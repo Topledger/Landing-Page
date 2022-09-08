@@ -1,0 +1,91 @@
+.demoMain {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.demoImg img {
+  height: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.thanksHeading h1 {
+  font-family: "Helvetica 45 Light", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 120%;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.thanksHeading p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-family: "Helvetica 45 Light", sans-serif;
+}
+.thankYou {
+  background: #eef2fc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  min-width: 80%;
+  width: 95%;
+}
+.thanksText {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+}
+.thanksText img {
+  cursor: pointer;
+  margin-right: 10px;
+  width: 20px;
+}
+.thanksText h6 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  font-family: "Helvetica 45 Light", sans-serif;
+  letter-spacing: 0.04em;
+}
+.mainThanks {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+.thanksText span.homeBack {
+  color: #6588e1;
+}
+.lastDemo {
+  position: fixed;
+  bottom: 5px;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .lastDemo {
+    position: fixed;
+    right: 0;
+    width: 100px;
+  }
+  .demoImg img {
+    height: 100px;
+  }
+  .thanksHeading h1 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+  }
+}

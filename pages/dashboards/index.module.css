@@ -1,0 +1,182 @@
+.title h3{
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 24px !important;
+  line-height: 29px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin-top: 0 !important;
+  margin-block-start: 0 !important;
+  padding-top: 30px;
+}
+.dashboardList {
+  padding-bottom: 70px;
+}
+.dashboardList a{
+  text-decoration: none;
+}
+.tabsDiv {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  justify-content: space-between;
+  align-items: center;
+}
+.tabs {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.tabs .tab {
+  padding: 10px 10px;
+  cursor: pointer;
+  position: relative;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.54);
+}
+.tabs .tab.active {
+  border-bottom: 2px solid #6588e1;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.87);
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 10px;
+  margin-bottom: 10px
+}
+.list:hover{
+  background-color: #EEF2FC;
+  border-radius: 8px;
+}
+.info h4 {
+  margin: 0;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #1a3989;
+  margin-bottom: 5px;
+}
+.info p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  color: rgba(0, 0, 0, 0.87);
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.fav p {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  text-align: left;
+  color: #1a3989;
+  gap: 10px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* dashboard footer */
+
+.dashboardFooter {
+  background-color: #001c65;
+  padding: 30px 0;
+  bottom: 0;
+  width: 100%;
+}
+.bottomFlex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottomFlex .content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.bottomFlex .content p {
+  font-family: "Helvetica 25 UltraLight", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  display: block;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+@media screen and (max-width:576px) {
+    .bottomFlex{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .bottomFlex .content{
+        order: 2;
+    }
+    .title h3{
+        font-size: 20px !important;
+    }
+}
+
+/* for black theme */
+
+.blackBg{
+  background-color: #121212;
+}
+.blackBg .title h3{
+  color: rgba(255, 255, 255, 0.6);
+}
+.blackBg .tabs .tab.active{
+  color: #6588E1;
+}
+.blackBg .tabs .tab{
+  color: rgba(255, 255, 255, 0.38)
+}
+.blackBg .tabsDiv{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.blackBg .list{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.blackBg .list:hover{
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)), #000000;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.12), 0px 1px 5px rgba(0, 0, 0, 0.2);
+  border-bottom: rgba(255, 255, 255, 0.06);
+}
+.blackBg .info h4{
+  color: #6588E1;
+}
+.blackBg .info p{
+  color: rgba(255, 255, 255, 0.87)
+}
+.blackBg .fav p{
+  color: rgba(255, 255, 255, 0.6);
+}
+.dashboardFooter.blackBg{
+  background-color: #000000 !important;
+}
