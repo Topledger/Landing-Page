@@ -161,10 +161,10 @@ function AboutUs() {
       </section>
 
       <section
-        className={`${styles.aboutTopLedger} ${styles.aboutReverseColumn}`}
+        className={`${styles.aboutTopLedger} ${styles.aboutReverseColumn}`} style={{scrollBehavior: "smooth"}}
         id="team"
       >
-        <div className={`${styles.wrapper} ${styles.withoutBg}`}>
+        <div className={`${styles.wrapper} ${styles.withoutBg}`} >
           <div className={styles.Content}>
             <h3 className={styles.title}>
               Afterall, a great team does it all...

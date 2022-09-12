@@ -26,7 +26,7 @@ const WeOffer = () => {
               of workloads, rollup aggregations and data compression to us.
             </p>
             <Link href="/get-started">
-              <a className="signUp">Try it for free</a>
+              <a className="signUp">Start a free trial</a>
             </Link>
           </div>
           <div className="offerImage">
