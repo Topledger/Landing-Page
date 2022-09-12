@@ -2,7 +2,9 @@ import React from "react";
 import { AiOutlineFontSize, AiOutlineHeart } from "react-icons/ai";
 import Link from "next/link";
 
+
 const Footer = () => {
+
   return (
     <footer className="footer">
       <div style={{ backgroundColor: "#001C6587" }}>
@@ -11,12 +13,12 @@ const Footer = () => {
             <div className="footerContent">
               <h1>Company</h1>
               <ul>
-                <li>Home</li>
+                <li><Link href="/">Home</Link></li>
                 <li>
                   <Link href="/about-us">About</Link>
                 </li>
                 <li>
-                  <Link href="/about-us/#team" scroll={false}>
+                  <Link href="/about-us/#team" scroll={false} >
                     Team
                   </Link>
                 </li>
