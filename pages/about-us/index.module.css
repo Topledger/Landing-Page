@@ -99,7 +99,7 @@
   position: absolute;
   top: 270px;
   right: 243px;
-  transform: rotate(45deg);
+  /* transform: rotate(45deg); */
 }
 .icans img {
   width: 50px;
@@ -244,14 +244,14 @@
   transition-duration: 0.3s;
 }
 .mainCardMain .contentBlock p {
-  margin-bottom: 10px !important;
+  margin-bottom: 14px !important;
 }
 .mainCardMain .contentBlock .socialIcons {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   display: flex;
   align-items: center;
   padding-bottom: 10px;
-  padding-top: 15px;
+  padding-top: 13px;
 }
 .mainCardMain .contentBlock .socialIcons .icon {
   background-color: #fff;
@@ -262,6 +262,11 @@
   width: 32px;
   height: 32px;
   margin-right: 10px;
+}
+.mainCardMain .contentBlock .socialIcons .icon a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .CardImg1 {
   position: absolute;
@@ -286,22 +291,24 @@
   font-weight: 500;
   font-size: 18px;
   margin: 0px;
-  padding-top: 15px;
+  padding-top: 15px !important;
   padding-bottom: 11px;
   text-align: left;
 }
 .mainCard .CardImg p {
   font-family: "Helvetica Neue";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
-  margin: 0px;
-  /* display: block;
-  padding-left: 20px; */
-  margin-bottom: 25px;
-  display: block;
-  text-align: left;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0px;
+    margin-bottom: 25px !important;
+    display: block;
+    text-align: left;
+}
+.mainCard .CardImg:hover p{
+  margin-bottom: 5px !important;
+  height: calc( 100% - 110px ) !important;
 }
 .aboutTopLedger .mainCard .CardImg1 {
   margin-top: 20px;
@@ -319,22 +326,24 @@
   font-weight: 500;
   font-size: 18px;
   margin: 0px;
-  padding-top: 21px;
+  padding-top: 15px;
   padding-bottom: 11px;
   text-align: left;
 }
 .mainCard .CardImg1 p {
   font-family: "Helvetica Neue";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
-  margin: 0px;
-  /* display: block;
-padding-left: 54px; */
-  margin-bottom: 25px;
-  text-align: left;
-  display: block;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0px;
+    margin-bottom: 25px !important;
+    text-align: left;
+    display: block;
+}
+.mainCard .CardImg1:hover p{
+  margin-bottom: 5px !important;
+  height: calc( 100% - 110px ) !important;
 }
 
 .aboutTopLedger .mainCard .CardImg2 {
@@ -356,7 +365,7 @@ padding-left: 54px; */
   font-weight: 500;
   font-size: 18px;
   margin: 0px;
-  padding-top: 21px;
+  padding-top: 15px;
   padding-bottom: 11px;
   text-align: left;
 }
@@ -367,11 +376,13 @@ padding-left: 54px; */
   font-size: 16px;
   line-height: 19px;
   margin: 0px;
-  /* display: block;
-padding-left: 54px; */
-  margin-bottom: 25px;
+  margin-bottom: 25px !important; 
   text-align: left;
   display: block;
+}
+.mainCard .CardImg2:hover p{
+  margin-bottom: 5px !important;
+  height: calc( 100% - 110px ) !important;
 }
 .aboutTopLedger .mainCard .CardImg3 {
   /* margin-top: 20px; */
@@ -392,7 +403,7 @@ padding-left: 54px; */
   font-weight: 500;
   font-size: 18px;
   margin: 0px;
-  padding-top: 21px;
+  padding-top: 15px;
   padding-bottom: 11px;
   text-align: left;
 }
@@ -403,11 +414,13 @@ padding-left: 54px; */
   font-size: 16px;
   line-height: 19px;
   margin: 0px;
-  /* display: block;
-padding-left: 54px; */
-  margin-bottom: 25px;
+  margin-bottom: 25px !important;
   text-align: left;
   display: block;
+}
+.mainCard .CardImg3:hover p{
+  margin-bottom: 5px !important;
+  height: calc( 100% - 110px ) !important;
 }
 .description input {
   border-radius: 25px;
@@ -547,7 +560,7 @@ padding-left: 54px; */
     position: absolute;
     top: 441px;
     right: 160px;
-    transform: rotate(45deg);
+    /* transform: rotate(45deg); */
   }
   .aboutsImgs {
     position: absolute;
@@ -738,6 +751,9 @@ padding-left: 54px; */
   .imgAboutDiv img{
     position: unset;
     top: 0;
+  }
+  .groupssImgs{
+    display: none;
   }
 }
 @media screen and (max-width: 400px) {

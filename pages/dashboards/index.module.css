@@ -1,4 +1,4 @@
-.title h3{
+.title h3 {
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500 !important;
@@ -13,7 +13,7 @@
 .dashboardList {
   padding-bottom: 70px;
 }
-.dashboardList a{
+.dashboardList a {
   text-decoration: none;
 }
 .tabsDiv {
@@ -51,16 +51,35 @@
   color: rgba(0, 0, 0, 0.87);
 }
 .list {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.list:hover {
+  background-color: #eef2fc;
+  border-radius: 8px;
+}
+.flexBox {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 10px;
-  margin-bottom: 10px
 }
-.list:hover{
-  background-color: #EEF2FC;
-  border-radius: 8px;
+.updated {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.06em;
+  opacity: 0;
+}
+.list:hover .updated {
+  opacity: 1;
+}
+.updated b {
+  color: #6588e1;
 }
 .info h4 {
   margin: 0;
@@ -87,6 +106,9 @@
   text-align: left;
   margin-bottom: 5px;
 }
+.fav{
+  position: relative;
+}
 .fav p {
   font-family: "Helvetica Neue";
   font-style: normal;
@@ -100,7 +122,73 @@
   align-items: center;
   white-space: nowrap;
 }
-
+.shareIcon {
+  width: 20px;
+  height: 20px;
+  color: rgb(0 0 0 / 54%);
+}
+.shareDropdown {
+  position: absolute;
+  right: 0;
+  min-width: 13rem;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+  border-radius: 6px;
+  z-index: 1;
+}
+.shareDropdown .icons {
+  display: flex;
+  gap: 20px;
+}
+.shareDropdown .icons svg {
+  width: 21px;
+  height: 21px;
+}
+.twitter {
+  color: #1da1f2;
+}
+.whatsapp {
+  color: #25d366;
+}
+.facebook {
+  color: #4267b2;
+}
+.telegram {
+  color: #2aabee;
+}
+.copyLink{
+  width: 100%;
+    display: flex;
+    margin: 10px 0 0;
+    position: relative;
+}
+.copyLink svg{
+  position: absolute;
+  width: 21px;
+    height: 21px;
+    left: 2px;
+    top: 8px;
+    color: #444;
+}
+.copyLink input{
+  padding: 10px 0 10px 30px;
+  width: 100%;
+  border: 0;
+  background: #edeaea;
+  border-radius: 6px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.copyLink button{
+  border: 0;
+  background: #001c65;
+  color: #fff;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding-left: 10px;
+    padding-right: 10px;
+}
 /* dashboard footer */
 
 .dashboardFooter {
@@ -109,10 +197,10 @@
   bottom: 0;
   width: 100%;
 }
-.bottomFlex{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.bottomFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .bottomFlex .content {
   display: flex;
@@ -130,53 +218,82 @@
   color: rgba(255, 255, 255, 0.64);
 }
 
-@media screen and (max-width:576px) {
-    .bottomFlex{
-        flex-direction: column;
-        gap: 20px;
-    }
-    .bottomFlex .content{
-        order: 2;
-    }
-    .title h3{
-        font-size: 20px !important;
-    }
+@media screen and (max-width: 576px) {
+  .bottomFlex {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .bottomFlex .content {
+    order: 2;
+  }
+  .title h3 {
+    font-size: 20px !important;
+  }
 }
 
 /* for black theme */
 
-.blackBg{
+.blackBg {
   background-color: #121212;
 }
-.blackBg .title h3{
+.blackBg .title h3 {
   color: rgba(255, 255, 255, 0.6);
 }
-.blackBg .tabs .tab.active{
-  color: #6588E1;
+.blackBg .tabs .tab.active {
+  color: #6588e1;
 }
-.blackBg .tabs .tab{
-  color: rgba(255, 255, 255, 0.38)
+.blackBg .tabs .tab {
+  color: rgba(255, 255, 255, 0.38);
 }
-.blackBg .tabsDiv{
+.blackBg .tabsDiv {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
-.blackBg .list{
+.blackBg .list {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
-.blackBg .list:hover{
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)), #000000;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.12), 0px 1px 5px rgba(0, 0, 0, 0.2);
+.blackBg .list:hover {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.08)
+    ),
+    #000000;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.12),
+    0px 1px 5px rgba(0, 0, 0, 0.2);
   border-bottom: rgba(255, 255, 255, 0.06);
 }
-.blackBg .info h4{
-  color: #6588E1;
+.blackBg .updated {
+  color: rgba(255, 255, 255, 0.38);
 }
-.blackBg .info p{
-  color: rgba(255, 255, 255, 0.87)
+.blackBg .info h4 {
+  color: #6588e1;
 }
-.blackBg .fav p{
+.blackBg .info p {
+  color: rgba(255, 255, 255, 0.87);
+}
+.blackBg .fav p {
   color: rgba(255, 255, 255, 0.6);
 }
-.dashboardFooter.blackBg{
+.dashboardFooter.blackBg {
   background-color: #000000 !important;
+}
+.blackBg .shareIcon{
+  color: rgba(255, 255, 255, 0.6);
+}
+.blackBg .shareDropdown{
+  background: #262525;
+}
+.blackBg .copyLink{
+  color: #ccc;
+}
+.blackBg .copyLink svg{
+  color: #ccc;
+}
+.blackBg .copyLink input{
+  background: #333;
+  color: #fff;
+}
+.blackBg .copyLink button{
+  background: #fff;
+  color: #000;
 }

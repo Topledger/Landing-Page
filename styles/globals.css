@@ -44,6 +44,9 @@ p {
 header.bgBlack {
   color: #000000;
 }
+input:focus-visible {
+  outline: none;
+}
 /* custom toggle btn */
 .toggle-btn .switch {
   position: relative;
@@ -193,6 +196,10 @@ header .navLink img {
   color: #6588e1;
   border-color: #6588e1;
 }
+.active-link, .active-link a{
+  color: #6588e1 !important;
+  border-color: #6588e1 !important;
+}
 /* header close */
 
 /* hero */
@@ -268,6 +275,8 @@ header .navLink img {
   padding: 15px 65px;
   box-shadow: 0px 4px 8px rgb(30 74 160 / 16%),
     -4px -4px 8px rgb(255 255 255 / 12%);
+    font-weight: 100;
+    font-size: 20px;
 }
 a.nextBtn img {
   width: 40px;
@@ -279,7 +288,24 @@ a.nextBtn {
   left: 50%;
   bottom: 20px;
 }
-
+.sub-header{
+  background-color: #1A3989;
+  padding: 8px 0;
+}
+.sub-header p{
+  font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 140%;
+letter-spacing: 0.04em;
+color: #FFFFFF;
+padding: 0 10px;
+}
+.sub-header a{
+  color: #fff;
+  padding-left: 5px;
+}
 @media (min-width: 768px) and (max-width: 900px) {
   .heroContent h1 {
     font-size: 50px;
@@ -1456,6 +1482,27 @@ ul.social img {
 .dashboard-container {
   margin: auto;
   padding: 0 64px;
+}
+header.blackBg .navLink img {
+  filter: invert(0.6);
+}
+.blackBg .head-menu {
+  background: rgb(14 14 14 / 54%);
+  border-bottom: 4px solid rgb(25 26 26 / 54%);
+}
+.blackBg .boxNavMain {
+  box-shadow: 0px 2px 4px rgb(255 255 255 / 38%);
+}
+.blackBg .head-menu div{
+  border-bottom: 4px solid rgb(255 255 255 / 54%);
+  color: rgba(0, 0, 0, 0.54);
+}
+.blackBg .active a{
+  color: rgb(255 255 255 / 54%);
+}
+.blackBg .active:hover, .blackBg .active:hover a{
+  color: #6588e1 !important;
+  border-color: #6588e1 !important;
 }
 @media screen and (max-width: 576px) {
   .dashboard-container {

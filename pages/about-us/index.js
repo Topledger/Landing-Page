@@ -25,19 +25,19 @@ function AboutUs() {
     <>
       <section className={styles.aboutHero}>
         <div className={styles.about_img}>
-          <img src="/assets/images/Group 200.png" alt="about-solana" />
+          <img src="/assets/images/Group 200.svg" alt="about-solana" />
         </div>
         <div className={styles.aboutsImg}>
-          <img src="/assets/images/pink-img.png" alt="about-solana" />
+          <img src="/assets/images/twitter-border.svg" alt="about-solana" />
         </div>
         <div className={styles.aboutsImgs}>
-          <img src="/assets/images/Group 208.png" alt="about-solana" />
+          <img src="/assets/images/s-logo.svg" alt="about-solana" />
         </div>
         <div className={styles.aboutsImagess}>
-          <img src="/assets/images/black-red-img.png" alt="about-solana" />
+          <img src="/assets/images/discord-border.svg" alt="about-solana" />
         </div>
         <div className={styles.groupImgs}>
-          <img src="/assets/images/pink-img.png" alt="about-solana" />
+          <img src="/assets/images/telegram-border.svg" alt="about-solana" />
         </div>
 
         <div className="container">
@@ -53,10 +53,10 @@ function AboutUs() {
 
           <div className={styles.mainGruop}>
             <div className={styles.groupssImgs}>
-              <img src="/assets/images/yellow-img.png" alt="about-solana" />
+              <img src="/assets/images/yellow-img.svg" alt="about-solana" />
             </div>
             <div className={styles.icans}>
-              <img src="/assets/images/blue-img.png" alt="about-solana" />
+              <img src="/assets/images/c-blue.svg" alt="about-solana" />
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ function AboutUs() {
           <div className={styles.Content}>
             <div className={styles.contentImage}>
               <Rotate>
-                <img src="/assets/images/Group 198.png" alt="about-solana" />
+                <img src="/assets/images/Group 198.svg" alt="about-solana" />
               </Rotate>
             </div>
 
@@ -117,7 +117,7 @@ function AboutUs() {
           <div className={styles.Content}>
             <div className={styles.contentImage}>
               <Rotate>
-                <img src="/assets/images/Group 198.png" alt="about-solana" />
+                <img src="/assets/images/Group 198.svg" alt="about-solana" />
               </Rotate>
             </div>
 
@@ -146,7 +146,7 @@ function AboutUs() {
               }}
             /> */}
             <img
-              src="/assets/images/team-upper.png"
+              src="/assets/images/team-upper-1.png"
               alt="about- solana12"
               style={{
                 maxWidth: 500,
@@ -199,6 +199,7 @@ function AboutUs() {
                       <img src="/assets/images/telegram-icon.svg" />
                     </a>
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -224,6 +225,7 @@ function AboutUs() {
                       <img src="/assets/images/telegram-icon.svg" />
                     </a>
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -254,6 +256,15 @@ function AboutUs() {
                       <img src="/assets/images/telegram-icon.svg" />
                     </a>
                   </div>
+                  {/* <div className={styles.icon}>
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img src="/assets/discord.svg" width="22px" height="22px" />
+                    </a>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -284,6 +295,7 @@ function AboutUs() {
                       <img src="/assets/images/telegram-icon.svg" />
                     </a>
                   </div>
+                  
                 </div>
               </div>
             </div>

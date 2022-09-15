@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import styles from "./index.module.css";
 import { DarkModeContext } from "../../context/DarkMode";
+import { AiOutlineShareAlt } from "react-icons/ai";
+import { BsFacebook, BsTwitter, BsTelegram, BsWhatsapp, BsLink45Deg } from "react-icons/bs";
+import List from "./list";
 
 const dashboardTabs = [
   "All",
@@ -14,45 +17,30 @@ const listData = [
     title: "Gari Network",
     text: "Fastest growing WEB3 social media.",
     fav: "30 favs",
-    link: "https://redash.topledger.xyz/public/dashboards/xAGJyiv1cREOP7w3QOo7xIXOcPj1KsypUt9yckv3?org_slug=default"
+    link: "https://redash.topledger.xyz/public/dashboards/xAGJyiv1cREOP7w3QOo7xIXOcPj1KsypUt9yckv3?org_slug=default",
   },
   {
     key: "2",
     title: "Project Serum",
     text: "Trade on the world's fastest and most powerful decentralized exchange.",
     fav: "40 favs",
-    link : "https://redash.topledger.xyz/public/dashboards/kR9HuP75SX5qDTDbzeybJ8SGnxdueH1FUj0kV64j?org_slug=default"
+    link: "https://redash.topledger.xyz/public/dashboards/kR9HuP75SX5qDTDbzeybJ8SGnxdueH1FUj0kV64j?org_slug=default",
   },
-  
 ];
 
 const DashboardContent = ({ key }) => {
   const { isDarkMode } = useContext(DarkModeContext);
+
   return (
     <div key={`dashboard-content-${key}`}>
       <div className={styles.dashboardList}>
         {listData.map((data, id) => (
-          <a href={data?.link} target="_blank" rel="noreferrer" key={id}>
-          <div className={styles.list} >
-            <div className={styles.info}>
-              <h4>{data?.title}</h4>
-              <p>{data?.text}</p>
-            </div>
-            <div className={styles.fav}>
-              <p>
-                <span>
-                  {isDarkMode ? (
-                    <img src="/assets/star-grey.svg" alt="star" />
-                  ) : (
-                    <img src="/assets/star.svg" alt="star" />
-                  )}
-                  {/* <img src="/assets/star.svg" alt="star" /> */}
-                </span>
-                {data?.fav}
-              </p>
-            </div>
+          <div className={styles.list} key={id}>
+            <List data={data} isDarkMode={isDarkMode} />
+            {/* <span className={styles.updated}>
+              last updated <b>12 hours ago</b>
+            </span> */}
           </div>
-          </a>
         ))}
       </div>
     </div>
@@ -64,7 +52,6 @@ const Dashboard = () => {
   const [isActive, setIsActive] = useState(false);
 
   const { isDarkMode, setIsDarkMode } = useContext(DarkModeContext);
-
 
   const handleClick = () => {
     // 👇️ toggle
