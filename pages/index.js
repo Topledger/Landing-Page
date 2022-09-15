@@ -9,6 +9,7 @@ import WeOffer from "../components/WeOffer";
 
 import "../node_modules/slick-carousel/slick/slick.css";
 import "../node_modules/slick-carousel/slick/slick-theme.css";
+import CommunitySection from "../components/CommunitySection";
 
 export default function Home() {
   return (
@@ -25,12 +26,16 @@ export default function Home() {
       </Head>
 
       <main>
+        <div className="bg-blue sub-header">
+          <p>Join our community of blockchain analysts and web3 managers on <a href="">discord <img src="/assets/arrow-up.svg" alt="arrow-up" /></a></p>
+        </div>
         <Hero />
         <Visual />
         <BackedBy />
         <WeOffer />
         <ChainSection />
         {/* <Client /> */}
+        <CommunitySection />
       </main>
     </div>
   );

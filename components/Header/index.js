@@ -18,15 +18,11 @@ const Header = () => {
   const {isDarkMode} = useContext(DarkModeContext);
 
   return (
-    <header className={isDarkMode ? "blackBg" : ""}>
+    <header className={router.pathname === "/dashboards" && isDarkMode ? "blackBg" : ""}>
       {/* <div className="container"> */}
       <div className={`navMain ${menuOpen && "boxNavMain"}`}>
         <div className="logo">
-          <Link href="/">
-            {
-              isDarkMode ? <img src="assets/images/black-logo.png" alt="Top Ledger Logo" /> : <img src="assets/images/logo.png" alt="Top Ledger Logo" /> 
-            }
-            
+          <Link href="/">{router.pathname === "/dashboards" && isDarkMode ? <img src="assets/images/black-logo.png" alt="Top Ledger Logo" /> : <img src="assets/images/logo.png" alt="Top Ledger Logo" /> }
           </Link>
         </div>
 
@@ -43,10 +39,10 @@ const Header = () => {
       {menuOpen && (
         <div className="head-menu">
           {/* <div className="active">Docs</div> */}
-          <div className="active">
+          <div  className={`active ${router.pathname === "/dashboards" ? "active-link" : null}`}>
             <Link href="/dashboards">Dashboards</Link>
           </div>
-          <div className="active">
+          <div className={`active ${router.pathname === "/about-us" ? "active-link" : null}`}>
             <Link href="/about-us">About</Link>
           </div>
         </div>

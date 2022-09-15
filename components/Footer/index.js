@@ -70,7 +70,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img src="assets/images/telegram.png" />
+                    <img src="assets/images/telegram.png" style={{marginLeft: "-3px"}} />
                   </a>
                 </li>
                 <li>
