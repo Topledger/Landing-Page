@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build && next export && touch ./out/.nojekyll && echo 'topledger.xyz' > ./out/CNAME",
     "start": "next start -p 3005",
-    "lint": "next lint",
-    "export": "next export"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
