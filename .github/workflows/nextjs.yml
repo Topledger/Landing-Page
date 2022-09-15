@@ -26,9 +26,6 @@ jobs:
           touch out/.nojekyll
           touch out/CNAME
           echo \"topledger.xyz\" >> out/CNAME
-          git add out/ 
-          git commit -m \"Deploy to gh-pages\" 
-          git subtree push --prefix out origin gh-pages"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
