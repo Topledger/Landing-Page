@@ -61,6 +61,7 @@
   transition: 0.5s ease-in-out;
   margin-bottom: 10px;
   transform: translateY(5px);
+  display: block;
 }
 .info a {
   font-style: normal;
@@ -101,11 +102,12 @@
   .flexBox {
     display: block;
     width: 100%;
-    padding: 50px 20px 0 20px !important;
+    /* padding: 50px 20px 0 20px !important; */
   }
   .flexBox .flex {
     width: 100%;
     margin-bottom: 20px;
+    justify-content: center;
   }
   .flexBox .flex:last-child {
     margin-bottom: 0;
@@ -114,9 +116,11 @@
     transform: scale(1.2) rotate(-15deg);
     transition: transform 0.5s ease-in-out;
   }
+  
   .flex .info p {
     font-size: 12px;
     transition:  0.5s ease-in-out;
+    transform: translateY(0px);
   }
   .flex .info a{
     opacity: 1;

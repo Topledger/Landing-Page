@@ -290,7 +290,7 @@ a.nextBtn {
 }
 .sub-header{
   background-color: #1A3989;
-  padding: 8px 0;
+  padding: 8px 50px;
 }
 .sub-header p{
   font-family: 'Helvetica Neue';
@@ -301,6 +301,8 @@ line-height: 140%;
 letter-spacing: 0.04em;
 color: #FFFFFF;
 padding: 0 10px;
+display: block;
+text-align: center;
 }
 .sub-header a{
   color: #fff;
@@ -927,8 +929,8 @@ ul.address a {
 }
 ul.address img {
   float: left;
-  margin-top: -7px;
-  width: 32px;
+  /* margin-top: -7px; */
+  width: 24px;
   padding-right: 10px;
   cursor: pointer;
 }

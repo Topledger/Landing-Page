@@ -52,11 +52,11 @@ const Footer = () => {
             <h1>Get in Touch</h1>
             <ul className="address">
               <li>
-                <img src="assets/images/mail.png" />
+                <img draggable="false" src="assets/images/mail.svg" />
                 <a href="mailto:nitin@topledger.xyz">nitin@topledger.xyz </a>
               </li>
               <li>
-                <img src="assets/images/locat.png" />
+                <img draggable="false" src="assets/images/locat.svg" />
                 Fraser Street #05-25 <br />
                 Duo Tower, Singapore
               </li>
@@ -66,20 +66,23 @@ const Footer = () => {
               <ul className="social">
                 <li>
                   <a
+                  draggable="false"
                     href="https://telegram.me/ergon50"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img src="assets/images/telegram.png" style={{marginLeft: "-3px"}} />
+                    <img draggable="false" src="assets/images/telegram-footer.svg" style={{marginLeft: "-3px"}} />
                   </a>
                 </li>
                 <li>
                   <a
+                  draggable="false"
                     href="https://twitter.com/ledger_top"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img src="assets/images/twiter.png" />
+                    <img draggable="false" 
+                    src="assets/images/twitter-footer.svg" />
                   </a>
                 </li>
               </ul>

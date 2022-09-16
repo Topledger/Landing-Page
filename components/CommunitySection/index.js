@@ -16,8 +16,8 @@ function CommunitySection() {
               </div>
               <div className={styles.info}>
                 <h4>Discord</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a href="#">
+                <p>Join our discord Server here</p>
+                <a href="https://discord.gg/x3EYAHYP" target="_blank" rel="noreferrer">
                   Join now{" "}
                   <svg
                     width="12"
@@ -43,8 +43,8 @@ function CommunitySection() {
               </div>
               <div className={styles.info}>
                 <h4>Twitter</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a href="#">
+                <p>Follow us on twitter to get all the latest updates</p>
+                <a href="https://twitter.com/ledger_top" target="_blank" rel="noreferrer">
                   Join now{" "}
                   <svg
                     width="12"
