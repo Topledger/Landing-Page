@@ -27,7 +27,7 @@ export default function Home() {
 
       <main>
         <div className="bg-blue sub-header">
-          <p>Join our community of blockchain analysts and web3 managers on <a href="">discord <img src="/assets/arrow-up.svg" alt="arrow-up" /></a></p>
+          <p>Join our community of web3 data scientists and builders on  <a href="https://discord.gg/x3EYAHYP" target="_blank" rel="noreferrer">discord <img src="/assets/arrow-up.svg" alt="arrow-up" /></a></p>
         </div>
         <Hero />
         <Visual />
