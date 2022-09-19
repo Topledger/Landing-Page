@@ -116,7 +116,7 @@ const BackedBy = () => {
           </div>
           <div className="powerContent">
             <img src="assets/images/Frame 2013.svg" />
-            <h3>Easy API access</h3>
+            <h3>Query with GraphQL</h3>
           </div>
         </Slider>
       </section>

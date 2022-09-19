@@ -1,8 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styles from "./index.module.css";
 import { DarkModeContext } from "../../context/DarkMode";
 import { AiOutlineShareAlt } from "react-icons/ai";
-import { BsFacebook, BsTwitter, BsTelegram, BsWhatsapp, BsLink45Deg } from "react-icons/bs";
+import axios from "axios";
+
+import {
+  BsFacebook,
+  BsTwitter,
+  BsTelegram,
+  BsWhatsapp,
+  BsLink45Deg,
+} from "react-icons/bs";
 import List from "./list";
 
 const dashboardTabs = [
@@ -16,34 +24,59 @@ const listData = [
     key: "1",
     title: "Gari Network",
     text: "Fastest growing WEB3 social media.",
-    fav: "30 favs",
+    fav: "30 shares",
     link: "https://redash.topledger.xyz/public/dashboards/xAGJyiv1cREOP7w3QOo7xIXOcPj1KsypUt9yckv3?org_slug=default",
   },
   {
     key: "2",
     title: "Project Serum",
     text: "Trade on the world's fastest and most powerful decentralized exchange.",
-    fav: "40 favs",
+    fav: "40 shares",
     link: "https://redash.topledger.xyz/public/dashboards/kR9HuP75SX5qDTDbzeybJ8SGnxdueH1FUj0kV64j?org_slug=default",
   },
 ];
 
 const DashboardContent = ({ key }) => {
+  const baseURL =
+    "https://top-ledger-panel.dishantagnihotri.com/api/dashboards";
+  const [loading, setLoading] = useState(false);
+  const [list, setList] = useState([]);
   const { isDarkMode } = useContext(DarkModeContext);
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const {data} = await axios.get(baseURL);
+      if (data?.data) setList(data.data);
+      else setList([]);
+    } catch (error) {
+      console.log("Error", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  console.log({ list });
+
+  if (loading) {
+    return <p>Fetching data...</p>;
+  }
+
   return (
-    <div key={`dashboard-content-${key}`}>
-      <div className={styles.dashboardList}>
-        {listData.map((data, id) => (
-          <div className={styles.list} key={id}>
-            <List data={data} isDarkMode={isDarkMode} />
-            {/* <span className={styles.updated}>
-              last updated <b>12 hours ago</b>
-            </span> */}
-          </div>
-        ))}
+    <>
+      {list.map((data) => (
+        <div className={styles.list} key={data.id}>
+        <List data={data} isDarkMode={isDarkMode} />
+        {/* <span className={styles.updated}>
+          last updated <b>12 hours ago</b>
+        </span> */}
       </div>
-    </div>
+      ))}
+    </>
   );
 };
 
@@ -60,6 +93,7 @@ const Dashboard = () => {
     // 👇️ or set to true
     setIsActive(true);
   };
+
   return (
     <>
       <section
@@ -88,7 +122,7 @@ const Dashboard = () => {
             </div>
             {/* <div className={styles.dashIcon}>
               {isActive ? <img src="/assets/dash-icon-grey.svg" alt="dash-icon" /> : <img src="/assets/dash-icon.svg" alt="dash-icon" />}
-              
+
             </div> */}
           </div>
           <div style={{ paddingTop: "40px" }}></div>
@@ -107,7 +141,7 @@ const Dashboard = () => {
         <div className="dashboard-container">
           <div className={styles.bottomFlex}>
             <div className={styles.content}>
-              <img src="/assets/images/copyright.svg" alt="copyright" />
+              {/* <img src="/assets/images/copyright.svg" alt="copyright" /> */}
               <p>Copyright, Top Ledger, 2022</p>
             </div>
             <div className={styles.toggleBtn + " toggle-btn"}>

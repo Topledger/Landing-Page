@@ -13,7 +13,7 @@
 .dashboardList {
   padding-bottom: 70px;
 }
-.dashboardList a {
+.dashboardList_a {
   text-decoration: none;
 }
 .tabsDiv {
@@ -97,7 +97,7 @@
 }
 .info p {
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.06em;
@@ -106,7 +106,7 @@
   text-align: left;
   margin-bottom: 5px;
 }
-.fav{
+.fav {
   position: relative;
 }
 .fav p {
@@ -129,13 +129,15 @@
 }
 .shareDropdown {
   position: absolute;
-  right: 0;
-  min-width: 13rem;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+  right: 102px;
+  padding: 14px;
+  background: transparent;
   border-radius: 6px;
   z-index: 1;
+  top: -13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .shareDropdown .icons {
   display: flex;
@@ -157,21 +159,21 @@
 .telegram {
   color: #2aabee;
 }
-.copyLink{
+.copyLink {
   width: 100%;
-    display: flex;
-    margin: 10px 0 0;
-    position: relative;
+  display: flex;
+  margin: 10px 0 0;
+  position: relative;
 }
-.copyLink svg{
+.copyLink svg {
   position: absolute;
   width: 21px;
-    height: 21px;
-    left: 2px;
-    top: 8px;
-    color: #444;
+  height: 21px;
+  left: 2px;
+  top: 8px;
+  color: #444;
 }
-.copyLink input{
+.copyLink input {
   padding: 10px 0 10px 30px;
   width: 100%;
   border: 0;
@@ -180,14 +182,14 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.copyLink button{
+.copyLink button {
   border: 0;
   background: #001c65;
   color: #fff;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   padding-left: 10px;
-    padding-right: 10px;
+  padding-right: 10px;
 }
 /* dashboard footer */
 
@@ -217,7 +219,22 @@
   letter-spacing: 0.06em;
   color: rgba(255, 255, 255, 0.64);
 }
-
+@media screen and (max-width: 768px) {
+  .shareDropdown {
+    position: absolute;
+    right: -10px;
+    min-width: 9rem;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    border-radius: 6px;
+    z-index: 1;
+    top: 30px;
+  }
+  .blackBg .shareDropdown {
+    background: #262525;
+  }
+}
 @media screen and (max-width: 576px) {
   .bottomFlex {
     flex-direction: column;
@@ -260,7 +277,7 @@
     #000000;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.12),
     0px 1px 5px rgba(0, 0, 0, 0.2);
-  border-bottom: rgba(255, 255, 255, 0.06);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
 }
 .blackBg .updated {
   color: rgba(255, 255, 255, 0.38);
@@ -277,23 +294,21 @@
 .dashboardFooter.blackBg {
   background-color: #000000 !important;
 }
-.blackBg .shareIcon{
+.blackBg .shareIcon {
   color: rgba(255, 255, 255, 0.6);
 }
-.blackBg .shareDropdown{
-  background: #262525;
-}
-.blackBg .copyLink{
+
+.blackBg .copyLink {
   color: #ccc;
 }
-.blackBg .copyLink svg{
+.blackBg .copyLink svg {
   color: #ccc;
 }
-.blackBg .copyLink input{
+.blackBg .copyLink input {
   background: #333;
   color: #fff;
 }
-.blackBg .copyLink button{
+.blackBg .copyLink button {
   background: #fff;
   color: #000;
 }
