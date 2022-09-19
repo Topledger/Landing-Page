@@ -17,7 +17,11 @@ function CommunitySection() {
               <div className={styles.info}>
                 <h4>Discord</h4>
                 <p>Join our discord Server here</p>
-                <a href="https://discord.gg/x3EYAHYP" target="_blank" rel="noreferrer">
+                <a
+                  href="https://discord.gg/x3EYAHYP"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Join now{" "}
                   <svg
                     width="12"
@@ -44,7 +48,11 @@ function CommunitySection() {
               <div className={styles.info}>
                 <h4>Twitter</h4>
                 <p>Follow us on twitter to get all the latest updates</p>
-                <a href="https://twitter.com/ledger_top" target="_blank" rel="noreferrer">
+                <a
+                  href="https://twitter.com/ledger_top"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Join now{" "}
                   <svg
                     width="12"

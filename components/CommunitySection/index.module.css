@@ -21,11 +21,13 @@
   margin: auto;
   width: 60%;
   padding-top: 50px;
+  padding-left: 50px;
 }
 .flexBox .flex {
   display: flex;
   gap: 20px;
   width: 50%;
+  justify-content: center;
 }
 .icon {
   background: #fff;
@@ -38,6 +40,7 @@
 }
 .info {
   width: 200px;
+  padding-top: 20px;
 }
 .info h4 {
   font-family: "Helvetica 25 UltraLight", sans-serif;
@@ -62,6 +65,7 @@
   margin-bottom: 10px;
   transform: translateY(5px);
   display: block;
+  margin: 0;
 }
 .info a {
   font-style: normal;
@@ -71,17 +75,16 @@
   color: #5865f2;
   opacity: 0;
   /* transition: transform 0.5s ease-in-out; */
-    transition: all 0.2s ease-in-out;
-    transition-delay: 0.2s;
-    text-decoration: none;
-
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0.2s;
+  text-decoration: none;
 }
-.flex:hover .info a{
-    opacity: 1;
-    /* transition: transform 0.5s ease-in-out; */
-    transform: translateY(0px);
+.flex:hover .info a {
+  opacity: 1;
+  /* transition: transform 0.5s ease-in-out; */
+  transform: translateY(0px);
 }
-.info svg path{
+.info svg path {
   margin-left: 3px;
   stroke: #5865f2;
 }
@@ -104,10 +107,17 @@
     width: 100%;
     /* padding: 50px 20px 0 20px !important; */
   }
+  .CommunitySection {
+    padding: 70px 22px;
+  }
+  .info {
+    padding-top: 0px;
+  }
   .flexBox .flex {
     width: 100%;
     margin-bottom: 20px;
     justify-content: center;
+    align-items: center;
   }
   .flexBox .flex:last-child {
     margin-bottom: 0;
@@ -116,14 +126,17 @@
     transform: scale(1.2) rotate(-15deg);
     transition: transform 0.5s ease-in-out;
   }
-  
+
   .flex .info p {
     font-size: 12px;
-    transition:  0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
     transform: translateY(0px);
   }
-  .flex .info a{
+  .flex .info a {
     opacity: 1;
     transition: transform 0.5s ease-in-out;
-}
+  }
+  .flexBox {
+    padding-left: 0 !important;
+  }
 }

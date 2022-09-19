@@ -127,10 +127,11 @@
   grid-template-columns: 50% 50%;
   /* max-height: 100vh; */
   overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 .topLedgerWrapper {
   /* top: -80px; */
-  background-color: #EEF2FC;
+  background-color: #eef2fc;
 }
 .withoutBg {
   top: -100px;
@@ -193,10 +194,10 @@
   width: 100%;
   height: 100%;
 }
-.imgAboutDiv{
+.imgAboutDiv {
   padding: 50px 0 90px;
 }
-.imgAboutDiv img{
+.imgAboutDiv img {
   position: relative;
   top: -50px;
 }
@@ -263,7 +264,7 @@
   height: 32px;
   margin-right: 10px;
 }
-.mainCardMain .contentBlock .socialIcons .icon a{
+.mainCardMain .contentBlock .socialIcons .icon a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -297,18 +298,18 @@
 }
 .mainCard .CardImg p {
   font-family: "Helvetica Neue";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 19px;
-    margin: 0px;
-    margin-bottom: 25px !important;
-    display: block;
-    text-align: left;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 0px;
+  margin-bottom: 25px !important;
+  display: block;
+  text-align: left;
 }
-.mainCard .CardImg:hover p{
+.mainCard .CardImg:hover p {
   margin-bottom: 5px !important;
-  height: calc( 100% - 110px ) !important;
+  height: calc(100% - 110px) !important;
 }
 .aboutTopLedger .mainCard .CardImg1 {
   margin-top: 20px;
@@ -332,18 +333,18 @@
 }
 .mainCard .CardImg1 p {
   font-family: "Helvetica Neue";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 19px;
-    margin: 0px;
-    margin-bottom: 25px !important;
-    text-align: left;
-    display: block;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 0px;
+  margin-bottom: 25px !important;
+  text-align: left;
+  display: block;
 }
-.mainCard .CardImg1:hover p{
+.mainCard .CardImg1:hover p {
   margin-bottom: 5px !important;
-  height: calc( 100% - 110px ) !important;
+  height: calc(100% - 110px) !important;
 }
 
 .aboutTopLedger .mainCard .CardImg2 {
@@ -376,13 +377,13 @@
   font-size: 16px;
   line-height: 19px;
   margin: 0px;
-  margin-bottom: 25px !important; 
+  margin-bottom: 25px !important;
   text-align: left;
   display: block;
 }
-.mainCard .CardImg2:hover p{
+.mainCard .CardImg2:hover p {
   margin-bottom: 5px !important;
-  height: calc( 100% - 110px ) !important;
+  height: calc(100% - 110px) !important;
 }
 .aboutTopLedger .mainCard .CardImg3 {
   /* margin-top: 20px; */
@@ -418,9 +419,9 @@
   text-align: left;
   display: block;
 }
-.mainCard .CardImg3:hover p{
+.mainCard .CardImg3:hover p {
   margin-bottom: 5px !important;
-  height: calc( 100% - 110px ) !important;
+  height: calc(100% - 110px) !important;
 }
 .description input {
   border-radius: 25px;
@@ -439,20 +440,20 @@
 .aboutAllMobile {
   display: none;
 }
-.emailSection{
+.emailSection {
   background-image: url("/assets/images/Frame 00208.png");
   background-size: 50% 100%;
-    background-repeat: no-repeat;
-    background-position: top right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(238, 242, 252);
-    height: 430px;
-    max-height: 430px;
-    text-align: center;
+  background-repeat: no-repeat;
+  background-position: top right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(238, 242, 252);
+  height: 430px;
+  max-height: 430px;
+  text-align: center;
 }
-.emailSection .title{
+.emailSection .title {
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500;
@@ -491,6 +492,7 @@
   .aboutTopLedger {
     display: flex;
     flex-direction: column-reverse;
+    margin-top: -1px;
   }
   .aboutTopLedger .wrapper .description {
     padding-left: 16px;
@@ -548,7 +550,7 @@
   .aboutTopLedger .wrapper .title {
     margin-right: 0px;
     text-align: left;
-    padding: 0px 5px;
+    /* padding: 0px 5px; */
     font-size: 17px;
   }
   .groupssImgs {
@@ -581,7 +583,7 @@
     font-size: 14px;
     padding: 14px 52px 13px 12px;
   }
-  .SignUp{
+  .SignUp {
     padding: 14px 24px !important;
   }
 }
@@ -730,29 +732,29 @@
   .aboutHero .content {
     justify-content: flex-start;
   }
-  .emailSection{
-    background-size: 80% 90%;
+  .emailSection {
+    background-size: 80% 100%;
     height: 300px;
     max-height: 300px;
   }
-  .emailSection .title{
+  .emailSection .title {
     font-size: 17px;
     line-height: 22px;
   }
-  .mainCardss{
+  .mainCardss {
     margin: 0;
   }
   .mainCard {
     padding-top: 0;
   }
-  .imgAboutDiv{
+  .imgAboutDiv {
     padding: 0;
   }
-  .imgAboutDiv img{
+  .imgAboutDiv img {
     position: unset;
     top: 0;
   }
-  .groupssImgs{
+  .groupssImgs {
     display: none;
   }
 }

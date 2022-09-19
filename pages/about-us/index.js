@@ -81,7 +81,7 @@ function AboutUs() {
             </div>
 
             <h3 className={styles.title}>
-              Socio-economically, utilizing Blockchain technology in various
+              Socio-economically, utilizing blockchain technology in various
               areas of our lives will be the biggest social experiment of our
               times.
             </h3>
@@ -102,7 +102,7 @@ function AboutUs() {
               alt="about-solana12"
               className={styles.aboutAllDesktop}
             /> */}
-            <img src="/assets/images/about-page.svg" alt="about"  />
+            <img src="/assets/images/about-page.svg" alt="about" />
             {/* <img
               src="/assets/images/about-all-mobile.png"
               alt="about-mobile"
@@ -122,12 +122,13 @@ function AboutUs() {
             </div>
 
             <h3 className={styles.title}>
-              At Top Ledger, customer and employee success and satisfaction are
-              the top two priorities.
+              At Top Ledger, consistently shipping and building an environment
+              filled with curiosity & creativity for our people are the top two
+              priorities.
             </h3>
             <p className={styles.description}>
-              The two go hand-in-hand, and as they build each other up, they
-              create an external and internal army of brand ambassadors.
+              Our team takes pleasure in regularly delivering exceptional
+              results by setting high-impact, data-driven targets.
             </p>
           </div>
         </div>
@@ -161,10 +162,11 @@ function AboutUs() {
       </section>
 
       <section
-        className={`${styles.aboutTopLedger} ${styles.aboutReverseColumn}`} style={{scrollBehavior: "smooth"}}
+        className={`${styles.aboutTopLedger} ${styles.aboutReverseColumn}`}
+        style={{ scrollBehavior: "smooth" }}
         id="team"
       >
-        <div className={`${styles.wrapper} ${styles.withoutBg}`} >
+        <div className={`${styles.wrapper} ${styles.withoutBg}`}>
           <div className={styles.Content}>
             <h3 className={styles.title}>
               Afterall, a great team does it all...
@@ -179,7 +181,7 @@ function AboutUs() {
         <div className={styles.mainCard}>
           <div className={styles.mainCardss}>
             <div className={`${styles.mainCardMain} ${styles.CardImg}`}>
-              <img src="/assets/images/Component 5.png" alt="about-solana" />
+              <img draggable="false" src="/assets/images/Component 5.png" alt="about-solana" />
 
               <div className={styles.contentBlock}>
                 <h3>Harsh Vardhan Sharma</h3>
@@ -191,21 +193,20 @@ function AboutUs() {
                   </div> */}
 
                   <div className={styles.icon}>
-                    <a
+                    <a draggable="false"
                       href="https://telegram.me/alaivable"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src="/assets/images/telegram-icon.svg" />
+                      <img draggable="false" src="/assets/images/telegram-icon.svg" />
                     </a>
                   </div>
-                  
                 </div>
               </div>
             </div>
 
             <div className={`${styles.mainCardMain} ${styles.CardImg1}`}>
-              <img src="/assets/images/Components05.png" alt="about-solana" />
+              <img draggable="false" src="/assets/images/Components05.png" alt="about-solana" />
 
               <div className={styles.contentBlock}>
                 <h3>Deepak Khatri</h3>
@@ -217,20 +218,19 @@ function AboutUs() {
                   </div> */}
 
                   <div className={styles.icon}>
-                    <a
+                    <a draggable="false"
                       href="https://telegram.me/DKdocs"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src="/assets/images/telegram-icon.svg" />
+                      <img draggable="false" src="/assets/images/telegram-icon.svg" />
                     </a>
                   </div>
-                  
                 </div>
               </div>
             </div>
             <div className={`${styles.mainCardMain} ${styles.CardImg2}`}>
-              <img src="/assets/images/Frame 77.png" alt="about-solana" />
+              <img draggable="false" src="/assets/images/Frame 77.png" alt="about-solana" />
 
               <div className={styles.contentBlock}>
                 <h3>Nitin Shukla</h3>
@@ -238,22 +238,22 @@ function AboutUs() {
 
                 <div className={styles.socialIcons}>
                   <div className={styles.icon}>
-                    <a
+                    <a draggable="false"
                       href="https://twitter.com/ergon50"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src="/assets/images/twitter-icon.svg" />
+                      <img draggable="false" src="/assets/images/twitter-icon.svg" />
                     </a>
                   </div>
 
                   <div className={styles.icon}>
-                    <a
+                    <a draggable="false"
                       href="https://telegram.me/ergon50"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src="/assets/images/telegram-icon.svg" />
+                      <img draggable="false" src="/assets/images/telegram-icon.svg" />
                     </a>
                   </div>
                   {/* <div className={styles.icon}>
@@ -277,25 +277,24 @@ function AboutUs() {
 
                 <div className={styles.socialIcons}>
                   <div className={styles.icon}>
-                    <a
+                    <a draggable="false"
                       href="https://twitter.com/urluckyturtle"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src="/assets/images/twitter-icon.svg" />
+                      <img draggable="false" src="/assets/images/twitter-icon.svg" />
                     </a>
                   </div>
 
                   <div className={styles.icon}>
-                    <a
+                    <a draggable="false"
                       href="https://telegram.me/urluckyturtle"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src="/assets/images/telegram-icon.svg" />
+                      <img draggable="false" src="/assets/images/telegram-icon.svg" />
                     </a>
                   </div>
-                  
                 </div>
               </div>
             </div>
