@@ -219,6 +219,17 @@
   letter-spacing: 0.06em;
   color: rgba(255, 255, 255, 0.64);
 }
+
+.copyText {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #4bb543;
+}
+.facebook {
+  color: #4267b2;
+}
 @media screen and (max-width: 768px) {
   .shareDropdown {
     position: absolute;
