@@ -57,7 +57,7 @@ const List = ({data, isDarkMode}) => {
                     <div className={styles.icons}>
                       {textCopy ? (<span className={styles.copyText}><MdDone />Copied to clipboard</span>)  : (<div style={{display: "flex", gap: "20px"}}>
                       /*<a href={`https://discord.gg/share?text=${data?.attributes?.title}&url=${data?.attributes?.link}`} target="_blank" rel="noreferrer">
-                        {/* <BsTwitter className={styles.twitter} /> */}
+                        { <BsTwitter className={styles.twitter} /> }
                         <img src="assets/images/logos_discord-icon.svg"/>
                       </a>*/
                       <a href={`https://twitter.com/share?text=${data?.attributes?.title}&url=${data?.attributes?.link}`} target="_blank" rel="noreferrer">
