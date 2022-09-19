@@ -141,7 +141,7 @@ const Dashboard = () => {
         <div className="dashboard-container">
           <div className={styles.bottomFlex}>
             <div className={styles.content}>
-              {/* <img src="/assets/images/copyright.svg" alt="copyright" /> */}
+              <img draggable="false" src="/assets/images/copyright.svg" alt="copyright" />
               <p>Copyright, Top Ledger, 2022</p>
             </div>
             <div className={styles.toggleBtn + " toggle-btn"}>

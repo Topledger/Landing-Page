@@ -125,7 +125,7 @@ const GetStarted = () => {
                   value={form.name}
                   onChange={(e) => {
                     e.preventDefault();
-                    const regex = new RegExp(/^[A-Za-z]+$/);
+                    const regex = new RegExp(/^[A-Za-z\s]+$/);
 
                     if (regex.test(e.target.value) || e.target.value === "") {
                       onFormChange(e);
