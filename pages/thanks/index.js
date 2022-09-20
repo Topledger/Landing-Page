@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import styles from "./index.module.css";
@@ -5,6 +6,19 @@ import styles from "./index.module.css";
 const thanks = () => {
   return (
     <>
+    <Head>
+        <title>Register for the demonstration | Top Ledger</title>
+        <meta
+          name="description"
+          content="Contact us and schedule a time to get a quick walk through our solution. "
+        ></meta>
+        <meta
+          name="keywords"
+          content="Solana Analytics, Solana Blockchain, Dune Analytics, Crypto Analytics,
+          Ledger Analytics, On-Chain Data, Off-Chain Data, NFT Analytics, DeFi Analytics, Crypto Dashboard,
+          Solana Dashboard, P2E Games, Magic Eden, Web3, SQL"
+        ></meta>
+      </Head>
       <div className={styles.demoMain}>
         <div className={styles.demoImg}>
           <img src="/assets/images/Group 19800.png" alt="about-solana" />

@@ -12,6 +12,7 @@ import {
   BsLink45Deg,
 } from "react-icons/bs";
 import List from "./list";
+import Head from "next/head";
 
 const dashboardTabs = [
   "All",
@@ -44,11 +45,14 @@ const DashboardContent = ({ key }) => {
   const { isDarkMode } = useContext(DarkModeContext);
 
   useEffect(() => {
-    fetchData();
+    fetchData(true);
   }, []);
 
-  const fetchData = async () => {
-    setLoading(true);
+  const fetchData = async (showLoader = false) => {
+    if (showLoader) {
+      setLoading(true);
+    }
+
     try {
       const { data } = await axios.get(baseURL);
       if (data?.data) setList(data.data);
@@ -61,11 +65,14 @@ const DashboardContent = ({ key }) => {
   };
 
   if (loading) {
-    return <p>Fetching data...</p>;
+    return <>
+    <div className={styles.loaderDiv}><img src="/assets/top-loader.gif" alt="loader" className={styles.loader} /></div>
+    </>;
   }
 
   return (
     <>
+     
       {list.map((data) => (
         <div className={styles.list} key={data.id}>
           <List
@@ -74,6 +81,7 @@ const DashboardContent = ({ key }) => {
             setSelectedTb
             fetchData={fetchData}
           />
+         
           {/* <span className={styles.updated}>
           last updated <b>12 hours ago</b>
         </span> */}
@@ -99,6 +107,19 @@ const Dashboard = () => {
 
   return (
     <>
+      <Head>
+        <title>List of popular dashboards on solana | Top Ledger</title>
+        <meta
+          name="description"
+          content="Helping web3 teams become more data-driven, making it as simple as possible for them to leverage analytics into their daily workflows."
+        ></meta>
+        <meta
+          name="keywords"
+          content="Solana Analytics, Solana Blockchain, Dune Analytics, Crypto Analytics,
+  Ledger Analytics, On-Chain Data, Off-Chain Data, NFT Analytics, DeFi Analytics, Crypto Dashboard,
+  Solana Dashboard, P2E Games, Magic Eden, Web3, SQL"
+        ></meta>
+      </Head>
       <section
         className={isDarkMode ? styles.blackBg : ""}
         style={{ height: listData.length > 5 ? "auto" : "100vh" }}

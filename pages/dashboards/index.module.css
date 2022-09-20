@@ -134,11 +134,13 @@
   padding: 14px;
   background: transparent;
   border-radius: 6px;
-  z-index: 1;
+  z-index: 1111;
   top: -13px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
+  opacity: 1;
 }
 .shareDropdown .icons {
   display: flex;
@@ -232,6 +234,24 @@
 .facebook {
   color: #4267b2;
 }
+.copyIconHide {
+  display: none;
+}
+.animationDropDown {
+  right: 70px;
+  transition: 0.3s;
+  opacity: 0;
+  z-index: -1;
+}
+.loaderDiv {
+}
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
 @media screen and (max-width: 768px) {
   .shareDropdown {
     position: absolute;
@@ -241,7 +261,7 @@
     background: #fff;
     box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
     border-radius: 6px;
-    z-index: 1;
+    z-index: 1111;
     top: 30px;
   }
   .blackBg .shareDropdown {
