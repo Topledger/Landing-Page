@@ -31,7 +31,7 @@ const List = ({ data, isDarkMode, fetchData }) => {
         { data: { shares: data?.attributes?.shares + 1 } }
       );
       if (res) {
-        fetchData();
+        fetchData(false);
       }
     } catch (error) {
       console.log("Error", error);
@@ -45,7 +45,7 @@ const List = ({ data, isDarkMode, fetchData }) => {
   const copyToClipboard = () => {
     setTextCopy(true);
     navigator.clipboard.writeText(data?.attributes?.link);
-    setTimeout(() => setTextCopy(false), 2000);
+    setTimeout(() => {setTextCopy(false); handleShareUpdate();}, 2000);
   };
 
   return (
@@ -62,7 +62,7 @@ const List = ({ data, isDarkMode, fetchData }) => {
       <div className={styles.fav}>
         <div
           className={styles.shareBtn}
-          style={{ display: "flex", alignItems: "center", gap: "10px" }}
+          style={{ display: "flex", alignItems: "center", gap: "10px", position: "relative", zIndex: "1" }}
         >
           <p onClick={() => toggleMenu()}>
             {/* {isDarkMode ? (
@@ -81,8 +81,8 @@ const List = ({ data, isDarkMode, fetchData }) => {
           </p>
           <p>{data?.attributes?.shares} shares</p>
         </div>
-        {isComponentVisible && (
-          <div className={styles.shareDropdown}>
+        
+          <div className={`${styles.shareDropdown} ${isComponentVisible ? " " : styles.animationDropDown}`}>
             <div className={styles.wrapper}>
               <div className={styles.icons}>
                 {textCopy ? (
@@ -92,15 +92,14 @@ const List = ({ data, isDarkMode, fetchData }) => {
                   </span>
                 ) : (
                   <div style={{ display: "flex", gap: "20px" }}>
-                    <a
+                    {/* <a
                       onClick={handleShareUpdate}
-                      href={`https://discord.com/share?text=${data?.attributes?.title}&url=${data?.attributes?.link}`}
+                      href={`https://discord.gg/share?text=${data?.attributes?.title}&url=${data?.attributes?.link}`}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      {/* <BsTwitter className={styles.twitter} /> */}
                       <img src="assets/images/logos_discord-icon.svg" />
-                    </a>
+                    </a> */}
                     <a
                       onClick={handleShareUpdate}
                       href={`https://twitter.com/share?text=${data?.attributes?.title}&url=${data?.attributes?.link}`}
@@ -119,7 +118,7 @@ const List = ({ data, isDarkMode, fetchData }) => {
                       {/* <BsFacebook className={styles.facebook} /> */}
                       <img src="assets/images/logos_telegram-icon.svg" />
                     </a>
-                    <a
+                    {/* <a
                       onClick={handleShareUpdate}
                       href={`https://www.facebook.com/sharer/sharer.php?u=${data?.attributes?.link}`}
                       target="_blank"
@@ -127,14 +126,11 @@ const List = ({ data, isDarkMode, fetchData }) => {
                       className={styles.facebook}
                     >
                       <MdFacebook />
-                    </a>
+                    </a> */}
                   </div>
                 )}
                 <span
-                  onClick={() => {
-                    handleShareUpdate();
-                    copyToClipboard();
-                  }}
+                  onClick={copyToClipboard} className={textCopy && styles.copyIconHide}
                 >
                   {/* <BsWhatsapp className={styles.whatsapp} /> */}
                   <img src="assets/images/copy.svg" />
@@ -147,7 +143,7 @@ const List = ({ data, isDarkMode, fetchData }) => {
                     </div> */}
             </div>
           </div>
-        )}
+        
       </div>
     </div>
   );

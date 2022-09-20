@@ -127,6 +127,8 @@
   grid-template-columns: 50% 50%;
   /* max-height: 100vh; */
   overflow: hidden;
+}
+.backgroundLedger {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 .topLedgerWrapper {

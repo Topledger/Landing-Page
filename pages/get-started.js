@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
+import Head from "next/head";
 
 const GetStarted = () => {
   const router = useRouter();
@@ -84,6 +85,20 @@ const GetStarted = () => {
   };
 
   return (
+    <>
+    <Head>
+        <title>Register for the demonstration | Top Ledger</title>
+        <meta
+          name="description"
+          content="Contact us and schedule a time to get a quick walk through our solution. "
+        ></meta>
+        <meta
+          name="keywords"
+          content="Solana Analytics, Solana Blockchain, Dune Analytics, Crypto Analytics,
+          Ledger Analytics, On-Chain Data, Off-Chain Data, NFT Analytics, DeFi Analytics, Crypto Dashboard,
+          Solana Dashboard, P2E Games, Magic Eden, Web3, SQL"
+        ></meta>
+      </Head>
     <div className="get-started-main">
       <div className="left">
         <div className="back-button" onClick={onBack}>
@@ -192,7 +207,7 @@ const GetStarted = () => {
                   // onChange={(e) => onFormChange(e)}
                   onChange={(e) => {
                     e.preventDefault();
-                    const regex = new RegExp(/^[A-Za-z]+$/);
+                    const regex = new RegExp(/^[A-Za-z\s]+$/);
 
                     if (regex.test(e.target.value) || e.target.value === "") {
                       onFormChange(e);
@@ -223,6 +238,7 @@ const GetStarted = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
