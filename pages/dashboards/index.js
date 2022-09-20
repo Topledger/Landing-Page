@@ -50,7 +50,7 @@ const DashboardContent = ({ key }) => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const {data} = await axios.get(baseURL);
+      const { data } = await axios.get(baseURL);
       if (data?.data) setList(data.data);
       else setList([]);
     } catch (error) {
@@ -60,8 +60,6 @@ const DashboardContent = ({ key }) => {
     }
   };
 
-  console.log({ list });
-
   if (loading) {
     return <p>Fetching data...</p>;
   }
@@ -70,11 +68,16 @@ const DashboardContent = ({ key }) => {
     <>
       {list.map((data) => (
         <div className={styles.list} key={data.id}>
-        <List data={data} isDarkMode={isDarkMode} />
-        {/* <span className={styles.updated}>
+          <List
+            data={data}
+            isDarkMode={isDarkMode}
+            setSelectedTb
+            fetchData={fetchData}
+          />
+          {/* <span className={styles.updated}>
           last updated <b>12 hours ago</b>
         </span> */}
-      </div>
+        </div>
       ))}
     </>
   );
@@ -141,7 +144,11 @@ const Dashboard = () => {
         <div className="dashboard-container">
           <div className={styles.bottomFlex}>
             <div className={styles.content}>
-              <img draggable="false" src="/assets/images/copyright.svg" alt="copyright" />
+              <img
+                draggable="false"
+                src="/assets/images/copyright.svg"
+                alt="copyright"
+              />
               <p>Copyright, Top Ledger, 2022</p>
             </div>
             <div className={styles.toggleBtn + " toggle-btn"}>
