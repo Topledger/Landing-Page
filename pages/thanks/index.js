@@ -4,6 +4,11 @@ import React from "react";
 import styles from "./index.module.css";
 
 const thanks = () => {
+  const onBack = () => {
+    // router.push("/");
+    window.location.assign("/")
+    
+  };
   return (
     <>
     <Head>
@@ -31,14 +36,14 @@ const thanks = () => {
                 <h1>Thank you for requesting a demo! </h1>
                 <p>Our team will get back to you within 24 hours!</p>
               </div>
-              <Link href="/">
+              <div onClick={onBack} style={{cursor: "pointer"}}>
                 <div className={styles.thanksText}>
                   <img src="/assets/images/shape.svg" alt="about-solana" />
                   <h6>
                     Back to <span className={styles.homeBack}>Home</span>
                   </h6>
                 </div>
-              </Link>
+              </div>
             </div>
           </div>
         </div>
