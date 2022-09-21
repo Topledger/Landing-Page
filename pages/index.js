@@ -18,10 +18,10 @@ export default function Home() {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
+        {/* <link
           href="http://fonts.cdnfonts.com/css/helvetica-neue-9"
           rel="stylesheet"
-        />
+        /> */}
         <title>Top Ledger | End-to-End Blockchain Analytics</title>
         <meta
           name="description"
