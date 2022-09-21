@@ -32,7 +32,7 @@ const GetStarted = () => {
       [name]: value,
     }));
   };
-
+console.log({recaptchaRef})
   const onChange = () => {
     console.log("recaptchaRef", recaptchaRef?.current?.getValue());
   };
@@ -48,12 +48,12 @@ const GetStarted = () => {
     emailjs
       .send(
         "service_62m42xo",
-        "template_tkdu0h1",
+        "template_7gxg9as",
         {
           ...form,
           "g-recaptcha-response": recaptchaRef?.current?.getValue(),
         },
-        "ImL1N_d83MU9mIi2m"
+        "8cYoh9v4ZIsKb9BfX"
       )
       .then(
         (result) => {
@@ -77,7 +77,9 @@ const GetStarted = () => {
   };
 
   const onBack = () => {
-    router.push("/");
+    // router.push("/");
+    window.location.assign("/")
+    
   };
 
   const varifyCallback = (response) => {
@@ -101,7 +103,7 @@ const GetStarted = () => {
       </Head>
     <div className="get-started-main">
       <div className="left">
-        <div className="back-button" onClick={onBack}>
+      <div className="back-button" onClick={onBack}>
           <img src="/assets/back.svg" />
           <span>Back</span>
         </div>
