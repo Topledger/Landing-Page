@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Galada&display=swap");
-@import url("http://fonts.cdnfonts.com/css/helvetica-neue-9");
+/* @import url("http://fonts.cdnfonts.com/css/helvetica-neue-9"); */
+@import url("/public/assets/font/HelveticaNeue.ttc");
 
 body {
   padding: 0;
@@ -264,6 +265,7 @@ header .navLink img {
   font-family: "Helvetica 45 Light", sans-serif;
   font-weight: 100;
   font-size: 20px;
+  cursor: pointer;
 }
 .getStartOutlined {
   background: #eef2fc;
@@ -279,12 +281,13 @@ header .navLink img {
     -4px -4px 8px rgb(255 255 255 / 12%);
   font-weight: 100;
   font-size: 20px;
+  cursor: pointer;
 }
-a.nextBtn img {
+.nextBtn img {
   width: 40px;
 }
 
-a.nextBtn {
+.nextBtn {
   position: absolute;
   transform: translate(-50%, -11px);
   left: 50%;
@@ -570,6 +573,7 @@ a.nextBtn {
   padding: 12px 24px;
   font-weight: 400;
   font-family: "Helvetica 45 Light", sans-serif;
+  cursor: pointer;
   /* margin-left: -50px; */
 }
 

@@ -18,10 +18,10 @@ export default function Home() {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
+        {/* <link
           href="http://fonts.cdnfonts.com/css/helvetica-neue-9"
           rel="stylesheet"
-        />
+        /> */}
         <title>Top Ledger | End-to-End Blockchain Analytics</title>
         <meta
           name="description"
@@ -39,7 +39,7 @@ export default function Home() {
         <div className="bg-blue sub-header">
           <p>
             Join our community of web3 data scientists and builders on
-            <a
+            <a title="discord"
               href="https://discord.gg/x3EYAHYP"
               target="_blank"
               rel="noreferrer"

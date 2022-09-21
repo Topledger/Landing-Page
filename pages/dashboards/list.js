@@ -100,7 +100,7 @@ const List = ({ data, isDarkMode, fetchData }) => {
                     >
                       <img src="assets/images/logos_discord-icon.svg" />
                     </a> */}
-                    <a
+                    <a title="twitter"
                       onClick={handleShareUpdate}
                       href={`https://twitter.com/share?text=${data?.attributes?.title}&url=${data?.attributes?.link}`}
                       target="_blank"
@@ -109,7 +109,7 @@ const List = ({ data, isDarkMode, fetchData }) => {
                       {/* <BsTelegram className={styles.telegram} /> */}
                       <img src="assets/images/logos_twitter-icon.svg" />
                     </a>
-                    <a
+                    <a title="twitter"
                       onClick={handleShareUpdate}
                       href={`https://t.me/share/url?url=${data?.attributes?.link}&text=${data?.attributes?.title}`}
                       target="_blank"
