@@ -219,7 +219,7 @@ const GetStarted = () => {
 
             <ReCAPTCHA
               ref={recaptchaRef}
-              sitekey="6LfLxcQhAAAAAFOcCcmslczwkIhxuPQC-KQrHHNR"
+              sitekey="6LfkFhciAAAAAJYW9D6jI65hnlgJf8lM3RC2pSQU"
               onChange={onChange}
             />
             {isChecked && (
