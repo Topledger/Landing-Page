@@ -39,7 +39,7 @@ export default function Home() {
         <div className="bg-blue sub-header">
           <p>
             Join our community of web3 data scientists and builders on
-            <a
+            <a title="discord"
               href="https://discord.gg/x3EYAHYP"
               target="_blank"
               rel="noreferrer"

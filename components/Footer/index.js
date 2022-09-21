@@ -65,7 +65,7 @@ const Footer = () => {
               <h1>Social</h1>
               <ul className="social">
                 <li>
-                  <a
+                  <a title="telegram"
                   draggable="false"
                     href="https://telegram.me/ergon50"
                     target="_blank"
@@ -75,7 +75,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a
+                  <a title="twitter"
                   draggable="false"
                     href="https://twitter.com/ledger_top"
                     target="_blank"

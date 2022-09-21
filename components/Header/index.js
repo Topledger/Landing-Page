@@ -28,9 +28,9 @@ const Header = () => {
 
         <div className="navLink" onClick={() => toggleMenu()}>
           {menuOpen ? (
-            <img src="assets/images/cross.svg" />
+            <img src="assets/images/cross.svg"  alt="cross-icon"/>
           ) : (
-            <img src="assets/images/navIcon.png" />
+            <img src="assets/images/navIcon.png" alt="menu-icon" />
           )}
         </div>
       </div>

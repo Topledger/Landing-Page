@@ -211,7 +211,7 @@ function AboutUs() {
                   </div> */}
 
                   <div className={styles.icon}>
-                    <a
+                    <a title="telegram"
                       draggable="false"
                       href="https://telegram.me/alaivable"
                       target="_blank"
@@ -244,7 +244,7 @@ function AboutUs() {
                   </div> */}
 
                   <div className={styles.icon}>
-                    <a
+                    <a title="telegram"
                       draggable="false"
                       href="https://telegram.me/DKdocs"
                       target="_blank"
@@ -272,7 +272,7 @@ function AboutUs() {
 
                 <div className={styles.socialIcons}>
                   <div className={styles.icon}>
-                    <a
+                    <a title="twitter"
                       draggable="false"
                       href="https://twitter.com/ergon50"
                       target="_blank"
@@ -286,7 +286,7 @@ function AboutUs() {
                   </div>
 
                   <div className={styles.icon}>
-                    <a
+                    <a title="telegram"
                       draggable="false"
                       href="https://telegram.me/ergon50"
                       target="_blank"
@@ -319,7 +319,7 @@ function AboutUs() {
 
                 <div className={styles.socialIcons}>
                   <div className={styles.icon}>
-                    <a
+                    <a title="twitter"
                       draggable="false"
                       href="https://twitter.com/urluckyturtle"
                       target="_blank"
@@ -333,7 +333,7 @@ function AboutUs() {
                   </div>
 
                   <div className={styles.icon}>
-                    <a
+                    <a title="telegram"
                       draggable="false"
                       href="https://telegram.me/urluckyturtle"
                       target="_blank"

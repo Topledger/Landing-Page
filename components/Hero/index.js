@@ -9,23 +9,23 @@ const Hero = () => (
         <h1 className="title">Blockchain Analytics</h1>
 
         <p className="description">
-          on <img src="assets/images/solana.png" className="textLogo" />
+          on <img src="assets/images/solana.png" className="textLogo" alt="solana" />
         </p>
 
         <Link href="/get-started">
-          <a className="getStart">Request demo</a>
+          <span  className="getStart">Request demo</span>
         </Link>
 
         <Link href="/dashboards">
-          <a className="getStartOutlined">View Dashboards</a>
+          <span className="getStartOutlined">View Dashboards</span>
         </Link>
 
-        <a className="nextBtn">
+        <div className="nextBtn">
           <div className="middle">
             <div className="mouse"></div>
           </div>
           {/* <img src="assets/images/nxtBtn.png" /> */}
-        </a>
+        </div>
       </div>
     </div>
   </section>
