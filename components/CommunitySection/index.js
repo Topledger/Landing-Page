@@ -18,7 +18,7 @@ function CommunitySection() {
                 <h4>Discord</h4>
                 <p>Join our discord Server here</p>
                 <a title="join now"
-                  href="https://discord.gg/x3EYAHYP"
+                  href="https://discord.gg/q5bHa2rXmu"
                   target="_blank"
                   rel="noreferrer"
                 >
