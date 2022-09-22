@@ -40,7 +40,7 @@ export default function Home() {
           <p>
             Join our community of web3 data scientists and builders on
             <a title="discord"
-              href="https://discord.gg/x3EYAHYP"
+              href="https://discord.gg/q5bHa2rXmu"
               target="_blank"
               rel="noreferrer"
             >
