@@ -122,7 +122,7 @@ const Dashboard = () => {
       </Head>
       <section
         className={isDarkMode ? styles.blackBg : ""}
-        style={{ paddingBottom: "50px" }}
+        style={{ paddingBottom: "100px", height: "calc( 100vh - 87px - 86px )" }}
         // height: listData.length > 5 ? "auto" : "100vh"
       >
         <div className="dashboard-container">
