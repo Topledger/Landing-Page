@@ -122,7 +122,8 @@ const Dashboard = () => {
       </Head>
       <section
         className={isDarkMode ? styles.blackBg : ""}
-        style={{ height: listData.length > 5 ? "auto" : "100vh" }}
+        style={{ paddingBottom: "50px" }}
+        // height: listData.length > 5 ? "auto" : "100vh"
       >
         <div className="dashboard-container">
           <div className={styles.title}>
@@ -160,7 +161,7 @@ const Dashboard = () => {
         className={`${styles.dashboardFooter} ${
           isDarkMode ? styles.blackBg : ""
         }`}
-        style={{ position: listData.length > 5 ? "unset" : "fixed" }}
+        // style={{ position: listData.length > 5 ? "unset" : "fixed" }}
       >
         <div className="dashboard-container">
           <div className={styles.bottomFlex}>
