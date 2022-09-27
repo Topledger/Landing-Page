@@ -20,7 +20,7 @@ const Visual = () => {
       <div className="visualContent">
         <p>
           Top Ledger allows Web3 growth, analytics & data science teams to
-          create powerful dashboards from decoded smart contract data. Analyse
+          create powerful dashboards from decoded solana program data. Analyse
           auto-generated sentiment, narrative & tag cloud charts from Twitter,
           Telegram & Discord data.
         </p>
