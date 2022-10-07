@@ -244,13 +244,16 @@
   z-index: -1;
 }
 .loaderDiv {
-  height: 200px;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 .loader {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -20%);
   width: 200px;
 }
 @media screen and (max-width: 768px) {

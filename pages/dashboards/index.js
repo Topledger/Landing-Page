@@ -65,14 +65,21 @@ const DashboardContent = ({ key }) => {
   };
 
   if (loading) {
-    return <>
-    <div className={styles.loaderDiv}><img src="/assets/top-loader.gif" alt="loader" className={styles.loader} /></div>
-    </>;
+    return (
+      <>
+        <div className={styles.loaderDiv}>
+          <img
+            src="/assets/top-loader.gif"
+            alt="loader"
+            className={styles.loader}
+          />
+        </div>
+      </>
+    );
   }
 
   return (
     <>
-     
       {list.map((data) => (
         <div className={styles.list} key={data.id}>
           <List
@@ -81,7 +88,7 @@ const DashboardContent = ({ key }) => {
             setSelectedTb
             fetchData={fetchData}
           />
-         
+
           {/* <span className={styles.updated}>
           last updated <b>12 hours ago</b>
         </span> */}
