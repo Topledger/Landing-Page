@@ -1,16 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
 import styles from "./index.module.css";
 import { DarkModeContext } from "../../context/DarkMode";
-import { AiOutlineShareAlt } from "react-icons/ai";
+import "react-loading-skeleton/dist/skeleton.css";
+import Skeleton from "react-loading-skeleton";
 import axios from "axios";
 
-import {
-  BsFacebook,
-  BsTwitter,
-  BsTelegram,
-  BsWhatsapp,
-  BsLink45Deg,
-} from "react-icons/bs";
 import List from "./list";
 import Head from "next/head";
 
@@ -20,22 +14,6 @@ const dashboardTabs = [
 ];
 
 // console.log(isDarkMode);
-const listData = [
-  {
-    key: "1",
-    title: "Gari Network",
-    text: "Fastest growing WEB3 social media.",
-    fav: "30 shares",
-    link: "https://redash.topledger.xyz/public/dashboards/xAGJyiv1cREOP7w3QOo7xIXOcPj1KsypUt9yckv3?org_slug=default",
-  },
-  {
-    key: "2",
-    title: "Project Serum",
-    text: "Trade on the world's fastest and most powerful decentralized exchange.",
-    fav: "40 shares",
-    link: "https://redash.topledger.xyz/public/dashboards/kR9HuP75SX5qDTDbzeybJ8SGnxdueH1FUj0kV64j?org_slug=default",
-  },
-];
 
 const DashboardContent = ({ key }) => {
   const baseURL =
@@ -67,13 +45,34 @@ const DashboardContent = ({ key }) => {
   if (loading) {
     return (
       <>
-        <div className={styles.loaderDiv}>
-          <img
-            src="/assets/top-loader.gif"
-            alt="loader"
-            className={styles.loader}
-          />
-        </div>
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((el) => (
+          <>
+            <div
+              style={{
+                marginBottom: "20px",
+                borderBottom: "1px solid #ebebeb",
+                paddingBottom: "10px",
+              }}
+            >
+              <div className={styles.flexBox}>
+                <div className={styles.info}>
+                  <h4>
+                    <Skeleton width={300} />
+                  </h4>
+                  <p>
+                    <Skeleton width={600} />
+                  </p>
+                </div>
+                <div className={styles.fav}>
+                  <div style={{ display: "flex", gap: "20px" }}>
+                    <Skeleton width={20} height={20} circle={true} />
+                    <Skeleton width={20} height={20} circle={true} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        ))}
       </>
     );
   }
@@ -157,8 +156,10 @@ const Dashboard = () => {
 
             </div> */}
           </div>
-          <div style={{ paddingTop: "40px" }}></div>
-          {activeTab == "All" && <DashboardContent />}
+          {/* <div ></div> */}
+          <div style={{ paddingTop: "40px", minHeight: "70vh" }}>
+            {activeTab == "All" && <DashboardContent />}
+          </div>
           {/* {activeTab == "Category A" && (<h3>Category A</h3>)} */}
           {/* {activeTab == "Category B" && (<h3>Category B</h3>)} */}
         </div>
