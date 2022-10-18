@@ -21,9 +21,7 @@ const List = ({ data, isDarkMode, fetchData }) => {
     setIsComponentVisible((prev) => !prev);
   };
 
-  console.log("hellloo", { data });
   const handleShareUpdate = async () => {
-    console.log("clicked data -------> ", data);
     try {
       const res = await axios.put(
         `https://top-ledger-panel.dishantagnihotri.com/api/dashboards/` +
@@ -45,7 +43,10 @@ const List = ({ data, isDarkMode, fetchData }) => {
   const copyToClipboard = () => {
     setTextCopy(true);
     navigator.clipboard.writeText(data?.attributes?.link);
-    setTimeout(() => {setTextCopy(false); handleShareUpdate();}, 2000);
+    setTimeout(() => {
+      setTextCopy(false);
+      handleShareUpdate();
+    }, 2000);
   };
 
   return (
@@ -56,14 +57,23 @@ const List = ({ data, isDarkMode, fetchData }) => {
           style={{ cursor: "pointer" }}
         >
           <h4>{data?.attributes?.title}</h4>
+
           <p>{data?.attributes.description}</p>
         </div>
       </div>
       <div className={styles.fav}>
         <div
           className={styles.shareBtn}
-          style={{ display: "flex", alignItems: "center", gap: "10px", position: "relative", zIndex: "1" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            position: "relative",
+            zIndex: "1",
+          }}
         >
+          {isComponentVisible ? "" : <p>{data?.attributes?.shares}</p>}
+
           <p onClick={() => toggleMenu()}>
             {/* {isDarkMode ? (
                       <AiOutlineShareAlt className={styles.shareIcon} />
@@ -79,20 +89,23 @@ const List = ({ data, isDarkMode, fetchData }) => {
               )}
             </div>
           </p>
-          <p>{data?.attributes?.shares} shares</p>
         </div>
-        
-          <div className={`${styles.shareDropdown} ${isComponentVisible ? " " : styles.animationDropDown}`}>
-            <div className={styles.wrapper}>
-              <div className={styles.icons}>
-                {textCopy ? (
-                  <span className={styles.copyText}>
-                    <MdDone />
-                    Copied to clipboard
-                  </span>
-                ) : (
-                  <div style={{ display: "flex", gap: "20px" }}>
-                    {/* <a
+
+        <div
+          className={`${styles.shareDropdown} ${
+            isComponentVisible ? " " : styles.animationDropDown
+          }`}
+        >
+          <div className={styles.wrapper}>
+            <div className={styles.icons}>
+              {textCopy ? (
+                <span className={styles.copyText}>
+                  <MdDone />
+                  Copied to clipboard
+                </span>
+              ) : (
+                <div style={{ display: "flex", gap: "20px" }}>
+                  {/* <a
                       onClick={handleShareUpdate}
                       href={`https://discord.gg/share?text=${data?.attributes?.title}&url=${data?.attributes?.link}`}
                       target="_blank"
@@ -100,25 +113,27 @@ const List = ({ data, isDarkMode, fetchData }) => {
                     >
                       <img src="assets/images/logos_discord-icon.svg" />
                     </a> */}
-                    <a title="twitter"
-                      onClick={handleShareUpdate}
-                      href={`https://twitter.com/share?text=${data?.attributes?.title}&url=${data?.attributes?.link}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {/* <BsTelegram className={styles.telegram} /> */}
-                      <img src="assets/images/logos_twitter-icon.svg" />
-                    </a>
-                    <a title="twitter"
-                      onClick={handleShareUpdate}
-                      href={`https://t.me/share/url?url=${data?.attributes?.link}&text=${data?.attributes?.title}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {/* <BsFacebook className={styles.facebook} /> */}
-                      <img src="assets/images/logos_telegram-icon.svg" />
-                    </a>
-                    {/* <a
+                  <a
+                    title="twitter"
+                    onClick={handleShareUpdate}
+                    href={`https://twitter.com/share?text=${data?.attributes?.title}&url=${data?.attributes?.link}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {/* <BsTelegram className={styles.telegram} /> */}
+                    <img src="assets/images/logos_twitter-icon.svg" />
+                  </a>
+                  <a
+                    title="twitter"
+                    onClick={handleShareUpdate}
+                    href={`https://t.me/share/url?url=${data?.attributes?.link}&text=${data?.attributes?.title}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {/* <BsFacebook className={styles.facebook} /> */}
+                    <img src="assets/images/logos_telegram-icon.svg" />
+                  </a>
+                  {/* <a
                       onClick={handleShareUpdate}
                       href={`https://www.facebook.com/sharer/sharer.php?u=${data?.attributes?.link}`}
                       target="_blank"
@@ -127,23 +142,23 @@ const List = ({ data, isDarkMode, fetchData }) => {
                     >
                       <MdFacebook />
                     </a> */}
-                  </div>
-                )}
-                <span
-                  onClick={copyToClipboard} className={textCopy && styles.copyIconHide}
-                >
-                  {/* <BsWhatsapp className={styles.whatsapp} /> */}
-                  <img src="assets/images/copy.svg" />
-                </span>
-              </div>
-              {/* <div className={styles.copyLink}>
+                </div>
+              )}
+              <span
+                onClick={copyToClipboard}
+                className={textCopy && styles.copyIconHide}
+              >
+                {/* <BsWhatsapp className={styles.whatsapp} /> */}
+                <img src="assets/images/copy.svg" />
+              </span>
+            </div>
+            {/* <div className={styles.copyLink}>
                       <BsLink45Deg />
                       <input type="text" className={styles.inputCopy} placeholder="https://www.kooapp.com/koo/kooenglish" />
                       <button type="button" className={styles.copyBtn}>Copy</button>
                     </div> */}
-            </div>
           </div>
-        
+        </div>
       </div>
     </div>
   );
