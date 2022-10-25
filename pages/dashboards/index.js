@@ -8,33 +8,28 @@ import axios from "axios";
 import List from "./list";
 import Head from "next/head";
 
-const dashboardTabs = [
-  "All",
-  // , "Category A", "Category B"
-];
+const Dashboard = () => {
+  const [activeTab, setActiveTab] = useState("All");
 
-// console.log(isDarkMode);
+  const { isDarkMode, setIsDarkMode } = useContext(DarkModeContext);
 
-const DashboardContent = ({ key }) => {
-  const baseURL =
-    "https://top-ledger-panel.dishantagnihotri.com/api/dashboards";
+  const baseURL = "https://top-ledger-panel.dishantagnihotri.com/api/";
+
   const [loading, setLoading] = useState(false);
-  const [list, setList] = useState([]);
-  const { isDarkMode } = useContext(DarkModeContext);
-
-  useEffect(() => {
-    fetchData(true);
-  }, []);
+  const [categories, setCategories] = useState([]);
 
   const fetchData = async (showLoader = false) => {
     if (showLoader) {
       setLoading(true);
     }
-
     try {
-      const { data } = await axios.get(baseURL);
-      if (data?.data) setList(data.data);
-      else setList([]);
+      const { data } = await axios.get(`${baseURL}categories?populate=*`);
+      setCategories(data?.data);
+      setActiveTab(data?.data?.[0]?.attributes);
+      // console.log("this is the data ------------> " , data.data)
+
+      // if (data?.data) setList(data.data);
+      // else setList([]);
     } catch (error) {
       console.log("Error", error);
     } finally {
@@ -42,74 +37,9 @@ const DashboardContent = ({ key }) => {
     }
   };
 
-  if (loading) {
-    return (
-      <>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((el) => (
-          <>
-            <div
-              style={{
-                marginBottom: "20px",
-                borderBottom: "1px solid #ebebeb",
-                paddingBottom: "10px",
-              }}
-            >
-              <div className={styles.flexBox}>
-                <div className={styles.info}>
-                  <h4>
-                    <Skeleton width={300} />
-                  </h4>
-                  <p>
-                    <Skeleton width={600} />
-                  </p>
-                </div>
-                <div className={styles.fav}>
-                  <div style={{ display: "flex", gap: "20px" }}>
-                    <Skeleton width={20} height={20} circle={true} />
-                    <Skeleton width={20} height={20} circle={true} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
-        ))}
-      </>
-    );
-  }
-
-  return (
-    <>
-      {list.map((data) => (
-        <div className={styles.list} key={data.id}>
-          <List
-            data={data}
-            isDarkMode={isDarkMode}
-            setSelectedTb
-            fetchData={fetchData}
-          />
-
-          {/* <span className={styles.updated}>
-          last updated <b>12 hours ago</b>
-        </span> */}
-        </div>
-      ))}
-    </>
-  );
-};
-
-const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState("All");
-  const [isActive, setIsActive] = useState(false);
-
-  const { isDarkMode, setIsDarkMode } = useContext(DarkModeContext);
-
-  const handleClick = () => {
-    // 👇️ toggle
-    // setIsActive(current => !current);
-
-    // 👇️ or set to true
-    setIsActive(true);
-  };
+  useEffect(() => {
+    fetchData(true);
+  }, []);
 
   return (
     <>
@@ -129,7 +59,6 @@ const Dashboard = () => {
       <section
         className={isDarkMode ? styles.blackBg : ""}
         style={{ paddingBottom: "200px" }}
-        // height: listData.length > 5 ? "auto" : "100vh"
       >
         <div className="dashboard-container">
           <div className={styles.title}>
@@ -137,17 +66,17 @@ const Dashboard = () => {
           </div>
           <div className={styles.tabsDiv}>
             <div className={styles.tabs}>
-              {dashboardTabs.map((ele, id) => (
+              {categories.map(({ attributes }, id) => (
                 <div
                   className={
-                    activeTab == ele
+                    activeTab === attributes
                       ? `${styles.tab} ${styles.active}`
                       : styles.tab
                   }
                   key={`dashboard-tab-${id}`}
-                  onClick={() => setActiveTab(ele)}
+                  onClick={() => setActiveTab(attributes)}
                 >
-                  {ele}
+                  {attributes?.title}
                 </div>
               ))}
             </div>
@@ -156,12 +85,51 @@ const Dashboard = () => {
 
             </div> */}
           </div>
-          {/* <div ></div> */}
           <div style={{ paddingTop: "40px", minHeight: "70vh" }}>
-            {activeTab == "All" && <DashboardContent />}
+            {loading ? (
+              [1, 2, 3, 4, 5, 6, 7, 8, 9].map((el) => (
+                <>
+                  <div
+                    style={{
+                      marginBottom: "20px",
+                      borderBottom: "1px solid #ebebeb",
+                      paddingBottom: "10px",
+                    }}
+                  >
+                    <div className={styles.flexBox}>
+                      <div className={styles.info}>
+                        <h4>
+                          <Skeleton width={300} />
+                        </h4>
+                        <p>
+                          <Skeleton width={600} />
+                        </p>
+                      </div>
+                      <div className={styles.fav}>
+                        <div style={{ display: "flex", gap: "20px" }}>
+                          <Skeleton width={20} height={20} circle={true} />
+                          <Skeleton width={20} height={20} circle={true} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ))
+            ) : activeTab?.dashboards?.data?.length ? (
+              activeTab?.dashboards?.data?.map((data) => (
+                <div className={styles.list} key={data.id}>
+                  <List
+                    data={data}
+                    isDarkMode={isDarkMode}
+                    setSelectedTb
+                    fetchData={fetchData}
+                  />
+                </div>
+              ))
+            ) : (
+              <h1 style={{ textAlign: "center" }}> No Data found </h1>
+            )}
           </div>
-          {/* {activeTab == "Category A" && (<h3>Category A</h3>)} */}
-          {/* {activeTab == "Category B" && (<h3>Category B</h3>)} */}
         </div>
       </section>
 
@@ -169,7 +137,6 @@ const Dashboard = () => {
         className={`${styles.dashboardFooter} ${
           isDarkMode ? styles.blackBg : ""
         }`}
-        // style={{ position: listData.length > 5 ? "unset" : "fixed" }}
       >
         <div className="dashboard-container">
           <div className={styles.bottomFlex}>
