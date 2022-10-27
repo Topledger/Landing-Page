@@ -13,7 +13,7 @@ import useComponentVisible from "../../hooks/useComponentVisible";
 import { MdDone, MdFacebook } from "react-icons/md";
 import axios from "axios";
 
-const List = ({ data, isDarkMode, fetchData }) => {
+const List = ({ data, isDarkMode, fetchData,fetchAllDashboards }) => {
   const { ref, isComponentVisible, setIsComponentVisible } =
     useComponentVisible(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -30,6 +30,7 @@ const List = ({ data, isDarkMode, fetchData }) => {
       );
       if (res) {
         fetchData(false);
+        fetchAllDashboards(false)
       }
     } catch (error) {
       console.log("Error", error);
@@ -58,7 +59,7 @@ const List = ({ data, isDarkMode, fetchData }) => {
         >
           <h4>{data?.attributes?.title}</h4>
 
-          <p>{data?.attributes.description}</p>
+          <p>{data?.attributes?.description}</p>
         </div>
       </div>
       <div className={styles.fav}>
@@ -74,7 +75,7 @@ const List = ({ data, isDarkMode, fetchData }) => {
         >
           {isComponentVisible ? "" : <p>{data?.attributes?.shares}</p>}
 
-          <p onClick={() => toggleMenu()}>
+          <p>
             {/* {isDarkMode ? (
                       <AiOutlineShareAlt className={styles.shareIcon} />
                     ) : (
@@ -83,9 +84,9 @@ const List = ({ data, isDarkMode, fetchData }) => {
             {/* <img src="/assets/star.svg" alt="star" /> */}
             <div className="ShareIcons">
               {isComponentVisible ? (
-                <img src="assets/images/cross-small.svg" />
+                <img src="assets/images/cross-small.svg"  onClick={() => toggleMenu()}/>
               ) : (
-                <AiOutlineShareAlt className={styles.shareIcon} />
+                <AiOutlineShareAlt className={styles.shareIcon} onClick={() => toggleMenu()}/>
               )}
             </div>
           </p>
