@@ -141,6 +141,7 @@
   align-items: center;
   transition: 0.5s;
   opacity: 1;
+  visibility: visible;
 }
 .shareDropdown .icons {
   display: flex;
@@ -242,6 +243,7 @@
   transition: 0.5s;
   opacity: 0;
   z-index: -1;
+  visibility: hidden;
 }
 .loaderDiv {
   min-height: 100vh;
