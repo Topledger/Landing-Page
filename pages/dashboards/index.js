@@ -4,43 +4,61 @@ import { DarkModeContext } from "../../context/DarkMode";
 import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
 import axios from "axios";
-
 import List from "./list";
 import Head from "next/head";
-
 const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState("All");
-
+  const [activeTab, setActiveTab] = useState(null);
   const { isDarkMode, setIsDarkMode } = useContext(DarkModeContext);
-
+  const [allDashboards, setAllDashboards] = useState([]);
   const baseURL = "https://top-ledger-panel.dishantagnihotri.com/api/";
-
   const [loading, setLoading] = useState(false);
   const [categories, setCategories] = useState([]);
-
-  const fetchData = async (showLoader = false) => {
+  const fetchData = async (showLoader = false , wannaUpdateActiveTab = false) => {
     if (showLoader) {
       setLoading(true);
     }
     try {
       const { data } = await axios.get(`${baseURL}categories?populate=*`);
-      setCategories(data?.data);
-      setActiveTab(data?.data?.[0]?.attributes);
-      // console.log("this is the data ------------> " , data.data)
-
-      // if (data?.data) setList(data.data);
-      // else setList([]);
+      // setCategories(data?.data);
+      setCategories(() => {
+        let mergedArray = [
+          { attributes: { title: "All" , dashboards : {data: []} }},
+          ...data.data,
+        ];
+        if(wannaUpdateActiveTab){
+          setActiveTab(mergedArray[0]?.attributes)
+        }
+        return mergedArray;
+      });
     } catch (error) {
       console.log("Error", error);
     } finally {
       setLoading(false);
     }
   };
-
   useEffect(() => {
-    fetchData(true);
+    fetchData(true ,true);
+    fetchAllDashboards();
   }, []);
 
+
+ 
+
+
+  const fetchAllDashboards = async (showLoader = false) => {
+    if (showLoader) {
+      setLoading(true);
+    }
+    try {
+      const { data } = await axios.get(`${baseURL}dashboards`);
+       setAllDashboards(data?.data);
+    } catch (error) {
+      console.log("Error", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  console.log("this is the active tab data -------> " , activeTab);
   return (
     <>
       <Head>
@@ -69,7 +87,7 @@ const Dashboard = () => {
               {categories.map(({ attributes }, id) => (
                 <div
                   className={
-                    activeTab === attributes
+                    activeTab?.title === attributes?.title
                       ? `${styles.tab} ${styles.active}`
                       : styles.tab
                   }
@@ -80,10 +98,6 @@ const Dashboard = () => {
                 </div>
               ))}
             </div>
-            {/* <div className={styles.dashIcon}>
-              {isActive ? <img src="/assets/dash-icon-grey.svg" alt="dash-icon" /> : <img src="/assets/dash-icon.svg" alt="dash-icon" />}
-
-            </div> */}
           </div>
           <div style={{ paddingTop: "40px", minHeight: "70vh" }}>
             {loading ? (
@@ -92,7 +106,7 @@ const Dashboard = () => {
                   <div
                     style={{
                       marginBottom: "20px",
-                      borderBottom: "1px solid #ebebeb",
+                      borderBottom: "1px solid #EBEBEB",
                       paddingBottom: "10px",
                     }}
                   >
@@ -115,14 +129,24 @@ const Dashboard = () => {
                   </div>
                 </>
               ))
-            ) : activeTab?.dashboards?.data?.length ? (
-              activeTab?.dashboards?.data?.map((data) => (
+            ) :  activeTab?.title === "All" ? allDashboards.length !== 0 ?  allDashboards?.map((dashboard , index)=>(
+              <div className={styles.list} key={index}>
+              <List
+                data={dashboard}
+                isDarkMode={isDarkMode}
+                fetchData={fetchData}
+                fetchAllDashboards={fetchAllDashboards}
+              />
+            </div>
+            ))  :  <h1 style={{ textAlign: "center" }}> No Data found </h1> :   
+             activeTab?.dashboards?.data?.length ? (
+              activeTab?.dashboards.data?.map((data) => (
                 <div className={styles.list} key={data.id}>
                   <List
                     data={data}
                     isDarkMode={isDarkMode}
-                    setSelectedTb
                     fetchData={fetchData}
+                    fetchAllDashboards={fetchAllDashboards}
                   />
                 </div>
               ))
@@ -132,7 +156,6 @@ const Dashboard = () => {
           </div>
         </div>
       </section>
-
       <section
         className={`${styles.dashboardFooter} ${
           isDarkMode ? styles.blackBg : ""
@@ -164,5 +187,4 @@ const Dashboard = () => {
     </>
   );
 };
-
 export default Dashboard;
