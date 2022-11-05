@@ -6,6 +6,8 @@ import Skeleton from "react-loading-skeleton";
 import axios from "axios";
 import List from "./list";
 import Head from "next/head";
+import Grid from "./Grid/grid";
+import { BsListStars, BsFillGrid3X3GapFill } from "react-icons/bs";
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState(null);
   const { isDarkMode, setIsDarkMode } = useContext(DarkModeContext);
@@ -13,7 +15,11 @@ const Dashboard = () => {
   const baseURL = "https://top-ledger-panel.dishantagnihotri.com/api/";
   const [loading, setLoading] = useState(false);
   const [categories, setCategories] = useState([]);
-  const fetchData = async (showLoader = false , wannaUpdateActiveTab = false) => {
+  const [isLayoutGrid, setIsLayoutGrid] = useState(false);
+  const fetchData = async (
+    showLoader = false,
+    wannaUpdateActiveTab = false
+  ) => {
     if (showLoader) {
       setLoading(true);
     }
@@ -22,11 +28,11 @@ const Dashboard = () => {
       // setCategories(data?.data);
       setCategories(() => {
         let mergedArray = [
-          { attributes: { title: "All" , dashboards : {data: []} }},
+          { attributes: { title: "All", dashboards: { data: [] } } },
           ...data.data,
         ];
-        if(wannaUpdateActiveTab){
-          setActiveTab(mergedArray[0]?.attributes)
+        if (wannaUpdateActiveTab) {
+          setActiveTab(mergedArray[0]?.attributes);
         }
         return mergedArray;
       });
@@ -37,13 +43,9 @@ const Dashboard = () => {
     }
   };
   useEffect(() => {
-    fetchData(true ,true);
+    fetchData(true, true);
     fetchAllDashboards();
   }, []);
-
-
- 
-
 
   const fetchAllDashboards = async (showLoader = false) => {
     if (showLoader) {
@@ -51,14 +53,14 @@ const Dashboard = () => {
     }
     try {
       const { data } = await axios.get(`${baseURL}dashboards`);
-       setAllDashboards(data?.data);
+      setAllDashboards(data?.data);
     } catch (error) {
       console.log("Error", error);
     } finally {
       setLoading(false);
     }
   };
-  console.log("this is the active tab data -------> " , activeTab);
+  console.log("this is the active tab data -------> ", activeTab);
   return (
     <>
       <Head>
@@ -79,8 +81,32 @@ const Dashboard = () => {
         style={{ paddingBottom: "200px" }}
       >
         <div className="dashboard-container">
-          <div className={styles.title}>
-            <h3>Dashboards</h3>
+          <div className={styles.topTitleSection}>
+            <div className={styles.title}>
+              <h3>Dashboards</h3>
+            </div>
+            <div className={`${styles.layoutBtns} `}>
+              <button
+                type="button"
+                className={`${styles.listBtn} ${
+                  isLayoutGrid ? null : styles.activeBtn
+                }`}
+                onClick={() => setIsLayoutGrid(false)}
+              >
+                <BsListStars />
+                {/* <img src="/assets/list.svg" alt="list" /> */}
+              </button>
+              <button
+                type="button"
+                className={`${styles.listBtn} ${
+                  isLayoutGrid ? styles.activeBtn : null
+                }`}
+                onClick={() => setIsLayoutGrid(true)}
+              >
+                <BsFillGrid3X3GapFill />
+                {/* <img src="/assets/grid.svg" alt="list" /> */}
+              </button>
+            </div>
           </div>
           <div className={styles.tabsDiv}>
             <div className={styles.tabs}>
@@ -99,60 +125,94 @@ const Dashboard = () => {
               ))}
             </div>
           </div>
-          <div style={{ paddingTop: "40px", minHeight: "70vh" }}>
-            {loading ? (
-              [1, 2, 3, 4, 5, 6, 7, 8, 9].map((el) => (
-                <>
-                  <div
-                    style={{
-                      marginBottom: "20px",
-                      borderBottom: "1px solid #EBEBEB",
-                      paddingBottom: "10px",
-                    }}
-                  >
-                    <div className={styles.flexBox}>
-                      <div className={styles.info}>
-                        <h4>
-                          <Skeleton width={300} />
-                        </h4>
-                        <p>
-                          <Skeleton width={600} />
-                        </p>
-                      </div>
-                      <div className={styles.fav}>
-                        <div style={{ display: "flex", gap: "20px" }}>
-                          <Skeleton width={20} height={20} circle={true} />
-                          <Skeleton width={20} height={20} circle={true} />
+          <div className={styles.flexContainer}>
+            <div
+              className={isLayoutGrid && styles.gridList}
+              style={{ paddingTop: "40px", minHeight: "70vh" }}
+            >
+              {loading ? (
+                [1, 2, 3, 4, 5, 6, 7, 8, 9].map((el) => (
+                  <>
+                    <div
+                      style={{
+                        marginBottom: "20px",
+                        borderBottom: "1px solid #EBEBEB",
+                        paddingBottom: "10px",
+                      }}
+                    >
+                      <div className={styles.flexBox}>
+                        <div className={styles.info}>
+                          <h4>
+                            <Skeleton width={300} />
+                          </h4>
+                          <p>
+                            <Skeleton width={600} />
+                          </p>
+                        </div>
+                        <div className={styles.fav}>
+                          <div style={{ display: "flex", gap: "20px" }}>
+                            <Skeleton width={20} height={20} circle={true} />
+                            <Skeleton width={20} height={20} circle={true} />
+                          </div>
                         </div>
                       </div>
                     </div>
+                  </>
+                ))
+              ) : activeTab?.title === "All" ? (
+                allDashboards.length !== 0 ? (
+                  allDashboards?.map((dashboard, index) => (
+                    <div
+                      className={isLayoutGrid ? styles.grid : styles.list}
+                      key={index}
+                    >
+                      {isLayoutGrid ? (
+                        <Grid
+                          data={dashboard}
+                          isDarkMode={isDarkMode}
+                          fetchData={fetchData}
+                          fetchAllDashboards={fetchAllDashboards}
+                        />
+                      ) : (
+                        <List
+                          data={dashboard}
+                          isDarkMode={isDarkMode}
+                          fetchData={fetchData}
+                          fetchAllDashboards={fetchAllDashboards}
+                        />
+                      )}
+                    </div>
+                  ))
+                ) : (
+                  <h1 style={{ textAlign: "center" }}> No Data found </h1>
+                )
+              ) : activeTab?.dashboards?.data?.length ? (
+                activeTab?.dashboards.data?.map((data) => (
+                  <div
+                    className={isLayoutGrid ? styles.grid : styles.list}
+                    key={data.id}
+                  >
+                    {isLayoutGrid ? (
+                      <Grid
+                        data={data}
+                        isDarkMode={isDarkMode}
+                        fetchData={fetchData}
+                        fetchAllDashboards={fetchAllDashboards}
+                      />
+                    ) : (
+                      <List
+                        data={data}
+                        isDarkMode={isDarkMode}
+                        fetchData={fetchData}
+                        fetchAllDashboards={fetchAllDashboards}
+                      />
+                    )}
                   </div>
-                </>
-              ))
-            ) :  activeTab?.title === "All" ? allDashboards.length !== 0 ?  allDashboards?.map((dashboard , index)=>(
-              <div className={styles.list} key={index}>
-              <List
-                data={dashboard}
-                isDarkMode={isDarkMode}
-                fetchData={fetchData}
-                fetchAllDashboards={fetchAllDashboards}
-              />
+                ))
+              ) : (
+                <h1 style={{ textAlign: "center" }}> No Data found </h1>
+              )}
             </div>
-            ))  :  <h1 style={{ textAlign: "center" }}> No Data found </h1> :   
-             activeTab?.dashboards?.data?.length ? (
-              activeTab?.dashboards.data?.map((data) => (
-                <div className={styles.list} key={data.id}>
-                  <List
-                    data={data}
-                    isDarkMode={isDarkMode}
-                    fetchData={fetchData}
-                    fetchAllDashboards={fetchAllDashboards}
-                  />
-                </div>
-              ))
-            ) : (
-              <h1 style={{ textAlign: "center" }}> No Data found </h1>
-            )}
           </div>
         </div>
       </section>
