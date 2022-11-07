@@ -266,21 +266,25 @@
 .layoutBtns {
   display: flex;
   background: #fff;
-  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+  /* box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px; */
   align-items: center;
-  border-radius: 3px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 .layoutBtns button {
   border: 0;
   background: none;
-  border-right: 1px solid #ccc;
+  /* border-right: 1px solid #ccc; */
   display: flex;
   align-items: center;
   padding: 10px;
   color: #1b3989;
+  border-top-left-radius: 4px;
+  border-radius: 4px 0 0 4px;
 }
 .layoutBtns button:last-child {
-  border-right: 0;
+  /* border-right: 0; */
+  border-radius: 0 4px 4px 0;
 }
 .flexContainer {
   position: relative;
@@ -312,31 +316,32 @@
   display: block;
 }
 .flexBox.blackBgLayout {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   padding: 20px;
   margin-bottom: 10px;
   background: #fff;
-  box-shadow: 0 0 5px #c6c6c6;
-  border-radius: 8px;
+  /* box-shadow: 0 0 5px #c6c6c6; */
+  border-radius: 4px;
 }
 .flexBox.blackBgLayout:hover {
   background-color: #eef2fc;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .flexBox.blackBgLayout .copyLinks {
   background: #fff;
-  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+  /* box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px; */
+  border: 1px solid rgba(0, 0, 0, 0.06);
   width: 100%;
   gap: 10px;
   display: flex;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 4px;
   margin-top: 15px;
 }
 .flexBox.blackBgLayout .copyLinks span {
   padding: 15px;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
 }
 .flexBox.blackBgLayout .copyLinks p {
   width: 100%;
@@ -349,7 +354,7 @@
   color: #fff;
   border: 0;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 4px;
   margin-right: 10px;
   white-space: nowrap;
 }
@@ -364,7 +369,8 @@
 }
 .flexBox.blackBgLayout .icons a {
   background: #fff;
-  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+  /* box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px; */
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -511,12 +517,25 @@
 /* black layout */
 
 .blackBg .blackBgLayout.flexBox {
-  background-color: #000;
+  background-color: transparent;
   box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.blackBg .layoutBtns {
+  background: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 .blackBg .blackBgLayout.flexBox:hover {
-  background: #121111;
-  box-shadow: 13px 13px 26px #0f0e0e, -13px -13px 26px #151414;
+  /* background: #121111;
+  box-shadow: 13px 13px 26px #0f0e0e, -13px -13px 26px #151414; */
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.08)
+    ),
+    #000000;
+  box-shadow: 0px 2px 2px rgb(0 0 0 / 14%), 0px 3px 1px rgb(0 0 0 / 12%),
+    0px 1px 5px rgb(0 0 0 / 20%);
 }
 .blackBg .blackBgLayout .icons a {
   background: #151718;

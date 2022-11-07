@@ -150,7 +150,7 @@ const Grid = ({ data, isDarkMode, fetchData, fetchAllDashboards }) => {
                 <img src="assets/images/logos_telegram-icon.svg" />
               </a>
             </div>
-            <p>{data?.attributes?.shares}</p>
+            <p>{data?.attributes?.shares} Shares</p>
           </div>
         </div>
         <div className={styles.gridIcons}>
