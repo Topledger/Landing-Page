@@ -1,0 +1,45 @@
+.searchInput {
+  display: inline-flex;
+  align-items: center;
+  width: 16rem;
+  background: rgba(238, 242, 252, 0.32);
+  backdrop-filter: blur(0.5rem);
+  padding: 0.5rem;
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 2rem;
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    180deg,
+    #eef2fc 0%,
+    rgba(26, 57, 137, 0.48) 100%
+  );
+  transition: width 0.25s ease;
+
+  .icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: white;
+    background: linear-gradient(94.28deg, #4383ff -15.13%, #6a5cff 107.24%);
+    box-shadow: 0px 1px 2px rgba(26, 57, 137, 0.38);
+    border-radius: 40px;
+    padding: 0.5rem;
+  }
+
+  .input {
+    border: none;
+    background: transparent;
+    height: 40px;
+    margin-left: 1rem;
+
+    &:global(::placeholder) {
+      letter-spacing: 0.04em;
+      font-size: 1.125rem;
+      /* Primary/2 */
+      color: #1a3989;
+    }
+  }
+
+  &:global(.focused) {
+    width: 33.625rem;
+  }
+}
