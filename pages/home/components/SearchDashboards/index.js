@@ -30,7 +30,7 @@ function SearchDashboards() {
         className={styles.search}
         onStateChange={handleSearchStateChange}
       />
-      <DashboardList />
+      {searchActive && <DashboardList />}
     </div>
   );
 }
