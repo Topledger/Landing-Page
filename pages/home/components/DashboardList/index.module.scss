@@ -36,7 +36,7 @@
   border-radius: $border-radius;
   background-color: rgba(238, 242, 252, 0.32);
   backdrop-filter: blur(24px);
-  min-width: 900px;
+  width: 900px;
   padding: 1.5rem 1rem;
   margin-top: 1rem;
   animation: 0.5s ease blur-in;
@@ -48,6 +48,10 @@
   @include gradient-border($border-radius);
 
   :global {
+    @media screen and (max-width: 480px) {
+      width: 20rem;
+      margin: 1rem auto 0rem;
+    }
     h2 {
       font-weight: normal;
       font-size: 14px;
@@ -120,7 +124,6 @@
       &.thumb {
         display: flex;
         .program {
-          margin-right: 2rem;
           .program-icon {
             margin-top: 0.25rem;
           }

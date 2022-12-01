@@ -32,12 +32,15 @@
     &:global(::placeholder) {
       letter-spacing: 0.04em;
       font-size: 1.125rem;
-      /* Primary/2 */
       color: #1a3989;
     }
   }
 
   &:global(.focused) {
     width: 33.625rem;
+
+    @media screen and (max-width: 480px) {
+      width: 20rem;
+    }
   }
 }

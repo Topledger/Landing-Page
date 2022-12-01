@@ -1,8 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import cx from "classnames";
 
 import styles from "./index.module.scss";
 import RightArrow from "@/components/SvgComponents/RightArrow";
+import { useRouter } from "next/router";
 
 function Program({ thumb, name, icon }) {
   return (
@@ -22,21 +23,27 @@ function Arrow({ onClick }) {
 }
 
 function PopularPrograms({ thumb, programs }) {
+  const router = useRouter();
+
+  const handleClick = (program) => {
+    router.push(`/programs/${program.id}`);
+  };
+
   return (
     <ul className={cx("program-list", { thumb })}>
-      {programs.map(({ icon, ...program }) => (
-        <li className={cx({ thumb })}>
+      {programs.map((program) => (
+        <li className={cx({ thumb })} key={program.id}>
           <Program
             thumb={thumb}
+            {...program}
             icon={
               <img
                 className={cx("program-icon", { small: !thumb })}
-                src={icon}
+                src={program.icon}
               />
             }
-            {...program}
           />
-          {!thumb && <Arrow />}
+          {!thumb && <Arrow onClick={() => handleClick(program)} />}
         </li>
       ))}
     </ul>
@@ -44,23 +51,61 @@ function PopularPrograms({ thumb, programs }) {
 }
 
 const programs = [
-  { icon: "/assets/images/program-icons/metaplex.svg", name: "Metaplex" },
-  { icon: "/assets/images/program-icons/raydium.svg", name: "Raydium" },
-  { icon: "/assets/images/program-icons/serum.svg", name: "Serum" },
-  { icon: "/assets/images/program-icons/metaplex.svg", name: "Metaplex" },
-  { icon: "/assets/images/program-icons/raydium.svg", name: "Raydium" },
-  { icon: "/assets/images/program-icons/serum.svg", name: "Serum" },
+  {
+    id: "metaplex",
+    name: "Metaplex",
+    icon: "/assets/images/program-icons/metaplex.svg",
+  },
+  {
+    id: "raydium",
+    name: "Raydium",
+    icon: "/assets/images/program-icons/raydium.svg",
+  },
+  {
+    id: "serum",
+    name: "Serum",
+    icon: "/assets/images/program-icons/serum.svg",
+  },
+  {
+    id: "metaplex",
+    name: "Metaplex",
+    icon: "/assets/images/program-icons/metaplex.svg",
+  },
+  {
+    id: "raydium",
+    name: "Raydium",
+    icon: "/assets/images/program-icons/raydium.svg",
+  },
+  {
+    id: "serum",
+    name: "Serum",
+    icon: "/assets/images/program-icons/serum.svg",
+  },
 ];
 
-function DashboardList() {
+const DashboardList = forwardRef(({ filterText }, ref) => {
   return (
-    <div className={styles.dashboardListContainer}>
-      <h2>Polular programs</h2>
-      <PopularPrograms thumb programs={programs} />
-      <h2 style={{ marginTop: "1.5rem" }}>All programs</h2>
-      <PopularPrograms programs={programs} />
+    <div className={styles.dashboardListContainer} ref={ref}>
+      {!filterText && (
+        <>
+          <h2>Polular programs</h2>
+          <PopularPrograms thumb programs={programs.slice(0, 3)} />
+          <h2 style={{ marginTop: "1.5rem" }}>All programs</h2>
+          <PopularPrograms programs={programs} />
+        </>
+      )}
+      {filterText && (
+        <>
+          <h2>Search results</h2>
+          <PopularPrograms
+            programs={programs.filter((p) =>
+              RegExp(filterText, "i").test(p.name)
+            )}
+          />
+        </>
+      )}
     </div>
   );
-}
+});
 
 export default DashboardList;
