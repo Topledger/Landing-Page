@@ -27,7 +27,7 @@ function Programs() {
     setCategory(category.key);
   }, []);
 
-  console.log("widgetList", widgetList);
+  const categorieList = categories.filter(({ key }) => data?.[key]);
 
   return (
     <div className={styles.programContainer}>
@@ -40,9 +40,9 @@ function Programs() {
             <span className="title-subtext">{subTitle}</span>
           </div>
           <div className="categories">
-            {categories.length > 0 && (
+            {categorieList.length > 1 && (
               <CategoryList
-                categories={categories}
+                categories={categorieList}
                 onSelect={handleCategorySelect}
               />
             )}

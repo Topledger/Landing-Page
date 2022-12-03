@@ -1,17 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
-import RightArrow from "@/components/SvgComponents/RightArrow";
+import { BarChart, Bar, Legend, ResponsiveContainer } from "recharts";
 import RightArrowLong from "@/components/SvgComponents/RightArrowLong";
 
 const Wrapper = styled.div`
