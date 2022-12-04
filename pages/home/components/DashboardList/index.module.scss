@@ -12,6 +12,7 @@
   color: #1a3989;
   padding: 0.5rem 1rem;
   transition: all 0.5s ease;
+
   :global {
     span {
       margin-right: 0.5rem;
@@ -19,9 +20,11 @@
       transition: all 0.5s ease;
     }
   }
+
   &:global(:hover) {
     background-color: #1a3989 !important;
     color: white !important;
+
     span {
       margin-right: 0.5rem;
       color: white !important;
@@ -52,6 +55,7 @@
       width: 20rem;
       margin: 1rem auto 0rem;
     }
+
     h2 {
       font-weight: normal;
       font-size: 14px;
@@ -84,9 +88,11 @@
           display: flex;
           align-items: center;
           padding: 1rem 0rem;
+          cursor: pointer;
 
           .program-icon {
             width: 3rem;
+
             &.small {
               width: 2rem;
               margin-right: 0.5rem;
@@ -97,17 +103,20 @@
             flex-direction: column;
           }
         }
+
         &:hover {
           background: rgba(238, 242, 252, 0.64);
 
           button {
             background-color: rgba(26, 57, 137, 0.08);
             color: #1a3989;
+
             span {
               margin-right: 0.5rem;
               color: #1a3989;
             }
           }
+
           &.thumb {
             background: none;
           }
@@ -123,6 +132,7 @@
 
       &.thumb {
         display: flex;
+
         .program {
           .program-icon {
             margin-top: 0.25rem;
