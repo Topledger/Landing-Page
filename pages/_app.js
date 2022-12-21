@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "@/assets/styles/fonts.scss";
 
 import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";

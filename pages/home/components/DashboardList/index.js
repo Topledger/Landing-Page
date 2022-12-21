@@ -4,6 +4,7 @@ import cx from "classnames";
 import styles from "./index.module.scss";
 import RightArrow from "@/components/SvgComponents/RightArrow";
 import { useRouter } from "next/router";
+import EmptyStates from "@/components/SvgComponents/EmptyStates";
 
 function Program({ thumb, name, icon, onClick }) {
   return (
@@ -85,6 +86,10 @@ const programs = [
 ];
 
 const DashboardList = forwardRef(({ filterText }, ref) => {
+  const filteredPrograms = programs.filter((p) =>
+    RegExp(filterText, "i").test(p.name)
+  );
+
   return (
     <div className={styles.dashboardListContainer} ref={ref}>
       {!filterText && (
@@ -98,11 +103,28 @@ const DashboardList = forwardRef(({ filterText }, ref) => {
       {filterText && (
         <>
           <h2>Search results</h2>
-          <PopularPrograms
-            programs={programs.filter((p) =>
-              RegExp(filterText, "i").test(p.name)
-            )}
-          />
+          {filteredPrograms.length > 0 ? (
+            <PopularPrograms programs={filteredPrograms} />
+          ) : (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "column",
+              }}
+            >
+              <EmptyStates />
+              <span
+                style={{
+                  display: "inline-block",
+                  marginTop: "-2rem",
+                  paddingBottom: "2rem",
+                }}
+              >
+                No results found
+              </span>
+            </div>
+          )}
         </>
       )}
     </div>
