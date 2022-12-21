@@ -67,17 +67,17 @@ const programs = [
     icon: "/assets/images/program-icons/serum.svg",
   },
   {
-    id: "metaplex",
+    id: "metaplex-1",
     name: "Metaplex",
     icon: "/assets/images/program-icons/metaplex.svg",
   },
   {
-    id: "raydium",
+    id: "raydium-1",
     name: "Raydium",
     icon: "/assets/images/program-icons/raydium.svg",
   },
   {
-    id: "serum",
+    id: "serum-1",
     name: "Serum",
     icon: "/assets/images/program-icons/serum.svg",
   },
