@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: auto;
 
   &:global(::before) {
     content: " ";
@@ -36,6 +37,7 @@
       .title {
         display: flex;
         align-items: flex-end;
+
         &-text {
           color: $primary;
           font-weight: 500;
@@ -43,6 +45,7 @@
           line-height: 1.8rem;
           letter-spacing: 2%;
         }
+
         &-subtext {
           color: $primary;
           font-weight: 300;

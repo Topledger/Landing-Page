@@ -5,9 +5,9 @@ import styles from "./index.module.scss";
 import RightArrow from "@/components/SvgComponents/RightArrow";
 import { useRouter } from "next/router";
 
-function Program({ thumb, name, icon }) {
+function Program({ thumb, name, icon, onClick }) {
   return (
-    <span className={cx("program", { thumb })}>
+    <span className={cx("program", { thumb })} onClick={onClick}>
       {icon}
       <span>{name}</span>
     </span>
@@ -42,6 +42,7 @@ function PopularPrograms({ thumb, programs }) {
                 src={program.icon}
               />
             }
+            onClick={() => handleClick(program)}
           />
           {!thumb && <Arrow onClick={() => handleClick(program)} />}
         </li>

@@ -51,12 +51,12 @@ function SearchDashboards() {
       }
     }
     if (searchActive) {
-      window.addEventListener("click", listenClick);
+      window.addEventListener("mousedown", listenClick);
       window.addEventListener("keydown", listenKeydown);
     }
 
     return () => {
-      window.removeEventListener("click", listenClick);
+      window.removeEventListener("mousedown", listenClick);
       window.addEventListener("keydown", listenKeydown);
     };
   }, [searchActive]);
