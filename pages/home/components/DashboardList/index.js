@@ -85,13 +85,17 @@ const programs = [
   },
 ];
 
-const DashboardList = forwardRef(({ filterText }, ref) => {
+const DashboardList = forwardRef(({ filterText, style, className }, ref) => {
   const filteredPrograms = programs.filter((p) =>
     RegExp(filterText, "i").test(p.name)
   );
 
   return (
-    <div className={styles.dashboardListContainer} ref={ref}>
+    <div
+      className={cx(styles.dashboardListContainer, className)}
+      ref={ref}
+      style={style}
+    >
       {!filterText && (
         <>
           <h2>Polular programs</h2>

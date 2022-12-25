@@ -42,7 +42,7 @@
   width: 900px;
   padding: 1.5rem 1rem;
   margin-top: 1rem;
-  animation: 0.5s ease blur-in;
+  transition: opacity 0.25s ease;
   max-height: 450px;
   overflow: auto;
   overflow-x: hidden;
