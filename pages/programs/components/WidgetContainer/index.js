@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 1.5rem;
+  justify-content: center;
 `;
 
 function WidgetContainer({ children }) {

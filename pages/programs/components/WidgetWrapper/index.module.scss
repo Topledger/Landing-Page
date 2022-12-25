@@ -59,6 +59,18 @@
     height: $base-size * 3 + (3 - 1) * ($gutter - 1px);
   }
 
+  &:global(.grid-3-1),
+  &:global(.grid-3-2),
+  &:global(.grid-3-3) {
+    @media screen and (max-width: 800px) {
+      width: $base-size * 2 + (2 - 1) * ($gutter - 1px);
+    }
+  }
+
   background-color: rgba(238, 242, 252, 0.32);
   backdrop-filter: blur(50px);
+
+  @media screen and (max-width: 640px) {
+    width: 100% !important;
+  }
 }

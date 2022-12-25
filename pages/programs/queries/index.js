@@ -36,9 +36,21 @@ export async function fetchProgramDashboard(programName) {
         subTitle: "was 800 last week",
       },
       {
+        id: 2,
+        grid: {
+          width: 1,
+          height: 1,
+        },
+        type: "STATS",
+        value: 1000,
+        change: 200,
+        title: "transactions this week",
+        subTitle: "was 800 last week",
+      },
+      {
         id: 3,
         grid: {
-          width: 2,
+          width: 3,
           height: 1,
         },
         type: "BAR_GRAPH",
@@ -53,7 +65,7 @@ export async function fetchProgramDashboard(programName) {
       {
         id: 4,
         grid: {
-          width: 2,
+          width: 3,
           height: 1,
         },
         type: "BAR_GRAPH",
@@ -68,7 +80,7 @@ export async function fetchProgramDashboard(programName) {
       {
         id: 5,
         grid: {
-          width: 2,
+          width: 3,
           height: 1,
         },
         type: "BAR_GRAPH",

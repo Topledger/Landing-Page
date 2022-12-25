@@ -24,7 +24,7 @@
   :global {
     .dashboard {
       display: flex;
-      width: 1090px;
+      width: calc(100% - 2rem);
       margin: auto;
       height: 100%;
       padding: 1.5rem 0;
@@ -56,8 +56,8 @@
         }
       }
 
-      @media screen and (max-width: 1280px) {
-        width: 960px;
+      @media screen and (max-width: 480px) {
+        width: calc(100% - 2rem);
       }
     }
   }
