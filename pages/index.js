@@ -10,6 +10,7 @@ import WeOffer from "../components/WeOffer";
 import "../node_modules/slick-carousel/slick/slick.css";
 import "../node_modules/slick-carousel/slick/slick-theme.css";
 import CommunitySection from "../components/CommunitySection";
+// import styles from "./index.module.css";
 
 export default function Home() {
   return (
@@ -39,7 +40,8 @@ export default function Home() {
         <div className="bg-blue sub-header">
           <p>
             Join our community of web3 data scientists and builders on
-            <a title="discord"
+            <a
+              title="discord"
               href="https://discord.gg/q5bHa2rXmu"
               target="_blank"
               rel="noreferrer"
@@ -53,6 +55,56 @@ export default function Home() {
         <BackedBy />
         <WeOffer />
         <ChainSection />
+        <div className="main-Section">
+          <div className="trustedText">
+            <p>Trusted by</p>
+          </div>
+          <div className="bottomImages">
+            <div className="icon">
+            <img src="/assets/images/gari-logo.svg" alt="discord" />
+            </div>
+            <div className="icon">
+            <img src="/assets/images/squads-logo.svg" alt="discord" />
+            </div>
+            <div className="icon">
+            <img src="/assets/images/metaplex-logo.svg" alt="discord" />
+            </div>
+            <div className="icon">
+            <img src="/assets/images/invariant-logo.svg" alt="discord" />
+            </div>
+          </div>
+          {/* <div className="bottomImages">
+            <div className="icon">
+              <img src="/assets/images/Component.svg" alt="discord" />
+            </div>
+            <div className="icon">
+              <img src="/assets/images/solana-lab.svg" alt="discord" />
+            </div>
+            <div className="icon">
+              <img src="/assets/images/solana-lab.svg" alt="discord" />
+            </div>
+            <div className="icon">
+              <img src="/assets/images/solana-lab.svg" alt="discord" />
+            </div>
+            <div className="icon">
+              <img src="/assets/images/solana-lab.svg" alt="discord" />
+            </div>
+          </div>
+          <div className="bottomImages">
+            <div className="icon">
+              <img src="/assets/images/Component.svg" alt="discord" />
+            </div>
+            <div className="icon">
+              <img src="/assets/images/solana-lab.svg" alt="discord" />
+            </div>
+            <div className="icon">
+              <img src="/assets/images/solana-lab.svg" alt="discord" />
+            </div>
+            <div className="icon">
+              <img src="/assets/images/solana-lab.svg" alt="discord" />
+            </div>
+          </div> */}
+        </div>
         {/* <Client /> */}
         <CommunitySection />
       </main>
