@@ -61,7 +61,24 @@ export default function Home() {
           </div>
           <div className="bottomImages">
             <div className="icon">
+            <img src="/assets/images/gari-logo.svg" alt="discord" />
+            </div>
+            <div className="icon">
+            <img src="/assets/images/squads-logo.svg" alt="discord" />
+            </div>
+            <div className="icon">
+            <img src="/assets/images/metaplex-logo.svg" alt="discord" />
+            </div>
+            <div className="icon">
+            <img src="/assets/images/invariant-logo.svg" alt="discord" />
+            </div>
+          </div>
+          {/* <div className="bottomImages">
+            <div className="icon">
               <img src="/assets/images/Component.svg" alt="discord" />
+            </div>
+            <div className="icon">
+              <img src="/assets/images/solana-lab.svg" alt="discord" />
             </div>
             <div className="icon">
               <img src="/assets/images/solana-lab.svg" alt="discord" />
@@ -86,24 +103,7 @@ export default function Home() {
             <div className="icon">
               <img src="/assets/images/solana-lab.svg" alt="discord" />
             </div>
-            <div className="icon">
-              <img src="/assets/images/solana-lab.svg" alt="discord" />
-            </div>
-          </div>
-          <div className="bottomImages">
-            <div className="icon">
-              <img src="/assets/images/Component.svg" alt="discord" />
-            </div>
-            <div className="icon">
-              <img src="/assets/images/solana-lab.svg" alt="discord" />
-            </div>
-            <div className="icon">
-              <img src="/assets/images/solana-lab.svg" alt="discord" />
-            </div>
-            <div className="icon">
-              <img src="/assets/images/solana-lab.svg" alt="discord" />
-            </div>
-          </div>
+          </div> */}
         </div>
         {/* <Client /> */}
         <CommunitySection />
