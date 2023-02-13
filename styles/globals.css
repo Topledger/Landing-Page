@@ -1546,4 +1546,35 @@ header.blackBg .navLink img {
   .sub-header a {
     display: block;
   }
+  .main-Section{
+    padding-left:10px;
+    padding-right: 10px;
+  }
+}
+
+/* images section css */
+.main-Section{
+  background-color: #EEF2FC;
+  padding-top: 56px;
+  padding-bottom:30px;
+}
+.trustedText{
+text-align: center;
+padding-bottom: 40px;
+}
+.trustedText p{
+ font-family: "Helvetica 45 Light", sans-serif;
+font-weight: 700;
+font-size: 21px;
+line-height: 26px;
+letter-spacing: 0.06em;
+color: #1A3989;
+}
+.bottomImages{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
 }
