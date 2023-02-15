@@ -43,7 +43,7 @@ const Header = () => {
             <Link href="/dashboards">Dashboards</Link>
           </div>
           <div  className={`active ${router.pathname === "https://docs.topledger.xyz/" ? "active-link" : null}`}>
-            <Link href="https://docs.topledger.xyz/">Docs</Link>
+            <Link href="https://docs.topledger.xyz/" target="_blank" >Docs</Link>
           </div>
           <div className={`active ${router.pathname === "/about-us" ? "active-link" : null}`}>
             <Link href="/about-us">About</Link>
