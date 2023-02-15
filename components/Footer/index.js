@@ -32,7 +32,7 @@ const Footer = () => {
                   <Link href="/dashboards">Dashboards</Link>
                 </li>
 <li>
-                  <Link target="_blank" href="https://docs.topledger.xyz">Documentation</Link>
+                  <Link target="_blank" href="https://docs.topledger.xyz" rel="noopener noreferrer">Documentation</Link>
                 </li>
               </ul>
             </div>
