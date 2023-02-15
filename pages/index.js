@@ -61,14 +61,15 @@ export default function Home() {
           </div>
           <div className="bottomImages">
             <div className="icon">
+            <img src="/assets/images/metaplex-logo.svg" alt="discord" />
+            </div>
+            <div className="icon">
             <img src="/assets/images/gari-logo.svg" alt="discord" />
             </div>
             <div className="icon">
             <img src="/assets/images/squads-logo.svg" alt="discord" />
             </div>
-            <div className="icon">
-            <img src="/assets/images/metaplex-logo.svg" alt="discord" />
-            </div>
+            
             <div className="icon">
             <img src="/assets/images/invariant-logo.svg" alt="discord" />
             </div>
