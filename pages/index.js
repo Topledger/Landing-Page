@@ -72,6 +72,9 @@ export default function Home() {
             <div className="icon">
             <img src="/assets/images/invariant-logo.svg" alt="discord" />
             </div>
+<div className="icon">
+            <img src="/assets/images/tulip-logo.svg" alt="discord" />
+            </div>
           </div>
           {/* <div className="bottomImages">
             <div className="icon">
