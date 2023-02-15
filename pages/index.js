@@ -57,7 +57,7 @@ export default function Home() {
         <ChainSection />
         <div className="main-Section">
           <div className="trustedText">
-            <h5>Trusted by</h5>
+            <p>Trusted by</p>
           </div>
           <div className="bottomImages">
             <div className="icon">
