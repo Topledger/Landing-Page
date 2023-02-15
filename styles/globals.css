@@ -1563,12 +1563,13 @@ text-align: center;
 padding-bottom: 40px;
 }
 .trustedText p{
- font-family: "Helvetica 45 Light", sans-serif;
-font-weight: 700;
-font-size: 21px;
-line-height: 26px;
-letter-spacing: 0.06em;
-color: #1A3989;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 26px;
+  letter-spacing: 0.04em;
+  color: #1a3989;
 }
 .bottomImages{
   display: flex;
