@@ -31,6 +31,9 @@ const Footer = () => {
                 <li>
                   <Link href="/dashboards">Dashboards</Link>
                 </li>
+<li>
+                  <Link href="https://docs.topledger.xyz">Documentation</Link>
+                </li>
               </ul>
             </div>
           </div>
