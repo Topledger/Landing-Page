@@ -61,20 +61,34 @@ export default function Home() {
           </div>
           <div className="bottomImages">
             <div className="icon">
-            <a href="https://www.metaplex.com/" target="_blank" ><img src="/assets/images/metaplex-logo.svg" alt="discord" /></a>
+              <a
+                href="https://www.metaplex.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="/assets/images/metaplex-logo.svg" alt="discord" />
+              </a>
             </div>
             <div className="icon">
-            <a href="https://gari.network/" target="_blank" ><img src="/assets/images/gari-logo.svg" alt="discord" /></a>
+              <a href="https://gari.network/" target="_blank" rel="noreferrer">
+                <img src="/assets/images/gari-logo.svg" alt="discord" />
+              </a>
             </div>
             <div className="icon">
-            <a href="https://squads.so/" target="_blank" ><img src="/assets/images/squads-logo.svg" alt="discord" /></a>
+              <a href="https://squads.so/" target="_blank" rel="noreferrer">
+                <img src="/assets/images/squads-logo.svg" alt="discord" />
+              </a>
             </div>
-            
+
             <div className="icon">
-            <a href="https://invariant.app/" target="_blank" ><img src="/assets/images/invariant-logo.svg" alt="discord" /></a>
+              <a href="https://invariant.app/" target="_blank" rel="noreferrer">
+                <img src="/assets/images/invariant-logo.svg" alt="discord" />
+              </a>
             </div>
-<div className="icon">
-            <a href="https://tulip.garden/" target="_blank" ><img src="/assets/images/tulip-logo.svg" alt="discord" /></a>
+            <div className="icon">
+              <a href="https://tulip.garden/" target="_blank" rel="noreferrer">
+                <img src="/assets/images/tulip-logo.svg" alt="discord" />
+              </a>
             </div>
           </div>
           {/* <div className="bottomImages">
