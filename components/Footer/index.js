@@ -2,9 +2,7 @@ import React from "react";
 import { AiOutlineFontSize, AiOutlineHeart } from "react-icons/ai";
 import Link from "next/link";
 
-
 const Footer = () => {
-
   return (
     <footer className="footer">
       <div style={{ backgroundColor: "#001C6587" }}>
@@ -13,12 +11,14 @@ const Footer = () => {
             <div className="footerContent">
               <h1>Company</h1>
               <ul>
-                <li><Link href="/">Home</Link></li>
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
                 <li>
                   <Link href="/about-us">About</Link>
                 </li>
                 <li>
-                  <Link href="/about-us/#team" scroll={false} >
+                  <Link href="/about-us/#team" scroll={false}>
                     Team
                   </Link>
                 </li>
@@ -31,8 +31,14 @@ const Footer = () => {
                 <li>
                   <Link href="/dashboards">Dashboards</Link>
                 </li>
-<li>
-                  <Link target="_blank" to="https://docs.topledger.xyz" rel="noreferrer">Documentation</Link>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://docs.topledger.xyz"
+                    rel="noreferrer"
+                  >
+                    Documentation
+                  </a>
                 </li>
               </ul>
             </div>
@@ -68,24 +74,32 @@ const Footer = () => {
               <h1>Social</h1>
               <ul className="social">
                 <li>
-                  <a title="telegram"
-                  draggable="false"
+                  <a
+                    title="telegram"
+                    draggable="false"
                     href="https://telegram.me/ergon50"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img draggable="false" src="assets/images/telegram-footer.svg" style={{marginLeft: "-3px"}} />
+                    <img
+                      draggable="false"
+                      src="assets/images/telegram-footer.svg"
+                      style={{ marginLeft: "-3px" }}
+                    />
                   </a>
                 </li>
                 <li>
-                  <a title="twitter"
-                  draggable="false"
+                  <a
+                    title="twitter"
+                    draggable="false"
                     href="https://twitter.com/ledger_top"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img draggable="false" 
-                    src="assets/images/twitter-footer.svg" />
+                    <img
+                      draggable="false"
+                      src="assets/images/twitter-footer.svg"
+                    />
                   </a>
                 </li>
               </ul>
