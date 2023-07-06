@@ -24,7 +24,7 @@ const List = ({ data, isDarkMode, fetchData,fetchAllDashboards }) => {
   const handleShareUpdate = async () => {
     try {
       const res = await axios.put(
-        `https://top-ledger-panel.dishantagnihotri.com/api/dashboards/` +
+        `https://admin.topledger.xyz/api/dashboards/` +
           data?.id,
         { data: { shares: data?.attributes?.shares + 1 } }
       );
