@@ -22,7 +22,15 @@ const Footer = () => {
                     Team
                   </Link>
                 </li>
-                {/* <li>Blog</li> */}
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://blogs.topledger.xyz"
+                    rel="noreferrer"
+                  >
+                    Blogs
+                  </a>
+                </li>
               </ul>
             </div>
             <div className="footerContent">
