@@ -47,13 +47,34 @@ const Header = () => {
 
       {menuOpen && (
         <div className="head-menu">
-          {/* <div className="active">Docs</div> */}
           <div
             className={`active ${
               router.pathname === "/dashboards" ? "active-link" : null
             }`}
           >
             <Link href="/dashboards">Dashboards</Link>
+          </div>
+          <div
+            className={`active ${
+              router.pathname === "https://docs.topledger.xyz/"
+                ? "active-link"
+                : null
+            }`}
+          >
+            <Link href="https://docs.topledger.xyz/" target="_blank">
+              Docs
+            </Link>
+          </div>
+          <div
+            className={`active ${
+              router.pathname === "https://docs.topledger.xyz/"
+                ? "active-link"
+                : null
+            }`}
+          >
+            <Link href="https://blogs.topledger.xyz/" target="_blank">
+              Blogs
+            </Link>
           </div>
           <div
             className={`active ${

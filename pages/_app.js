@@ -3,7 +3,7 @@ import "@/assets/styles/fonts.scss";
 
 import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
-
+import ReactGA from "react-ga4";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { DarkModeProvider } from "../providers/DarkMode";
@@ -17,6 +17,8 @@ const headerExcludePaths = ["thanks"];
 function isExcludedPath(pathList, currentPath) {
   return pathList.findIndex((path) => currentPath.includes(path)) === -1;
 }
+const TRACKING_ID = "G-EBHMMQEYHV";
+ReactGA.initialize([{ trackingId: TRACKING_ID }]);
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -48,9 +50,12 @@ function MyApp({ Component, pageProps }) {
 
             return (
               <>
-                {showHeader && <Header />}
+                {router.pathname.includes("thanks") ? null : <Header />}
                 <Component {...pageProps} />
-                {showFooter && <Footer />}
+                {router.pathname.includes("thanks") ||
+                router.pathname.includes("dashboard") ? null : (
+                  <Footer />
+                )}
               </>
             );
           })()}
