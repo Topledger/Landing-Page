@@ -1,15 +1,16 @@
-import Home from "./home";
+// import Home from "./home";
+import Head from "next/head";
 
 import BackedBy from "../components/BackedBy";
 import ChainSection from "../components/ChainSection";
 import Client from "../components/Client";
-import Hero from "../components/Hero";
 import Visual from "../components/Visual";
 import WeOffer from "../components/WeOffer";
 
 import "../node_modules/slick-carousel/slick/slick.css";
 import "../node_modules/slick-carousel/slick/slick-theme.css";
 import CommunitySection from "../components/CommunitySection";
+import Hero from "./home/components/Hero";
 // import styles from "./index.module.css";
 
 export default function Home() {

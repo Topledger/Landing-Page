@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
+import dynamic from "next/dynamic";
 
 import DashboardLoader from "./components/DashboardLoader";
 import WidgetContainer from "./components/WidgetContainer";
@@ -10,6 +11,19 @@ import CategoryList from "./components/CategoryList";
 import { categories } from "./components/constanst";
 
 import styles from "./programs.module.scss";
+
+const TLDashboards = dynamic(
+  async () => {
+    const DashboardModule = await import("tl-dashboards");
+    console.log("DashboardModule", DashboardModule);
+
+    return DashboardModule;
+  },
+  {
+    loading: () => <p>...Loading</p>,
+    ssr: false,
+  }
+);
 
 function Programs() {
   const router = useRouter();
@@ -39,19 +53,25 @@ function Programs() {
             <span className="title-text">{title}</span>
             <span className="title-subtext">{subTitle}</span>
           </div>
-          <div className="categories">
+          {/* <div className="categories">
             {categorieList.length > 1 && (
               <CategoryList
                 categories={categorieList}
                 onSelect={handleCategorySelect}
               />
             )}
-          </div>
-          <WidgetContainer>
+          </div> */}
+          {/* <WidgetContainer>
             {widgetList?.map((widget) => (
               <WidgetWrapper key={widget.id} widget={widget} />
             ))}
-          </WidgetContainer>
+          </WidgetContainer> */}
+          <div className="dashboard-component">
+            <TLDashboards
+              client="tl"
+              token="oIEupNW8g4Ua9C64JvUsYRLNlOZej940x341KaAH"
+            />
+          </div>
         </div>
       )}
     </div>

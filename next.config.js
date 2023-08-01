@@ -1,3 +1,7 @@
+const withAntd = require("next-plugin-antd-less");
+const withPlugins = require("next-compose-plugins");
+// const withTM = require("next-transpile-modules")(["tl-dashboards"]);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -5,4 +9,4 @@ const nextConfig = {
   styledComponents: true,
 };
 
-module.exports = nextConfig;
+module.exports = withPlugins([withAntd], nextConfig);

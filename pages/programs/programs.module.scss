@@ -1,6 +1,9 @@
+@import "@/assets/styles/mixins.scss";
+
 .programContainer {
   $primary: #1a3989;
 
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,10 +19,11 @@
     z-index: -1;
     background: url(/assets/images/clientbg.png);
     background-size: 100% auto;
-    filter: blur(8px);
+    filter: blur(24px);
+    background-repeat: repeat-y;
   }
 
-  height: calc(100vh - 88px);
+  min-height: calc(100vh - 88px);
 
   :global {
     .dashboard {
@@ -53,6 +57,50 @@
           line-height: 1.2rem;
           letter-spacing: 2%;
           margin-left: 0.5rem;
+        }
+      }
+
+      .dashboard-component {
+        .tl-dashboards {
+          &.public-dashboard-page {
+            background: none;
+
+            .widget-wrapper {
+              & > .tile {
+                border-radius: 8px;
+                background: rgba(238, 242, 252, 0.32);
+                backdrop-filter: blur(32px);
+
+                .widget-header {
+                  * {
+                    color: #1a3989;
+                  }
+                  .th-title {
+                    span {
+                      font-weight: 600;
+                    }
+                  }
+                }
+                .markdown {
+                  h3 {
+                    color: #1a3989;
+                  }
+                }
+                .svg-container {
+                  backdrop-filter: blur(32px);
+                  background: rgba(238, 242, 252, 0.32);
+                  transform: scale(0.97);
+                  border-radius: 1rem;
+                  overflow: hidden;
+                  @include gradient-border(1rem);
+
+                  .main-svg {
+                    background: none !important;
+                  }
+                }
+              }
+            }
+          }
         }
       }
 
