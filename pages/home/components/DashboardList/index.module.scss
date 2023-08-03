@@ -21,7 +21,8 @@
     }
   }
 
-  &:global(:hover) {
+  &:global(:hover),
+  &:global(.focused) {
     background-color: #1a3989 !important;
     color: white !important;
 

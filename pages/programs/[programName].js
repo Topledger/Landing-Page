@@ -11,6 +11,8 @@ import CategoryList from "./components/CategoryList";
 import { categories } from "./components/constanst";
 
 import styles from "./programs.module.scss";
+import SearchDashboards from "pages/home/components/SearchDashboards";
+import ProgramAdressInput from "./components/ProgramAddressInput";
 
 const TLDashboards = dynamic(
   async () => {
@@ -49,10 +51,7 @@ function Programs() {
         <DashboardLoader />
       ) : (
         <div className="dashboard">
-          <div className="title">
-            <span className="title-text">{title}</span>
-            <span className="title-subtext">{subTitle}</span>
-          </div>
+          <ProgramAdressInput />
           {/* <div className="categories">
             {categorieList.length > 1 && (
               <CategoryList
@@ -67,9 +66,14 @@ function Programs() {
             ))}
           </WidgetContainer> */}
           <div className="dashboard-component">
+            <div className="title">
+              <span className="title-text">{title}</span>
+              <span className="title-subtext">{subTitle}</span>
+            </div>
             <TLDashboards
               client="tl"
               token="oIEupNW8g4Ua9C64JvUsYRLNlOZej940x341KaAH"
+              className={styles.dashboard}
             />
           </div>
         </div>

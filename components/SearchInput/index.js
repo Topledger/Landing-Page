@@ -6,19 +6,25 @@ import styles from "./index.module.scss";
 
 const SearchInput = forwardRef(
   (
-    { className, onStateChange, onChange, placeholder = "Type something..." },
+    {
+      className,
+      onStateChange,
+      onChange,
+      placeholder = "Type something...",
+      defaultFocused,
+    },
     ref
   ) => {
-    const [focused, setFocused] = useState(false);
+    const [focused, setFocused] = useState(defaultFocused);
 
     const handleFocus = (e) => {
       setFocused(true);
-      onStateChange({ focused: true });
+      onStateChange({ focused: defaultFocused && true });
     };
 
     const handleBlur = (e) => {
       setFocused(false);
-      onStateChange({ focused: false });
+      onStateChange({ focused: defaultFocused && false });
     };
 
     return (
