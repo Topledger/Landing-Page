@@ -5,7 +5,7 @@ function wait(time = 0) {
 }
 
 export async function fetchProgramDashboard(programName) {
-  await wait(1000);
+  // await wait(1000);
 
   return {
     title: "Metaplex",

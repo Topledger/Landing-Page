@@ -52,4 +52,16 @@
 .arrow {
   position: absolute;
   right: 1rem;
+
+  &:global(.focused) {
+    background-image: var(
+      --primary-gradient,
+      linear-gradient(144deg, #4383ff 0%, #6a5cff 100%)
+    );
+  }
+  :global {
+    svg {
+      display: none;
+    }
+  }
 }

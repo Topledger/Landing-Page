@@ -13,6 +13,7 @@ import { categories } from "./components/constanst";
 import styles from "./programs.module.scss";
 import SearchDashboards from "pages/home/components/SearchDashboards";
 import ProgramAdressInput from "./components/ProgramAddressInput";
+import Loader from "./components/ComponentLoader";
 
 const TLDashboards = dynamic(
   async () => {
@@ -22,7 +23,7 @@ const TLDashboards = dynamic(
     return DashboardModule;
   },
   {
-    loading: () => <p>...Loading</p>,
+    loading: () => <Loader />,
     ssr: false,
   }
 );
@@ -47,7 +48,7 @@ function Programs() {
 
   return (
     <div className={styles.programContainer}>
-      {isLoading ? (
+      {isLoading && false ? (
         <DashboardLoader />
       ) : (
         <div className="dashboard">
