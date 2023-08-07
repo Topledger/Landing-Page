@@ -30,7 +30,11 @@ const TLDashboards = dynamic(
 
 function Programs() {
   const router = useRouter();
-  const { programName, ["p_Program Address"]: address } = router.query;
+  const {
+    programName,
+    ["p_Program Address"]:
+      address = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+  } = router.query;
   console.log("router.query", router.query);
   // const [category, setCategory] = useState("general");
 
