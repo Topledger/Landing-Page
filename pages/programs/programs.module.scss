@@ -67,7 +67,7 @@
         padding: 1rem;
         margin-top: 1rem;
         backdrop-filter: blur(20px);
-        min-height: 20rem;
+        animation: blur-in 1s ease forwards;
 
         &::before {
           content: " ";
@@ -83,9 +83,21 @@
           z-index: -1;
         }
         .tl-dashboards {
+
           &.public-dashboard-page {
+
             background: none;
             margin-top: 1.5rem;
+            min-height: 30rem;
+            .tl-dashboard-container {
+              margin: 0;
+              #dashboard-container {
+                .dashboard-wrapper {
+                  width: calc(100vw - 4rem);
+                  margin: 0;
+                }
+              }
+            }
 
             .widget-wrapper {
               & > .tile {
@@ -106,6 +118,17 @@
                 .markdown {
                   h3 {
                     color: #1a3989;
+                    font-family: "Helvetica Neue", "Helvetica 45 Light", sans-serif;
+                  }
+                }
+                .widget-header {
+                  display: inline-flex;
+                  * {
+                    font-family: "Helvetica Neue", "Helvetica 45 Light", sans-serif;
+                    text-align: left;
+                    color: #1A3989;
+                    font-size: 1rem;
+                    letter-spacing: 0.05rem;
                   }
                 }
                 .visualization-renderer-wrapper {
@@ -126,6 +149,12 @@
                     background-color: transparent !important;
                   }
                 }
+                .widget-text h3 {
+                  display: flex;
+                  height: 100%;
+                  align-items: center;
+                  font-family: "Helvetica Neue", "Helvetica 45 Light", sans-serif;
+                }
               }
             }
 
@@ -144,6 +173,22 @@
 
       @media screen and (max-width: 480px) {
         width: calc(100% - 2rem);
+      }
+    }
+  }
+
+  :global {
+    @keyframes blur-in {
+      0% {
+        opacity: 0;
+        margin-top: -2rem;
+      }
+      90% {
+        opacity: 0.9;
+        margin-top: 2rem;
+      }
+      100% {
+        opacity: 1;
       }
     }
   }
@@ -172,4 +217,8 @@
 
     }
   }
+}
+
+.dashboardLoader {
+  min-height: 30rem;
 }

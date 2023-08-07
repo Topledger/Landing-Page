@@ -23,7 +23,11 @@ const TLDashboards = dynamic(
     return DashboardModule;
   },
   {
-    loading: () => <Loader />,
+    loading: () => (
+      <div className={styles.dashboardLoader}>
+        <Loader />
+      </div>
+    ),
     ssr: false,
   }
 );
