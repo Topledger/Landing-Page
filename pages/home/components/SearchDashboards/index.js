@@ -7,12 +7,14 @@ import DashboardList from "../DashboardList";
 import Introduction from "../Introduction";
 
 import styles from "./index.module.scss";
+import { useRouter } from "next/router";
 
 function SearchDashboards() {
   const [searchActive, setSearchActive] = useState(false);
   const [filterText, setFilterText] = useState("");
   const searchRef = useRef();
   const dashboardListRef = useRef();
+  const router = useRouter();
 
   const handleSearchStateChange = (state) => {
     if (state.focused) {
@@ -74,8 +76,14 @@ function SearchDashboards() {
       <SearchInput
         className={styles.search}
         onStateChange={handleSearchStateChange}
-        onChange={handleInputChange}
+        // onChange={handleInputChange}
+        onClick={(e) => {
+          e.preventDefault();
+
+          router.push("/programs");
+        }}
         ref={searchRef}
+        placeholder="Enter a program"
       />
       <Transition in={searchActive} nodeRef={dashboardListRef}>
         {(state) => (

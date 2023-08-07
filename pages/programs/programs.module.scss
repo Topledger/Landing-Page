@@ -40,7 +40,8 @@
 
       .title {
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        justify-content: flex-end;
         margin: 1rem 1rem;
 
         &-text {
@@ -54,10 +55,10 @@
         &-subtext {
           color: $primary;
           font-weight: 300;
-          font-size: 1rem;
+          font-size: 1.125rem;
           line-height: 1.2rem;
           letter-spacing: 2%;
-          margin-left: 0.5rem;
+          margin-top: 0.5rem;
         }
       }
 
@@ -79,6 +80,7 @@
           top: 0;
           // filter: blur(10px);
           opacity: 0.15;
+          z-index: -1;
         }
         .tl-dashboards {
           &.public-dashboard-page {
@@ -132,6 +134,10 @@
                 font-size: 1.6rem;
               }
             }
+
+            > #footer {
+              display: none;
+            }
           }
         }
       }
@@ -139,6 +145,31 @@
       @media screen and (max-width: 480px) {
         width: calc(100% - 2rem);
       }
+    }
+  }
+}
+
+.talkToUs {
+  display: flex;
+  justify-content: center;
+
+  &:global {
+    > a {
+      display: inline-flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-radius: 2.625rem;
+      background: linear-gradient(144deg, #4383FF 0%, #6A5CFF 100%);
+      box-shadow: 0px 1px 2px 0px rgba(26, 57, 137, 0.38);
+      color: #EEF2FC;
+      font-size: 1.3125rem;
+      letter-spacing: 0.0525rem;
+      text-decoration: none;
+
+      & > img {
+        margin-right: 1rem;
+      }
+
     }
   }
 }

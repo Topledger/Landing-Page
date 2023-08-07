@@ -9,6 +9,7 @@ const SearchInput = forwardRef(
     {
       className,
       onStateChange,
+      onClick,
       onChange,
       placeholder = "Type something...",
       defaultFocused,
@@ -28,12 +29,16 @@ const SearchInput = forwardRef(
     };
 
     return (
-      <div className={cx(className, styles.searchInput, { focused })} ref={ref}>
+      <div
+        className={cx(className, styles.searchInput, { focused })}
+        ref={ref}
+        onClick={onClick}
+      >
         <BiSearch className={styles.icon} />
         <input
           className={styles.input}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
+          // onFocus={handleFocus}
+          // onBlur={handleBlur}
           placeholder={placeholder}
           onChange={onChange}
         />

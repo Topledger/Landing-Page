@@ -1,4 +1,4 @@
-import { resolve } from "styled-jsx/css";
+import axios from "axios";
 
 function wait(time = 0) {
   return new Promise((resolve) => setTimeout(resolve, time));
@@ -95,3 +95,26 @@ export async function fetchProgramDashboard(programName) {
     ],
   };
 }
+
+export const queryToRows = (queryResult) => {
+  const { data } = queryResult;
+  const { columns, rows } = data;
+
+  return rows.map((row) => {
+    return columns.reduce(
+      (obj, col) => ({
+        ...obj,
+        [col.name]: row[col.name],
+      }),
+      {}
+    );
+  });
+};
+
+export const fetchProgramList = async () => {
+  const response = await axios.get(
+    "https://analytics.topledger.xyz/tl/api/queries/4036/results.json?api_key=c02tliT9W5qpU5Yug42thLOJBtKcveEX8hIamwE5"
+  );
+
+  return queryToRows(response.data.query_result);
+};
