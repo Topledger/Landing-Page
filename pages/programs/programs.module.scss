@@ -98,7 +98,11 @@
                 }
               }
             }
-
+            .widget-visualization {
+              .tile__bottom-control {
+                margin-top: -1rem;
+              }
+            }
             .widget-wrapper {
               & > .tile {
                 border-radius: 8px;
