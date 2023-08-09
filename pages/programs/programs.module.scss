@@ -9,6 +9,8 @@
   justify-content: center;
   overflow: auto;
 
+  animation: blur-in 0.25s ease forwards;
+
   &:global(::before) {
     content: " ";
     position: fixed;
@@ -82,15 +84,16 @@
           opacity: 0.15;
           z-index: -1;
         }
+
         .tl-dashboards {
-
           &.public-dashboard-page {
-
             background: none;
             margin-top: 1.5rem;
             min-height: 30rem;
+
             .tl-dashboard-container {
               margin: 0;
+
               #dashboard-container {
                 .dashboard-wrapper {
                   width: calc(100vw - 4rem);
@@ -98,11 +101,13 @@
                 }
               }
             }
+
             .widget-visualization {
               .tile__bottom-control {
                 margin-top: -1rem;
               }
             }
+
             .widget-wrapper {
               & > .tile {
                 border-radius: 8px;
@@ -113,31 +118,51 @@
                   * {
                     color: #1a3989;
                   }
+
                   .th-title {
                     span {
                       font-weight: 600;
                     }
                   }
                 }
+
                 .markdown {
                   h3 {
-                    color: #1a3989;
-                    font-family: "Helvetica Neue", "Helvetica 45 Light", sans-serif;
+                    font-family: "Helvetica Neue", "Helvetica 45 Light",
+                      sans-serif;
                     height: 100%;
                     display: inline-flex;
                     align-items: center;
+                    font-size: 1.125rem;
+                  }
+
+                  * {
+                    color: $primary;
+                  }
+
+                  h4 {
+                    font-weight: normal;
+                    font-size: 1rem;
                   }
                 }
+
                 .widget-header {
                   display: inline-flex;
+
+                  .widget.t-header {
+                    padding-bottom: 0;
+                  }
+
                   * {
-                    font-family: "Helvetica Neue", "Helvetica 45 Light", sans-serif;
+                    font-family: "Helvetica Neue", "Helvetica 45 Light",
+                      sans-serif;
                     text-align: left;
-                    color: #1A3989;
+                    color: #1a3989;
                     font-size: 1rem;
                     letter-spacing: 0.05rem;
                   }
                 }
+
                 .visualization-renderer-wrapper {
                   backdrop-filter: blur(32px);
                   background: rgba(238, 242, 252, 0.32);
@@ -152,15 +177,82 @@
                     background: none !important;
                     transform: scale(0.9);
                   }
+
                   .modebar-group {
                     background-color: transparent !important;
                   }
+
+                  .legend {
+                    rect.bg {
+                      fill: rgba(255, 255, 255) !important;
+                      fill-opacity: 0.4 !important;
+                      backdrop-filter: blur(16px);
+                      rx: 0.25rem;
+                    }
+                  }
+                  .table-visualization-container {
+                    .ant-table {
+                      backdrop-filter: blur(32px);
+                      background: rgba(238, 242, 252, 0.32);
+                      .ant-table-thead {
+                        th {
+                          background: rgba(238, 242, 252, 1) !important;
+                        }
+                      }
+                      tr {
+                        td {
+                          vertical-align: middle;
+                          text-align: left !important;
+                          div {
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                          }
+                        }
+                      }
+                      * {
+                        color: $primary;
+                      }
+                    }
+                    .ant-pagination {
+                      .ant-pagination-item {
+                        a {
+                          color: #6a5cff !important;
+                        }
+                        &-active {
+                          a {
+                            color: #4938ff !important;
+                          }
+                        }
+                      }
+                      &-disabled {
+                        .ant-pagination-item-link {
+                          opacity: 0.6;
+                        }
+                      }
+                      .ant-pagination-item-link {
+                        svg {
+                          color: $primary;
+                        }
+                      }
+                    }
+                  }
                 }
-                .widget-text h3 {
-                  display: flex;
-                  height: 100%;
-                  align-items: center;
-                  font-family: "Helvetica Neue", "Helvetica 45 Light", sans-serif;
+
+                .widget-text {
+                  h3 {
+                    display: flex;
+                    height: 100%;
+                    align-items: center;
+                    font-family: "Helvetica Neue", "Helvetica 45 Light",
+                      sans-serif;
+                  }
+                }
+
+                .counter-visualization-container {
+                  * {
+                    color: $primary;
+                  }
                 }
               }
             }
@@ -190,10 +282,12 @@
         opacity: 0;
         margin-top: -2rem;
       }
+
       90% {
         opacity: 0.9;
         margin-top: 2rem;
       }
+
       100% {
         opacity: 1;
       }
@@ -211,9 +305,9 @@
       align-items: center;
       padding: 1rem 2rem;
       border-radius: 2.625rem;
-      background: linear-gradient(144deg, #4383FF 0%, #6A5CFF 100%);
+      background: linear-gradient(144deg, #4383ff 0%, #6a5cff 100%);
       box-shadow: 0px 1px 2px 0px rgba(26, 57, 137, 0.38);
-      color: #EEF2FC;
+      color: #eef2fc;
       font-size: 1.3125rem;
       letter-spacing: 0.0525rem;
       text-decoration: none;
@@ -221,7 +315,6 @@
       & > img {
         margin-right: 1rem;
       }
-
     }
   }
 }

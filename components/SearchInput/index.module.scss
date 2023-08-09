@@ -28,11 +28,13 @@
     background: transparent;
     height: 40px;
     margin-left: 1rem;
+    letter-spacing: 0.04em;
+    font-size: 1.125rem;
+    color: #1a3989;
 
     &:global(::placeholder) {
-      letter-spacing: 0.04em;
-      font-size: 1.125rem;
       color: #1a3989;
+      opacity: 0.64;
     }
   }
 
