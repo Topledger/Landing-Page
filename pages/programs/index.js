@@ -13,7 +13,7 @@ import { categories } from "./components/constanst";
 import styles from "./programs.module.scss";
 import SearchDashboards from "pages/home/components/SearchDashboards";
 import ProgramAdressInput from "./components/ProgramAddressInput";
-import Loader from "./components/ComponentLoader";
+import Loader from "./components/Loader";
 
 const TLDashboards = dynamic(
   async () => {
@@ -62,34 +62,23 @@ function Programs() {
 
   return (
     <div className={styles.programContainer}>
-      {isLoading ? (
-        <DashboardLoader />
-      ) : (
-        <div className="dashboard">
-          <ProgramAdressInput />
-          {/* <div className="categories">
-            {categorieList.length > 1 && (
-              <CategoryList
-                categories={categorieList}
-                onSelect={handleCategorySelect}
-              />
-            )}
-          </div> */}
-          {/* <WidgetContainer>
-            {widgetList?.map((widget) => (
-              <WidgetWrapper key={widget.id} widget={widget} />
-            ))}
-          </WidgetContainer> */}
+      <div className="dashboard">
+        <ProgramAdressInput />
+        <>
           <div className="dashboard-component">
             <div className="title">
               <span className="title-text">{title}</span>
               <span className="title-subtext">{subTitle}</span>
             </div>
-            <TLDashboards
-              client="tl"
-              token="oIEupNW8g4Ua9C64JvUsYRLNlOZej940x341KaAH"
-              className={styles.dashboard}
-            />
+            {isLoading ? (
+              <Loader />
+            ) : (
+              <TLDashboards
+                client="tl"
+                token="oIEupNW8g4Ua9C64JvUsYRLNlOZej940x341KaAH"
+                className={styles.dashboard}
+              />
+            )}
             <div className={styles.talkToUs}>
               <a
                 title="telegram"
@@ -103,8 +92,8 @@ function Programs() {
               </a>
             </div>
           </div>
-        </div>
-      )}
+        </>
+      </div>
     </div>
   );
 }

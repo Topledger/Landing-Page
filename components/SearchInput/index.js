@@ -47,6 +47,8 @@ const SearchInput = forwardRef(
   }
 );
 
+SearchInput.displayName = "SearchInput";
+
 SearchInput.defaultProps = {
   onStateChange() {},
 };

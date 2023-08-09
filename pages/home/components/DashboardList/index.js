@@ -138,4 +138,6 @@ const DashboardList = forwardRef(({ filterText, style, className }, ref) => {
   );
 });
 
+DashboardList.displayName = "DashboardList";
+
 export default DashboardList;

@@ -56,6 +56,7 @@ function CategoryList({ categories, onSelect }) {
     <ListWrapper className="category-list">
       {categories.map((category, index) => (
         <Category
+          key={index}
           category={category}
           onClick={(category) => handleSelectedCategory(category, index)}
           selected={selectedCategory === index}
