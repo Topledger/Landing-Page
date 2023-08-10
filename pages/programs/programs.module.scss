@@ -7,9 +7,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: auto;
 
-  animation: blur-in 0.25s ease forwards;
+  animation: blur-in 1s ease forwards;
 
   &:global(::before) {
     content: " ";
@@ -33,7 +32,7 @@
       width: 100%;
       margin: auto;
       height: 100%;
-      padding: 1.5rem 0;
+      padding-top: 1.5rem;
       flex-direction: column;
 
       .categories {
@@ -71,9 +70,10 @@
       .dashboard-component {
         position: relative;
         padding: 1rem;
+        padding-bottom: 2.5rem;
         margin-top: 1rem;
         backdrop-filter: blur(20px);
-        animation: blur-in 1s ease forwards;
+        animation: blur-in 0.25s ease forwards;
 
         &::before {
           content: " ";
@@ -93,7 +93,7 @@
           &.public-dashboard-page {
             background: none;
             margin-top: 1.5rem;
-            min-height: 30rem;
+            min-height: 33rem;
 
             .tl-dashboard-container {
               margin: 0;
@@ -123,6 +123,7 @@
                 border-radius: 8px;
                 background: rgba(238, 242, 252, 0.32);
                 backdrop-filter: blur(32px);
+                animation: blur-in 0.25s ease forwards;
 
                 .widget-header {
                   * {
@@ -133,6 +134,19 @@
                     span {
                       font-weight: 600;
                     }
+                  }
+                }
+                @keyframes blur-in {
+                  0% {
+                    opacity: 0;
+                    margin-top: -2rem;
+                  }
+                  90% {
+                    opacity: 0.9;
+                    margin-top: 2rem;
+                  }
+                  100% {
+                    opacity: 1;
                   }
                 }
 
@@ -281,24 +295,6 @@
       }
     }
   }
-
-  :global {
-    @keyframes blur-in {
-      0% {
-        opacity: 0;
-        margin-top: -2rem;
-      }
-
-      90% {
-        opacity: 0.9;
-        margin-top: 2rem;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-  }
 }
 
 .talkToUs {
@@ -326,5 +322,11 @@
 }
 
 .dashboardLoader {
-  min-height: 30rem;
+  min-height: 33rem;
+}
+
+.dashboardContainer {
+  min-height: 33rem;
+  opacity: 1;
+  transition: opacity 0.25s ease;
 }

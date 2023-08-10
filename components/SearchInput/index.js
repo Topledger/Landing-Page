@@ -34,7 +34,9 @@ const SearchInput = forwardRef(
         ref={ref}
         onClick={onClick}
       >
-        <BiSearch className={styles.icon} />
+        <span className={cx(styles.icon, "search-icon")}>
+          <BiSearch />
+        </span>
         <input
           className={styles.input}
           // onFocus={handleFocus}

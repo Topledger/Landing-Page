@@ -1,17 +1,12 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 import dynamic from "next/dynamic";
+import cx from "classnames";
 
-import DashboardLoader from "./components/DashboardLoader";
-import WidgetContainer from "./components/WidgetContainer";
-import WidgetWrapper from "./components/WidgetWrapper";
-import { fetchProgramDashboard, fetchProgramList } from "./queries";
-import CategoryList from "./components/CategoryList";
-import { categories } from "./components/constanst";
+import { fetchProgramList } from "./queries";
 
 import styles from "./programs.module.scss";
-import SearchDashboards from "pages/home/components/SearchDashboards";
 import ProgramAdressInput from "./components/ProgramAddressInput";
 import Loader from "./components/Loader";
 
@@ -39,6 +34,7 @@ function Programs() {
     ["p_Program Address"]:
       address = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
   } = router.query;
+  const [dashboardLoading, setDashboardLoading] = useState(true);
   console.log("router.query", router.query);
   // const [category, setCategory] = useState("general");
 
@@ -70,27 +66,35 @@ function Programs() {
               <span className="title-text">{title}</span>
               <span className="title-subtext">{subTitle}</span>
             </div>
-            {isLoading ? (
-              <Loader />
-            ) : (
+            {isLoading && <Loader />}
+            <div
+              className={cx(styles.dashboardContainer, { dashboardLoading })}
+            >
               <TLDashboards
                 client="tl"
                 token="oIEupNW8g4Ua9C64JvUsYRLNlOZej940x341KaAH"
                 className={styles.dashboard}
+                loader={<Loader />}
+                onDashboardLoad={() => setDashboardLoading(false)}
               />
-            )}
-            <div className={styles.talkToUs}>
-              <a
-                title="telegram"
-                draggable="false"
-                href="https://telegram.me/ergon50"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img draggable="false" src="/assets/images/telegram-icon.svg" />
-                Talk to us
-              </a>
             </div>
+            {!isLoading && !dashboardLoading && (
+              <div className={styles.talkToUs}>
+                <a
+                  title="telegram"
+                  draggable="false"
+                  href="https://telegram.me/ergon50"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    draggable="false"
+                    src="/assets/images/telegram-icon.svg"
+                  />
+                  Talk to us
+                </a>
+              </div>
+            )}
           </div>
         </>
       </div>
