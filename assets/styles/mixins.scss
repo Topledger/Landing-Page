@@ -61,6 +61,12 @@
   }
 }
 
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @keyframes blur-in {
   0% {
     opacity: 0;

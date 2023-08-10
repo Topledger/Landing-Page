@@ -63,7 +63,7 @@ function Programs() {
   return (
     <div className={styles.programContainer}>
       <div className="dashboard">
-        <ProgramAdressInput />
+        <ProgramAdressInput isDashboard />
         <>
           <div className="dashboard-component">
             <div className="title">

@@ -7,7 +7,7 @@ import searchStyles from "../../../home/components/SearchDashboards/index.module
 import styles from "./ProgramAddressInput.module.scss";
 import { Arrow } from "pages/home/components/DashboardList";
 
-function ProgramAdressInput() {
+function ProgramAdressInput({ isDashboard }) {
   const [filterText, setFilterText] = useState("");
   const searchRef = useRef();
 
@@ -31,7 +31,9 @@ function ProgramAdressInput() {
       </div>
       <span className={styles.searchContainer}>
         <SearchInput
-          className={cx(searchStyles.search, styles.search)}
+          className={cx(searchStyles.search, styles.search, {
+            dashboardInput: isDashboard,
+          })}
           onStateChange={() => {}}
           onChange={handleInputChange}
           ref={searchRef}

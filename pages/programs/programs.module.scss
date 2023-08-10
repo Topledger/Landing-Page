@@ -59,8 +59,12 @@
           font-weight: 300;
           font-size: 1.125rem;
           line-height: 1.2rem;
-          letter-spacing: 2%;
+          letter-spacing: 1px;
           margin-top: 0.5rem;
+
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
 
@@ -268,10 +272,6 @@
             }
           }
         }
-      }
-
-      @media screen and (max-width: 480px) {
-        width: calc(100% - 2rem);
       }
     }
   }
