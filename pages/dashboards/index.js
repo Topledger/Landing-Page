@@ -6,6 +6,7 @@ import Skeleton from "react-loading-skeleton";
 import axios from "axios";
 import List from "./list";
 import Head from "next/head";
+
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState(null);
   const { isDarkMode, setIsDarkMode } = useContext(DarkModeContext);
@@ -13,15 +14,18 @@ const Dashboard = () => {
   const baseURL = "https://admin.topledger.xyz/";
   const [loading, setLoading] = useState(false);
   const [categories, setCategories] = useState([]);
-  const fetchData = async (showLoader = false, wannaUpdateActiveTab = false) => {
+  const fetchData = async (
+    showLoader = false,
+    wannaUpdateActiveTab = false
+  ) => {
     if (showLoader) {
       setLoading(true);
     }
     try {
       const { data } = await axios.get(`${baseURL}api/categories?populate=*`, {
         headers: {
-          Authorization: `Bearer a51a0c17511b66c8b0c0d924fc2151ef24c29f69ca2260962fbaea5e5ae34725c0f2379b336bc54a657bf1e97c2261e5122c8202faad25b091432cb9df7d6f9e3cc6d92b9afd2787782036ad924b35bfc4524f47963d45bd54798641b14eb5c0498cae09b784df55623467fd10462f5afbe4fa203f727c79a54871c122ebf606`
-        }
+          Authorization: `Bearer a51a0c17511b66c8b0c0d924fc2151ef24c29f69ca2260962fbaea5e5ae34725c0f2379b336bc54a657bf1e97c2261e5122c8202faad25b091432cb9df7d6f9e3cc6d92b9afd2787782036ad924b35bfc4524f47963d45bd54798641b14eb5c0498cae09b784df55623467fd10462f5afbe4fa203f727c79a54871c122ebf606`,
+        },
       });
       // setCategories(data?.data);
       setCategories(() => {
@@ -30,7 +34,7 @@ const Dashboard = () => {
           ...data?.data,
         ];
         if (wannaUpdateActiveTab) {
-          setActiveTab(mergedArray[0]?.attributes)
+          setActiveTab(mergedArray[0]?.attributes);
         }
         return mergedArray;
       });
@@ -45,10 +49,6 @@ const Dashboard = () => {
     fetchAllDashboards();
   }, []);
 
-
-
-
-
   const fetchAllDashboards = async (showLoader = false) => {
     if (showLoader) {
       setLoading(true);
@@ -56,8 +56,8 @@ const Dashboard = () => {
     try {
       const { data } = await axios.get(`${baseURL}api/dashboards`, {
         headers: {
-          Authorization: `Bearer a51a0c17511b66c8b0c0d924fc2151ef24c29f69ca2260962fbaea5e5ae34725c0f2379b336bc54a657bf1e97c2261e5122c8202faad25b091432cb9df7d6f9e3cc6d92b9afd2787782036ad924b35bfc4524f47963d45bd54798641b14eb5c0498cae09b784df55623467fd10462f5afbe4fa203f727c79a54871c122ebf606`
-        }
+          Authorization: `Bearer a51a0c17511b66c8b0c0d924fc2151ef24c29f69ca2260962fbaea5e5ae34725c0f2379b336bc54a657bf1e97c2261e5122c8202faad25b091432cb9df7d6f9e3cc6d92b9afd2787782036ad924b35bfc4524f47963d45bd54798641b14eb5c0498cae09b784df55623467fd10462f5afbe4fa203f727c79a54871c122ebf606`,
+        },
       });
       setAllDashboards(data?.data);
     } catch (error) {
@@ -137,21 +137,12 @@ const Dashboard = () => {
                   </div>
                 </>
               ))
-            ) : activeTab?.title === "All" ? allDashboards.length !== 0 ? allDashboards?.map((dashboard, index) => (
-              <div className={styles.list} key={index}>
-                <List
-                  data={dashboard}
-                  isDarkMode={isDarkMode}
-                  fetchData={fetchData}
-                  fetchAllDashboards={fetchAllDashboards}
-                />
-              </div>
-            )) : <h1 style={{ textAlign: "center" }}> No Data found </h1> :
-              activeTab?.dashboards?.data?.length ? (
-                activeTab?.dashboards.data?.map((data) => (
-                  <div className={styles.list} key={data.id}>
+            ) : activeTab?.title === "All" ? (
+              allDashboards.length !== 0 ? (
+                allDashboards?.map((dashboard, index) => (
+                  <div className={styles.list} key={index}>
                     <List
-                      data={data}
+                      data={dashboard}
                       isDarkMode={isDarkMode}
                       fetchData={fetchData}
                       fetchAllDashboards={fetchAllDashboards}
@@ -160,13 +151,28 @@ const Dashboard = () => {
                 ))
               ) : (
                 <h1 style={{ textAlign: "center" }}> No Data found </h1>
-              )}
+              )
+            ) : activeTab?.dashboards?.data?.length ? (
+              activeTab?.dashboards.data?.map((data) => (
+                <div className={styles.list} key={data.id}>
+                  <List
+                    data={data}
+                    isDarkMode={isDarkMode}
+                    fetchData={fetchData}
+                    fetchAllDashboards={fetchAllDashboards}
+                  />
+                </div>
+              ))
+            ) : (
+              <h1 style={{ textAlign: "center" }}> No Data found </h1>
+            )}
           </div>
         </div>
       </section>
       <section
-        className={`${styles.dashboardFooter} ${isDarkMode ? styles.blackBg : ""
-          }`}
+        className={`${styles.dashboardFooter} ${
+          isDarkMode ? styles.blackBg : ""
+        }`}
       >
         <div className="dashboard-container">
           <div className={styles.bottomFlex}>
