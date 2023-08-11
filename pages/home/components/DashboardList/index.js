@@ -21,7 +21,7 @@ export function Arrow({ className, focused, onClick }) {
       className={cx(styles.rightArrow, className, { focused })}
       onClick={onClick}
     >
-      <span>Get insights</span> <RightArrow />
+      <span>Analyze</span> <RightArrow />
     </button>
   );
 }
