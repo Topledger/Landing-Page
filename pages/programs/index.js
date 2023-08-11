@@ -30,7 +30,7 @@ function Programs() {
   const router = useRouter();
   const {
     ["p_Program Address"]:
-      address = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      address = "JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB",
   } = router.query;
   const [dashboardLoading, setDashboardLoading] = useState(true);
   const { data: programList = {}, isLoading } = useQuery("PROGRAM_LIST", () =>
