@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Galada&display=swap");
 @font-face {
   font-family: Helvetica;
-  src: url(assets/font/HelveticaNeue.ttf);
+  src: url(/assets/font/HelveticaNeue.ttf);
 }
 
 * {

@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.1.4",
     "@emailjs/browser": "^3.7.0",
     "@ramonak/react-progress-bar": "^5.0.2",
     "axios": "^0.27.2",
+    "classnames": "^2.3.2",
     "font-awesome": "^4.7.0",
     "g": "^2.0.1",
     "next": "12.2.4",
@@ -21,13 +23,22 @@
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.4.0",
     "react-loading-skeleton": "^3.1.0",
+    "react-query": "^3.39.2",
     "react-reveal": "^1.2.2",
     "react-slick": "^0.29.0",
+    "react-transition-group": "^4.4.5",
+    "recharts": "^2.1.16",
     "slick-carousel": "^1.8.1",
+    "tl-dashboards": "^1.1.24",
     "yarn": "^1.22.19"
   },
   "devDependencies": {
     "eslint": "8.21.0",
-    "eslint-config-next": "12.2.4"
+    "eslint-config-next": "12.2.4",
+    "next-compose-plugins": "^2.2.1",
+    "next-plugin-antd-less": "^1.8.0",
+    "next-transpile-modules": "^10.0.1",
+    "sass": "^1.56.1",
+    "styled-components": "^5.3.6"
   }
 }

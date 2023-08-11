@@ -1,24 +1,37 @@
 import "../styles/globals.css";
+import "@/assets/styles/fonts.scss";
 
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
 import ReactGA from "react-ga4";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { DarkModeProvider } from "../providers/DarkMode";
 import Head from "next/head";
+import { QueryClient, QueryClientProvider } from "react-query";
+// import ReactQueryDevtools from "react-query/devtools";
 
+const footerExcludePaths = ["thanks", "dashboard", "programs"];
+const headerExcludePaths = ["thanks"];
+
+function isExcludedPath(pathList, currentPath) {
+  return pathList.findIndex((path) => currentPath.includes(path)) === -1;
+}
 const TRACKING_ID = "G-EBHMMQEYHV";
 ReactGA.initialize([{ trackingId: TRACKING_ID }]);
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
+  const queryClient = useMemo(() => new QueryClient(), []);
 
   useEffect(() => {
     if (router.pathname.includes("about-us")) {
       document.body.style.background = "white";
     }
   }, []);
+
+  const showFooter = isExcludedPath(footerExcludePaths, router.pathname);
+  const showHeader = isExcludedPath(headerExcludePaths, router.pathname);
 
   return (
     <>
@@ -28,24 +41,27 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
       </Head>
-      <DarkModeProvider>
-        {(() => {
-          if (router.pathname.includes("get-started")) {
-            return <Component {...pageProps} />;
-          }
+      <QueryClientProvider client={queryClient}>
+        <DarkModeProvider>
+          {(() => {
+            if (router.pathname.includes("get-started")) {
+              return <Component {...pageProps} />;
+            }
 
-          return (
-            <>
-              {router.pathname.includes("thanks") ? null : <Header />}
-              <Component {...pageProps} />
-              {router.pathname.includes("thanks") ||
-              router.pathname.includes("dashboard") ? null : (
-                <Footer />
-              )}
-            </>
-          );
-        })()}
-      </DarkModeProvider>
+            return (
+              <>
+                {router.pathname.includes("thanks") ? null : <Header />}
+                <Component {...pageProps} />
+                {router.pathname.includes("thanks") ||
+                router.pathname.includes("dashboard") ? null : (
+                  <Footer />
+                )}
+              </>
+            );
+          })()}
+        </DarkModeProvider>
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      </QueryClientProvider>
     </>
   );
 }

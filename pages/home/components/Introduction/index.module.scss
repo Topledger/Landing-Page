@@ -1,0 +1,26 @@
+.introduction {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #1a3989;
+
+  .line1 {
+    font-size: 1.5rem;
+  }
+
+  .line2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  .line3 {
+    display: block;
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
+    padding: 0rem 2rem;
+
+    &:global(> img) {
+      transform: translateY(0.5rem);
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@mixin gradient-border($border-radius: 3rem) {
+  border: 1px solid;
+  border-width: 1px 0px 1px 0px;
+  border-top-color: #ffffff;
+  border-right-color: rgba(255, 255, 255, 0.18);
+  border-bottom-color: rgba(26, 57, 137, 0.48);
+  border-left-color: rgba(255, 255, 255, 0.18);
+
+  &:global(::before) {
+    content: " ";
+    $margin: 20%;
+    height: calc(100% - $border-radius * 2 + $margin / 3);
+    position: absolute;
+    top: calc($border-radius - $margin / 6);
+    left: -1px;
+    width: 100%;
+
+    border: 1px solid;
+    border-width: 0px 1px 0px 1px;
+    border-right-color: rgba(255, 255, 255, 0.18);
+    border-left-color: rgba(255, 255, 255, 0.18);
+    display: block;
+  }
+
+  // &:global(::before) {
+  //   content: " ";
+  //   display: block;
+  //   position: absolute;
+  //   width: calc(100% + 2px);
+  //   height: calc(100% + 2px);
+  //   left: -1px;
+  //   top: -1px;
+  //   background-image: url("/assets/images/border-left-circle.svg");
+  //   background-size: auto 100%;
+  //   background-repeat: no-repeat;
+  // }
+  // &:global(::after) {
+  //   content: " ";
+  //   display: block;
+  //   position: absolute;
+  //   width: calc(100% + 2px);
+  //   height: calc(100% + 2px);
+  //   right: -1px;
+  //   top: -1px;
+  //   background-image: url("/assets/images/border-right-circle.svg");
+  //   background-size: auto 100%;
+  //   background-repeat: no-repeat;
+  //   background-position: center right;
+  // }
+}
+
+@mixin bottom-separator($length: 90%, $width: 1px, $padding: 0rem) {
+  &::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: calc($length - 2 * $padding);
+    left: calc((100% - $length) / 2 + $padding);
+    border-bottom: $width solid rgba(0, 0, 0, 0.06);
+  }
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@keyframes blur-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
