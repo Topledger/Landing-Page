@@ -18,7 +18,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url(/assets/images/clientbg.png);
+    background: url(/assets/images/clientbg.webp);
     background-size: 100% auto;
     // filter: blur(24px);
     background-repeat: repeat-y;
@@ -97,12 +97,6 @@
 
             .tl-dashboard-container {
               margin: 0;
-
-              .tl-dashboards-loader {
-                .loading-indicator {
-                  transform: scale(0.75);
-                }
-              }
 
               #dashboard-container {
                 .dashboard-wrapper {
@@ -257,6 +251,19 @@
                       .ant-pagination-item-link {
                         svg {
                           color: $primary;
+                        }
+                      }
+                    }
+                  }
+                  .chart-visualization-container {
+                    .main-svg {
+                      .trace.bars {
+                        .points {
+                          .point {
+                            text.bartext {
+                              display: none;
+                            }
+                          }
                         }
                       }
                     }
