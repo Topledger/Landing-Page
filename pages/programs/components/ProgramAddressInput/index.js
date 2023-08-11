@@ -39,6 +39,7 @@ function ProgramAdressInput({ isDashboard }) {
           ref={searchRef}
           defaultFocused
           placeholder="Enter a program address"
+          onEnter={handleArrowClick}
         />
         <Arrow focused onClick={handleArrowClick} className={styles.arrow} />
       </span>

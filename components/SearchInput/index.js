@@ -13,6 +13,7 @@ const SearchInput = forwardRef(
       onChange,
       placeholder = "Type something...",
       defaultFocused,
+      onEnter,
     },
     ref
   ) => {
@@ -27,6 +28,16 @@ const SearchInput = forwardRef(
       setFocused(false);
       onStateChange({ focused: defaultFocused && false });
     };
+
+    /**
+     * 
+     * @param {KeyboardEvent} e 
+     */
+    const handleKeyDown = (e) => {
+      if (e.key === 'Enter' && onEnter) {
+        onEnter()
+      }
+    }
 
     return (
       <div
@@ -43,6 +54,7 @@ const SearchInput = forwardRef(
           // onBlur={handleBlur}
           placeholder={placeholder}
           onChange={onChange}
+          onKeyDown={handleKeyDown}
         />
       </div>
     );
