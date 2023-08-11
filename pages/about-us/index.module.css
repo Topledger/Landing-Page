@@ -282,8 +282,7 @@
       0deg,
       rgba(244, 243, 255, 0.75),
       rgba(244, 243, 255, 0.75)
-    ),
-    url();
+    );
   position: absolute;
   top: 0;
   left: 63px;
@@ -319,8 +318,7 @@
       0deg,
       rgba(244, 243, 255, 0.75),
       rgba(244, 243, 255, 0.75)
-    ),
-    url();
+    ),;
   text-align: left;
 }
 .mainCard .CardImg1 h3 {
@@ -355,8 +353,7 @@
       0deg,
       rgba(244, 243, 255, 0.75),
       rgba(244, 243, 255, 0.75)
-    ),
-    url();
+    );
   position: absolute;
   top: 370px;
   left: 63px;
@@ -393,8 +390,7 @@
       0deg,
       rgba(244, 243, 255, 0.75),
       rgba(244, 243, 255, 0.75)
-    ),
-    url();
+    );
   position: absolute;
   top: 520px;
   right: 73px;

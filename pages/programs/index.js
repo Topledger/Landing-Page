@@ -4,8 +4,7 @@ import { useQuery } from "react-query";
 import dynamic from "next/dynamic";
 import cx from "classnames";
 
-import { fetchProgramList } from "./queries";
-
+import { fetchProgramList } from "queries";
 import styles from "./programs.module.scss";
 import ProgramAdressInput from "./components/ProgramAddressInput";
 import Loader from "./components/Loader";
@@ -30,17 +29,10 @@ const TLDashboards = dynamic(
 function Programs() {
   const router = useRouter();
   const {
-    programName,
     ["p_Program Address"]:
       address = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
   } = router.query;
   const [dashboardLoading, setDashboardLoading] = useState(true);
-  console.log("router.query", router.query);
-  // const [category, setCategory] = useState("general");
-
-  // const { data, isLoading } = useQuery(["PROGRAMD_DATA", programName], () =>
-  //   fetchProgramDashboard(programName)
-  // );
   const { data: programList = {}, isLoading } = useQuery("PROGRAM_LIST", () =>
     fetchProgramList().then((list) =>
       list.reduce((obj, item) => ({ ...obj, [item.program]: item }), {})
@@ -49,12 +41,6 @@ function Programs() {
 
   const title = programList[address]?.program_name ?? "Solana Program";
   const subTitle = address;
-  // const widgetList = data?.[category];
-  // const handleCategorySelect = useCallback((category) => {
-  //   setCategory(category.key);
-  // }, []);
-
-  // const categorieList = categories.filter(({ key }) => data?.[key]);
 
   return (
     <div className={styles.programContainer}>
