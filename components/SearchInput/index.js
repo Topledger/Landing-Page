@@ -14,6 +14,7 @@ const SearchInput = forwardRef(
       placeholder = "Type something...",
       defaultFocused,
       onEnter,
+      value,
     },
     ref
   ) => {
@@ -35,7 +36,7 @@ const SearchInput = forwardRef(
      */
     const handleKeyDown = (e) => {
       if (e.key === 'Enter' && onEnter) {
-        onEnter()
+        onEnter(e.target.value)
       }
     }
 
@@ -55,6 +56,7 @@ const SearchInput = forwardRef(
           placeholder={placeholder}
           onChange={onChange}
           onKeyDown={handleKeyDown}
+          value={value}
         />
       </div>
     );

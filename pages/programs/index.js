@@ -43,10 +43,11 @@ function Programs() {
   const subTitle = address;
 
   useEffect(() => {
+    const address = new URLSearchParams(location.search).get('p_Program Address')
     if (!address) {
       router.replace('/programs?p_Program Address=JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB')
     }
-  }, [address])
+  }, [])
 
   return (
     <div className={styles.programContainer}>

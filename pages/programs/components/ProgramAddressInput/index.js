@@ -15,10 +15,10 @@ function ProgramAdressInput({ isDashboard }) {
     setFilterText(e.target.value);
   };
 
-  const handleArrowClick = () => {
+  const handleArrowClick = (value) => {
     if (filterText) {
       const queryParams = new URLSearchParams(location.search);
-      queryParams.set("p_Program Address", filterText);
+      queryParams.set("p_Program Address", value ?? filterText);
 
       location.search = queryParams.toString();
     }
@@ -40,8 +40,9 @@ function ProgramAdressInput({ isDashboard }) {
           defaultFocused
           placeholder="Enter a program address"
           onEnter={handleArrowClick}
+          value={filterText}
         />
-        <Arrow focused onClick={handleArrowClick} className={styles.arrow} />
+        <Arrow focused onClick={() => handleArrowClick()} className={styles.arrow} />
       </span>
     </div>
   );
