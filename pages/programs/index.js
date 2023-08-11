@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 import dynamic from "next/dynamic";
@@ -30,7 +30,7 @@ function Programs() {
   const router = useRouter();
   const {
     ["p_Program Address"]:
-      address = "JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB",
+      address,
   } = router.query;
   const [dashboardLoading, setDashboardLoading] = useState(true);
   const { data: programList = {}, isLoading } = useQuery("PROGRAM_LIST", () =>
@@ -41,6 +41,12 @@ function Programs() {
 
   const title = programList[address]?.program_name ?? "Solana Program";
   const subTitle = address;
+
+  useEffect(() => {
+    if (!address) {
+      router.replace('/programs?p_Program Address=JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB')
+    }
+  }, [address])
 
   return (
     <div className={styles.programContainer}>

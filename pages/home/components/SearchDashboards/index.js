@@ -80,7 +80,7 @@ function SearchDashboards() {
         onClick={(e) => {
           e.preventDefault();
 
-          router.push("/programs");
+          router.push("/programs?p_Program+Address=JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB");
         }}
         ref={searchRef}
         placeholder="Enter a program"
