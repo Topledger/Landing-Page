@@ -9,7 +9,7 @@ function Introduction({ className }) {
       <div className={styles.line1}>End-to-end</div>
       <div className={styles.line2}>blockchain analytics</div>
       <div className={styles.line3}>
-        Discover your users' engagement on <SolanaLogo inline />
+        Discover your users&#8217; engagement on <SolanaLogo inline />
       </div>
     </div>
   );
