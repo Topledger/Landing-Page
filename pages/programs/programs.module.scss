@@ -5,7 +5,6 @@
 
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
 
   animation: blur-in 1s ease forwards;
@@ -30,7 +29,7 @@
     .dashboard {
       display: flex;
       width: 100%;
-      margin: auto;
+      margin: 0;
       height: 100%;
       padding-top: 1.5rem;
       flex-direction: column;
@@ -128,19 +127,6 @@
                     span {
                       font-weight: 600;
                     }
-                  }
-                }
-                @keyframes blur-in {
-                  0% {
-                    opacity: 0;
-                    margin-top: -2rem;
-                  }
-                  90% {
-                    opacity: 0.9;
-                    margin-top: 2rem;
-                  }
-                  100% {
-                    opacity: 1;
                   }
                 }
 

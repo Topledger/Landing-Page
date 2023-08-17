@@ -8,6 +8,19 @@ import { fetchProgramList } from "queries";
 import styles from "./programs.module.scss";
 import ProgramAdressInput from "./components/ProgramAddressInput";
 import Loader from "./components/Loader";
+import Head from "next/head";
+import { pageView, sendEvent } from "helpers/gaHelper";
+
+const DashboardHead = ({ programName }) => (
+  <Head>
+    <title>User Engagement Tracker | Top Ledger</title>
+    <meta name="description" content=""></meta>
+    <meta
+      name="keywords"
+      content={`${programName}, User Engagement Tracker, Top Ledger, Crypto Analytics, Solana Analytics, Solana Blockchain`}
+    ></meta>
+  </Head>
+);
 
 const TLDashboards = dynamic(
   async () => {
@@ -56,77 +69,88 @@ function Programs() {
     [address]
   );
 
-  address;
-
-  const updateParameterAddress = useCallback((address) => {
-    const parameters = parametersRef.current;
-    if (parameters) {
-      let updated = false;
-      parameters.forEach((parameter) => {
-        if (
-          parameter.name === "Program Address" &&
-          parameter.getExecutionValue() !== address
-        ) {
-          parameter.setValue(address);
-          updated = true;
+  const updateParameterAddress = useCallback(
+    (address) => {
+      const parameters = parametersRef.current;
+      if (parameters) {
+        let updated = false;
+        parameters.forEach((parameter) => {
+          if (
+            parameter.name === "Program Address" &&
+            parameter.getExecutionValue() !== address
+          ) {
+            parameter.setValue(address);
+            const title =
+              programList[address]?.program_name ?? "Solana Program";
+            pageView({ title, address });
+            updated = true;
+          }
+        });
+        if (updated) {
+          dashboardRef.current?.refreshDashboard([...parameters]);
         }
-      });
-      if (updated) {
-        dashboardRef.current?.refreshDashboard([...parameters]);
       }
-    }
-  }, []);
+    },
+    [programList]
+  );
 
   useEffect(() => {
     updateParameterAddress(address);
   }, [address]);
 
+  useEffect(() => {
+    pageView({ path: window.location.pathname, title });
+  }, []);
+
   return (
-    <div className={styles.programContainer}>
-      <div className="dashboard">
-        <ProgramAdressInput isDashboard onApply={() => {}} />
-        <>
-          <div className="dashboard-component">
-            <div className="title">
-              <span className="title-text">{title}</span>
-              <span className="title-subtext">{subTitle}</span>
-            </div>
-            {isLoading && <Loader />}
-            <div
-              className={cx(styles.dashboardContainer, { dashboardLoading })}
-            >
-              <TLDashboards
-                key={address}
-                client="tl"
-                token="oIEupNW8g4Ua9C64JvUsYRLNlOZej940x341KaAH"
-                className={styles.dashboard}
-                loader={<Loader />}
-                onDashboardLoad={handleDashboardLoad}
-                parameters={parametersRef.current}
-                dashboardRef={dashboardRef}
-              />
-            </div>
-            {!isLoading && !dashboardLoading && (
-              <div className={styles.talkToUs}>
-                <a
-                  title="telegram"
-                  draggable="false"
-                  href="https://telegram.me/ergon50"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    draggable="false"
-                    src="/assets/images/telegram-icon.svg"
-                  />
-                  Talk to us
-                </a>
+    <>
+      <DashboardHead programName={title} />
+      <div className={styles.programContainer}>
+        <div className="dashboard">
+          <ProgramAdressInput isDashboard onApply={() => {}} />
+          <>
+            <div className="dashboard-component">
+              <div className="title">
+                <span className="title-text">{title}</span>
+                <span className="title-subtext">{subTitle}</span>
               </div>
-            )}
-          </div>
-        </>
+              {isLoading && <Loader />}
+              <div
+                className={cx(styles.dashboardContainer, { dashboardLoading })}
+              >
+                <TLDashboards
+                  key={address}
+                  client="tl"
+                  token="oIEupNW8g4Ua9C64JvUsYRLNlOZej940x341KaAH"
+                  className={styles.dashboard}
+                  loader={<Loader />}
+                  onDashboardLoad={handleDashboardLoad}
+                  parameters={parametersRef.current}
+                  dashboardRef={dashboardRef}
+                />
+              </div>
+              {!isLoading && !dashboardLoading && (
+                <div className={styles.talkToUs}>
+                  <a
+                    title="telegram"
+                    draggable="false"
+                    href="https://telegram.me/ergon50"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      draggable="false"
+                      src="/assets/images/telegram-icon.svg"
+                    />
+                    Talk to us
+                  </a>
+                </div>
+              )}
+            </div>
+          </>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

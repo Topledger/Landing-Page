@@ -53,6 +53,9 @@
       --primary-gradient,
       linear-gradient(144deg, #4383ff 0%, #6a5cff 100%)
     );
+    span {
+      margin-right: 0;
+    }
   }
   :global {
     svg {

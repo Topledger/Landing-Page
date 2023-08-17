@@ -3,12 +3,14 @@ import "@/assets/styles/fonts.scss";
 
 import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
-import ReactGA from "react-ga4";
+import Head from "next/head";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { DarkModeProvider } from "../providers/DarkMode";
-import Head from "next/head";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { initGa } from "helpers/gaHelper";
+import { TRACKING_ID } from "constants/app.constants";
 // import ReactQueryDevtools from "react-query/devtools";
 
 const footerExcludePaths = ["thanks", "dashboard", "programs"];
@@ -17,8 +19,6 @@ const headerExcludePaths = ["thanks"];
 function isExcludedPath(pathList, currentPath) {
   return pathList.findIndex((path) => currentPath.includes(path)) === -1;
 }
-const TRACKING_ID = "G-EBHMMQEYHV";
-ReactGA.initialize([{ trackingId: TRACKING_ID }]);
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -32,6 +32,10 @@ function MyApp({ Component, pageProps }) {
 
   const showFooter = isExcludedPath(footerExcludePaths, router.pathname);
   const showHeader = isExcludedPath(headerExcludePaths, router.pathname);
+
+  useEffect(() => {
+    initGa({ trackingId: TRACKING_ID });
+  }, []);
 
   return (
     <>
