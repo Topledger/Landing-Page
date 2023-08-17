@@ -9,6 +9,7 @@ import styles from "./programs.module.scss";
 import ProgramAdressInput from "./components/ProgramAddressInput";
 import Loader from "./components/Loader";
 import Head from "next/head";
+import { pageView, sendEvent } from "helpers/gaHelper";
 
 const DashboardHead = ({ programName }) => (
   <Head>
@@ -68,28 +69,38 @@ function Programs() {
     [address]
   );
 
-  const updateParameterAddress = useCallback((address) => {
-    const parameters = parametersRef.current;
-    if (parameters) {
-      let updated = false;
-      parameters.forEach((parameter) => {
-        if (
-          parameter.name === "Program Address" &&
-          parameter.getExecutionValue() !== address
-        ) {
-          parameter.setValue(address);
-          updated = true;
+  const updateParameterAddress = useCallback(
+    (address) => {
+      const parameters = parametersRef.current;
+      if (parameters) {
+        let updated = false;
+        parameters.forEach((parameter) => {
+          if (
+            parameter.name === "Program Address" &&
+            parameter.getExecutionValue() !== address
+          ) {
+            parameter.setValue(address);
+            const title =
+              programList[address]?.program_name ?? "Solana Program";
+            pageView({ title, address });
+            updated = true;
+          }
+        });
+        if (updated) {
+          dashboardRef.current?.refreshDashboard([...parameters]);
         }
-      });
-      if (updated) {
-        dashboardRef.current?.refreshDashboard([...parameters]);
       }
-    }
-  }, []);
+    },
+    [programList]
+  );
 
   useEffect(() => {
     updateParameterAddress(address);
   }, [address]);
+
+  useEffect(() => {
+    pageView({ path: window.location.pathname, title });
+  }, []);
 
   return (
     <>
