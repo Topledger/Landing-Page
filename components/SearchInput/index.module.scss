@@ -4,7 +4,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  width: 18rem;
+  width: 14.5rem;
   background: rgba(238, 242, 252, 0.32);
   backdrop-filter: blur(0.5rem);
   padding: 0.5rem;
@@ -35,9 +35,11 @@
     background: transparent;
     height: 40px;
     margin-left: 1rem;
+    margin-right: 0.5rem;
     letter-spacing: 0.04em;
     font-size: 1.125rem;
     color: #1a3989;
+    width: calc(100% - 1rem);
 
     &:global(::placeholder-shown) {
       color: #1a3989;
