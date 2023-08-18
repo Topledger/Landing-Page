@@ -4,14 +4,6 @@ export function initGa({ trackingId }) {
   ReactGA.initialize([{ trackingId, gaOptions: {} }]);
 }
 
-export function pageView({ path, title }) {
-  ReactGA.send({
-    hitType: "pageview",
-    page: path,
-    title,
-  });
-}
-
 const eventType = {
   dashboard: {
     category: "dashboard",
@@ -25,9 +17,11 @@ const eventType = {
 };
 
 export function sendEvent(type, data = {}) {
-  ReactGA.send({
-    hitType: "event",
-    ...(eventType[type] ?? eventType.default),
-    ...data,
-  });
+  setTimeout(() => {
+    ReactGA.gtag("event", "view_dashboard", {
+      hitType: "event",
+      ...(eventType[type] ?? eventType.default),
+      ...data,
+    });
+  }, 0);
 }

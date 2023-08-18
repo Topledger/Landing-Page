@@ -80,9 +80,6 @@ function Programs() {
             parameter.getExecutionValue() !== address
           ) {
             parameter.setValue(address);
-            const title =
-              programList[address]?.program_name ?? "Solana Program";
-            pageView({ title, address });
             updated = true;
           }
         });
@@ -99,8 +96,11 @@ function Programs() {
   }, [address]);
 
   useEffect(() => {
-    pageView({ path: window.location.pathname, title });
-  }, []);
+    if (address) {
+      sendEvent("dashboard", { title, address });
+    }
+    // pageView({ path: window.location.pathname, title });
+  }, [address]);
 
   return (
     <>
