@@ -20,6 +20,7 @@
     border-right-color: rgba(255, 255, 255, 0.18);
     border-left-color: rgba(255, 255, 255, 0.18);
     display: block;
+    z-index: -1;
   }
 
   // &:global(::before) {
