@@ -1732,23 +1732,23 @@ header.blackBg .navLink img {
   .sub-header a {
     display: block;
   }
-  .main-Section{
-    padding-left:10px;
+  .main-Section {
+    padding-left: 10px;
     padding-right: 10px;
   }
 }
 
 /* images section css */
-.main-Section{
-  background-color: #EEF2FC;
+.main-Section {
+  background-color: #eef2fc;
   padding-top: 56px;
-  padding-bottom:30px;
+  padding-bottom: 30px;
 }
-.trustedText{
-text-align: center;
-padding-bottom: 40px;
+.trustedText {
+  text-align: center;
+  padding-bottom: 40px;
 }
-.trustedText p{
+.trustedText p {
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500;
@@ -1757,7 +1757,7 @@ padding-bottom: 40px;
   letter-spacing: 0.04em;
   color: #1a3989;
 }
-.bottomImages{
+.bottomImages {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1778,5 +1778,23 @@ padding-bottom: 40px;
   100% {
     filter: blur(0);
     opacity: 1;
+  }
+}
+
+.visualization-renderer {
+  .visualization-renderer-wrapper {
+    .chart-visualization-container {
+      .main-svg {
+        .trace.bars {
+          .points {
+            .point {
+              text.bartext {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

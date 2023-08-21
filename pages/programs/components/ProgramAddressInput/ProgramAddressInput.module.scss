@@ -16,6 +16,9 @@
   display: inline-flex;
   align-items: center;
   margin-top: 1rem;
+  @media screen and (max-width: 480px) {
+    width: calc(100% - 34px);
+  }
 }
 
 .search {
@@ -39,7 +42,7 @@
     }
 
     @media screen and (max-width: 480px) {
-      width: 20rem !important;
+      width: 100% !important;
     }
   }
 }
