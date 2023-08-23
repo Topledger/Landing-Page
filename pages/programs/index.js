@@ -10,6 +10,7 @@ import ProgramAdressInput from "./components/ProgramAddressInput";
 import Loader from "./components/Loader";
 import Head from "next/head";
 import { pageView, sendEvent } from "helpers/gaHelper";
+import FeedbackForm from "./components/FeedbackForm";
 
 const DashboardHead = ({ programName }) => (
   <Head>
@@ -129,23 +130,7 @@ function Programs() {
                   dashboardRef={dashboardRef}
                 />
               </div>
-              {!isLoading && !dashboardLoading && (
-                <div className={styles.talkToUs}>
-                  <a
-                    title="telegram"
-                    draggable="false"
-                    href="https://telegram.me/ergon50"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      draggable="false"
-                      src="/assets/images/telegram-icon.svg"
-                    />
-                    Talk to us
-                  </a>
-                </div>
-              )}
+              {!isLoading && !dashboardLoading && <FeedbackForm />}
             </div>
           </>
         </div>

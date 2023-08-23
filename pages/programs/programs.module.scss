@@ -294,30 +294,6 @@
   }
 }
 
-.talkToUs {
-  display: flex;
-  justify-content: center;
-
-  &:global {
-    > a {
-      display: inline-flex;
-      align-items: center;
-      padding: 1rem 2rem;
-      border-radius: 2.625rem;
-      background: linear-gradient(144deg, #4383ff 0%, #6a5cff 100%);
-      box-shadow: 0px 1px 2px 0px rgba(26, 57, 137, 0.38);
-      color: #eef2fc;
-      font-size: 1.3125rem;
-      letter-spacing: 0.0525rem;
-      text-decoration: none;
-
-      & > img {
-        margin-right: 1rem;
-      }
-    }
-  }
-}
-
 .dashboardLoader {
   min-height: 33rem;
 }

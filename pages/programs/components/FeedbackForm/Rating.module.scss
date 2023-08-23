@@ -1,0 +1,19 @@
+.ratingContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.ratingItem {
+  display: flex;
+  width: 4rem;
+  height: 4rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  background: rgba(0, 117, 255, 0.08);
+  cursor: pointer;
+
+  &:global(.selected) {
+    background: rgba(0, 117, 255, 0.38);
+  }
+}
