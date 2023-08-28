@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import cx from "classnames";
 
 import Portal from "@/components/Portal";
@@ -7,17 +7,21 @@ import styles from "./index.module.scss";
 import Rating from "./Rating";
 import { CSSTransition } from "react-transition-group";
 import { postFeedback } from "queries";
+import { getScrollParent } from "pages/programs/utils";
 
-function FeedbackForm() {
+function FeedbackForm({}) {
   const [open, setOpen] = useState();
   const [rating, setRating] = useState();
   const [feedback, setFeedback] = useState("");
   const modalRef = useRef();
   const [loading, setLoading] = useState();
-
-  const handleClick = () => {
-    setOpen(true);
-  };
+  const [talkToUsEl, setTalkToUsEl] = useState();
+  const [isFeedbackShown, setIsFeedbackShown] = useState(
+    localStorage.feedback === "shown"
+  );
+  const [isFeedbackDone, setIsFeedbackDone] = useState(
+    localStorage.feedback === "done"
+  );
 
   const handleCancel = () => {
     setRating();
@@ -30,6 +34,8 @@ function FeedbackForm() {
     try {
       setLoading(true);
       await postFeedback(formData);
+      setIsFeedbackDone(true);
+      localStorage.feedback = "done";
       setRating();
       setFeedback("");
     } catch (err) {}
@@ -37,29 +43,83 @@ function FeedbackForm() {
     setOpen(false);
   };
 
+  const showFeedback = useCallback(() => {
+    if (!localStorage.feedback) {
+      setOpen(true);
+
+      if (localStorage.feedback !== "shown") {
+        setIsFeedbackShown(true);
+        localStorage.feedback = "shown";
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      showFeedback();
+    }, 30000);
+
+    return () => clearTimeout(timer);
+  }, [showFeedback]);
+
+  useEffect(() => {
+    if (talkToUsEl) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const scrollParent = document?.documentElement;
+          if (entry.isIntersecting === 1 && scrollParent?.scrollTop > 6000) {
+            showFeedback();
+          }
+        });
+      });
+      observer.observe(talkToUsEl);
+
+      return () => {
+        observer.disconnect();
+      };
+    }
+  }, [talkToUsEl, showFeedback]);
+
   return (
     <>
       <div className={styles.talkToUs}>
         <a
           title="telegram"
           draggable="false"
-          // href="https://telegram.me/ergon50"
-          // target="_blank"
-          // rel="noreferrer"
-          onClick={handleClick}
+          href="https://telegram.me/ergon50"
+          target="_blank"
+          rel="noreferrer"
+          ref={setTalkToUsEl}
         >
           <img draggable="false" src="/assets/images/telegram-icon.svg" />
           Talk to us
         </a>
       </div>
+      {isFeedbackShown && !isFeedbackDone && !open && (
+        <Portal>
+          <div className={styles.feedbackButton}>
+            <button onClick={() => setOpen(true)}>Feedback</button>
+          </div>
+        </Portal>
+      )}
       <Portal>
         <CSSTransition
           nodeRef={modalRef}
-          in={open}
-          timeout={250}
+          in={open && !isFeedbackDone}
+          timeout={{
+            enter: 0,
+            exit: 500,
+          }}
           mountOnEnter
           unmountOnExit
-          classNames={styles.modalContainer}
+          classNames={{
+            appear: styles.modalContainer,
+            enter: styles.modalContainerEnter,
+            enterActive: styles.modalContainerEnterActive,
+            enterDone: styles.modalContainerEnterDone,
+            exit: styles.modalContainerExit,
+            exitActive: styles.modalContainerExitActive,
+          }}
         >
           <div
             ref={modalRef}
