@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { CSSTransition } from "react-transition-group";
 import cx from "classnames";
 
 import Portal from "@/components/Portal";
 
 import styles from "./index.module.scss";
 import Rating from "./Rating";
-import { CSSTransition } from "react-transition-group";
 import { postFeedback } from "queries";
-import { getScrollParent } from "pages/programs/utils";
 
 function FeedbackForm({}) {
   const [open, setOpen] = useState();
@@ -22,6 +22,7 @@ function FeedbackForm({}) {
   const [isFeedbackDone, setIsFeedbackDone] = useState(
     localStorage.feedback === "done"
   );
+  const [feedbackSuccess, setFeedbackSuccess] = useState(false);
 
   const handleCancel = () => {
     setRating();
@@ -34,13 +35,14 @@ function FeedbackForm({}) {
     try {
       setLoading(true);
       await postFeedback(formData);
+      setFeedbackSuccess(true);
       setIsFeedbackDone(true);
       localStorage.feedback = "done";
       setRating();
       setFeedback("");
     } catch (err) {}
     setLoading(false);
-    setOpen(false);
+    // setOpen(false);
   };
 
   const showFeedback = useCallback(() => {
@@ -105,7 +107,7 @@ function FeedbackForm({}) {
       <Portal>
         <CSSTransition
           nodeRef={modalRef}
-          in={open && !isFeedbackDone}
+          in={open}
           timeout={{
             enter: 0,
             exit: 500,
@@ -126,43 +128,66 @@ function FeedbackForm({}) {
             className={cx(styles.modalContainer, "modal-container")}
           >
             <div className={styles.modalContent}>
-              <div className={styles.head}>
-                <span className={styles.title}>Kindly leave a reaction</span>
-                <span className={styles.subtitle}>to help us improve</span>
-              </div>
-              <div className={styles.body}>
-                <div className={styles.form}>
-                  <Rating value={rating} onChange={setRating} />
-                  <p className="feedback-row">
-                    <span className="label">
-                      <span>Tell us how we can improve</span>{" "}
-                      <span className="option-text">(optional)</span>
-                    </span>
-
-                    <textarea
-                      className="feedback-input"
-                      value={feedback}
-                      onChange={(e) => setFeedback(e.target.value)}
+              {feedbackSuccess ? (
+                <div className={styles.successContainer}>
+                  <div className={styles.successImage}>
+                    <Image
+                      width={141}
+                      height={141}
+                      src="/assets/images/feedback-success.png"
                     />
-                  </p>
-                  <p className="feedback-row submit-row">
-                    <button
-                      className="feedback-button"
-                      onClick={handleCancel}
-                      disabled={loading}
-                    >
-                      Not now
-                    </button>
-                    <button
-                      className="feedback-button feedback-submit"
-                      onClick={handleSubmit}
-                      disabled={loading || !rating}
-                    >
-                      Submit
-                    </button>
-                  </p>
+                  </div>
+                  <div className={styles.successLine1}>Thanks!</div>
+                  <div className={styles.successLine2}>
+                    for your valuable feedback
+                  </div>
+                  <div className={styles.successClose}>
+                    <button onClick={() => setOpen(false)}>Close</button>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <>
+                  <div className={styles.head}>
+                    <span className={styles.title}>
+                      Kindly leave a reaction
+                    </span>
+                    <span className={styles.subtitle}>to help us improve</span>
+                  </div>
+                  <div className={styles.body}>
+                    <div className={styles.form}>
+                      <Rating value={rating} onChange={setRating} />
+                      <p className="feedback-row">
+                        <span className="label">
+                          <span>Tell us how we can improve</span>{" "}
+                          <span className="option-text">(optional)</span>
+                        </span>
+
+                        <textarea
+                          className="feedback-input"
+                          value={feedback}
+                          onChange={(e) => setFeedback(e.target.value)}
+                        />
+                      </p>
+                      <p className="feedback-row submit-row">
+                        <button
+                          className="feedback-button"
+                          onClick={handleCancel}
+                          disabled={loading}
+                        >
+                          Not now
+                        </button>
+                        <button
+                          className="feedback-button feedback-submit"
+                          onClick={handleSubmit}
+                          disabled={loading || !rating}
+                        >
+                          Submit
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </CSSTransition>

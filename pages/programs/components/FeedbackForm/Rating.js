@@ -6,32 +6,62 @@ import styles from "./Rating.module.scss";
 const ratingList = [
   {
     value: 1,
-    content: (
-      <Image width={40} height={40} src="/assets/images/ratings/rating-1.png" />
+    content: ({ selected }) => (
+      <Image
+        width={40}
+        height={40}
+        src={`/assets/images/ratings/rating-1${
+          selected ? "-selected" : ""
+        }.png`}
+      />
     ),
   },
   {
     value: 2,
-    content: (
-      <Image width={40} height={40} src="/assets/images/ratings/rating-2.png" />
+    content: ({ selected }) => (
+      <Image
+        width={40}
+        height={40}
+        src={`/assets/images/ratings/rating-2${
+          selected ? "-selected" : ""
+        }.png`}
+      />
     ),
   },
   {
     value: 3,
-    content: (
-      <Image width={40} height={40} src="/assets/images/ratings/rating-3.png" />
+    content: ({ selected }) => (
+      <Image
+        width={40}
+        height={40}
+        src={`/assets/images/ratings/rating-3${
+          selected ? "-selected" : ""
+        }.png`}
+      />
     ),
   },
   {
     value: 4,
-    content: (
-      <Image width={40} height={40} src="/assets/images/ratings/rating-4.png" />
+    content: ({ selected }) => (
+      <Image
+        width={40}
+        height={40}
+        src={`/assets/images/ratings/rating-4${
+          selected ? "-selected" : ""
+        }.png`}
+      />
     ),
   },
   {
     value: 5,
-    content: (
-      <Image width={40} height={40} src="/assets/images/ratings/rating-5.png" />
+    content: ({ selected }) => (
+      <Image
+        width={40}
+        height={40}
+        src={`/assets/images/ratings/rating-5${
+          selected ? "-selected" : ""
+        }.png`}
+      />
     ),
   },
 ];
@@ -48,7 +78,7 @@ function Rating({ value, onChange }) {
           className={cx(styles.ratingItem, { selected: value === v.value })}
           onClick={() => handleClick(v)}
         >
-          {v.content}
+          {<v.content selected={value === v.value} />}
         </span>
       ))}
     </div>

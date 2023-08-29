@@ -11,9 +11,16 @@
   align-items: center;
   border-radius: 0.5rem;
   background: rgba(0, 117, 255, 0.08);
+  transition: border-radius 0.1s ease;
+
   cursor: pointer;
 
   &:global(.selected) {
-    background: rgba(0, 117, 255, 0.38);
+    border-radius: 50%;
+    background: linear-gradient(
+      338deg,
+      rgba(255, 122, 0, 0.28) 11.46%,
+      rgba(255, 178, 28, 0.42) 76.68%
+    );
   }
 }
