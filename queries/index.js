@@ -118,3 +118,24 @@ export const fetchProgramList = async () => {
 
   return queryToRows(response.data.query_result);
 };
+
+const APP_SCRIPT_ID =
+  "AKfycbzLroq5USlpyn2pC-UNm_1GdeVw6O20QfIPHXD8Ai4WmZShq9_VvlgpoN5X-KKXgvBM";
+
+export const postFeedback = async (formData) => {
+  const qs = new URLSearchParams();
+  for (const key in formData) {
+    qs.set(key, formData[key]);
+  }
+
+  const response = await axios.post(
+    `https://script.google.com/macros/s/${APP_SCRIPT_ID}/exec`,
+    qs.toString(),
+    {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    }
+  );
+  console.log("form response", response.data);
+};

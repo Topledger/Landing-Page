@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import "@/assets/styles/fonts.scss";
 
 import { useEffect, useMemo } from "react";

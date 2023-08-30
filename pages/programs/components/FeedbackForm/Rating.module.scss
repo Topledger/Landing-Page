@@ -1,0 +1,26 @@
+.ratingContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.ratingItem {
+  display: flex;
+  width: 4rem;
+  height: 4rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  background: rgba(0, 117, 255, 0.08);
+  transition: border-radius 0.1s ease;
+
+  cursor: pointer;
+
+  &:global(.selected) {
+    border-radius: 50%;
+    background: linear-gradient(
+      338deg,
+      rgba(255, 122, 0, 0.28) 11.46%,
+      rgba(255, 178, 28, 0.42) 76.68%
+    );
+  }
+}
