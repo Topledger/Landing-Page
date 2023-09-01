@@ -5,6 +5,7 @@ import styles from "./Rating.module.scss";
 
 const ratingList = [
   {
+    key: 'rating-1',
     value: 1,
     content: ({ selected }) => (
       <Image
@@ -17,6 +18,7 @@ const ratingList = [
     ),
   },
   {
+    key: 'rating-2',
     value: 2,
     content: ({ selected }) => (
       <Image
@@ -29,6 +31,7 @@ const ratingList = [
     ),
   },
   {
+    key: 'rating-3',
     value: 3,
     content: ({ selected }) => (
       <Image
@@ -41,6 +44,7 @@ const ratingList = [
     ),
   },
   {
+    key: 'rating-4',
     value: 4,
     content: ({ selected }) => (
       <Image
@@ -53,6 +57,7 @@ const ratingList = [
     ),
   },
   {
+    key: 'rating-5',
     value: 5,
     content: ({ selected }) => (
       <Image
@@ -75,6 +80,7 @@ function Rating({ value, onChange }) {
     <div className={styles.ratingContainer}>
       {ratingList.map((v) => (
         <span
+          key={v.key}
           className={cx(styles.ratingItem, { selected: value === v.value })}
           onClick={() => handleClick(v)}
         >
