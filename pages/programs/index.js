@@ -1,16 +1,19 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import cx from "classnames";
+import dynamic from "next/dynamic";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
-import dynamic from "next/dynamic";
-import cx from "classnames";
 
+import { sendEvent } from "helpers/gaHelper";
 import { fetchProgramList } from "queries";
-import styles from "./programs.module.scss";
-import ProgramAdressInput from "./components/ProgramAddressInput";
 import Loader from "./components/Loader";
-import Head from "next/head";
-import { pageView, sendEvent } from "helpers/gaHelper";
-import FeedbackForm from "./components/FeedbackForm";
+import ProgramAdressInput from "./components/ProgramAddressInput";
+import styles from "./programs.module.scss";
+
+const FeedbackForm = dynamic(() => import(/** webackChunkName: "FeedbackForm" */"@/components/FeedbackForm"), {
+  ssr: false
+});
 
 const DashboardHead = ({ programName }) => (
   <Head>
