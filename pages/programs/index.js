@@ -108,7 +108,11 @@ function Programs() {
       <DashboardHead programName={title} />
       <div className={styles.programContainer}>
         <div className="dashboard">
-          <ProgramAdressInput isDashboard onApply={() => {}} />
+          <ProgramAdressInput
+            isDashboard
+            onApply={() => {}}
+            programs={programList}
+          />
           <>
             <div className="dashboard-component">
               <div className="title">

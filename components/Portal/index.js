@@ -1,11 +1,7 @@
 import { createPortal } from "react-dom";
 
 const Portal = ({ children, container }) => {
-  return document.body ? (
-    createPortal(children, container ?? document.body)
-  ) : (
-    <></>
-  );
+  return container ? createPortal(children, container) : <></>;
 };
 
 Portal.defaultProps = {

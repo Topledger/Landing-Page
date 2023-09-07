@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useMemo } from "react";
 import cx from "classnames";
 
 import styles from "./index.module.scss";
@@ -26,11 +26,12 @@ export function Arrow({ className, focused, onClick }) {
   );
 }
 
-function PopularPrograms({ thumb, programs }) {
-  const router = useRouter();
-
+function PopularPrograms({ thumb, programs, onSelect }) {
   const handleClick = (program) => {
-    router.push(`/programs/${program.id}`);
+    // router.push(`/programs/${program.id}`);
+    if (onSelect) {
+      onSelect(program);
+    }
   };
 
   return (
@@ -88,55 +89,61 @@ const programs = [
   },
 ];
 
-const DashboardList = forwardRef(({ filterText, style, className }, ref) => {
-  const filteredPrograms = programs.filter((p) =>
-    RegExp(filterText, "i").test(p.name)
-  );
+const DashboardList = forwardRef(
+  ({ programList, filterText, style, className, onSelect }, ref) => {
+    const filteredPrograms = useMemo(() => {
+      const regex = RegExp(filterText, "i");
+      return programList.filter((p) => regex.test(p.name) || regex.test(p.id));
+    }, [filterText]);
 
-  return (
-    <div
-      className={cx(styles.dashboardListContainer, className)}
-      ref={ref}
-      style={style}
-    >
-      {!filterText && (
-        <>
-          <h2>Polular programs</h2>
-          <PopularPrograms thumb programs={programs.slice(0, 3)} />
-          <h2 style={{ marginTop: "1.5rem" }}>All programs</h2>
-          <PopularPrograms programs={programs} />
-        </>
-      )}
-      {filterText && (
-        <>
-          <h2>Search results</h2>
-          {filteredPrograms.length > 0 ? (
-            <PopularPrograms programs={filteredPrograms} />
-          ) : (
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                flexDirection: "column",
-              }}
-            >
-              <EmptyStates />
-              <span
+    return (
+      <div
+        className={cx(styles.dashboardListContainer, className)}
+        ref={ref}
+        style={style}
+      >
+        {false && !filterText && (
+          <>
+            <h2>Polular programs</h2>
+            <PopularPrograms thumb programs={programs.slice(0, 3)} />
+            <h2 style={{ marginTop: "1.5rem" }}>All programs</h2>
+            <PopularPrograms programs={programs} />
+          </>
+        )}
+        {filterText && (
+          <>
+            <h2>Search results</h2>
+            {filteredPrograms.length > 0 ? (
+              <PopularPrograms
+                programs={filteredPrograms}
+                onSelect={onSelect}
+              />
+            ) : (
+              <div
                 style={{
-                  display: "inline-block",
-                  marginTop: "-2rem",
-                  paddingBottom: "2rem",
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "column",
                 }}
               >
-                No results found
-              </span>
-            </div>
-          )}
-        </>
-      )}
-    </div>
-  );
-});
+                <EmptyStates />
+                <span
+                  style={{
+                    display: "inline-block",
+                    marginTop: "-2rem",
+                    paddingBottom: "2rem",
+                  }}
+                >
+                  No results found
+                </span>
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    );
+  }
+);
 
 DashboardList.displayName = "DashboardList";
 
