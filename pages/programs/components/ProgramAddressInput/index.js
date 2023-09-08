@@ -57,6 +57,14 @@ function ProgramAdressInput({ isDashboard, onApply, programs }) {
     }));
   }, [programs]);
 
+  const filteredPrograms = useMemo(() => {
+    const regex = RegExp(
+      filterText?.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"),
+      "i"
+    );
+    return programList.filter((p) => regex.test(p.name) || regex.test(p.id));
+  }, [filterText]);
+
   return (
     <>
       <div className={styles.container}>
@@ -85,7 +93,9 @@ function ProgramAdressInput({ isDashboard, onApply, programs }) {
       </div>
       <Portal container={portalContainer}>
         <Transition
-          in={filterText && filterText !== address}
+          in={
+            filterText && filterText !== address && filteredPrograms?.length > 0
+          }
           nodeRef={suggestionListRef}
           timeout={1000}
         >
@@ -97,7 +107,7 @@ function ProgramAdressInput({ isDashboard, onApply, programs }) {
                 ...transitionStyles[state],
               }}
               onSelect={handleSelect}
-              programList={programList}
+              programList={filteredPrograms}
               filterText={filterText}
             />
           )}

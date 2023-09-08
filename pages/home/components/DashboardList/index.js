@@ -90,12 +90,16 @@ const programs = [
 ];
 
 const DashboardList = forwardRef(
-  ({ programList = [], filterText, style, className, onSelect }, ref) => {
-    const filteredPrograms = useMemo(() => {
-      const regex = RegExp(filterText, "i");
-      return programList.filter((p) => regex.test(p.name) || regex.test(p.id));
-    }, [filterText]);
-
+  (
+    {
+      programList: filteredPrograms = [],
+      filterText,
+      style,
+      className,
+      onSelect,
+    },
+    ref
+  ) => {
     return (
       <div
         className={cx(styles.dashboardListContainer, className)}
