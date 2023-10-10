@@ -590,33 +590,35 @@ header .navLink img {
 .weOffer {
   background: #fbfcfe;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
-}
 
-.weOffer .offerMain {
-  display: grid;
-  grid-template-columns: 56% 45%;
-  margin: auto;
-  padding: 50px 8%;
-}
+  .offerMain {
+    display: grid;
+    grid-template-columns: 56% 45%;
+    margin: auto;
+    padding: 50px 8%;
 
-.weOffer .offerMain .offerContent h1 {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 120%;
-  letter-spacing: 0.02em;
-  color: rgba(0, 0, 0, 0.87);
-  font-family: "Helvetica 45 Light", sans-serif;
-}
+    .offerContent {
+      h1 {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: 0.02em;
+        color: rgba(0, 0, 0, 0.87);
+        font-family: "Helvetica 45 Light", sans-serif;
+      }
 
-.weOffer .offerMain .offerContent p {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  letter-spacing: 0.04em;
-  color: rgba(0, 0, 0, 0.54);
-  font-family: "Helvetica 45 Light", sans-serif;
-  text-align: left;
-  padding-bottom: 16px;
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        letter-spacing: 0.04em;
+        color: rgba(0, 0, 0, 0.54);
+        font-family: "Helvetica 45 Light", sans-serif;
+        text-align: left;
+        padding-bottom: 16px;
+      }
+    }
+  }
 }
 
 .signUp {
@@ -1210,6 +1212,10 @@ ul.social img {
     padding: 0px 16px;
     display: flex;
     flex-direction: column-reverse;
+
+    &.chainMain {
+      flex-direction: column;
+    }
   }
 
   .sub-header p {
@@ -1746,7 +1752,6 @@ header.blackBg .navLink img {
 }
 .trustedText {
   text-align: center;
-  padding-bottom: 40px;
 }
 .trustedText p {
   font-family: "Helvetica Neue";
@@ -1797,4 +1802,11 @@ header.blackBg .navLink img {
       }
     }
   }
+}
+
+main.page-main {
+  background-image: url("/assets/images/clientbg.webp");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
 }

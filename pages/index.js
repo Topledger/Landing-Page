@@ -11,6 +11,7 @@ import "../node_modules/slick-carousel/slick/slick.css";
 import "../node_modules/slick-carousel/slick/slick-theme.css";
 import CommunitySection from "../components/CommunitySection";
 import Hero from "./home/components/Hero";
+import TrustedBySection from "@/components/TrustedBySection";
 // import styles from "./index.module.css";
 
 export default function Home() {
@@ -37,95 +38,15 @@ export default function Home() {
         ></meta>
       </Head>
 
-      <main>
-        <div className="bg-blue sub-header">
-          <p>
-            Join our community of web3 data scientists and builders on
-            <a
-              title="discord"
-              href="https://discord.gg/q5bHa2rXmu"
-              target="_blank"
-              rel="noreferrer"
-            >
-              discord <img src="/assets/arrow-up.svg" alt="arrow-up" />
-            </a>
-          </p>
-        </div>
+      <main className="page-main">
         <Hero />
         <Visual />
         <BackedBy />
         <WeOffer />
         <ChainSection />
-        <div className="main-Section">
-          <div className="trustedText">
-            <p>Trusted by</p>
-          </div>
-          <div className="bottomImages">
-            <div className="icon">
-              <a
-                href="https://www.metaplex.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src="/assets/images/metaplex-logo.svg" alt="discord" />
-              </a>
-            </div>
-            <div className="icon">
-              <a href="https://gari.network/" target="_blank" rel="noreferrer">
-                <img src="/assets/images/gari-logo.svg" alt="discord" />
-              </a>
-            </div>
-            <div className="icon">
-              <a href="https://squads.so/" target="_blank" rel="noreferrer">
-                <img src="/assets/images/squads-logo.svg" alt="discord" />
-              </a>
-            </div>
-
-            <div className="icon">
-              <a href="https://invariant.app/" target="_blank" rel="noreferrer">
-                <img src="/assets/images/invariant-logo.svg" alt="discord" />
-              </a>
-            </div>
-            <div className="icon">
-              <a href="https://tulip.garden/" target="_blank" rel="noreferrer">
-                <img src="/assets/images/tulip-logo.svg" alt="discord" />
-              </a>
-            </div>
-          </div>
-          {/* <div className="bottomImages">
-            <div className="icon">
-              <img src="/assets/images/Component.svg" alt="discord" />
-            </div>
-            <div className="icon">
-              <img src="/assets/images/solana-lab.svg" alt="discord" />
-            </div>
-            <div className="icon">
-              <img src="/assets/images/solana-lab.svg" alt="discord" />
-            </div>
-            <div className="icon">
-              <img src="/assets/images/solana-lab.svg" alt="discord" />
-            </div>
-            <div className="icon">
-              <img src="/assets/images/solana-lab.svg" alt="discord" />
-            </div>
-          </div>
-          <div className="bottomImages">
-            <div className="icon">
-              <img src="/assets/images/Component.svg" alt="discord" />
-            </div>
-            <div className="icon">
-              <img src="/assets/images/solana-lab.svg" alt="discord" />
-            </div>
-            <div className="icon">
-              <img src="/assets/images/solana-lab.svg" alt="discord" />
-            </div>
-            <div className="icon">
-              <img src="/assets/images/solana-lab.svg" alt="discord" />
-            </div>
-          </div> */}
-        </div>
+        <TrustedBySection />
         {/* <Client /> */}
-        <CommunitySection />
+        {/* <CommunitySection /> */}
       </main>
     </div>
   );
