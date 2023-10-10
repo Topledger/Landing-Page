@@ -82,6 +82,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      justify-content: center;
       gap: calc(2.33rem / var(--scaling-factor));
 
       border-radius: calc(3.2rem / var(--scaling-factor));
