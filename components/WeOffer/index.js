@@ -16,10 +16,9 @@ const WeOffer = () => {
             <h1>Build custom dashboards using plain SQL</h1>
             <p>
               Create successful business strategies, generate meaningful graphs
-              and do powerful analysis on the decoded Solana program
-              data. Our backend infra pulls in raw data from the Solana
-              blockchain and labels and indexes them into different tables on a
-              daily basis.
+              and do powerful analysis on the decoded Solana program data. Our
+              backend infra pulls in raw data from the Solana blockchain and
+              labels and indexes them into different tables on a daily basis.
             </p>
             <p>
               Run blazingly fast SQL queries and leave auto-scaling, replication
@@ -30,12 +29,15 @@ const WeOffer = () => {
             </Link>
           </div>
           <div className="offerImage">
-            <img src="assets/images/offer.png" />
+            <img
+              style={{ border: "1px solid #D8E3FF", borderRadius: "1rem" }}
+              src="assets/images/offer.png"
+            />
           </div>
         </div>
       </section>
 
-      <section className="sources">
+      {/* <section className="sources">
         <div className="sourcesMain">
           <div className="sourcesImage">
             <img src="assets/images/weOffer.png" />
@@ -54,7 +56,7 @@ const WeOffer = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
