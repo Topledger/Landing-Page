@@ -29,7 +29,10 @@ const WeOffer = () => {
             </Link>
           </div>
           <div className="offerImage">
-            <img src="assets/images/offer.png" />
+            <img
+              style={{ border: "1px solid #D8E3FF", borderRadius: "1rem" }}
+              src="assets/images/offer.png"
+            />
           </div>
         </div>
       </section>
