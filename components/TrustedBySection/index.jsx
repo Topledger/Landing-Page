@@ -4,8 +4,8 @@ import styles from "./index.module.scss";
 
 const trustees = [
   {
-    link: "https://tulip.garden/",
-    icon: "/assets/images/trustee-icons/solana-foundation.svg",
+    link: "https://solana.org/",
+    icon: "/assets/images/trustee-icons/solana-foundation.png",
     name: "Solana Foundation",
   },
   {
@@ -14,32 +14,32 @@ const trustees = [
     name: "Metaplex",
   },
   {
-    link: "https://tulip.garden/",
+    link: "https://www.orca.so/",
     icon: "/assets/images/trustee-icons/orca.svg",
     name: "Orca",
   },
   {
-    link: "https://invariant.app/",
+    link: "https://www.drift.trade/",
     icon: "/assets/images/trustee-icons/drift.svg",
     name: "Drift",
   },
   {
-    link: "https://tulip.garden/",
+    link: "https://squads.so/",
     icon: "/assets/images/trustee-icons/squads.svg",
     name: "Squads",
   },
   {
-    link: "https://tulip.garden/",
+    link: "https://switchboard.xyz/",
     icon: "/assets/images/trustee-icons/switchboard.svg",
     name: "Switchboard",
   },
   {
-    link: "https://gari.network/",
+    link: "https://drip.haus/",
     icon: "/assets/images/trustee-icons/drip.svg",
     name: "Drip",
   },
   {
-    link: "https://squads.so/",
+    link: "https://www.frakt.xyz/",
     icon: "/assets/images/trustee-icons/frakt.svg",
     name: "Frakt",
   },
