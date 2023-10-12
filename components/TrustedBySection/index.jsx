@@ -54,7 +54,7 @@ const TrustedBySection = () => {
       <div className={styles.imagesContainer}>
         <div className={styles.bottomImages}>
           {trustees.map((trustee) => (
-            <div className="icon">
+            <div className="icon" key={trustee.name}>
               <a href={trustee.link} target="_blank" rel="noreferrer">
                 <img src={trustee.icon} alt={trustee.name} />
               </a>
