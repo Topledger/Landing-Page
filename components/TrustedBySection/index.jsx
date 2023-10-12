@@ -5,7 +5,7 @@ import styles from "./index.module.scss";
 const trustees = [
   {
     link: "https://solana.org/",
-    icon: "/assets/images/trustee-icons/solana-foundation.svg",
+    icon: "/assets/images/trustee-icons/solana-foundation.png",
     name: "Solana Foundation",
   },
   {
