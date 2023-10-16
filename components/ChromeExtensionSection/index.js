@@ -3,7 +3,15 @@ import styles from "./index.module.scss";
 
 const AddToChromeButton = () => {
   return (
-    <span className={styles.addToChrome}>
+    <span
+      className={styles.addToChrome}
+      onClick={() =>
+        window.open(
+          "https://chrome.google.com/webstore/detail/top-ledger-end-to-end-blo/nkinmfenfjlhhaphmdmnjejcacaebmbd",
+          "_blank"
+        )
+      }
+    >
       <Image
         width={30}
         height={25}
@@ -26,7 +34,7 @@ export const ChromeExtensionSection = () => {
           deeper and actionable insights about your project from alternative
           data sources like Twitter, Telegram & Discord.
         </p>
-        <p>
+        <p style={{ textAlign: "left", marginTop: "1.5rem" }}>
           <AddToChromeButton />
         </p>
       </div>
