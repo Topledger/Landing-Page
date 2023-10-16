@@ -4,19 +4,27 @@
   padding: 5rem 6rem;
   gap: 2rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 991px) {
     flex-direction: column;
     padding: 1rem 2rem;
   }
 }
 
 .textSection {
-  color: #fff;
+  color: #eef2fc;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  font-family: "Helvetica 45 Light", sans-serif;
   p {
-    color: #fff;
     text-align: left;
     display: flex;
     justify-content: flex-start;
+    color: #eef2fc;
+    font-family: "Helvetica 45 Light", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 140%;
+    letter-spacing: 0.04em;
   }
   flex: 2;
 }
@@ -26,7 +34,7 @@
   flex: 3;
   margin-bottom: -5rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 991px) {
     margin-bottom: -1rem;
   }
 }
@@ -50,7 +58,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 991px) {
     margin-top: 1rem;
   }
 }
