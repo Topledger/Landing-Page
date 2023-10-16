@@ -1,0 +1,29 @@
+.pageHeader {
+  :global {
+    .navMain {
+      .right-section {
+        display: inline-flex;
+        gap: 1.62rem;
+        align-items: center;
+
+        .login-btn {
+          display: inline-flex;
+          padding: 0.5rem 1.5rem;
+          justify-content: flex-end;
+          align-items: center;
+
+          border-radius: 1.5625rem;
+          border: 2px solid #4383ff;
+          background: #eef2fc;
+
+          font-size: 1.125rem;
+          font-weight: 500;
+          letter-spacing: 0.045rem;
+          background: linear-gradient(94deg, #4383ff -15.13%, #6a5cff 107.24%);
+          background-clip: text;
+          color: #4383ff;
+        }
+      }
+    }
+  }
+}

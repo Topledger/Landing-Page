@@ -10,6 +10,7 @@ import Visual from "@/components/Visual";
 import WeOffer from "@/components/WeOffer";
 
 import Hero from "./components/Hero";
+import { ChromeExtensionSection } from "@/components/ChromeExtensionSection";
 
 export default function Home() {
   return (
@@ -40,6 +41,7 @@ export default function Home() {
         <Visual />
         <BackedBy />
         <WeOffer />
+        <ChromeExtensionSection />
         <ChainSection />
         {/* <Client /> */}
         {/* <CommunitySection /> */}

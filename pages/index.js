@@ -12,6 +12,7 @@ import "../node_modules/slick-carousel/slick/slick-theme.css";
 import CommunitySection from "../components/CommunitySection";
 import Hero from "./home/components/Hero";
 import TrustedBySection from "@/components/TrustedBySection";
+import { ChromeExtensionSection } from "@/components/ChromeExtensionSection";
 // import styles from "./index.module.css";
 
 export default function Home() {
@@ -44,6 +45,7 @@ export default function Home() {
         <BackedBy />
         <WeOffer />
         <ChainSection />
+        <ChromeExtensionSection />
         <TrustedBySection />
         {/* <Client /> */}
         {/* <CommunitySection /> */}
