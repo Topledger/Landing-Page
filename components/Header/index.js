@@ -1,7 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import cx from "classnames";
+
 import { DarkModeContext } from "../../context/DarkMode";
+
+import styles from "./index.module.scss";
 
 const Header = () => {
   const router = useRouter();
@@ -19,9 +23,9 @@ const Header = () => {
 
   return (
     <header
-      className={
-        router.pathname === "/dashboards" && isDarkMode ? "blackBg" : ""
-      }
+      className={cx(styles.pageHeader, {
+        blackBg: router.pathname === "/dashboards" && isDarkMode,
+      })}
     >
       {/* <div className="container"> */}
       <div className={`navMain ${menuOpen && "boxNavMain"}`}>
@@ -34,13 +38,20 @@ const Header = () => {
             )}
           </Link>
         </div>
-
-        <div className="navLink" onClick={() => toggleMenu()}>
-          {menuOpen ? (
-            <img src="/assets/images/cross.svg" alt="cross-icon" />
-          ) : (
-            <img src="/assets/images/navIcon.png" alt="menu-icon" />
-          )}
+        <div className="right-section">
+          <button
+            className="login-btn"
+            onClick={() => window.open("https://analytics.topledger.xyz")}
+          >
+            Login
+          </button>
+          <div className="navLink" onClick={() => toggleMenu()}>
+            {menuOpen ? (
+              <img src="/assets/images/cross.svg" alt="cross-icon" />
+            ) : (
+              <img src="/assets/images/navIcon.png" alt="menu-icon" />
+            )}
+          </div>
         </div>
       </div>
       {/* </div> */}
