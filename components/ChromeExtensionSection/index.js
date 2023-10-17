@@ -29,10 +29,7 @@ export const ChromeExtensionSection = () => {
       <div className={styles.textSection}>
         <h3>Chrome Extension</h3>
         <p>
-          Access deeper and actionable insights about your project from
-          alternative data sources like Twitter, Telegram & Discord. Access
-          deeper and actionable insights about your project from alternative
-          data sources like Twitter, Telegram & Discord.
+          Explore the vital statistics of any Solana-based project at a glance! With the Top Ledger chrome extension, effortlessly access key metrics such as transactions, active wallets, volume, TVL, and even comparative analysis.<br />Seamlessly integrate in-depth insights into your browsing experience and unlock a wealth of blockchain analysis, all within your browser!
         </p>
         <p style={{ textAlign: "left", marginTop: "1.5rem" }}>
           <AddToChromeButton />
