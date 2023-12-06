@@ -14,7 +14,7 @@ export const DASHBOARDS = {
   token: {
     client: "tl",
     token: "NECxpxtYkwl4p3AnXN8pUEZpdy57h8jO0xADB3PZ",
-    adddressParamName: "token mint",
+    adddressParamName: "token  mint",
     title: "Solana Token",
   },
 };

@@ -121,12 +121,12 @@ function Programs() {
         }
       }
     },
-    [programList]
+    [programList, dashboard]
   );
 
   useEffect(() => {
     updateParameterAddress(address);
-  }, [address]);
+  }, [dashboard, address]);
 
   useEffect(() => {
     if (address) {
