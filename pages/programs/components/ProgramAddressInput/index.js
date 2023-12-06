@@ -38,6 +38,19 @@ function ProgramAdressInput({ isDashboard, onApply, programs }) {
     }
   };
 
+  useEffect(() => {
+    if (!address) {
+      const queryParams = new URLSearchParams(location.search);
+      queryParams.set(
+        "p_Program Address",
+        "JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB"
+      );
+      const newURL = new URL(location.href);
+      newURL.search = queryParams.toString();
+      router.push(newURL.href);
+    }
+  }, []);
+
   const handleSelect = (program) => {
     console.log("program", program);
     if (program.id) {

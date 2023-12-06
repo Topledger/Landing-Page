@@ -6,14 +6,18 @@ import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 
 import { sendEvent } from "helpers/gaHelper";
-import { fetchProgramList } from "queries";
+import { fetchAddressInfo, fetchProgramList } from "queries";
 import Loader from "./components/Loader";
 import ProgramAdressInput from "./components/ProgramAddressInput";
 import styles from "./programs.module.scss";
 
-const FeedbackForm = dynamic(() => import(/** webackChunkName: "FeedbackForm" */"@/components/FeedbackForm"), {
-  ssr: false
-});
+const FeedbackForm = dynamic(
+  () =>
+    import(/** webackChunkName: "FeedbackForm" */ "@/components/FeedbackForm"),
+  {
+    ssr: false,
+  }
+);
 
 const DashboardHead = ({ programName }) => (
   <Head>
@@ -43,12 +47,34 @@ const TLDashboards = dynamic(
   }
 );
 
+const DASHBOARDS = {
+  programs: {
+    client: "tl",
+    token: "oIEupNW8g4Ua9C64JvUsYRLNlOZej940x341KaAH",
+    adddressParamName: "Program Address",
+    title: "Solana Program",
+  },
+  wallet: {
+    client: "tl",
+    token: "ZfXfJZaOF4bGnQjV7W7C8xDkfHHDptITVJkQ8SF3",
+    adddressParamName: "Program Address",
+    title: "Solana Wallet",
+  },
+  token: {
+    client: "tl",
+    token: "NECxpxtYkwl4p3AnXN8pUEZpdy57h8jO0xADB3PZ",
+    adddressParamName: "Program Address",
+    title: "Solana Token",
+  },
+};
+
 function Programs() {
   const router = useRouter();
   const dashboardRef = useRef();
-  const { ["p_Program Address"]: address } = router.query;
   const [dashboardLoading, setDashboardLoading] = useState(true);
   const parametersRef = useRef();
+  const [dashboard, setDashboard] = useState(DASHBOARDS.programs);
+  const { [`p_${dashboard.adddressParamName}`]: address } = router.query;
 
   const { data: programList = {}, isLoading } = useQuery(
     "PROGRAM_LIST",
@@ -58,10 +84,21 @@ function Programs() {
       ),
     {
       cacheTime: 3600,
+      refetchOnWindowFocus: false,
     }
   );
 
-  const title = programList[address]?.program_name ?? "Solana Program";
+  const { data: addressInfo, isLoading: isAddressLoading } = useQuery(
+    ["ADDRESS_INFO", address],
+    () => fetchAddressInfo({ address }),
+    {
+      cacheTime: 3600,
+      refetchOnWindowFocus: false,
+      enabled: !!address,
+    }
+  );
+
+  const title = programList[address]?.program_name ?? dashboard?.title;
   const subTitle = address;
 
   const handleDashboardLoad = useCallback(
@@ -80,7 +117,7 @@ function Programs() {
         let updated = false;
         parameters.forEach((parameter) => {
           if (
-            parameter.name === "Program Address" &&
+            parameter.name === dashboard.adddressParamName &&
             parameter.getExecutionValue() !== address
           ) {
             parameter.setValue(address);
@@ -106,6 +143,19 @@ function Programs() {
     // pageView({ path: window.location.pathname, title });
   }, [address]);
 
+  useEffect(() => {
+    if (addressInfo) {
+      console.log("addressInfo", addressInfo);
+      setDashboard(
+        addressInfo.isProgram
+          ? DASHBOARDS.programs
+          : addressInfo.isToken
+          ? DASHBOARDS.token
+          : DASHBOARDS.wallet
+      );
+    }
+  }, [addressInfo]);
+
   return (
     <>
       <DashboardHead programName={title} />
@@ -122,20 +172,22 @@ function Programs() {
                 <span className="title-text">{title}</span>
                 <span className="title-subtext">{subTitle}</span>
               </div>
-              {isLoading && <Loader />}
+              {isLoading && isAddressLoading && <Loader />}
               <div
                 className={cx(styles.dashboardContainer, { dashboardLoading })}
               >
-                <TLDashboards
-                  key={address}
-                  client="tl"
-                  token="oIEupNW8g4Ua9C64JvUsYRLNlOZej940x341KaAH"
-                  className={styles.dashboard}
-                  loader={<Loader />}
-                  onDashboardLoad={handleDashboardLoad}
-                  parameters={parametersRef.current}
-                  dashboardRef={dashboardRef}
-                />
+                {address && dashboard.token && dashboard.client && (
+                  <TLDashboards
+                    key={address}
+                    client={dashboard.client}
+                    token={dashboard.token}
+                    className={styles.dashboard}
+                    loader={<Loader />}
+                    onDashboardLoad={handleDashboardLoad}
+                    parameters={parametersRef.current}
+                    dashboardRef={dashboardRef}
+                  />
+                )}
               </div>
               {!isLoading && !dashboardLoading && <FeedbackForm />}
             </div>
