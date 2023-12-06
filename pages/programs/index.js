@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import cx from "classnames";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 
 import { sendEvent } from "helpers/gaHelper";
@@ -10,6 +9,12 @@ import { fetchAddressInfo, fetchProgramList } from "queries";
 import Loader from "./components/Loader";
 import ProgramAdressInput from "./components/ProgramAddressInput";
 import styles from "./programs.module.scss";
+import {
+  DASHBOARDS,
+  DASHBOARD_PARAM_MAPPING,
+  PARAMETER_NAMES,
+} from "./constants";
+import { useSearchObject } from "./utils";
 
 const FeedbackForm = dynamic(
   () =>
@@ -47,34 +52,21 @@ const TLDashboards = dynamic(
   }
 );
 
-const DASHBOARDS = {
-  programs: {
-    client: "tl",
-    token: "oIEupNW8g4Ua9C64JvUsYRLNlOZej940x341KaAH",
-    adddressParamName: "Program Address",
-    title: "Solana Program",
-  },
-  wallet: {
-    client: "tl",
-    token: "ZfXfJZaOF4bGnQjV7W7C8xDkfHHDptITVJkQ8SF3",
-    adddressParamName: "Program Address",
-    title: "Solana Wallet",
-  },
-  token: {
-    client: "tl",
-    token: "NECxpxtYkwl4p3AnXN8pUEZpdy57h8jO0xADB3PZ",
-    adddressParamName: "Program Address",
-    title: "Solana Token",
-  },
-};
-
 function Programs() {
-  const router = useRouter();
+  const query = useSearchObject();
   const dashboardRef = useRef();
   const [dashboardLoading, setDashboardLoading] = useState(true);
   const parametersRef = useRef();
-  const [dashboard, setDashboard] = useState(DASHBOARDS.programs);
-  const { [`p_${dashboard.adddressParamName}`]: address } = router.query;
+
+  const [parameterName, setParameterName] = useState(
+    PARAMETER_NAMES.find((name) => query[`p_${name}`]) ??
+      DASHBOARDS.programs.adddressParamName
+  );
+
+  const [dashboard, setDashboard] = useState(
+    DASHBOARD_PARAM_MAPPING[parameterName]
+  );
+  const address = query[`p_${parameterName}`];
 
   const { data: programList = {}, isLoading } = useQuery(
     "PROGRAM_LIST",
@@ -146,13 +138,13 @@ function Programs() {
   useEffect(() => {
     if (addressInfo) {
       console.log("addressInfo", addressInfo);
-      setDashboard(
-        addressInfo.isProgram
-          ? DASHBOARDS.programs
-          : addressInfo.isToken
-          ? DASHBOARDS.token
-          : DASHBOARDS.wallet
-      );
+      const dashboard = addressInfo.isProgram
+        ? DASHBOARDS.programs
+        : addressInfo.isToken
+        ? DASHBOARDS.token
+        : DASHBOARDS.wallet;
+      setDashboard(dashboard);
+      setParameterName(dashboard.adddressParamName);
     }
   }, [addressInfo]);
 
@@ -163,6 +155,7 @@ function Programs() {
         <div className="dashboard">
           <ProgramAdressInput
             isDashboard
+            parameterName={parameterName}
             onApply={() => {}}
             programs={programList}
           />
@@ -198,4 +191,6 @@ function Programs() {
   );
 }
 
-export default Programs;
+export default dynamic(() => Promise.resolve(Programs), {
+  ssr: false,
+});
