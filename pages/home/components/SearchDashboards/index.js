@@ -83,7 +83,7 @@ function SearchDashboards() {
           router.push("/programs?p_Program+Address=JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB");
         }}
         ref={searchRef}
-        placeholder="Enter a program"
+        placeholder="Program/Token"
       />
       <Transition in={searchActive} nodeRef={dashboardListRef}>
         {(state) => (
