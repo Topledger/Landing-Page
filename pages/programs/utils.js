@@ -30,3 +30,8 @@ export function useSearchObject() {
     return Object.fromEntries(params.entries());
   }, [params]);
 }
+
+export default {
+  useSearchParams,
+  useSearchObject,
+};
