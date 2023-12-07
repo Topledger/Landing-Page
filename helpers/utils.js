@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 export function useSearchParams() {
   const router = useRouter();
   const [params, setParams] = useState(
-    new URLSearchParams(window?.location?.search)
+    new URLSearchParams((typeof window==='undefined' ? {} : window)?.location?.search)
   );
   console.log("router.asPath", router.asPath);
 

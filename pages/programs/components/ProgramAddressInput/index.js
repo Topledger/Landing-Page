@@ -9,8 +9,8 @@ import DashboardList, { Arrow } from "pages/home/components/DashboardList";
 import searchStyles from "../../../home/components/SearchDashboards/index.module.scss";
 import styles from "./ProgramAddressInput.module.scss";
 import Portal from "@/components/Portal";
-import { PARAMETER_NAMES } from "pages/programs/constants";
-import { useSearchObject } from "pages/programs/utils";
+import { PARAMETER_NAMES } from "../../../../constants/constants";
+import { useSearchObject } from "helpers/utils";
 import { useRouter } from "next/router";
 
 function ProgramAdressInput({ isDashboard, parameterName, onApply, programs }) {
