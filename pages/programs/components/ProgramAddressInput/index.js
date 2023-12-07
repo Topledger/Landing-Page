@@ -38,7 +38,8 @@ function ProgramAdressInput({ isDashboard, parameterName, onApply, programs }) {
       queryParams.set(`p_${parameterName}`, value ?? filterText);
       const newURL = new URL(location.href);
       newURL.search = queryParams.toString();
-      router.push(newURL.href);
+      // router.push(newURL.href);
+      window.location.href = newURL.href;
       // onApply(value ?? filterText)
     }
   };
@@ -53,7 +54,8 @@ function ProgramAdressInput({ isDashboard, parameterName, onApply, programs }) {
       );
       const newURL = new URL(location.href);
       newURL.search = queryParams.toString();
-      router.push(newURL.href);
+      // router.push(newURL.href);
+      window.location.href = newURL.href;
     }
   }, []);
 
