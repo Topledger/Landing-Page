@@ -114,11 +114,11 @@ function ProgramAdressInput({ isDashboard, parameterName, onApply, programs }) {
             className={cx(searchStyles.search, styles.search, {
               dashboardInput: isDashboard,
             })}
-            onStateChange={() => {}}
+            onStateChange={() => { }}
             onChange={handleInputChange}
             ref={searchRef}
             defaultFocused
-            placeholder="Enter a address"
+            placeholder="Enter a Program or Token Address"
             onEnter={handleArrowClick}
             value={filterText}
           />
