@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useRouter } from "next/router";
 import cx from "classnames";
 import { usePopper } from "react-popper";
 import { Transition } from "react-transition-group";
@@ -10,14 +9,19 @@ import DashboardList, { Arrow } from "pages/home/components/DashboardList";
 import searchStyles from "../../../home/components/SearchDashboards/index.module.scss";
 import styles from "./ProgramAddressInput.module.scss";
 import Portal from "@/components/Portal";
+import { PARAMETER_NAMES } from "pages/programs/constants";
+import { useSearchObject } from "pages/programs/utils";
+import { useRouter } from "next/router";
 
-function ProgramAdressInput({ isDashboard, onApply, programs }) {
+function ProgramAdressInput({ isDashboard, parameterName, onApply, programs }) {
   const [filterText, setFilterText] = useState("");
   const [portalContainer, setPortalContainer] = useState();
   const searchRef = useRef();
   const router = useRouter();
+  const query = useSearchObject();
   const suggestionListRef = useRef();
-  const { ["p_Program Address"]: address } = router.query;
+  const { [`p_${parameterName}`]: address } = query;
+  console.log("address", address, query);
   const { styles: popperStyles } = usePopper(
     searchRef.current,
     suggestionListRef.current
@@ -30,16 +34,50 @@ function ProgramAdressInput({ isDashboard, onApply, programs }) {
   const handleArrowClick = (value) => {
     if (filterText) {
       const queryParams = new URLSearchParams(location.search);
-      queryParams.set("p_Program Address", value ?? filterText);
+      PARAMETER_NAMES.forEach((name) => queryParams.delete(`p_${name}`));
+      queryParams.set(`p_${parameterName}`, value ?? filterText);
       const newURL = new URL(location.href);
       newURL.search = queryParams.toString();
-      router.push(newURL.href);
+      // router.push(newURL.href);
+      window.location.href = newURL.href;
       // onApply(value ?? filterText)
     }
   };
 
+  useEffect(() => {
+    if (!address) {
+      const queryParams = new URLSearchParams(location.search);
+      PARAMETER_NAMES.forEach((name) => queryParams.delete(`p_${name}`));
+      queryParams.set(
+        `p_${parameterName}`,
+        "JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB"
+      );
+      const newURL = new URL(location.href);
+      newURL.search = queryParams.toString();
+      // router.push(newURL.href);
+      window.location.href = newURL.href;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (parameterName) {
+      const queryParams = new URLSearchParams(location.search);
+      const currentParamName = PARAMETER_NAMES.find((name) =>
+        queryParams.has(`p_${name}`)
+      );
+      if (currentParamName) {
+        const address = queryParams.get(`p_${currentParamName}`);
+        queryParams.delete(`p_${currentParamName}`);
+        queryParams.set(`p_${parameterName}`, address);
+
+        const newURL = new URL(location.href);
+        newURL.search = queryParams.toString();
+        router.push(newURL.href);
+      }
+    }
+  }, [parameterName]);
+
   const handleSelect = (program) => {
-    console.log("program", program);
     if (program.id) {
       setFilterText(program.id);
       handleArrowClick(program.id);
@@ -76,11 +114,11 @@ function ProgramAdressInput({ isDashboard, onApply, programs }) {
             className={cx(searchStyles.search, styles.search, {
               dashboardInput: isDashboard,
             })}
-            onStateChange={() => {}}
+            onStateChange={() => { }}
             onChange={handleInputChange}
             ref={searchRef}
             defaultFocused
-            placeholder="Enter a program address"
+            placeholder="Enter a Program or Token Address"
             onEnter={handleArrowClick}
             value={filterText}
           />

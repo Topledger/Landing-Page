@@ -139,3 +139,37 @@ export const postFeedback = async (formData) => {
   );
   console.log("form response", response.data);
 };
+
+export const fetchAddressInfo = async ({ address }) => {
+  const data = {
+    jsonrpc: "2.0",
+    id: 1,
+    method: "getAccountInfo",
+    params: [
+      address,
+      {
+        encoding: "jsonParsed",
+      },
+    ],
+  };
+  const response = await axios.post(
+    "https://external-api.topledger.xyz/",
+    data,
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: false,
+    }
+  );
+  const result = response?.data?.result || {};
+  const type = result?.value?.data?.parsed?.type;
+  const info = result?.value?.data?.parsed?.info;
+  return {
+    isProgram: type === "program",
+    isToken: type === "mint" || (type === "account" && info?.mint),
+    isWallet:
+      result?.value?.data?.parsed?.info?.owner ===
+      "11111111111111111111111111111111",
+  };
+};
