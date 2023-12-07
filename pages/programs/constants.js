@@ -7,7 +7,7 @@ export const DASHBOARDS = {
   },
   wallet: {
     client: "tl",
-    token: "ZfXfJZaOF4bGnQjV7W7C8xDkfHHDptITVJkQ8SF3",
+    token: "T36Gx8PC8nZtot8jqIbM8yMU1l2ZjvCltXs2MLY5",
     adddressParamName: "wallet address",
     title: "Solana Wallet",
   },
