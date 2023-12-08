@@ -30,9 +30,3 @@ export const DASHBOARD_PARAM_MAPPING = Object.keys(DASHBOARDS).reduce(
 export const PARAMETER_NAMES = Object.keys(DASHBOARDS).map(
   (type) => DASHBOARDS[type].adddressParamName
 );
-
-export default {
-  DASHBOARDS,
-  DASHBOARD_PARAM_MAPPING,
-  PARAMETER_NAMES,
-};
