@@ -4,17 +4,17 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useQuery } from "react-query";
 
+import {
+  DASHBOARDS,
+  DASHBOARD_PARAM_MAPPING,
+  PARAMETER_NAMES,
+} from "constants/constants";
+import { useSearchObject } from "helpers/utils";
 import { sendEvent } from "helpers/gaHelper";
 import { fetchAddressInfo, fetchProgramList } from "queries";
 import Loader from "./components/Loader";
 import ProgramAdressInput from "./components/ProgramAddressInput";
 import styles from "./programs.module.scss";
-import {
-  DASHBOARDS,
-  DASHBOARD_PARAM_MAPPING,
-  PARAMETER_NAMES,
-} from "../../constants/constants";
-import { useSearchObject } from "../../helpers/utils";
 
 const FeedbackForm = dynamic(
   () =>
@@ -60,7 +60,7 @@ function Programs() {
 
   const [parameterName, setParameterName] = useState(
     PARAMETER_NAMES.find((name) => query[`p_${name}`]) ??
-    DASHBOARDS.programs.adddressParamName
+      DASHBOARDS.programs.adddressParamName
   );
 
   const [dashboard, setDashboard] = useState(
@@ -141,8 +141,8 @@ function Programs() {
       const dashboard = addressInfo.isProgram
         ? DASHBOARDS.programs
         : addressInfo.isToken
-          ? DASHBOARDS.token
-          : DASHBOARDS.wallet;
+        ? DASHBOARDS.token
+        : DASHBOARDS.wallet;
       setDashboard(dashboard);
       setParameterName(dashboard.adddressParamName);
     }
@@ -156,7 +156,7 @@ function Programs() {
           <ProgramAdressInput
             isDashboard
             parameterName={parameterName}
-            onApply={() => { }}
+            onApply={() => {}}
             programs={programList}
           />
           <>
