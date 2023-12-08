@@ -1,17 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import cx from "classnames";
+import { useRouter } from "next/router";
 import { usePopper } from "react-popper";
 import { Transition } from "react-transition-group";
 
 import SearchInput from "@/components/SearchInput";
 import DashboardList, { Arrow } from "pages/home/components/DashboardList";
 
+import Portal from "@/components/Portal";
+import { PARAMETER_NAMES } from "constants/constants";
+import { useSearchObject } from "helpers/utils";
+
 import searchStyles from "../../../home/components/SearchDashboards/index.module.scss";
 import styles from "./ProgramAddressInput.module.scss";
-import Portal from "@/components/Portal";
-import { PARAMETER_NAMES } from "../../../../constants/constants";
-import { useSearchObject } from "helpers/utils";
-import { useRouter } from "next/router";
 
 function ProgramAdressInput({ isDashboard, parameterName, onApply, programs }) {
   const [filterText, setFilterText] = useState("");
@@ -114,7 +115,7 @@ function ProgramAdressInput({ isDashboard, parameterName, onApply, programs }) {
             className={cx(searchStyles.search, styles.search, {
               dashboardInput: isDashboard,
             })}
-            onStateChange={() => { }}
+            onStateChange={() => {}}
             onChange={handleInputChange}
             ref={searchRef}
             defaultFocused

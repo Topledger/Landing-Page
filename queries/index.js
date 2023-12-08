@@ -168,8 +168,6 @@ export const fetchAddressInfo = async ({ address }) => {
   return {
     isProgram: type === "program",
     isToken: type === "mint" || (type === "account" && info?.mint),
-    isWallet:
-      result?.value?.data?.parsed?.info?.owner ===
-      "11111111111111111111111111111111",
+    isWallet: result?.value?.owner === "11111111111111111111111111111111",
   };
 };
