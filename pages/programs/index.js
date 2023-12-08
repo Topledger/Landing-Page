@@ -138,11 +138,11 @@ function Programs() {
   useEffect(() => {
     if (addressInfo) {
       console.log("addressInfo", addressInfo);
-      const dashboard = addressInfo.isProgram
-        ? DASHBOARDS.programs
+      const dashboard = addressInfo.isWallet
+        ? DASHBOARDS.wallet
         : addressInfo.isToken
         ? DASHBOARDS.token
-        : DASHBOARDS.wallet;
+        : DASHBOARDS.programs;
       setDashboard(dashboard);
       setParameterName(dashboard.adddressParamName);
     }
