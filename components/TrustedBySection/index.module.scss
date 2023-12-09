@@ -8,8 +8,8 @@
   align-items: center;
   background-color: rgba(255, 255, 255, 0);
   backdrop-filter: blur(8px);
-  padding: calc(10.4rem / var(--scaling-factor))
-    calc(17.6rem / var(--scaling-factor)) calc(12.6rem / var(--scaling-factor));
+  padding: calc(10.4rem / var(--scaling-factor)) calc(17.6rem / var(--scaling-factor)) calc(12.6rem / var(--scaling-factor));
+  position: relative;
 
   &::before {
     content: " ";
@@ -28,9 +28,11 @@
     .trustedText {
       position: relative;
       padding-bottom: 2rem;
+
       p {
         font-weight: 600;
       }
+
       &::after {
         content: " ";
         display: inline-block;
@@ -52,13 +54,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: calc(5rem / var(--scaling-factor))
-      calc(10rem / var(--scaling-factor));
+    padding: calc(5rem / var(--scaling-factor)) calc(10rem / var(--scaling-factor));
     backdrop-filter: blur(20px);
     --border-radius: calc(5.33rem / var(--scaling-factor));
     border-radius: var(--border-radius);
     @include gradient-border(var(--border-radius));
     box-shadow: 0px 2px 4px rgba(255, 255, 255, 1);
+    position: relative;
 
     @media screen and (max-width: 1200px) {
       --border-radius: calc(2rem / var(--scaling-factor));
@@ -82,8 +84,7 @@
 
     .bottomImages {
       width: calc(54rem / var(--scaling-factor));
-      padding: calc(2.66rem / var(--scaling-factor))
-        calc(8.66rem / var(--scaling-factor));
+      padding: calc(2.66rem / var(--scaling-factor)) calc(8.66rem / var(--scaling-factor));
 
       display: flex;
       flex-wrap: wrap;
@@ -117,7 +118,6 @@
   }
 
   @media screen and (max-width: 1200px) {
-    padding: calc(2rem / var(--scaling-factor))
-      calc(0rem / var(--scaling-factor)) calc(2rem / var(--scaling-factor));
+    padding: calc(2rem / var(--scaling-factor)) calc(0rem / var(--scaling-factor)) calc(2rem / var(--scaling-factor));
   }
 }
