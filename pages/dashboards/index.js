@@ -182,7 +182,7 @@ const Dashboard = () => {
                 src="/assets/images/copyright.svg"
                 alt="copyright"
               />
-              <p>Copyright, Top Ledger, 2022</p>
+              <p>Copyright, Top Ledger, 2024</p>
             </div>
             <div className={styles.toggleBtn + " toggle-btn"}>
               <label className="switch">
