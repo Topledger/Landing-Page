@@ -140,7 +140,7 @@ const Footer = () => {
                 fontWeight: "300",
               }}
             >
-              Copyright, Top Ledger, 2023
+              Copyright, Top Ledger, 2024
             </p>
           </div>
         </div>
