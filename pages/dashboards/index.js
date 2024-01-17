@@ -6,8 +6,7 @@ import Skeleton from "react-loading-skeleton";
 import axios from "axios";
 import List from "./list";
 import Head from "next/head";
-
-const dashboardSorter = (dashboard2, dashboard1) => new Date(dashboard1?.attributes?.createdAt).getTime() - new Date(dashboard2?.attributes?.createdAt).getTime()
+import { dashboardSorter, getCreationDate } from "helpers/dashboard";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState(null);
@@ -61,7 +60,7 @@ const Dashboard = () => {
           Authorization: `Bearer a51a0c17511b66c8b0c0d924fc2151ef24c29f69ca2260962fbaea5e5ae34725c0f2379b336bc54a657bf1e97c2261e5122c8202faad25b091432cb9df7d6f9e3cc6d92b9afd2787782036ad924b35bfc4524f47963d45bd54798641b14eb5c0498cae09b784df55623467fd10462f5afbe4fa203f727c79a54871c122ebf606`,
         },
       });
-      setAllDashboards(data?.data?.sort(dashboardSorter));
+      setAllDashboards(data?.data?.sort(dashboardSorter(getCreationDate, 'desc')));
     } catch (error) {
       console.log("Error", error);
     } finally {
@@ -155,7 +154,7 @@ const Dashboard = () => {
                 <h1 style={{ textAlign: "center" }}> No Data found </h1>
               )
             ) : activeTab?.dashboards?.data?.length ? (
-              activeTab?.dashboards.data?.sort(dashboardSorter).map((data) => (
+              activeTab?.dashboards.data?.sort(dashboardSorter(getCreationDate, 'desc')).map((data) => (
                 <div className={styles.list} key={data.id}>
                   <List
                     data={data}
