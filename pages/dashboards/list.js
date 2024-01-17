@@ -13,7 +13,7 @@ import useComponentVisible from "../../hooks/useComponentVisible";
 import { MdDone, MdFacebook } from "react-icons/md";
 import axios from "axios";
 
-const List = ({ data, isDarkMode, fetchData,fetchAllDashboards }) => {
+const List = ({ data, isDarkMode, fetchData, fetchAllDashboards }) => {
   const { ref, isComponentVisible, setIsComponentVisible } =
     useComponentVisible(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -25,7 +25,7 @@ const List = ({ data, isDarkMode, fetchData,fetchAllDashboards }) => {
     try {
       const res = await axios.put(
         `https://admin.topledger.xyz/api/dashboards/` +
-          data?.id,
+        data?.id,
         { data: { shares: data?.attributes?.shares + 1 } }
       );
       if (res) {
@@ -76,26 +76,19 @@ const List = ({ data, isDarkMode, fetchData,fetchAllDashboards }) => {
           {isComponentVisible ? "" : <p>{data?.attributes?.shares}</p>}
 
           <p>
-            {/* {isDarkMode ? (
-                      <AiOutlineShareAlt className={styles.shareIcon} />
-                    ) : (
-                      <AiOutlineShareAlt className={styles.shareIcon} />
-                    )} */}
-            {/* <img src="/assets/star.svg" alt="star" /> */}
             <div className="ShareIcons">
               {isComponentVisible ? (
-                <img src="assets/images/cross-small.svg"  onClick={() => toggleMenu()}/>
+                <img src="assets/images/cross-small.svg" onClick={() => toggleMenu()} />
               ) : (
-                <AiOutlineShareAlt className={styles.shareIcon} onClick={() => toggleMenu()}/>
+                <AiOutlineShareAlt className={styles.shareIcon} onClick={() => toggleMenu()} />
               )}
             </div>
           </p>
         </div>
 
         <div
-          className={`${styles.shareDropdown} ${
-            isComponentVisible ? " " : styles.animationDropDown
-          }`}
+          className={`${styles.shareDropdown} ${isComponentVisible ? " " : styles.animationDropDown
+            }`}
         >
           <div className={styles.wrapper}>
             <div className={styles.icons}>
