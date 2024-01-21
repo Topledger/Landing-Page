@@ -5,8 +5,8 @@ import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/Header1";
+import Footer from "../components/Footer1";
 import { DarkModeProvider } from "../providers/DarkMode";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { initGa } from "helpers/gaHelper";
@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }) {
       <QueryClientProvider client={queryClient}>
         <DarkModeProvider>
           {(() => {
-            if (router.pathname.includes("get-started")) {
+            if (router.pathname.includes("get-started") || router.pathname.includes("landing")) {
               return <Component {...pageProps} />;
             }
 

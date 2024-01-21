@@ -1,0 +1,23 @@
+.headerLink {
+  display: inline-flex;
+  align-items: center;
+}
+
+.chevron {
+  transition: transform 0.3s ease-in-out;
+}
+
+.headerMenu {
+  position: absolute;
+  top: 88px;
+  right: 0;
+  width: 100%;
+  height: 0;
+  background-color: #eef2fc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}

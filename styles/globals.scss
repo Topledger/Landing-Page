@@ -44,18 +44,28 @@ html {
   background-color: #000000;
 }
 
-p {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
-  /* text-align: center; */
-  letter-spacing: 0.02em;
-  color: rgba(0, 0, 0, 0.54);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0;
 }
+// p {
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 20px;
+//   margin: 0;
+//   /* text-align: center; */
+//   letter-spacing: 0.02em;
+//   color: rgba(0, 0, 0, 0.54);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 header.bgBlack {
   color: #000000;
@@ -144,17 +154,17 @@ input:focus-visible {
   border-radius: 50%;
 }
 
-/* header */
-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  width: 100%;
-  /* width: 100vw; */
-  height: 88px;
-  background-color: #eef2fc;
-}
+// /* header */
+// header {
+//   position: sticky;
+//   top: 0;
+//   left: 0;
+//   z-index: 99;
+//   width: 100%;
+//   /* width: 100vw; */
+//   height: 88px;
+//   background-color: #eef2fc;
+// }
 
 .boxNavMain {
   box-shadow: 0px 2px 4px rgb(35 112 183 / 38%);

@@ -1,0 +1,40 @@
+@import "@/assets/styles/mixins";
+
+.landingHeroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mesh-overlay;
+}
+
+.heading {
+  margin-top: 32px;
+  color: #2a3a62;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.subHeading {
+  margin-top: 128px;
+  color: #5e709d;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0.64px;
+}
+
+.description {
+  margin-top: 128px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1rem;
+}
+
+.companyLogos {
+  margin-top: 22.5px;
+  margin-bottom: 178px;
+}
