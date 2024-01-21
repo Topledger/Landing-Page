@@ -1,4 +1,5 @@
 import axios from "axios";
+import { SYSTEM_PROGRAM_ADDRESS } from "constants/constants";
 
 function wait(time = 0) {
   return new Promise((resolve) => setTimeout(resolve, time));
@@ -168,6 +169,6 @@ export const fetchAddressInfo = async ({ address }) => {
   return {
     isProgram: type === "program",
     isToken: type === "mint" || (type === "account" && info?.mint),
-    isWallet: result?.value?.owner === "11111111111111111111111111111111",
+    isWallet: result?.value?.owner === SYSTEM_PROGRAM_ADDRESS,
   };
 };

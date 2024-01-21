@@ -1,37 +1,46 @@
+import cx from "classnames";
+
+import Input from "@/components/Input";
 import Button from "../../Button";
+
 import styles from "./index.module.scss";
 
-const ACTION_COMPONENT_TYPE_MAP = (type) => {
+const { Link } = Button;
+
+export const getAction = ({ type, ...props }) => {
   switch (type) {
     case "button":
-      return Button;
+      return (
+        <Button
+          {...props}
+          primary
+          href={props.href}
+          target={props.target}
+          color="#4A7DFF"
+        >
+          {props.text}
+        </Button>
+      );
     case "link":
-      return Button.Link;
+      return (
+        <Link {...props} color="#4A7DFF">
+          {props.text}
+        </Link>
+      );
     case "search":
-      return Button.Search;
+      return <Input.Search {...props} style={{ width: "80%" }} />;
     default:
-      return Button;
+      return <Button {...props} />;
   }
 };
 
 const FooterAction = ({ action }) => {
-  const ActionComponent = ACTION_COMPONENT_TYPE_MAP(action.type);
-  return (
-    <div>
-      <ActionComponent
-        primary={action.type !== "link"}
-        href={action.href}
-        target={action.target}
-      >
-        {action.text}
-      </ActionComponent>
-    </div>
-  );
+  return getAction(action);
 };
 
 const FooterActions = ({ actions = [] }) => {
   return (
-    <div className={styles.footer}>
+    <div className={cx(styles.footer, styles.footerAction)}>
       {actions.length > 0 &&
         actions.map((action) => (
           <FooterAction key={action.id} action={action} />

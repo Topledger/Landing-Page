@@ -3,9 +3,9 @@ import Section from "@/components/Section";
 
 import style from "./index.module.scss";
 
-const ArticleSection = ({ articles }) => {
+const ArticleSection = ({ articles = [] }) => {
   return (
-    <Section>
+    <Section style={{ height: "758px" }}>
       <div className={style.columns}>
         {articles.map((article) => (
           <ArticleCard article={article} key={article.id} />

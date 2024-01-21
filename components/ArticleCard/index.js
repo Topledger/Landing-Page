@@ -1,13 +1,12 @@
-import Button from "../Button";
+import Card from "../Card";
 import Chip from "../Chip";
 import FooterActions from "./ArticleFooter";
 
 import styles from "./index.module.scss";
 
 const ArticleCard = ({ article }) => {
-  const { colour, text } = article.tags;
   return (
-    <div className={styles.card}>
+    <Card>
       <div className={styles.header}>
         {article.tags.length > 0 &&
           article.tags.map((tag) => (
@@ -21,7 +20,7 @@ const ArticleCard = ({ article }) => {
       <div className={styles.footerContainer}>
         <FooterActions actions={article?.footer?.actionElements || []} />
       </div>
-    </div>
+    </Card>
   );
 };
 

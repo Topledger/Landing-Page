@@ -19,6 +19,7 @@ const LandingHeroSection = () => {
             src="/assets/images/landing/solana-logo-inline.png"
             width={96}
             height={18}
+            alt="Solana"
           />
         </span>
         <span>ecosystem</span>

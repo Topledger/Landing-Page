@@ -1,6 +1,7 @@
 import cx from "classnames";
 
 import styles from "./index.module.scss";
+import SvgIcon from "../SvgIcon";
 
 const getBtnProps = (props) => ({
   ...props,
@@ -11,38 +12,45 @@ const getBtnProps = (props) => ({
   }),
 });
 
-const Button = ({ children, className, ...props }) => {
+const Button = ({ color, children, className, ...props }) => {
   const btnProps = getBtnProps({ ...props, className });
 
-  return <button {...btnProps}>{children}</button>;
+  const style = {
+    ...btnProps?.style,
+    ...(props.primary && { backgroundColor: color, backgroundImage: "none" }),
+  };
+
+  return (
+    <button {...btnProps} style={style}>
+      {children}
+    </button>
+  );
 };
 
-Button.Link = ({ children, className, ...props }) => {
+Button.Link = ({ color, children, className, ...props }) => {
   const btnProps = getBtnProps({ ...props, className });
   const newWindowLink = props.target === "_blank";
+
+  const style = {
+    ...btnProps?.style,
+    borderColor: color,
+    color,
+  };
+
   return (
-    <a {...btnProps} className={cx(btnProps.className, styles.link)}>
+    <a
+      {...btnProps}
+      className={cx(btnProps.className, styles.link)}
+      style={style}
+    >
       {children}
       {newWindowLink && (
-        <span className={styles.newWindowIcon} aria-hidden="true">
-          ↗
-        </span>
+        <SvgIcon className={styles.newWindowIcon} name="out-arrow" />
       )}
     </a>
   );
 };
 
-Button.Search = ({ children, className, ...props }) => {
-  return (
-    <div className={cx(styles.searchContainer)}>
-      <input type="text" {...props} className={cx(styles.search)} />
-      <Button primary>
-        <span className={styles.searchIcon} aria-hidden="true">
-          🔍
-        </span>
-      </Button>
-    </div>
-  );
-};
+Button.Link.displayName = "Button.Link";
 
 export default Button;
