@@ -1,0 +1,22 @@
+import Button from "@/components/Button";
+
+import styles from "./index.module.scss";
+
+const FooterLinks = ({ footerLinks = [] }) => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.title}>{footerLinks.title}</div>
+      <ul className={styles.links}>
+        {footerLinks.links.map((link) => (
+          <li key={link.href} className={styles.linkWrapper}>
+            <Button.Link href={link.href} tertiary className={styles.link}>
+              {link.text}
+            </Button.Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default FooterLinks;

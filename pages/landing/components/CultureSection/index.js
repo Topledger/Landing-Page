@@ -43,7 +43,7 @@ const Culture = ({
 
 const DataCultureSection = ({ dataCultures = [] }) => {
   return (
-    <Section containerStyle={{ paddingTop: "120px", paddingBottom: "105px" }}>
+    <Section containerStyle={{ paddingTop: "120px", paddingBottom: "188px" }}>
       <div className={styles.sectionHead}>
         <div>
           <h2 className={styles.sectionTitle}>

@@ -6,6 +6,9 @@ import ArticleSection from "./components/ArticleSection";
 import Section from "@/components/Section";
 import OutcomesSection from "./components/OutcomesSection";
 import DataCultureSection from "./components/CultureSection";
+import TestimonialsSection from "./components/TestimonialsSection";
+import TrialSection from "./components/TrialSection";
+import Footer from "@/components/Footer";
 
 const articles = [
   {
@@ -147,6 +150,25 @@ const dataCultures = [
   },
 ];
 
+const testimonials = [
+  {
+    id: 1,
+    text: "The Top Ledger team has been a key partner for Metaplex Studios in creating real time dashboards that inform our most important strategic questions. I check Top Ledger regularly to track market movements and to understand the impact of new features and initiatives. It's become one of our most important tools and significantly improved the quality of our decision-making as a team.",
+    name: "Stephen",
+    credentials: "CEO, Metaplex",
+    logo: "/assets/images/logo/metaplex.svg",
+    avatar: "/assets/images/logo/metaplex.svg",
+  },
+  {
+    id: 2,
+    text: "Top Ledger has been a great partner for us. They have been able to provide us with the data we need to make informed decisions and have been very responsive to our requests. We look forward to continuing to work with them as we grow our business.",
+    name: "Nitin",
+    credentials: "CEO, Topledger",
+    logo: "/assets/images/logo/topledger.svg",
+    avatar: "/assets/images/logo/topledger.svg",
+  },
+];
+
 const LandingPage = () => {
   return (
     <Page>
@@ -155,6 +177,8 @@ const LandingPage = () => {
       <ArticleSection articles={articles} />
       <OutcomesSection outcomes={outcomes} />
       <DataCultureSection dataCultures={dataCultures} />
+      <TestimonialsSection testimonials={testimonials} />
+      <TrialSection />
     </Page>
   );
 };

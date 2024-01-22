@@ -1,3 +1,4 @@
+import Link from "next/link";
 import cx from "classnames";
 
 import styles from "./index.module.scss";
@@ -18,6 +19,7 @@ const Button = ({ color, children, className, ...props }) => {
   const style = {
     ...btnProps?.style,
     ...(props.primary && { backgroundColor: color, backgroundImage: "none" }),
+    ...(props.tertiary && { color }),
   };
 
   return (
@@ -27,7 +29,9 @@ const Button = ({ color, children, className, ...props }) => {
   );
 };
 
-Button.Link = ({ color, children, className, ...props }) => {
+const Anchor = ({ children, ...props }) => <a {...props}>{children}</a>;
+
+Button.Link = ({ color, href, children, className, ...props }) => {
   const btnProps = getBtnProps({ ...props, className });
   const newWindowLink = props.target === "_blank";
 
@@ -37,17 +41,31 @@ Button.Link = ({ color, children, className, ...props }) => {
     color,
   };
 
-  return (
-    <a
-      {...btnProps}
-      className={cx(btnProps.className, styles.link)}
-      style={style}
-    >
+  const Component = href ? Link : Anchor;
+
+  const renderedChildren = (
+    <>
       {children}
       {newWindowLink && (
         <SvgIcon className={styles.newWindowIcon} name="out-arrow" />
       )}
-    </a>
+    </>
+  );
+
+  const allProps = {
+    ...btnProps,
+    className: cx(btnProps.className, styles.link),
+    style: style,
+  };
+
+  return (
+    <Component {...allProps} href={href}>
+      {Component === Link ? (
+        <a {...allProps}>{renderedChildren}</a>
+      ) : (
+        renderedChildren
+      )}
+    </Component>
   );
 };
 

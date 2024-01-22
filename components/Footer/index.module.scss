@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  padding-top: 120px;
+  padding-bottom: 0;
+  gap: 64px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  color: #1a3989;
+  margin-bottom: 24px;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLinksContainer {
+  display: flex;
+  gap: 24px;
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactUsContainer {
+  width: 100%;
+}
+
+.copyLink {
+  font-size: 16px;
+  color: #1a3989;
+  padding: 0;
+}
+
+.copyContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  width: 100%;
+}

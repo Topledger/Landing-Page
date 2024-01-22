@@ -9,9 +9,10 @@ const Section = ({
   children,
   className,
   containerClassName,
+  component: Component = "section",
   ...props
 }) => (
-  <section
+  <Component
     {...props}
     className={cx(styles.section, className)}
     style={{ ...style, backgroundImage: `url(${background})` }}
@@ -22,7 +23,7 @@ const Section = ({
     >
       {children}
     </div>
-  </section>
+  </Component>
 );
 
 export default Section;
