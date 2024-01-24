@@ -1,0 +1,50 @@
+@import "@/assets/styles/mixins";
+
+.landingHeroSection {
+  @include mesh-overlay;
+}
+
+.heroSectionContainer {
+  display: flex;
+  padding: 96px 132px 112px;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  max-width: 588px;
+  width: 100%;
+}
+.heading {
+  color: #374151;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.subHeading {
+  margin-top: 23px;
+  color: #374151;
+  font-size: 18px;
+  line-height: 140%;
+  max-width: 80%;
+}
+
+.description {
+  margin-top: 42px;
+}
+
+.image {
+  height: 478px;
+  width: 549px;
+  margin-left: 71px;
+}
+
+.scrollIcon {
+  position: absolute;
+  left: calc(50% - 16px);
+  bottom: 40px;
+}

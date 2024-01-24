@@ -1,6 +1,44 @@
+@import "@/assets/styles/breakpoints.scss";
+
+$header-animation-time: 0.3s;
+$header-in-animation-delay: 0.1s;
+$header-out-animation-delay: 0.3s;
+
+@mixin header-menu {
+  z-index: -1;
+  opacity: 0;
+  transform: translate(0px, -10px);
+  transition: height $header-animation-time ease-in-out,
+    opacity $header-animation-time ease-in-out $header-out-animation-delay,
+    z-index $header-animation-time ease-in-out $header-out-animation-delay,
+    transform $header-animation-time ease-in-out $header-out-animation-delay;
+}
+
+@mixin header-menu-hover {
+  opacity: 1;
+  z-index: 10;
+  transform: translate(0px, 0px);
+  transition: height $header-animation-time ease-in-out,
+    opacity $header-animation-time ease-in-out $header-in-animation-delay,
+    z-index $header-animation-time ease-in-out $header-in-animation-delay,
+    transform $header-animation-time ease-in-out $header-in-animation-delay;
+}
+
 .headerLink {
   display: inline-flex;
   align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    .headerMenu {
+      @include header-menu-hover;
+    }
+
+    .chevron {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 .chevron {
@@ -8,16 +46,77 @@
 }
 
 .headerMenu {
-  position: absolute;
+  position: fixed;
   top: 88px;
-  right: 0;
-  width: 100%;
-  height: 0;
-  background-color: #eef2fc;
+  width: 100vw;
+  left: 0;
+  background-color: #fff;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  transition: height 0.3s ease-in-out;
+
+  @include header-menu;
+
+  &:hover {
+    @include header-menu-hover;
+  }
+}
+
+.headerMenuItems {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 888px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 24px;
+  column-gap: 84px;
+}
+
+.headerMenuItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 16px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    padding 0.3s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #fdfdff;
+    border-color: #e8e9fa;
+    padding: 15px;
+  }
+}
+
+.headerMenuItemIcon {
+  margin-right: 32px;
+}
+
+.headerMenuItemContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.menuItemTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #374151;
+  padding: 0;
+  height: auto;
+}
+
+.headerMenuItemDescription {
+  color: #374151;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.56px;
 }

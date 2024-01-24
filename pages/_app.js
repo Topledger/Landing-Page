@@ -20,6 +20,8 @@ function isExcludedPath(pathList, currentPath) {
   return pathList.findIndex((path) => currentPath.includes(path)) === -1;
 }
 
+const NO_HEADER_FOOTER_PATHS = ["/get-started", "/landing", "/web3-teams"];
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const queryClient = useMemo(() => new QueryClient(), []);
@@ -48,7 +50,7 @@ function MyApp({ Component, pageProps }) {
       <QueryClientProvider client={queryClient}>
         <DarkModeProvider>
           {(() => {
-            if (router.pathname.includes("get-started") || router.pathname.includes("landing")) {
+            if (NO_HEADER_FOOTER_PATHS.includes(router.pathname)) {
               return <Component {...pageProps} />;
             }
 

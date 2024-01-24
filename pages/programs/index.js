@@ -172,12 +172,12 @@ function Programs() {
                 {address && dashboard.token && dashboard.client && (
                   <TLDashboards
                     key={address}
-                    client={dashboard.client}
-                    token={dashboard.token}
+                    client={"tl"}
+                    token={"nVzjszC7V9cMjdohSocIBOLEfZWAp0aduC3j5YAV"}
                     className={styles.dashboard}
                     loader={<Loader />}
                     onDashboardLoad={handleDashboardLoad}
-                    parameters={parametersRef.current}
+                    // parameters={parametersRef.current}
                     dashboardRef={dashboardRef}
                   />
                 )}

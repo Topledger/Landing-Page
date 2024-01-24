@@ -1,11 +1,8 @@
 import Header from "@/components/Header";
 import Page from "@/components/Page";
 
-import LandingHeroSection from "./components/LandingHeroSection";
-import ArticleSection from "./components/ArticleSection";
-import OutcomesSection from "./components/OutcomesSection";
-import DataCultureSection from "./components/CultureSection";
-import TestimonialsSection from "./components/TestimonialsSection";
+import Web3HeroSection from "./components/Web3HeroSection";
+
 import TrialSection from "@/components/TrialSection";
 
 const articles = [
@@ -167,18 +164,14 @@ const testimonials = [
   },
 ];
 
-const LandingPage = () => {
+const Web3TeamsPage = () => {
   return (
     <Page>
       <Header />
-      <LandingHeroSection />
-      <ArticleSection articles={articles} />
-      <OutcomesSection outcomes={outcomes} />
-      <DataCultureSection dataCultures={dataCultures} />
-      <TestimonialsSection testimonials={testimonials} />
+      <Web3HeroSection />
       <TrialSection />
     </Page>
   );
 };
 
-export default LandingPage;
+export default Web3TeamsPage;

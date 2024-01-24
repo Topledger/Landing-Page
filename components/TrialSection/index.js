@@ -10,6 +10,8 @@ const TrialSection = () => {
         height: "422px",
         backgroundSize: "contain",
         borderTop: "1px solid #E8E9FA",
+        backgroundRepeat: "repeat-x",
+        backgroundPosition: "bottom",
       }}
       className={styles.trialSection}
       containerStyle={{}}

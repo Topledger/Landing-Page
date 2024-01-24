@@ -1,15 +1,28 @@
 import cx from "classnames";
 
 import styles from "./index.module.scss";
+import Section from "../Section";
 
-const HeroSection = ({ style, className, background, children }) => {
+const HeroSection = ({
+  style,
+  className,
+  containerClassName,
+  background,
+  backgroundColor,
+  children,
+}) => {
   return (
-    <section
+    <Section
       className={cx(styles.heroSection, className)}
-      style={{ ...style, backgroundImage: `url(${background})` }}
+      containerClassName={cx(styles.heroSectionContainer, containerClassName)}
+      background={background}
+      style={{
+        ...style,
+        ...(backgroundColor && { backgroundColor }),
+      }}
     >
       {children}
-    </section>
+    </Section>
   );
 };
 

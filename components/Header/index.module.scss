@@ -1,3 +1,5 @@
+@import "@/assets/styles/breakpoints.scss";
+
 .appHeader {
   z-index: 99;
   width: 100%;
@@ -7,6 +9,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 132px;
+
+  @include max-width(md) {
+    padding: 0 24px;
+  }
 }
 
 .headerWrapper {
@@ -29,13 +36,17 @@
   justify-content: center;
   flex: 1;
   gap: 32px;
+}
 
-  & > a {
+.headerLink {
+  &,
+  & a {
     color: #4e618d;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.32px;
     text-decoration: none;
+    cursor: pointer;
   }
 }
 
