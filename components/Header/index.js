@@ -67,7 +67,7 @@ const Header = ({ className }) => {
             alt="Top Ledger logo"
           />
         </span>
-        <span className={styles.headerLinks}>
+        <nav className={styles.headerLinks}>
           <HeaderMenu
             className={styles.headerLink}
             menuItems={productsHeaderLinks}
@@ -93,7 +93,7 @@ const Header = ({ className }) => {
           >
             Docs
           </Button.Link>
-        </span>
+        </nav>
         <span className={styles.headerButtons}>
           <Button.Link href="//analytics.topledger.xyz/login">
             Login

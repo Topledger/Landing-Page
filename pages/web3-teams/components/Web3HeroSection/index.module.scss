@@ -6,7 +6,7 @@
 
 .heroSectionContainer {
   display: flex;
-  padding: 96px 132px 112px;
+  padding: 96px 0px 112px;
   justify-content: center;
   align-items: center;
 }
@@ -38,6 +38,10 @@
 }
 
 .image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 478px;
   width: 549px;
   margin-left: 71px;

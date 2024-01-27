@@ -1,0 +1,13 @@
+.underlinedText {
+  position: relative;
+  &::before {
+    content: "";
+    background-color: rgba(119, 172, 255, 0.3);
+    height: 16px;
+    width: calc(100% + 0.5rem);
+    position: absolute;
+    bottom: 0;
+    left: -0.4rem;
+    z-index: -1;
+  }
+}

@@ -6,6 +6,7 @@ import { getAction } from "@/components/ArticleCard/ArticleFooter";
 import Image from "next/image";
 import Icon from "@/components/Icon";
 import Button from "@/components/Button";
+import UnderlinedText from "@/components/UnderlinedText";
 
 const Culture = ({
   image,
@@ -47,8 +48,7 @@ const DataCultureSection = ({ dataCultures = [] }) => {
       <div className={styles.sectionHead}>
         <div>
           <h2 className={styles.sectionTitle}>
-            <span>Start building a data culture</span>
-            <span style={{ flex: 1 }}></span>
+            <UnderlinedText>Start building a data culture</UnderlinedText>
           </h2>
         </div>
         <p className={styles.sectionDescription}>

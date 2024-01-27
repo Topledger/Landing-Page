@@ -16,14 +16,14 @@ export const getAction = ({ type, ...props }) => {
           primary
           href={props.href}
           target={props.target}
-          color="#4A7DFF"
+          color="#085ED4"
         >
           {props.text}
         </Button>
       );
     case "link":
       return (
-        <Link {...props} color="#4A7DFF">
+        <Link {...props} color="#085ED4">
           {props.text}
         </Link>
       );
