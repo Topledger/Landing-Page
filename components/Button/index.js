@@ -20,6 +20,12 @@ const Button = ({ color, children, className, ...props }) => {
     ...btnProps?.style,
     ...(props.primary && { backgroundColor: color, backgroundImage: "none" }),
     ...(props.tertiary && { color }),
+    ...(props.secondary && {
+      backgroundColor: "transparent",
+      backgroundImage: "none",
+      borderColor: color,
+      color,
+    }),
   };
 
   return (

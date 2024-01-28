@@ -7,13 +7,20 @@ import styles from "./index.module.scss";
 
 const { Link } = Button;
 
-export const getAction = ({ type, ...props }) => {
+export const getAction = ({
+  type,
+  isSelected,
+  primary,
+  secondary,
+  ...props
+}) => {
   switch (type) {
     case "button":
       return (
         <Button
           {...props}
-          primary
+          primary={primary || (isSelected && secondary)}
+          secondary={secondary && !isSelected}
           href={props.href}
           target={props.target}
           color="#085ED4"

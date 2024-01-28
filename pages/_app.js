@@ -20,7 +20,13 @@ function isExcludedPath(pathList, currentPath) {
   return pathList.findIndex((path) => currentPath.includes(path)) === -1;
 }
 
-const NO_HEADER_FOOTER_PATHS = ["/get-started", "/landing", "/web3-teams"];
+const NO_HEADER_FOOTER_PATHS = [
+  "/get-started",
+  "/landing",
+  "/web3-teams",
+  "/pricing",
+  "/dashboard-list",
+];
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();

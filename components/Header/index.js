@@ -80,7 +80,7 @@ const Header = ({ className }) => {
           >
             <a className={styles.headerLink}>User cases</a>
           </HeaderMenu>
-          <Button.Link tertiary className={styles.headerLink} href="/blog">
+          <Button.Link tertiary className={styles.headerLink} href="/pricing">
             Pricing
           </Button.Link>
           <Button.Link tertiary className={styles.headerLink} href="/blog">

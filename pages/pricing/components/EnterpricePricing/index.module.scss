@@ -1,0 +1,62 @@
+.enterpricePricing {
+  border-radius: 40px;
+  border: 1px solid #e8e9fa;
+  background: #fdfdff;
+  display: flex;
+  height: 100%;
+}
+
+.enterpricePricingMedia {
+  padding: 27px 40px 39px 44px;
+  width: 48.16%;
+  border-radius: 40px 0px 0px 40px;
+  border-right: 1px solid #e8e9fa;
+  background: #f1f5ff;
+}
+
+.enterpricePricingName {
+  color: #374151;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+.enterpricePricingDescription {
+  color: #374151;
+  font-size: 16px;
+  line-height: 140%;
+  margin-top: 16px;
+}
+
+.enterpricePricingCta {
+  margin-top: 65px;
+}
+
+.enterpricePricingContent {
+  flex: 1;
+  padding: 40px 41px;
+}
+
+.enterpricePricingFeatures {
+}
+
+.enterpricePricingFeatureTitle {
+  color: #374151;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.enterpricePricingFeatureList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.enterpricePricingFeature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

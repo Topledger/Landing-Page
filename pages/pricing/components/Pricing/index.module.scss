@@ -1,0 +1,94 @@
+.pricing {
+  border-radius: 40px;
+  border: 1px solid #e8e9fa;
+  background: #fdfdff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease;
+
+  &.selectedPricing {
+    border: 1px solid #4e6088;
+  }
+}
+
+.pricingMedia {
+  border-radius: 39px 39px 0px 0px;
+  border-bottom: 1px solid #e8e9fa;
+  background: #f1f5ff;
+
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 0px 40px;
+}
+
+.pricingName {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.pricingContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pricingCurrency {
+  color: rgba(40, 61, 109, 0.56);
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.pricingPrice {
+  padding: 40px;
+  display: flex;
+  border-bottom: 1px solid #e8e9fa;
+  color: #374151;
+  font-size: 32px;
+  font-weight: 500;
+  align-items: center;
+}
+
+.pricingPeriod {
+  color: #374151;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.pricingFeatures {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  border-bottom: 1px solid #e8e9fa;
+  padding: 32px 40px;
+  flex: 1;
+}
+
+.pricingFeature {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+  }
+}
+
+.pricingCta {
+  display: flex;
+  padding: 40px;
+  align-items: center;
+  justify-content: center;
+}

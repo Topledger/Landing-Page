@@ -1,0 +1,48 @@
+.pricingSection {
+  border-top: 1px solid #e2e8ff;
+  background: #fff;
+  padding: 120px 0px;
+}
+
+.pricingSectionTitle {
+  color: #374151;
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.pricingSectionSubtitle {
+  color: #374151;
+  font-size: 18px;
+  line-height: 140%;
+}
+
+.pricingSectionContent {
+}
+
+.pricingContainer {
+  display: flex;
+  gap: 32px;
+  margin-top: 81px;
+}
+
+.pricingItem {
+  flex: 1;
+}
+
+.customPricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 33px;
+  margin-top: 48px;
+
+  > div:first-child {
+    grid-column: 1 / span 2;
+  }
+}
+.enterpricePlan {
+  height: 100%;
+}
+.walletAnalyticsPlan {
+  height: 100%;
+}

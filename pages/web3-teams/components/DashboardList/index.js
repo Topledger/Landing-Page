@@ -2,10 +2,10 @@ import List from "../List";
 
 import styles from "./index.module.scss";
 
-const DashboardList = ({ dashboards }) => {
+const DashboardList = ({ dashboards, viewMoreLink = "/dashboard-list" }) => {
   return (
     <div className={styles.dashboardList}>
-      <List items={dashboards} viewMoreLink="/dashboards" />
+      <List items={dashboards} viewMoreLink={viewMoreLink} />
     </div>
   );
 };
