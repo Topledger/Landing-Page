@@ -32,9 +32,11 @@ const ContactUs = () => {
       </div>
       <div className={cx(styles.row, styles.shareRow)}>
         <Button.Link
-          href="mailto:nitin@topledger.xyz"
+          href="https://telegram.me/ergon50"
           tertiary
           className={styles.shareLink}
+          target="_blank"
+          noArrow
         >
           <Image
             src="/assets/images/telegram-share.svg"
@@ -44,9 +46,11 @@ const ContactUs = () => {
           />
         </Button.Link>
         <Button.Link
-          href="mailto:nitin@topledger.xyz"
+          href="https://twitter.com/ledger_top"
           tertiary
           className={styles.shareLink}
+          target="_blank"
+          noArrow
         >
           <Image
             src="/assets/images/twitter-share.svg"
