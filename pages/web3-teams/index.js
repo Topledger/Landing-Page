@@ -92,12 +92,6 @@ const features = [
   },
 ];
 
-// Metaplex public dashboard
-// Drip
-// Drift public dashboard
-// Helium
-// Phoenix
-
 const dashboards = [
   {
     name: "Metaplex",
@@ -126,16 +120,6 @@ const dashboards = [
     icon: "/assets/images/dashboards/phoenix.png",
   },
 ];
-
-// Connect private DB
-// Set alerts
-// Cast your dashboards
-// Securely connect your private data source to the Top Ledger platform and collate it with decoded on-chain Solana data
-// Set alerts on any chart to receive notifications in both your Slack and Discord channels
-// Our React component lets you effortlessly integrate any dashboard into your website, complementing your UI/UX design
-// Supported DBs
-// Demo
-// Live Example
 
 const featureSuites = [
   {
@@ -190,16 +174,6 @@ const featureSuites = [
     ],
   },
 ];
-
-// Squads Utilizes Top Ledger’s Analytics Platform
-// Squads is a platform aimed at simplifying the management of developer and treasury assets...
-// Read full case study
-// Drift Protocol’s Data-Driven Journey with Top Ledger
-// Drift Protocol is an open-sourced, decentralized exchange built on the Solana blockchain...
-// Read full case study
-// Switchboard: Linking real-world data to blockchains
-// Switchboard is a revolutionary multi-chain oracle protocol designed to address the ...
-// Read full case study
 
 const caseStudies = [
   {

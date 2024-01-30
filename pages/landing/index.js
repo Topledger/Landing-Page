@@ -23,7 +23,7 @@ const articles = [
           type: "link",
           text: "Public dashboards",
           target: "_blank",
-          href: "https://app.topledger.io",
+          href: "/dashboards",
         },
       ],
     },
@@ -60,7 +60,7 @@ const articles = [
           type: "link",
           text: "Available schemas",
           target: "_blank",
-          href: "https://app.topledger.io",
+          href: "/research",
         },
       ],
     },
@@ -73,7 +73,18 @@ const articles = [
       "Top Ledger AI is set to transform data analysis on Solana, simplifying large-scale insight consumption and accelerating decision-making",
     image: "/assets/images/landing/article-3.jpg",
     footer: {
-      actionElements: [{ type: "button", text: "Coming soon" }],
+      actionElements: [
+        {
+          type: "comingSoon",
+          text: "Coming soon",
+          style: {
+            width: "100%",
+            textAlign: "center",
+            border: "1px solid rgba(29, 148, 34, 0.14)",
+            background: "#DDF8E7",
+          },
+        },
+      ],
     },
   },
 ];
@@ -81,7 +92,7 @@ const articles = [
 const outcomes = [
   {
     id: 1,
-    image: "/assets/images/landing/outcome-analysts.jpg",
+    image: "/assets/images/landing/outcome-analysts.svg",
     title: "For analysts",
     description:
       "Run blazingly fast SQL queries and leave auto-scaling, replication of workloads, rollup aggregations and custom data decoding to us",
@@ -93,7 +104,7 @@ const outcomes = [
   },
   {
     id: 2,
-    image: "/assets/images/landing/outcome-businesses.jpg",
+    image: "/assets/images/landing/outcome-businesses.png",
     title: "For business people",
     description:
       "Our user-friendly interface with upcoming AI capabilities accelerates data analysis, enabling quicker, more effective problem-solving and a stronger data-driven approach in business decision-making",
@@ -105,7 +116,7 @@ const outcomes = [
   },
   {
     id: 3,
-    image: "/assets/images/landing/outcome-developers.jpg",
+    image: "/assets/images/landing/outcome-developers.svg",
     title: "For developers",
     description:
       "Boost your development with Top Ledger API! Designed for seamless data integration on the Solana blockchain, our API empowers you to efficiently manage and query hundreds of decoded data tables",

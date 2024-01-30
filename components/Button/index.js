@@ -1,8 +1,8 @@
 import Link from "next/link";
 import cx from "classnames";
+import SvgIcon from "../SvgIcon";
 
 import styles from "./index.module.scss";
-import SvgIcon from "../SvgIcon";
 
 const getBtnProps = (props) => ({
   ...props,
@@ -18,7 +18,8 @@ const Button = ({ color, children, className, ...props }) => {
 
   const style = {
     ...btnProps?.style,
-    ...(props.primary && { backgroundColor: color, backgroundImage: "none" }),
+    ...(props.primary &&
+      color && { backgroundColor: color, backgroundImage: "none" }),
     ...(props.tertiary && { color }),
     ...(props.secondary && {
       backgroundColor: "transparent",
@@ -37,7 +38,15 @@ const Button = ({ color, children, className, ...props }) => {
 
 const Anchor = ({ children, ...props }) => <a {...props}>{children}</a>;
 
-Button.Link = ({ color, href, children, className, ...props }) => {
+Button.Link = ({
+  color,
+  href,
+  children,
+  className,
+  noArrow,
+  arrowOnHover,
+  ...props
+}) => {
   const btnProps = getBtnProps({ ...props, className });
   const newWindowLink = props.target === "_blank";
 
@@ -52,8 +61,13 @@ Button.Link = ({ color, href, children, className, ...props }) => {
   const renderedChildren = (
     <>
       {children}
-      {newWindowLink && (
-        <SvgIcon className={styles.newWindowIcon} name="out-arrow" />
+      {newWindowLink && !noArrow && (
+        <SvgIcon
+          className={cx(styles.newWindowIcon, {
+            [styles.arrowOnHover]: arrowOnHover,
+          })}
+          name="out-arrow"
+        />
       )}
     </>
   );

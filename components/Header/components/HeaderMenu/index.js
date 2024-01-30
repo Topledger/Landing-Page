@@ -18,10 +18,10 @@ import Link from "next/link";
 //                   {menuItem.title}
 //                 </Button.Link>
 
-const MenuItem = ({ icon, title, description, href }) => {
+const MenuItem = ({ icon, title, description, href, target, comingSoon }) => {
   return (
-    <Link href={href}>
-      <a className={styles.headerMenuItem}>
+    <Link href={comingSoon ? "" : href}>
+      <a className={styles.headerMenuItem} target={target}>
         <Image
           className={styles.headerMenuItemIcon}
           src={`/assets/images/header/menu-item-${icon}.svg`}
@@ -35,7 +35,10 @@ const MenuItem = ({ icon, title, description, href }) => {
             // href={href}
             style={{ padding: 0 }}
           >
-            {title}
+            {title}{" "}
+            {comingSoon && (
+              <span className={styles.comingSoon}>Coming soon</span>
+            )}
           </span>
           <p className={styles.headerMenuItemDescription}>{description}</p>
         </div>

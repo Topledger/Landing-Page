@@ -13,14 +13,14 @@ const ContactUs = () => {
       </div>
       <div
         className={styles.row}
-        style={{ borderBottom: "none", paddginBottom: 0 }}
+        style={{ borderBottom: "none", paddingTop: 0, paddingBottom: "24px" }}
       >
         {addressIcon}
         <Button.Link tertiary className={styles.mailLink}>
           Fraser Street #05-25 Duo Tower Singapore
         </Button.Link>
       </div>
-      <div className={styles.row} style={{ paddingTop: 0 }}>
+      <div className={styles.row} style={{ paddingTop: 0, paddingBottom: 0 }}>
         {mailIcon}
         <Button.Link
           href="mailto:nitin@topledger.xyz"

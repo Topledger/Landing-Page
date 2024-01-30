@@ -1,6 +1,7 @@
 import cx from "classnames";
 
 import Input from "@/components/Input";
+import Chip from "@/components/Chip";
 import Button from "../../Button";
 
 import styles from "./index.module.scss";
@@ -17,7 +18,7 @@ export const getAction = ({
   switch (type) {
     case "button":
       return (
-        <Button
+        <Link
           {...props}
           primary={primary || (isSelected && secondary)}
           secondary={secondary && !isSelected}
@@ -26,7 +27,7 @@ export const getAction = ({
           color="#085ED4"
         >
           {props.text}
-        </Button>
+        </Link>
       );
     case "link":
       return (
@@ -36,6 +37,12 @@ export const getAction = ({
       );
     case "search":
       return <Input.Search {...props} style={{ width: "80%" }} />;
+    case "comingSoon":
+      return (
+        <Chip color="#59B077" {...props}>
+          Coming Soon
+        </Chip>
+      );
     default:
       return <Button {...props} />;
   }

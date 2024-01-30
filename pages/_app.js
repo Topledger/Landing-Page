@@ -26,6 +26,7 @@ const NO_HEADER_FOOTER_PATHS = [
   "/web3-teams",
   "/pricing",
   "/dashboard-list",
+  "/research",
 ];
 
 function MyApp({ Component, pageProps }) {

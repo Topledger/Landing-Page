@@ -38,6 +38,16 @@ $input-height: 43px;
   @include button-text;
   @include link;
   height: $input-height - 2px;
+
+  &:hover {
+    .arrowOnHover {
+      display: inline-block;
+    }
+  }
+}
+
+.arrowOnHover {
+  display: none;
 }
 
 .primary {

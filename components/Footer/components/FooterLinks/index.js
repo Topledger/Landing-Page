@@ -9,7 +9,14 @@ const FooterLinks = ({ footerLinks = [] }) => {
       <ul className={styles.links}>
         {footerLinks.links.map((link) => (
           <li key={link.href} className={styles.linkWrapper}>
-            <Button.Link href={link.href} tertiary className={styles.link}>
+            <Button.Link
+              href={link.href}
+              tertiary
+              className={styles.link}
+              target={link.target}
+              noArrow={link.noArrow}
+              arrowOnHover
+            >
               {link.text}
             </Button.Link>
           </li>

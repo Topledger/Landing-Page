@@ -12,15 +12,15 @@ const footerLinks = [
     links: [
       {
         text: "SQL platform",
-        href: "/sql-platform",
+        href: "/web3-teams",
       },
       {
         text: "Wallet profiler",
-        href: "/wallet-profiler",
+        href: "",
       },
       {
         text: "TL for research",
-        href: "/top-ledger-for-research",
+        href: "/research",
       },
     ],
   },
@@ -30,15 +30,16 @@ const footerLinks = [
     links: [
       {
         text: "For web3 teams",
-        href: "/for-web3-teams",
+        href: "/web3-teams",
       },
       {
         text: "For institutions",
-        href: "/for-institutions",
+        href: "/research",
       },
       {
         text: "For developers",
-        href: "/for-developers",
+        href: "https://docs.topledger.xyz",
+        target: "_blank",
       },
     ],
   },
@@ -52,15 +53,18 @@ const footerLinks = [
       },
       {
         text: "Blogs",
-        href: "/blogs",
+        href: "https://blog.topledger.xyz",
+        target: "_blank",
       },
       {
         text: "Docs",
-        href: "/docs",
+        href: "https://docs.topledger.xyz",
+        target: "_blank",
       },
       {
         text: "Github",
-        href: "/github",
+        href: "https://github.com/Topledger",
+        target: "_blank",
       },
     ],
   },
@@ -68,10 +72,7 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <Section
-      style={{ minHeight: "432px", backgroundColor: "#E9EFFF" }}
-      component="footer"
-    >
+    <Section style={{ backgroundColor: "#E9EFFF" }} component="footer">
       <div className={styles.container}>
         <div className={styles.leftSection}>
           <div className={styles.footerLinksContainer}>

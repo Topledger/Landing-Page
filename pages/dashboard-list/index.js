@@ -47,7 +47,6 @@ const DASHBOARD_ICONS = {
 };
 
 const DashboardList = ({ dashboards }) => {
-  console.log("dashboards", dashboards);
   return (
     <Page>
       <Header />

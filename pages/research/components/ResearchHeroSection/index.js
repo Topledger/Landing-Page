@@ -7,7 +7,7 @@ import Button from "@/components/Button";
 import Icon from "@/components/Icon";
 import Chip from "@/components/Chip";
 
-const Web3HeroSection = () => {
+const ResearchHeroSection = () => {
   return (
     <HeroSection
       className={styles.landingHeroSection}
@@ -16,29 +16,29 @@ const Web3HeroSection = () => {
     >
       <div className={styles.detailsSection}>
         <p className={styles.tags}>
-          <Chip className={styles.chip} color="#3678C5">
-            Web3 teams
+          <Chip className={styles.chip} color="#6467C5">
+            Institutions & Market intelligence platforms
           </Chip>
         </p>
         <h1 className={styles.heading}>
-          Transforming the way teams do{" "}
-          <span style={{ color: "#4A7DFF" }}>data analytics</span>
+          Trusted data source for advanced use cases
         </h1>
         <p className={styles.subHeading}>
-          Unlocking and unleashing the power of blockchain data has never been
-          easier, until now
+          Whether you&apos;re training an AI agent, conducting industry-leading
+          crypto research, or creating a DeFi simulator, Top Ledger is your
+          go-to data provider for Solana
         </p>
         <p className={styles.description}>
           <Button className={styles.trialButton} primary color="#4A7DFF">
-            Book a demo
+            Schedule a call
           </Button>
         </p>
       </div>
       <p className={styles.image}>
         <Image
-          src="/assets/images/web3-teams/hero-image.png"
-          width={549}
-          height={478}
+          src="/assets/images/research/data-source-8b.png"
+          width={457}
+          height={490}
           alt="Top Ledger for web3 teams"
         />
       </p>
@@ -49,4 +49,4 @@ const Web3HeroSection = () => {
   );
 };
 
-export default Web3HeroSection;
+export default ResearchHeroSection;
