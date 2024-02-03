@@ -16,7 +16,13 @@ const ContactUs = () => {
         style={{ borderBottom: "none", paddingTop: 0, paddingBottom: "24px" }}
       >
         {addressIcon}
-        <Button.Link tertiary className={styles.mailLink}>
+        <Button.Link
+          tertiary
+          className={styles.mailLink}
+          href="https://maps.app.goo.gl/UrpxLVteHYZJKVhUA"
+          target="_blank"
+          noArrow
+        >
           Fraser Street #05-25 Duo Tower Singapore
         </Button.Link>
       </div>
