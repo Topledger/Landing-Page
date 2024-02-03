@@ -2,6 +2,7 @@ import Section from "@/components/Section";
 import Button from "@/components/Button";
 
 import styles from "./index.module.scss";
+import QueryFormModal from "../QueryForm/QueryFormModal";
 
 const TrialSection = () => {
   return (
@@ -24,7 +25,12 @@ const TrialSection = () => {
           </h2>
           <p className={styles.trialDescription}>Experience it now</p>
           <div className={styles.trialButtonContainer}>
-            <Button className={styles.trialButton} primary color="#4A7DFF">
+            <Button
+              className={styles.trialButton}
+              primary
+              color="#4A7DFF"
+              onClick={() => QueryFormModal.show()}
+            >
               Start a free trial
             </Button>
           </div>

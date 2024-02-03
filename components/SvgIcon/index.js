@@ -2,12 +2,20 @@ import { ReactComponent as Chevron } from "@/assets/images/icons/chevron.svg";
 import outArrow from "./out-arrow";
 import ChevronLeft from "./chevron-left";
 import DiamondBullet from "./diamond-bullet";
+import User from "./user";
+import Email from "./email";
+import Company from "./company";
+import Designation from "./designation";
 
 const IconMap = {
   chevron: Chevron,
   "out-arrow": outArrow,
   "chevron-left": ChevronLeft,
   "diamond-bullet": DiamondBullet,
+  user: User,
+  email: Email,
+  company: Company,
+  designation: Designation,
 };
 
 const SvgIcon = ({ name, ...props }) => {
