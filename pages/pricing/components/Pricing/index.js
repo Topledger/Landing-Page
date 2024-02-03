@@ -38,7 +38,7 @@ const Pricing = ({ pricing = {}, isSelected, onClick }) => {
       onClick={onClick}
     >
       <div className={styles.pricingMedia}>
-        <img src={pricing.media.src} alt="Pricing media" />
+        <img src={pricing.media?.src} alt="Pricing media" />
         <div className={styles.pricingName}>{pricing.name}</div>
       </div>
       <div className={styles.pricingContent}>

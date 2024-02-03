@@ -6,7 +6,7 @@ import Button from "@/components/Button";
 import styles from "./index.module.scss";
 import { Arrow } from "pages/home/components/DashboardList";
 
-const List = ({ items, viewMoreLink }) => {
+const List = ({ items = [], viewMoreLink }) => {
   return (
     <ul className={styles.list}>
       {items.map((item, index) => (

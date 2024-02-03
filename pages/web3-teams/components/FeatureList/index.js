@@ -44,7 +44,7 @@ const Media = ({ media }) => {
   );
 };
 
-const FeatureList = ({ features }) => {
+const FeatureList = ({ features = {} }) => {
   return (
     <div className={styles.featureList} style={{ borderColor: features.color }}>
       <div

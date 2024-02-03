@@ -29,11 +29,11 @@ import { getAction } from "@/components/ArticleCard/ArticleFooter";
 //   ],
 // };
 
-const EnterpricePricing = ({ enterpricePricingPlan }) => {
+const EnterpricePricing = ({ enterpricePricingPlan = {} }) => {
   return (
     <div className={styles.enterpricePricing}>
       <div className={styles.enterpricePricingMedia}>
-        <img src={enterpricePricingPlan.media.src} alt="Pricing media" />
+        <img src={enterpricePricingPlan.media?.src} alt="Pricing media" />
 
         <div className={styles.enterpricePricingName}>
           {enterpricePricingPlan.name}
@@ -41,9 +41,11 @@ const EnterpricePricing = ({ enterpricePricingPlan }) => {
         <div className={styles.enterpricePricingDescription}>
           {enterpricePricingPlan.description}
         </div>
-        <div className={styles.enterpricePricingCta}>
-          {getAction(enterpricePricingPlan.cta)}
-        </div>
+        {enterpricePricingPlan.cta && (
+          <div className={styles.enterpricePricingCta}>
+            {getAction(enterpricePricingPlan.cta)}
+          </div>
+        )}
       </div>
       <div className={styles.enterpricePricingContent}>
         <div className={styles.enterpricePricingFeatures}>

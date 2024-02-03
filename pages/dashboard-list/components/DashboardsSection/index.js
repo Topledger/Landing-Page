@@ -3,7 +3,7 @@ import Section from "@/components/Section";
 import styles from "./index.module.scss";
 import DashboardList from "pages/web3-teams/components/DashboardList";
 
-const DashboardsSection = ({ dashboards }) => {
+const DashboardsSection = ({ dashboards = [] }) => {
   return (
     <Section className={styles.dashboardsSection}>
       <h2 className={styles.dashboardsSectionTitle}>Dashboard</h2>

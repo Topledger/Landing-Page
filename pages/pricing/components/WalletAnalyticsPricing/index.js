@@ -28,7 +28,7 @@ const WalletAnalyticsPricing = ({ walletAnalyticsPricing = {} }) => {
   return (
     <div className={styles.walletAnalyticsPricing}>
       <div className={styles.walletAnalyticsPricingMedia}>
-        <img src={walletAnalyticsPricing.media.src} alt="Pricing media" />
+        <img src={walletAnalyticsPricing.media?.src} alt="Pricing media" />
 
         <div className={styles.walletAnalyticsPricingTitle}>
           {walletAnalyticsPricing.title}

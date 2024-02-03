@@ -14,7 +14,7 @@ export const getAction = ({
   primary,
   secondary,
   ...props
-}) => {
+} = {}) => {
   switch (type) {
     case "button":
       return (
