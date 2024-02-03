@@ -33,7 +33,9 @@ const Input = ({ icon, className, validations, ...inputProps }) => {
       <input
         className={styles.input}
         {...inputProps}
-        onChange={(e) => setIsValid(isValid(e.target.value, validations))}
+        {...(validations && {
+          onChange: (e) => setIsValid(isValid(e.target.value, validations)),
+        })}
       />
       {validations && (
         <span className={styles.check}>

@@ -1,13 +1,31 @@
 @import "@/assets/styles/breakpoints.scss";
 
+.outcomesSection {
+  padding-top: 7.5rem;
+  padding-bottom: 6.5625rem;
+
+  @include mobile {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
 .sectionHead {
   width: 60%;
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .sectionTitle {
   color: #283d6d;
   font-size: 2.5rem;
   font-weight: 600;
+
+  @include mobile {
+    font-size: 1.625rem;
+  }
 }
 
 .sectionDescription {
@@ -17,6 +35,10 @@
   line-height: 140%;
   letter-spacing: 0.72px;
   margin-top: 0.5rem;
+
+  @include mobile {
+    font-size: 1rem;
+  }
 }
 
 .outcomeContainer {

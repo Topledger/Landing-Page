@@ -35,7 +35,7 @@ const OutcomesSection = ({ outcomes = [] }) => {
         // backgroundSize: "400%",
         backgroundPosition: "center center",
       }}
-      containerStyle={{ paddingTop: "120px", paddingBottom: "105px" }}
+      containerClassName={styles.outcomesSection}
     >
       <div className={styles.sectionHead}>
         <h2 className={styles.sectionTitle}>Drive better business outcomes</h2>
