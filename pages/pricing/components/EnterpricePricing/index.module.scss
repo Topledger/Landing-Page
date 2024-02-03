@@ -1,5 +1,5 @@
 .enterpricePricing {
-  border-radius: 40px;
+  border-radius: 2.5rem;
   border: 1px solid #e8e9fa;
   background: #fdfdff;
   display: flex;
@@ -16,16 +16,16 @@
 
 .enterpricePricingName {
   color: #374151;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
 
 .enterpricePricingDescription {
   color: #374151;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 140%;
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 
 .enterpricePricingCta {
@@ -42,7 +42,7 @@
 
 .enterpricePricingFeatureTitle {
   color: #374151;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 140%;
 }
@@ -52,11 +52,11 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 .enterpricePricingFeature {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
 }

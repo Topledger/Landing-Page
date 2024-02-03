@@ -1,33 +1,53 @@
+@import "@/assets/styles/breakpoints.scss";
+
 .container {
   display: flex;
   padding-top: 120px;
   padding-bottom: 0;
-  gap: 64px;
+  gap: 4rem;
+
+  @include max-width(xxl) {
+    gap: 2rem;
+  }
+  @include max-width(xl) {
+    flex-direction: column-reverse;
+    padding-top: 4rem;
+    gap: 2rem;
+  }
 }
 
 .title {
   font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
   letter-spacing: 2%;
   color: #1a3989;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .leftSection {
   display: flex;
   flex-direction: column;
+
+  @include max-width(xxl) {
+    flex: 1;
+  }
 }
 
 .footerLinksContainer {
   display: flex;
-  gap: 24px;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+
+  @include max-width(xxl) {
+    gap: 1rem;
+  }
 }
 
 .rightSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -36,7 +56,7 @@
 }
 
 .copyLink {
-  font-size: 16px;
+  font-size: 1rem;
   color: #1a3989;
   padding: 0;
 }
@@ -45,6 +65,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 16px;
+  margin-top: 1rem;
   width: 100%;
 }

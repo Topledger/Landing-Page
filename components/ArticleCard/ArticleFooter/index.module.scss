@@ -1,8 +1,9 @@
 .footer {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .footerAction {

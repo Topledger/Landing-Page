@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  border-radius: 40px;
+  border-radius: 2.5rem;
   grid-template-columns: 12fr 13fr;
   transition: border-color 0.3s ease-in-out;
 
@@ -27,19 +27,19 @@
 }
 
 .featureListTags {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .featureListTitle {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .featureListDescription {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .featureListFeatures {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   list-style: none;
   padding: 0;
   display: grid;
@@ -48,7 +48,7 @@
 .featureListItem {
   margin: 8px 0;
   color: #374151;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 140%;
   letter-spacing: 0.32px;
@@ -63,7 +63,7 @@
   display: inline-block;
   width: 22px;
   height: 22px;
-  margin-right: 12px;
+  margin-right: 0.75rem;
 
   // background-image: url(/assets/images/icons/bullet-diamond.svg);
   background-size: cover;

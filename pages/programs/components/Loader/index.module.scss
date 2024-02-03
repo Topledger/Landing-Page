@@ -10,8 +10,8 @@
 .span {
   display: block;
   width: 35px;
-  height: 8px;
-  border-radius: 4px;
+  height: 0.5rem;
+  border-radius: 0.25rem;
   background: #1a3989;
   position: absolute;
   animation-duration: 1s;
@@ -24,16 +24,16 @@
   }
 
   &:global(:nth-of-type(3)) {
-    left: 2px;
+    left: 0.125rem;
   }
 
   &:global(:nth-of-type(7)) {
-    right: 2px;
+    right: 0.125rem;
   }
 
   &:global(:nth-of-type(4n-1)) {
     top: 24.5px;
-    width: 8px;
+    width: 0.5rem;
     height: 35px;
     animation-name: rotate1;
   }
@@ -48,11 +48,11 @@
   }
 
   &:global(:nth-of-type(2)) {
-    top: 12px;
+    top: 0.75rem;
   }
 
   &:global(:nth-of-type(6)) {
-    bottom: 12px;
+    bottom: 0.75rem;
     right: 0;
   }
 
@@ -62,11 +62,11 @@
   }
 
   &:global(:nth-of-type(4)) {
-    bottom: 12px;
+    bottom: 0.75rem;
   }
 
   &:global(:nth-of-type(8)) {
-    top: 12px;
+    top: 0.75rem;
     right: 0;
   }
 }

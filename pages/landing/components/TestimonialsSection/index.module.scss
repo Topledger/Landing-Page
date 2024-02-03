@@ -7,7 +7,7 @@
 .sectionTitle {
   color: #374151;
   text-align: center;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 0.8px;
 }
@@ -15,14 +15,14 @@
 .sectionDescription {
   color: rgba(55, 65, 81, 0.7);
   text-align: center;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 140%;
   letter-spacing: 0.72px;
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 .sectionBody {
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 
 .testimonialContainer {
@@ -33,7 +33,7 @@
 .testimonial {
   width: 100%;
   max-width: 800px;
-  border-radius: 40px;
+  border-radius: 2.5rem;
   background: #fff;
   padding: 40px 80px;
   box-shadow: 0px 8px 16px 0px rgba(116, 149, 199, 0.16);
@@ -41,12 +41,12 @@
 
 .testimonialText {
   color: #374151;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 140%;
 }
 
 .testimonialContent {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 28px;
   color: #42454a;
   margin-bottom: 20px;
@@ -58,11 +58,11 @@
 }
 
 .testimonialAvatar {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 10px;
+  margin-right: 0.625rem;
   background-color: #c5c0ff;
   display: flex;
   align-items: center;
@@ -75,14 +75,14 @@
 
 .testimonialAuthorName {
   color: #4a7dff;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
   line-height: 140%;
 }
 
 .testimonialAuthorCredentials {
   color: rgba(0, 0, 0, 0.64);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 101.2%;
   letter-spacing: 0.35px;

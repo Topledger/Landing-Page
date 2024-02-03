@@ -1,3 +1,5 @@
+@import "@/assets/styles/breakpoints.scss";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -7,11 +9,19 @@
     linear-gradient(0deg, #2d3250 0%, #2d3250 100%), #fff;
   border-radius: 32px 32px 0px 0px;
   height: 100%;
+
+  @include max-width(xxl) {
+    width: 20rem;
+  }
+  @include max-width(xl) {
+    border-radius: 2rem;
+    width: 100%;
+  }
 }
 
 .title {
   color: #e0e1ff;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -20,17 +30,22 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 24px;
+  padding: 1.5rem;
   border-bottom: 1px solid #1e202f;
 
   &:last-child {
     border-bottom: none;
   }
+
+  svg:first-child {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 
 .mailLink {
   color: #e0e1ff;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 140%;
   letter-spacing: 0.64px;

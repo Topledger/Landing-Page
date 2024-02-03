@@ -10,7 +10,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500;
-  font-size: 21px;
+  font-size: 1.3125rem;
   line-height: 26px;
   letter-spacing: 0.04em;
   color: #1a3989;
@@ -20,8 +20,8 @@
   gap: 20px;
   margin: auto;
   width: 60%;
-  padding-top: 50px;
-  padding-left: 50px;
+  padding-top: 3.125rem;
+  padding-left: 3.125rem;
 }
 .flexBox .flex {
   display: flex;
@@ -31,7 +31,7 @@
 }
 .icon {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   width: 126px;
   height: 126px;
   align-items: center;
@@ -46,23 +46,23 @@
   font-family: "Helvetica 25 UltraLight", sans-serif;
   font-style: normal;
   font-weight: 100;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 140%;
   letter-spacing: 0.02em;
   color: #000000;
   margin: 0;
-  margin-bottom: 4px;
+  margin-bottom: 0.25rem;
 }
 .info p {
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 140%;
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.54);
   transition: 0.5s ease-in-out;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   transform: translateY(5px);
   display: block;
   margin: 0;
@@ -70,7 +70,7 @@
 .info a {
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 140%;
   color: #5865f2;
   opacity: 0;
@@ -96,7 +96,7 @@
   transition: transform 0.5s ease-in-out;
 }
 .flex:hover .info p {
-  font-size: 12px;
+  font-size: 0.75rem;
   transition: 0.5s ease-in-out;
   transform: translateY(0px);
 }
@@ -128,7 +128,7 @@
   }
 
   .flex .info p {
-    font-size: 12px;
+    font-size: 0.75rem;
     transition: 0.5s ease-in-out;
     transform: translateY(0px);
   }

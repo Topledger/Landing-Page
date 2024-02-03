@@ -6,14 +6,14 @@
 
 .pricingSectionTitle {
   color: #374151;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 .pricingSectionSubtitle {
   color: #374151;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 140%;
 }
 
@@ -22,7 +22,7 @@
 
 .pricingContainer {
   display: flex;
-  gap: 32px;
+  gap: 2rem;
   margin-top: 81px;
 }
 
@@ -34,7 +34,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 33px;
-  margin-top: 48px;
+  margin-top: 3rem;
 
   > div:first-child {
     grid-column: 1 / span 2;

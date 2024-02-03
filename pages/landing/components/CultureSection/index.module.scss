@@ -7,7 +7,7 @@
 .sectionTitle {
   position: relative;
   color: #283d6d;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 600;
   display: inline-flex;
 
@@ -19,11 +19,11 @@
 
 .sectionDescription {
   color: #2b3d6e;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 140%;
   letter-spacing: 0.72px;
-  margin-top: 8px;
+  margin-top: 0.5rem;
   max-width: 500px;
 }
 
@@ -56,14 +56,14 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 52px;
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 
 .culture {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 2.5rem;
 }
 .cultureContent {
   flex: 1;
@@ -71,27 +71,27 @@
   flex-direction: column;
 }
 .cultureTitle {
-  margin-top: 24px;
+  margin-top: 1.5rem;
   color: #374151;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 .cultureDescription {
   flex: 1;
-  margin-top: 24px;
+  margin-top: 1.5rem;
   color: #374151;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 140%;
   letter-spacing: 0.64px;
 }
 
 .cultureAction {
   width: 100%;
-  margin-top: 32px;
+  margin-top: 2rem;
 }
 
 .ideaSection {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
 }

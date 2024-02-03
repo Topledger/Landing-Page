@@ -1,11 +1,17 @@
+@import "@/assets/styles/breakpoints.scss";
+
 .card {
   display: inline-flex;
   padding: 48px 140px 40px 40px;
   flex-direction: column;
   align-items: flex-start;
-  border-radius: 40px;
+  border-radius: 2.5rem;
   border: 1px solid #e8e9fa;
   background: #fdfdff;
+
+  @include tablet {
+    padding: 2rem;
+  }
 }
 
 .header {
@@ -16,23 +22,23 @@
 }
 
 .title {
-  font-size: 29px;
+  font-size: 1.8125rem;
   font-weight: 800;
   letter-spacing: 0.29px;
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
 
 .subtitle {
   color: #374151;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 140%;
   letter-spacing: 0.64px;
-  margin-top: 16px;
+  margin-top: 1rem;
   flex: 1;
 }
 
 .footerContainer {
-  margin-top: 32px;
+  margin-top: 2rem;
   display: flex;
   width: 100%;
 }

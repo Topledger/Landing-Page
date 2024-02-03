@@ -55,7 +55,7 @@ const LoaderWrapper = styled.div`
   h3 {
     color: #1a3989;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 19.34px;
     letter-spacing: 2%;
     text-align: Center;

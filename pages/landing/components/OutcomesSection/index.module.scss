@@ -1,39 +1,49 @@
+@import "@/assets/styles/breakpoints.scss";
+
 .sectionHead {
   width: 60%;
 }
 
 .sectionTitle {
   color: #283d6d;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 600;
 }
 
 .sectionDescription {
   color: #2b3d6e;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 140%;
   letter-spacing: 0.72px;
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 .outcomeContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 52px;
-  margin-top: 40px;
+  margin-top: 2.5rem;
+
+  @include tablet {
+    gap: 2rem;
+  }
 }
 
 .outcome {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 2.5rem;
+
+  @include tablet {
+    padding: 2rem;
+  }
 }
 
 .outcomeImage {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 1rem;
 }
 .outcomeImage img {
   width: 100%;
@@ -45,21 +55,21 @@
   flex-direction: column;
 }
 .outcomeTitle {
-  margin-top: 24px;
+  margin-top: 1.5rem;
   color: #374151;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 .outcomeDescription {
   flex: 1;
-  margin-top: 24px;
+  margin-top: 1.5rem;
   color: #374151;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 140%;
   letter-spacing: 0.64px;
 }
 
 .outcomeAction {
   width: 100%;
-  margin-top: 32px;
+  margin-top: 2rem;
 }

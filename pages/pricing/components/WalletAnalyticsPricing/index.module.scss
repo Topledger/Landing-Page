@@ -1,5 +1,5 @@
 .walletAnalyticsPricing {
-  border-radius: 40px;
+  border-radius: 2.5rem;
   border: 1px solid #1e202f;
   background: #2d3250;
   display: flex;
@@ -15,22 +15,22 @@
 }
 .walletAnalyticsPricingTitle {
   color: #f0f4ff;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 .walletAnalyticsPricingDescription {
   color: #e2eaff;
   text-align: center;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
   line-height: 140%;
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 
 .walletAnalyticsPricingContent {
-  margin-top: 24px;
-  border-radius: 16px;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
   background: #20243d;
   padding: 25px 16px 15px;
 }
@@ -38,19 +38,19 @@
   display: flex;
   align-items: flex-end;
   color: #e2eaff;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
 }
 .walletAnalyticsPricingCurrency {
   color: #6a719c;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
 }
 .walletAnalyticsPricingPeriod {
   color: #e2eaff;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
-  margin-left: 4px;
+  margin-left: 0.25rem;
 }
 .walletAnalyticsPricingCta {
   width: 100%;

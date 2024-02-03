@@ -38,7 +38,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 17px;
   display: flex;
   align-items: center;
@@ -52,12 +52,12 @@
 }
 .list {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
 }
 .list:hover {
   background-color: #eef2fc;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 .flexBox {
   display: flex;
@@ -70,7 +70,7 @@
   gap: 5px;
   color: rgba(0, 0, 0, 0.87);
   font-weight: 300;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 15px;
   letter-spacing: 0.06em;
   opacity: 0;
@@ -86,7 +86,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 20px;
   display: flex;
   align-items: center;
@@ -98,7 +98,7 @@
 .info p {
   font-style: normal;
   font-weight: 100;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 17px;
   letter-spacing: 0.06em;
   color: rgba(0, 0, 0, 0.87);
@@ -113,12 +113,12 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 3px;
   display: flex;
   text-align: left;
   color: #1a3989;
-  gap: 10px;
+  gap: 0.625rem;
   align-items: center;
   white-space: nowrap;
   cursor: pointer;
@@ -174,8 +174,8 @@
   position: absolute;
   width: 21px;
   height: 21px;
-  left: 2px;
-  top: 8px;
+  left: 0.125rem;
+  top: 0.5rem;
   color: #444;
 }
 .copyLink input {
@@ -193,8 +193,8 @@
   color: #fff;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
 }
 /* dashboard footer */
 
@@ -212,13 +212,13 @@
 .bottomFlex .content {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 .bottomFlex .content p {
   font-family: "Helvetica 25 UltraLight", sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 19px;
   display: block;
   letter-spacing: 0.06em;

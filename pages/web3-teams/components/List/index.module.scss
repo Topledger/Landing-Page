@@ -3,10 +3,10 @@
   flex-direction: column;
   padding: 0;
   list-style: none;
-  gap: 8px;
+  gap: 0.5rem;
 }
 .listItemContainer {
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border: 1px solid #e8e9fa;
   background: #fdfdff;
   transition: border-color 0.3s ease-in-out;
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   color: #374151;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
   letter-spacing: 0.36px;
   padding: 24px 32px;
@@ -26,14 +26,14 @@
 }
 
 .listItemIcon {
-  width: 32px;
-  height: 32px;
-  margin-right: 24px;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1.5rem;
 }
 
 .listItemName {
   color: #374151;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
   letter-spacing: 0.36px;
   flex: 1;
@@ -42,7 +42,7 @@
 .listItemArrow {
   &:global(.dashboards-list-item-arrow) {
     color: #374151;
-    border-radius: 4px;
+    border-radius: 0.25rem;
 
     &:hover {
       color: #fff;
