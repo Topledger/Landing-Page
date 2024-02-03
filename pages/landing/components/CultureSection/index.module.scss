@@ -73,6 +73,7 @@
 
   @include mobile {
     grid-template-columns: 1fr;
+    gap: 120px;
   }
 }
 
