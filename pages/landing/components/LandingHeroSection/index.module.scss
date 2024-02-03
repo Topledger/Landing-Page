@@ -16,18 +16,24 @@
   font-weight: 700;
   line-height: 120%;
 
-  @include max-width(sm) {
+  @include mobile {
+    font-size: 3.5rem;
   }
 }
 
 .subHeading {
-  margin-top: 128px;
+  margin-top: 8rem;
   color: #5e709d;
   font-size: 2rem;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
   letter-spacing: 0.64px;
+
+  @include mobile {
+    margin-top: 4rem;
+    font-size: 1.5rem;
+  }
 }
 
 .description {
@@ -41,4 +47,9 @@
 .companyLogos {
   margin-top: 22.5px;
   margin-bottom: 178px;
+
+  @include mobile {
+    margin-bottom: 100px;
+    width: 100%;
+  }
 }

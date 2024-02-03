@@ -49,7 +49,7 @@ const TestimonialsSection = ({ testimonials }) => {
         backgroundPosition: "center center",
         borderTop: "1px solid #E8E9FA",
       }}
-      containerStyle={{ paddingTop: "120px", paddingBottom: "105px" }}
+      containerClassName={styles.testimonialsSection}
     >
       <div className={styles.sectionHead}>
         <h2 className={styles.sectionTitle}>Testimonials</h2>

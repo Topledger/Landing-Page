@@ -28,6 +28,9 @@
   @include tablet {
     gap: 2rem;
   }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
 }
 
 .outcome {

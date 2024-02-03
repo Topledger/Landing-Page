@@ -32,7 +32,7 @@ const OutcomesSection = ({ outcomes = [] }) => {
     <Section
       background="/assets/images/landing/block-chain-hero-80.jpg"
       style={{
-        backgroundSize: "400%",
+        // backgroundSize: "400%",
         backgroundPosition: "center center",
       }}
       containerStyle={{ paddingTop: "120px", paddingBottom: "105px" }}
