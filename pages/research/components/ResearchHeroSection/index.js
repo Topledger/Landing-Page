@@ -6,6 +6,7 @@ import styles from "./index.module.scss";
 import Button from "@/components/Button";
 import Icon from "@/components/Icon";
 import Chip from "@/components/Chip";
+import QueryFormModal from "@/components/QueryForm/QueryFormModal";
 
 const ResearchHeroSection = () => {
   return (
@@ -29,7 +30,12 @@ const ResearchHeroSection = () => {
           go-to data provider for Solana
         </p>
         <p className={styles.description}>
-          <Button className={styles.trialButton} primary color="#4A7DFF">
+          <Button
+            className={styles.trialButton}
+            primary
+            color="#4A7DFF"
+            onClick={QueryFormModal.show}
+          >
             Schedule a call
           </Button>
         </p>

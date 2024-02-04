@@ -8,6 +8,7 @@ import FeaturesSection from "./components/FeaturesSection";
 import DashboardsSection from "./components/DashboardsSection";
 import FeatureSuiteSection from "./components/FeautreSuiteSection";
 import CaseStudySection from "./components/CaseStudySection";
+import QueryFormModal from "@/components/QueryForm/QueryFormModal";
 
 const features = [
   {
@@ -86,7 +87,7 @@ const features = [
         type: "link",
         text: "Start a free trail",
         target: "_blank",
-        href: "https://docs.topledger.xyz",
+        onClick: QueryFormModal.show,
       },
     ],
   },

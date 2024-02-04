@@ -7,6 +7,7 @@ import Image from "next/image";
 import Icon from "@/components/Icon";
 import Button from "@/components/Button";
 import UnderlinedText from "@/components/UnderlinedText";
+import QueryFormModal from "@/components/QueryForm/QueryFormModal";
 
 // const sections = [
 //   {
@@ -156,7 +157,7 @@ const PrivateCloudSection = ({ sections = [] }) => {
             your specific needs and offer comprehensive enterprise support
             throughout the entire process
           </span>
-          <Button primary color="#085ED4">
+          <Button primary color="#085ED4" onClick={QueryFormModal.show}>
             Schedule a call
           </Button>
         </div>

@@ -6,6 +6,7 @@ import styles from "./index.module.scss";
 import Button from "@/components/Button";
 import Icon from "@/components/Icon";
 import Chip from "@/components/Chip";
+import QueryFormModal from "@/components/QueryForm/QueryFormModal";
 
 const Web3HeroSection = () => {
   return (
@@ -29,7 +30,12 @@ const Web3HeroSection = () => {
           easier, until now
         </p>
         <p className={styles.description}>
-          <Button className={styles.trialButton} primary color="#4A7DFF">
+          <Button
+            className={styles.trialButton}
+            primary
+            color="#4A7DFF"
+            onClick={QueryFormModal.show}
+          >
             Book a demo
           </Button>
         </p>

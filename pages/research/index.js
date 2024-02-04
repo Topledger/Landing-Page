@@ -7,30 +7,6 @@ import TrialSection from "@/components/TrialSection";
 import FeatureSuiteSection from "./components/FeautreSuiteSection";
 import PrivateCloudSection from "./components/PrivateCloudSection";
 
-// Tailored schemas to fit your specific needs
-// DEX trades
-// NFT/cNFT mints and trades
-// Staking
-// Decoded data from all DEXs and aggregators since 2021
-// All NFT/cNFT decoded data to analyze primary & secondary GMV
-// All native and liquid staking decoded transactions
-// Perpetuals
-// Stablecoin activities
-// DePIN
-// Decoding perpetual swaps to analyze the derivatives ecosystem
-// Access the activities of all stablecoins and SPL tokens
-// Decoded data for all DePIN protocols on Solana
-// Private cloud
-// Powering the most advanced use cases of the industry
-// Market intelligence & reporting
-// Intelligent trading strategies
-// Fuel your research reports effortlessly, without concerning yourself with the underlying data
-// Build trading tactics and develop backtesting systems by employing data science techniques
-// AI models
-// Wallet profiling at scale
-// Train custom AI models from trusted and curatedon-chain data
-// Compute customized attributes and enhance your wallet profiling and cohort segmentation applications
-
 const privateCloud = [
   {
     title: "Tailored schemas to fit your specific needs",
