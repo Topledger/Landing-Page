@@ -2,6 +2,7 @@ import ReactDom from "react-dom";
 
 import Card from "../Card";
 import styles from "./index.module.scss";
+import { createRoot } from "react-dom/client";
 
 const Modal = ({ children, onShadowClick }) => {
   return (
@@ -21,30 +22,31 @@ export const unlockBackgroundScroll = () => {
 };
 
 export const WrapModal = (name, Component) => {
-  let modalRoot = null;
+  /** @type {ReturnType<typeof createRoot>>} */
+  let root = null;
 
   function init() {
-    if (!modalRoot) {
-      modalRoot = document.createElement("div");
-      modalRoot.id = `modal-root-${name}`;
-      document.body.append(modalRoot);
+    if (!root) {
+      const div = document.createElement("div");
+      div.id = `modal-root-${name}`;
+      document.body.append(div);
+      root = createRoot(div);
     }
   }
 
   Component.show = (props) => {
     init();
-    ReactDom.unmountComponentAtNode(modalRoot);
+    root.render(null);
     lockBackgroundScroll();
-    ReactDom.render(
+    root.render(
       <Modal onShadowClick={Component.hide}>
         <Component {...props} />
-      </Modal>,
-      modalRoot
+      </Modal>
     );
   };
   Component.hide = () => {
     init();
-    ReactDom.unmountComponentAtNode(modalRoot);
+    root.render(null);
     unlockBackgroundScroll();
   };
 

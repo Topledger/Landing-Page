@@ -10,6 +10,7 @@ const getBtnProps = (props) => ({
     [styles.primary]: props.primary,
     [styles.secondary]: props.secondary,
     [styles.tertiary]: props.tertiary,
+    [styles.disabled]: props.disabled,
   }),
 });
 
