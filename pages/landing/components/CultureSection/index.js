@@ -17,7 +17,7 @@ const Culture = ({
 }) => {
   const bottomContent = (
     <div className={styles.ideaSection}>
-      <Icon name="diamond-circle" />
+      <Icon name="diamond-circle" className={styles.bottomIcon} />
       <Button.Link tertiary target="_blank" color="#42454A" style={{padding: 0}}>
         {text}
       </Button.Link>

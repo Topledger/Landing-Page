@@ -39,19 +39,18 @@
 
 .description {
   margin-top: 128px;
-  display: flex;
-  align-items: center;
   gap: 0.25rem;
   padding: 1rem;
-  justify-content: center;
+  line-height: 2rem;
 }
 
 .companyLogos {
   margin-top: 22.5px;
   margin-bottom: 178px;
+  height: 2.5rem;
 
-  @include mobile {
-    margin-bottom: 100px;
-    width: 100%;
-  }
+  background-image: url(/assets/images/landing/company-logos.svg);
+  background-image: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }

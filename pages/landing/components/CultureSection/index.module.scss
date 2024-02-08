@@ -116,4 +116,12 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  > span:first-child {
+    display: inline-block;
+    min-width: 24px !important;
+  }
+}
+.bottomIcon {
+  min-width: 24px !important;
 }

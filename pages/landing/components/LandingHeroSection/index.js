@@ -25,11 +25,11 @@ const LandingHeroSection = () => {
         <span>ecosystem</span>
       </p>
       <p className={styles.companyLogos}>
-        <Image
+        {/* <Image
           src={"/assets/images/landing/company-logos.svg"}
           width={836}
           height={40}
-        />
+        /> */}
       </p>
     </HeroSection>
   );

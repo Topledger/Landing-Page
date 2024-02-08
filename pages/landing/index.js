@@ -165,17 +165,6 @@ const dataCultures = [
   },
 ];
 
-// Topledger is a top-notch team that ships fast and produces high quality results. I'd recommend them to anyone looking for great Solana data infrastructure or analytics.
-// Anduril
-// Data lead, Solana Foundation
-// Top Ledger has been an invaluable partner for Squads, providing us with on-chain data that would otherwise be hard to obtain. As a native crypto company, we use their dashboards daily for most of our business metrics, which help us understand how we are growing and make strategic decisions based on this data.
-// Stepan
-// Squads
-// CEO, Squads Labs
-// Top Ledger has been instrumental in helping Drift analyze complex on-chain transactions with their real time dashboards. They are a highly responsive team, constantly iterating on their product and helping with feedback from the Drift team and users. Today, their dashboard helps to power analysis of the Drift platform through swaps, volume, and user data.
-// Cindy
-// Co-founder, Drift Protocol
-
 const testimonials = [
   {
     id: 1,
