@@ -213,7 +213,48 @@
 
 .checkmark {
   display: inline;
+  @keyframes checkmark {
+    0% {
+      stroke-dashoffset: 100px;
+    }
 
+    100% {
+      stroke-dashoffset: 0px;
+    }
+  }
+
+  @keyframes checkmark-circle {
+    0% {
+      stroke-dashoffset: 480;
+    }
+
+    100% {
+      stroke-dashoffset: 960;
+    }
+  }
+
+  @keyframes colored-circle {
+    0% {
+      opacity: 0;
+      fill: transparent;
+    }
+
+    100% {
+      opacity: 100;
+      fill: #63b63c;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out 0.7s forwards;
   path {
     // animation: checkmark 0.25s ease-in-out 0.7s backwards;
   }
@@ -223,36 +264,5 @@
   }
   circle#colored {
     // animation: colored-circle 0.6s ease-in-out 0.7s backwards;
-  }
-}
-@keyframes checkmark {
-  0% {
-    stroke-dashoffset: 100px;
-  }
-
-  100% {
-    stroke-dashoffset: 0px;
-  }
-}
-
-@keyframes checkmark-circle {
-  0% {
-    stroke-dashoffset: 480;
-  }
-
-  100% {
-    stroke-dashoffset: 960;
-  }
-}
-
-@keyframes colored-circle {
-  0% {
-    opacity: 0;
-    fill: transparent;
-  }
-
-  100% {
-    opacity: 100;
-    fill: #63b63c;
   }
 }
