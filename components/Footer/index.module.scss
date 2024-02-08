@@ -28,10 +28,8 @@
 .leftSection {
   display: flex;
   flex-direction: column;
+  flex: 1;
 
-  @include max-width(xxl) {
-    flex: 1;
-  }
 }
 
 .footerLinksContainer {

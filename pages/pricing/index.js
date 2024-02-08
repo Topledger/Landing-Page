@@ -1,33 +1,8 @@
 import Header from "@/components/Header";
 import Page from "@/components/Page";
 import PricingSection from "./components/PricingSection";
-// Basic
-// Plus
-// Pro
-// $750
-// per month
-// $1500
-// per month
-// $2500
-// per month
-// Access to all decoded program tables
-// Access to all smart tables like dex-trades, nft-trades, staking, DePIN, bridges and more
-// Offload analytics workload
-// Wallet analytics at scale
-// CSV exports
-// Unlimited custom data decoding & indexing
-// Custom APIs
-// SQL to API
-// All Plus plan benefits
-// Basic support
-// Ability to connect private database
-// Business support
-// Access to all decoded program tables
-// SQL to API
-// CSV exports
-// Start with Basic
-// Start with Plus
-// Start with Pro
+import QueryFormModal from "@/components/QueryForm/QueryFormModal";
+
 const pricing = [
   {
     media: {
@@ -51,7 +26,7 @@ const pricing = [
         secondary: true,
         text: "Start with Basic",
         target: "_blank",
-        href: "https://docs.topledger.io",
+        onClick: () => QueryFormModal.show(),
       },
     ],
   },
@@ -80,7 +55,7 @@ const pricing = [
         secondary: true,
         text: "Start with Plus",
         target: "_blank",
-        href: "https://docs.topledger.io",
+        onClick: () => QueryFormModal.show(),
       },
     ],
   },
@@ -106,7 +81,7 @@ const pricing = [
         secondary: true,
         text: "Start with Pro",
         target: "_blank",
-        href: "https://docs.topledger.io",
+        onClick: () => QueryFormModal.show(),
       },
     ],
   },
@@ -126,7 +101,7 @@ const enterpricePricingPlan = {
     primary: true,
     text: "Contact sales",
     target: "_blank",
-    href: "https://docs.topledger.io",
+    onClick: () => QueryFormModal.show(),
   },
   featureTitle: "Tailored for institutional demands :",
   features: [
@@ -155,7 +130,7 @@ const walletAnalyticsPricing = {
     primary: true,
     text: "Start with Plus",
     target: "_blank",
-    href: "https://docs.topledger.io",
+    onClick: () => QueryFormModal.show(),
   },
   isNew: true,
 };

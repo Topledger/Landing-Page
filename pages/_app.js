@@ -21,6 +21,7 @@ function isExcludedPath(pathList, currentPath) {
 }
 
 const NO_HEADER_FOOTER_PATHS = [
+  "/",
   "/get-started",
   "/landing",
   "/web3-teams",

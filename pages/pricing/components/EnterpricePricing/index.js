@@ -3,32 +3,6 @@ import SvgIcon from "@/components/SvgIcon";
 import styles from "./index.module.scss";
 import { getAction } from "@/components/ArticleCard/ArticleFooter";
 
-// const enterpricePricingPlan = {
-//   media: {
-//     type: "image",
-//     src: "/assets/images/pricing/enterprise.svg",
-//     backgroundColor: "#F1F5FF",
-//   },
-//   name: "Enterprise plan",
-//   description:
-//     "A complete solution designed to integrate analytics across all areas of your organization",
-//   cta: {
-//     type: "button",
-//     primary: true,
-//     text: "Contact sales",
-//     target: "_blank",
-//     href: "https://docs.topledger.io",
-//   },
-//   featureTitle: "Tailored for institutional demands :",
-//   features: [
-//     "Decoded data on your private cloud",
-//     "Dedicated analyst & data engineer",
-//     "Priority data decoding & indexing",
-//     "Custom APIs",
-//     "All Pro plan benefits",
-//   ],
-// };
-
 const EnterpricePricing = ({ enterpricePricingPlan = {} }) => {
   return (
     <div className={styles.enterpricePricing}>

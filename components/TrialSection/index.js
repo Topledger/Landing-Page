@@ -7,16 +7,9 @@ import QueryFormModal from "../QueryForm/QueryFormModal";
 const TrialSection = () => {
   return (
     <Section
-      style={{
-        height: "422px",
-        backgroundSize: "contain",
-        borderTop: "1px solid #E8E9FA",
-        backgroundRepeat: "repeat-x",
-        backgroundPosition: "bottom",
-      }}
       className={styles.trialSection}
       containerStyle={{}}
-      background="/assets/images/landing/bars-background.svg"
+      background="/assets/images/landing/bars-background-1.svg"
     >
       <div className={styles.trialContainer}>
         <div className={styles.trialContent}>

@@ -13,6 +13,7 @@ export const getAction = ({
   isSelected,
   primary,
   secondary,
+  tertiary,
   ...props
 } = {}) => {
   switch (type) {
@@ -31,7 +32,7 @@ export const getAction = ({
       );
     case "link":
       return (
-        <Link {...props} color="#085ED4">
+        <Link {...props} color="#085ED4" primary={primary || (isSelected && secondary)} secondary={(!primary && !tertiary) || (secondary && !isSelected)}>
           {props.text}
         </Link>
       );

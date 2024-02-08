@@ -1,9 +1,16 @@
+@import '@/assets/styles/breakpoints.scss';
+
 .enterpricePricing {
   border-radius: 2.5rem;
   border: 1px solid #e8e9fa;
   background: #fdfdff;
   display: flex;
   height: 100%;
+
+  @include mobile {
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 .enterpricePricingMedia {
@@ -12,6 +19,16 @@
   border-radius: 40px 0px 0px 40px;
   border-right: 1px solid #e8e9fa;
   background: #f1f5ff;
+
+  @include mobile {
+    width: 100%;
+    border-radius: 40px 40px 0px 0px;
+    border-right: none;
+    border-bottom: 1px solid #e8e9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .enterpricePricingName {
@@ -19,6 +36,11 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 1.5rem;
+  
+  @include mobile {
+    margin-top: 1rem;
+    width: 100%;
+  }
 }
 
 .enterpricePricingDescription {
@@ -26,10 +48,18 @@
   font-size: 1rem;
   line-height: 140%;
   margin-top: 1rem;
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .enterpricePricingCta {
   margin-top: 65px;
+
+  @include mobile {
+    margin-top: 2rem;
+  }
 }
 
 .enterpricePricingContent {
@@ -45,6 +75,10 @@
   font-size: 1rem;
   font-weight: 600;
   line-height: 140%;
+
+  @include mobile {
+    text-wrap: nowrap;
+  }
 }
 
 .enterpricePricingFeatureList {

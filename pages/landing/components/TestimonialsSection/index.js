@@ -1,19 +1,7 @@
 import Section from "@/components/Section";
 
 import styles from "./index.module.scss";
-import Image from "next/image";
 import Carousel from "@/components/Carousel";
-
-// const testimonials = [
-//   {
-//     id: 1,
-//     text: "The Top Ledger team has been a key partner for Metaplex Studios in creating real time dashboards that inform our most important strategic questions. I check Top Ledger regularly to track market movements and to understand the impact of new features and initiatives. It's become one of our most important tools and significantly improved the quality of our decision-making as a team.",
-//     name: "Stephen",
-//     credentials: "CEO, Metaplex",
-//     logo: "/assets/images/logo/metaplex.svg",
-//     avatar: "/assets/images/logo/metaplex.svg",
-//   },
-// ];
 
 const Testimonial = ({ testimonial }) => {
   return (
@@ -56,7 +44,7 @@ const TestimonialsSection = ({ testimonials }) => {
         <p className={styles.sectionDescription}>Real Stories, Real Success</p>
       </div>
       <div className={styles.sectionBody}>
-        <Carousel>
+        <Carousel className={styles.carousel}>
           {testimonials?.map((testimonial) => (
             <Testimonial testimonial={testimonial} key={testimonial.id} />
           ))}

@@ -62,7 +62,7 @@ const Header = ({ className }) => {
   return (
     <header className={cx(styles.appHeader, className)}>
       <span className={styles.headerWrapper}>
-        <Button.Link className={styles.logoContainer} href="/landing" tertiary>
+        <Button.Link className={styles.logoContainer} href="/" tertiary>
           <Image
             src={"/assets/images/logo/topledger-full.svg"}
             width={144}
@@ -71,7 +71,7 @@ const Header = ({ className }) => {
           />
         </Button.Link>
         <nav className={styles.headerLinks}>
-          <HeaderMenu
+          {/* <HeaderMenu
             className={styles.headerLink}
             menuItems={productsHeaderLinks}
           >
@@ -82,7 +82,7 @@ const Header = ({ className }) => {
             menuItems={useCasesHeaderLinks}
           >
             <a className={styles.headerLink}>User cases</a>
-          </HeaderMenu>
+          </HeaderMenu> */}
           <Button.Link tertiary className={styles.headerLink} href="/pricing">
             Pricing
           </Button.Link>

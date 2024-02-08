@@ -2,28 +2,6 @@ import { getAction } from "@/components/ArticleCard/ArticleFooter";
 
 import styles from "./index.module.scss";
 
-// const walletAnalyticsPricing = {
-//   media: {
-//     type: "image",
-//     src: "/assets/images/pricing/wallet-analytics.svg",
-//     backgroundColor: "#F1E0FF",
-//   },
-//   title: "Wallet analytics at scale",
-//   description:
-//     "Analyze your thousands of users across multiple Solana ecosystems in a no-code way.",
-//   price: "1000",
-//   currency: "$",
-//   period: "per month",
-//   cta: {
-//     type: "button",
-//     secondary: true,
-//     text: "Start with Plus",
-//     target: "_blank",
-//     href: "https://docs.topledger.io",
-//   },
-//   isNew: true,
-// };
-
 const WalletAnalyticsPricing = ({ walletAnalyticsPricing = {} }) => {
   return (
     <div className={styles.walletAnalyticsPricing}>

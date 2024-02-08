@@ -37,13 +37,14 @@
   margin-top: 2.5rem;
 
   @include mobile {
-    height: 24rem;
+    height: auto;
   }
 }
 
 .testimonialContainer {
   display: flex;
   justify-content: center;
+  height: 100%;
 }
 
 .testimonial {
@@ -63,6 +64,10 @@
   color: #374151;
   font-size: 1rem;
   line-height: 140%;
+  
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonialContent {
@@ -70,6 +75,7 @@
   line-height: 28px;
   color: #42454a;
   margin-bottom: 20px;
+  flex: 1;
 }
 
 .testimonialAuthor {
@@ -109,4 +115,12 @@
 }
 
 .testimonialLogo {
+}
+
+.carousel {
+  min-height: 20rem;
+
+  @include mobile {
+    min-height: 32rem;
+  }
 }

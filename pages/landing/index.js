@@ -7,6 +7,7 @@ import OutcomesSection from "./components/OutcomesSection";
 import DataCultureSection from "./components/CultureSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import TrialSection from "@/components/TrialSection";
+import QueryFormModal from "@/components/QueryForm/QueryFormModal";
 
 const articles = [
   {
@@ -18,12 +19,13 @@ const articles = [
     image: "/assets/images/landing/article-1.jpg",
     footer: {
       actionElements: [
-        { type: "button", text: "See details" },
+        { type: "button", text: "See details", primary: true },
         {
           type: "link",
           text: "Public dashboards",
           target: "_blank",
           href: "/dashboards",
+          secondary: true,
         },
       ],
     },
@@ -55,7 +57,7 @@ const articles = [
     image: "/assets/images/landing/article-3.jpg",
     footer: {
       actionElements: [
-        { type: "button", text: "See details" },
+        { type: "button", text: "See details", primary: true},
         {
           type: "link",
           text: "Available schemas",
@@ -100,6 +102,7 @@ const outcomes = [
       type: "link",
       target: "_blank",
       text: "Start a free trial",
+      onClick: () => QueryFormModal.show(),
     },
   },
   {
@@ -121,7 +124,7 @@ const outcomes = [
     description:
       "Boost your development with Top Ledger API! Designed for seamless data integration on the Solana blockchain, our API empowers you to efficiently manage and query hundreds of decoded data tables",
     action: {
-      type: "link",
+      type: "comingSoon",
       target: "_blank",
       text: "API guide",
     },
@@ -138,6 +141,7 @@ const dataCultures = [
       type: "link",
       target: "_blank",
       text: "See details",
+      href: "/dashboard-list",
     },
     bottomContent: {
       text: "Indexing Helium's on-chain and oracle data",
@@ -152,6 +156,7 @@ const dataCultures = [
       type: "link",
       target: "_blank",
       text: "Success stories",
+      href: "https://blogs.topledger.xyz/"
     },
     bottomContent: {
       text: "Multiple teams at Metaplex uses Top Ledger daily",

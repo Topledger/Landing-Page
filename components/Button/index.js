@@ -14,21 +14,20 @@ const getBtnProps = (props) => ({
   }),
 });
 
+const getBtnStyle = ({color, ...props}) => ({
+  ...props?.style,
+  ...(props.primary && { backgroundColor: color, backgroundImage: "none" }),
+  ...(props.secondary && { backgroundColor: "transparent",
+  backgroundImage: "none",
+  borderColor: color,
+  color }),
+  ...(props.tertiary && { color: color }),
+});
+
 const Button = ({ color, children, className, ...props }) => {
   const btnProps = getBtnProps({ ...props, className });
 
-  const style = {
-    ...btnProps?.style,
-    ...(props.primary &&
-      color && { backgroundColor: color, backgroundImage: "none" }),
-    ...(props.tertiary && { color }),
-    ...(props.secondary && {
-      backgroundColor: "transparent",
-      backgroundImage: "none",
-      borderColor: color,
-      color,
-    }),
-  };
+  const style = getBtnStyle({color, ...btnProps});
 
   return (
     <button {...btnProps} style={style}>
@@ -51,11 +50,7 @@ Button.Link = ({
   const btnProps = getBtnProps({ ...props, className });
   const newWindowLink = props.target === "_blank";
 
-  const style = {
-    ...btnProps?.style,
-    borderColor: color,
-    color,
-  };
+  const style = getBtnStyle({color, ...btnProps});
 
   const Component = href ? Link : Anchor;
 

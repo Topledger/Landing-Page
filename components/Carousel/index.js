@@ -5,7 +5,7 @@ import SvgIcon from "../SvgIcon";
 
 import styles from "./index.module.scss";
 
-const Carousel = ({ children, getKey }) => {
+const Carousel = ({ className, style, children, getKey }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
@@ -19,7 +19,7 @@ const Carousel = ({ children, getKey }) => {
   };
 
   return (
-    <div className={styles.carousel}>
+    <div className={cx(styles.carousel, className)} style={style}>
       <button className={cx(styles.button, styles.prev)} onClick={prevSlide}>
         <SvgIcon name="chevron-left" className={styles.chevron} />
       </button>

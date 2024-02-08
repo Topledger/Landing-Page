@@ -11,7 +11,7 @@
   height: 100%;
 
   @include max-width(xxl) {
-    width: 20rem;
+    width: 22rem;
   }
   @include max-width(xl) {
     border-radius: 2rem;
@@ -40,6 +40,7 @@
   svg:first-child {
     width: 4rem;
     height: 4rem;
+    min-width: 4rem;
   }
 }
 
