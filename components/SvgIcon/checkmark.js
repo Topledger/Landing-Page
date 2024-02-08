@@ -7,7 +7,7 @@ const SvgComponent = ({ color, ...props }) => (
     height={24}
     {...props}
   >
-    <g fill="none" stroke="#63B63C" strokeWidth={2}>
+    <g fill="none" stroke="#487efb" strokeWidth={2}>
       <circle
         cx={77}
         cy={77}
@@ -22,7 +22,7 @@ const SvgComponent = ({ color, ...props }) => (
         cx={77}
         cy={77}
         r={72}
-        fill="#63B63C"
+        fill="#487efb"
         style={{
           strokeDasharray: "480,480",
           strokeDashoffset: 960,
