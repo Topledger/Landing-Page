@@ -24,7 +24,7 @@ const articles = [
           type: "link",
           text: "Public dashboards",
           target: "_blank",
-          href: "/dashboards",
+          href: "/dashboard-list",
           secondary: true,
         },
       ],
@@ -107,7 +107,7 @@ const outcomes = [
   },
   {
     id: 2,
-    image: "/assets/images/landing/outcome-businesses.png",
+    image: "/assets/images/landing/outcome-businesses.svg",
     title: "For business people",
     description:
       "Our user-friendly interface with upcoming AI capabilities accelerates data analysis, enabling quicker, more effective problem-solving and a stronger data-driven approach in business decision-making",
@@ -128,6 +128,7 @@ const outcomes = [
       type: "comingSoon",
       target: "_blank",
       text: "API guide",
+      fullWidth: true,
     },
   },
 ];
@@ -141,7 +142,7 @@ const dataCultures = [
     action: {
       type: "link",
       target: "_blank",
-      text: "See details",
+      text: "Public Dashboards",
       href: "/dashboard-list",
     },
     bottomContent: {

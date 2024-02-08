@@ -2,7 +2,7 @@
 
 .testimonialsSection {
   padding-top: 7.5rem;
-  padding-bottom: 6.5625rem;
+  padding-bottom: 7.5rem;
 
   @include mobile {
     padding-top: 2rem;
@@ -71,8 +71,8 @@
 }
 
 .testimonialContent {
-  font-size: 1.125rem;
-  line-height: 28px;
+  font-size: 1rem;
+  line-height: 1.4;
   color: #42454a;
   margin-bottom: 20px;
   flex: 1;
@@ -118,9 +118,9 @@
 }
 
 .carousel {
-  min-height: 20rem;
+  min-height: 15rem;
 
   @include mobile {
-    min-height: 32rem;
+    min-height: 23rem;
   }
 }

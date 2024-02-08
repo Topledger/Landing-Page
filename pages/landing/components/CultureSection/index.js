@@ -17,8 +17,8 @@ const Culture = ({
 }) => {
   const bottomContent = (
     <div className={styles.ideaSection}>
-      <Icon name="diamond-circle" className={styles.bottomIcon} />
-      <Button.Link tertiary target="_blank" color="#42454A" style={{padding: 0}}>
+      <Icon name="diamond-circle" className={styles.bottomIcon} height={32} width={32} />
+      <Button.Link tertiary target="_blank" color="#42454A" style={{padding: 0, textWrap: 'nowrap'}}>
         {text}
       </Button.Link>
     </div>
@@ -29,7 +29,7 @@ const Culture = ({
       extraContent={{
         bottom: bottomContent,
         bottomStyle: {
-          backgroundColor: "#92a6ec",
+          backgroundColor: "#bfc5e5",
         },
       }}
     >

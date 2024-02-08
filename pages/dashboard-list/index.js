@@ -9,35 +9,6 @@ import {
   getCreationDate,
 } from "helpers/dashboard";
 
-// const dashboards = [
-//   {
-//     name: "Metaplex",
-//     href: "https://analytics.topledger.xyz/metaplex/public/dashboards/T50WQTTu2Cbz8hG0vge18izUO5ghEDrWhzb92knN",
-//     icon: "/assets/images/dashboards/metaplex.svg",
-//     target: "_blank",
-//   },
-//   {
-//     name: "Drip",
-//     href: "https://topledger.xyz/dashboards/drip",
-//     icon: "/assets/images/dashboards/drip.png",
-//   },
-//   {
-//     name: "Drift",
-//     href: "https://topledger.xyz/dashboards/drift",
-//     icon: "/assets/images/dashboards/drift.png",
-//   },
-//   {
-//     name: "Helium",
-//     href: "https://topledger.xyz/dashboards/helium",
-//     icon: "/assets/images/dashboards/helium.png",
-//   },
-//   {
-//     name: "Phoenix",
-//     href: "https://topledger.xyz/dashboards/phoenix",
-//     icon: "/assets/images/dashboards/phoenix.png",
-//   },
-// ];
-
 const DASHBOARD_ICONS = {
   Metaplex: "/assets/images/dashboards/metaplex.svg",
   Drip: "/assets/images/dashboards/drip.png",

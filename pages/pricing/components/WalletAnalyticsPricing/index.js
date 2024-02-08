@@ -1,6 +1,7 @@
 import { getAction } from "@/components/ArticleCard/ArticleFooter";
 
 import styles from "./index.module.scss";
+import Chip from "@/components/Chip";
 
 const WalletAnalyticsPricing = ({ walletAnalyticsPricing = {} }) => {
   return (
@@ -23,6 +24,7 @@ const WalletAnalyticsPricing = ({ walletAnalyticsPricing = {} }) => {
           {walletAnalyticsPricing.price}
           <div className={styles.walletAnalyticsPricingPeriod}>
             {walletAnalyticsPricing.period}
+            <Chip style={{padding: '0.25rem 0.5rem', fontSize: '10px'}} color='#24B500'>New</Chip>
           </div>
         </div>
         <div className={styles.walletAnalyticsPricingCta}>

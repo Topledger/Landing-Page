@@ -111,6 +111,7 @@ const Header = ({ className }) => {
             target="_blank"
             noArrow
             color="#085ED4"
+            secondary
           >
             Login
           </Button.Link>

@@ -37,10 +37,10 @@ export const getAction = ({
         </Link>
       );
     case "search":
-      return <Input.Search {...props} style={{ width: "80%" }} />;
+      return <Input.Search {...props} style={{ ...props?.style, width: "80%" }} color="#085ED4" primary/>;
     case "comingSoon":
       return (
-        <Chip color="#59B077" {...props}>
+        <Chip color="#59B077" {...props} style={{...props?.style, width: '100%', textAlign: 'center'}}>
           Coming Soon
         </Chip>
       );

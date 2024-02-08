@@ -19,7 +19,7 @@ Input.Search = ({
   return (
     <span style={style} className={cx(styles.searchInputContainer, className)}>
       <Input className={cx(styles.searchInput, inputClassName)} {...props} />
-      <Button {...props} className={cx(styles.searchBtn, btnClassName)} primary>
+      <Button {...props} className={cx(styles.searchBtn, btnClassName)}>
         <Icon name="arrow-right" />
       </Button>
     </span>

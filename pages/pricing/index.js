@@ -131,6 +131,10 @@ const walletAnalyticsPricing = {
     text: "Start with Plus",
     target: "_blank",
     onClick: () => QueryFormModal.show(),
+    style: {
+      width: "100%",
+      justifyContent: 'center'
+    }
   },
   isNew: true,
 };

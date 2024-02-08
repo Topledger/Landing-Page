@@ -29,13 +29,13 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-
 }
 
 .footerLinksContainer {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  flex: 1;
 
   @include max-width(xxl) {
     gap: 1rem;
@@ -57,6 +57,9 @@
   font-size: 1rem;
   color: #1a3989;
   padding: 0;
+  color: #374151;
+  letter-spacing: 0.96px;
+  font-weight: 400;
 }
 
 .copyContainer {
@@ -64,5 +67,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
   width: 100%;
 }

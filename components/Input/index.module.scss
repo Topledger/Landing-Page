@@ -7,12 +7,12 @@ $input-height: 43px;
   gap: 0.625rem;
   flex-shrink: 0;
   border-radius: 0.5rem;
-  border: 1px solid #dbdced;
+  border: 1px solid #d6e2ff;
   background: var(--Neutral-light-1, #fff);
 
   &:focus {
     outline: none;
-    border-color: #aaa;
+    border-color: #a8abd7;
   }
   &.error {
     border-color: red;
