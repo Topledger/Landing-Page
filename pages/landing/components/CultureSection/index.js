@@ -18,7 +18,7 @@ const Culture = ({
   const bottomContent = (
     <div className={styles.ideaSection}>
       <Icon name="diamond-circle" className={styles.bottomIcon} height={32} width={32} />
-      <Button.Link tertiary target="_blank" color="#42454A" style={{padding: 0, textWrap: 'nowrap'}}>
+      <Button.Link tertiary target="_blank" color="#42454A" className={styles.bottomText}>
         {text}
       </Button.Link>
     </div>
@@ -44,7 +44,7 @@ const Culture = ({
 
 const DataCultureSection = ({ dataCultures = [] }) => {
   return (
-    <Section containerStyle={{ paddingTop: "120px", paddingBottom: "188px" }}>
+    <Section className={styles.cultureSection}>
       <div className={styles.sectionHead}>
         <div>
           <h2 className={styles.sectionTitle}>

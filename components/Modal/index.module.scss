@@ -1,3 +1,5 @@
+@import "@/assets/styles/breakpoints.scss";
+
 .modalContainer {
   position: fixed;
   top: 0;
@@ -31,4 +33,10 @@
   }
 
   animation: appearIn 0.3s ease-out forwards;
+}
+
+.modalContent {
+  @include mobile {
+    border-radius: 1.5rem;
+  }
 }

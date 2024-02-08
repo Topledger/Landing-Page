@@ -11,7 +11,7 @@
   }
   @include max-width(xl) {
     flex-direction: column-reverse;
-    padding-top: 4rem;
+    padding-top: 5rem;
     gap: 2rem;
   }
 }

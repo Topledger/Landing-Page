@@ -8,7 +8,7 @@ const Modal = ({ children, onShadowClick }) => {
   return (
     <div className={styles.modalContainer}>
       <div className={styles.shadow} onClick={onShadowClick}></div>
-      <Card className={styles.modal}>{children}</Card>
+      <Card className={styles.modal} contentClassName={styles.modalContent}>{children}</Card>
     </div>
   );
 };

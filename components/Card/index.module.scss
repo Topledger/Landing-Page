@@ -37,7 +37,7 @@
   @include card-style;
   width: 100%;
   position: absolute;
-  padding-bottom: 23px;
+  padding-bottom: 16px;
   flex-direction: column;
   left: 0;
   top: calc(100% - 70px);
@@ -47,6 +47,11 @@
   z-index: 0;
 
   @include mobile {
-    padding-top: 100px;
+    padding-top: 84px;
+    padding-bottom: 1rem;
+
+    a {
+      font-size: 0.875rem;
+    }
   }
 }

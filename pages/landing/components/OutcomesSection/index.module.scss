@@ -5,8 +5,8 @@
   padding-bottom: 6.5625rem;
 
   @include mobile {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 }
 
@@ -48,7 +48,7 @@
   margin-top: 2.5rem;
 
   @include tablet {
-    gap: 2rem;
+    gap: 3.5rem;
   }
   @include mobile {
     grid-template-columns: 1fr;
