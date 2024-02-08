@@ -19,7 +19,7 @@ const articles = [
     image: "/assets/images/landing/article-1.jpg",
     footer: {
       actionElements: [
-        { type: "button", text: "See details", primary: true },
+        // { type: "button", text: "See details", primary: true },
         {
           type: "link",
           text: "Public dashboards",
@@ -57,7 +57,7 @@ const articles = [
     image: "/assets/images/landing/article-3.jpg",
     footer: {
       actionElements: [
-        { type: "button", text: "See details", primary: true},
+        // { type: "button", text: "See details", primary: true},
         {
           type: "link",
           text: "Available schemas",
