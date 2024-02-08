@@ -10,6 +10,10 @@
   @include tablet {
     padding: 2rem;
   }
+
+  @include mobile {
+    border-radius: 1.5rem;
+  }
 }
 
 .card {

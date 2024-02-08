@@ -6,6 +6,7 @@ import User from "./user";
 import Email from "./email";
 import Company from "./company";
 import Designation from "./designation";
+import Checkmark from "./checkmark";
 
 const IconMap = {
   chevron: Chevron,
@@ -16,6 +17,7 @@ const IconMap = {
   email: Email,
   company: Company,
   designation: Designation,
+  checkmark: Checkmark,
 };
 
 const SvgIcon = ({ name, ...props }) => {

@@ -1,7 +1,14 @@
+@import "@/assets/styles/breakpoints.scss";
+
 .chip {
   display: inline-block;
   padding: 12px 24px;
   border-radius: 0.25rem;
   background-color: #f5f5f5;
   font-size: 0.875rem;
+
+  @include mobile {
+    padding: 8px;
+    font-size: 0.75rem;
+  }
 }

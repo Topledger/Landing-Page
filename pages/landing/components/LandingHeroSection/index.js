@@ -13,16 +13,19 @@ const LandingHeroSection = () => {
       <p className={styles.subHeading}>End to End</p>
       <h1 className={styles.heading}>Blockchain Analytics</h1>
       <p className={styles.description}>
-        <span>Powering the best in the</span>
-        <span style={{ marginBottom: "-3px" }}>
-          <Image
-            src="/assets/images/landing/solana-logo-inline.png"
-            width={96}
-            height={18}
-            alt="Solana"
-          />
+        <span>Powering the best</span>
+        <span className={styles.hiddenMobile}>
+          in the
+          <span style={{ marginBottom: "-3px" }}>
+            <Image
+              src="/assets/images/landing/solana-logo-inline.png"
+              width={96}
+              height={18}
+              alt="Solana"
+            />
+          </span>
+          <span>ecosystem</span>
         </span>
-        <span>ecosystem</span>
       </p>
       <p className={styles.companyLogos}>
         {/* <Image

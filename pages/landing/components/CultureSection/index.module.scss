@@ -27,6 +27,10 @@
     z-index: 1;
     margin-left: 0.5rem;
   }
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
 }
 
 .sectionDescription {
@@ -37,6 +41,10 @@
   letter-spacing: 0.72px;
   margin-top: 0.5rem;
   max-width: 500px;
+
+  @include mobile {
+    font-size: 1rem;
+  }
 }
 
 .chartIcons {

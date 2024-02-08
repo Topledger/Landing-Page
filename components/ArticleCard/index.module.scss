@@ -27,6 +27,10 @@
   letter-spacing: 0.29px;
   margin-top: 1.5rem;
   color: #374151;
+
+  @include mobile {
+    font-size: 1.125rem;
+  }
 }
 
 .subtitle {
@@ -36,6 +40,10 @@
   letter-spacing: 0.64px;
   margin-top: 1rem;
   flex: 1;
+
+  @include mobile {
+    font-size: 0.875rem;
+  }
 }
 
 .footerContainer {

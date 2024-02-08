@@ -42,6 +42,12 @@
   gap: 0.25rem;
   padding: 1rem;
   line-height: 2rem;
+  color: #374151;
+}
+.hiddenMobile {
+  @include mobile {
+    display: none;
+  }
 }
 
 .companyLogos {
@@ -53,4 +59,8 @@
   background-image: cover;
   background-position: center center;
   background-repeat: no-repeat;
+
+  @include mobile {
+    margin-top: 0.5rem;
+  }
 }

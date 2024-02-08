@@ -8,6 +8,7 @@ import SvgIcon from "../SvgIcon";
 
 import styles from "./index.module.scss";
 import { postFeedback } from "queries";
+import Icon from "../Icon";
 
 const isValid = (value, validations) => {
   return validations.every((validation) => validation(value));
@@ -15,9 +16,18 @@ const isValid = (value, validations) => {
 
 const Input = ({ icon, className, validations, name, ...inputProps }) => {
   const [valid, setIsValid] = useState(!validations);
+  const [focused, setFocused] = useState(false);
+
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleBlur = () => {
+    setFocused(false);
+  };
 
   return (
-    <span className={styles.inputContainer}>
+    <span className={cx(styles.inputContainer, { [styles.focused]: focused })}>
       <SvgIcon name={icon} className={styles.inputIcon} />
       <input
         className={styles.input}
@@ -26,6 +36,8 @@ const Input = ({ icon, className, validations, name, ...inputProps }) => {
         {...(validations && {
           onChange: (e) => setIsValid(isValid(e.target.value, validations)),
         })}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       />
       <input type="hidden" name={`${name}_valid`} value={valid} />
       {validations && (
@@ -294,11 +306,11 @@ const QueryForm = () => {
         <div className={styles.submittedForm}>
           <div className={styles.submittedContainer}>
             <div className={styles.successImageContainer}>
-              <Image
-                className={styles.successImage}
-                src="/assets/images/feedback-success.gif"
-                width={48}
-                height={48}
+              <SvgIcon
+                className={styles.checkmark}
+                name="checkmark"
+                height={150}
+                width={150}
               />
             </div>
             <div className={styles.successLine1}>
