@@ -296,10 +296,9 @@ const QueryForm = () => {
             <div className={styles.successImageContainer}>
               <Image
                 className={styles.successImage}
-                src="/assets
-                  /images/feedback-success.gif"
-                width={150}
-                height={150}
+                src="/assets/images/feedback-success.gif"
+                width={48}
+                height={48}
               />
             </div>
             <div className={styles.successLine1}>
