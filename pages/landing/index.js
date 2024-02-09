@@ -71,6 +71,7 @@ const articles = [
     id: 4,
     tags: [{ text: "Everyone", color: "#D4996D" }],
     title: "Top Ledger AI: Your trusted data ally",
+    titleMobile: "Top Ledger AI",
     description:
       "Top Ledger AI is set to transform data analysis on Solana, simplifying large-scale insight consumption and accelerating decision-making",
     image: "/assets/images/landing/article-3.jpg",

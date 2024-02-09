@@ -29,6 +29,14 @@
   color: #374151;
 
   @include mobile {
+    display: none;
+  }
+}
+
+.titleMobile {
+  display: none;
+  @include mobile {
+    display: block;
     font-size: 1.125rem;
   }
 }

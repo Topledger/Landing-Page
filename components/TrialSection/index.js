@@ -8,6 +8,7 @@ const TrialSection = () => {
   return (
     <Section
       className={styles.trialSection}
+      containerClassName={styles.trialSectionContainer}
       containerStyle={{}}
       background="/assets/images/landing/bars-background-1.svg"
     >
