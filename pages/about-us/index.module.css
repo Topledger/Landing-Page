@@ -20,7 +20,7 @@
   height: 100%;
 }
 .aboutHero .content .title {
-  font-size: 64px;
+  font-size: 4rem;
   line-height: 72px;
   font-weight: 700;
   color: #6588e1;
@@ -30,7 +30,7 @@
 }
 .aboutHero .content .description {
   font-weight: 300;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 29px;
   letter-spacing: 0.04em;
   color: rgba(0, 0, 0, 0.54);
@@ -43,7 +43,7 @@
   transform: translateX(-50%);
 }
 .aboutHero .nxt img {
-  width: 50px;
+  width: 3.125rem;
 }
 
 .about_img {
@@ -57,7 +57,7 @@
   width: 100%;
 }
 .aboutsImg img {
-  width: 50px;
+  width: 3.125rem;
 }
 .aboutsImg {
   position: absolute;
@@ -70,7 +70,7 @@
   left: 54%;
 }
 .aboutsImagess img {
-  width: 40px;
+  width: 2.5rem;
 }
 .aboutsImagess {
   position: absolute;
@@ -78,7 +78,7 @@
   right: 92px;
 }
 .aboutsImgs img {
-  width: 50px;
+  width: 3.125rem;
 }
 .maskImgs {
   position: absolute;
@@ -102,7 +102,7 @@
   /* transform: rotate(45deg); */
 }
 .icans img {
-  width: 50px;
+  width: 3.125rem;
 }
 .icans {
   position: absolute;
@@ -153,7 +153,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500;
-  font-size: 21px;
+  font-size: 1.3125rem;
   line-height: 26px;
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.87);
@@ -162,7 +162,7 @@
 }
 .aboutTopLedger .wrapper .description {
   font-weight: 300;
-  font-size: 21px;
+  font-size: 1.3125rem;
   line-height: 24px !important;
   letter-spacing: 0.02em !important;
   color: rgba(0, 0, 0, 0.54);
@@ -224,7 +224,7 @@
   margin: 0 50px;
 }
 .mainCardMain {
-  border-radius: 8px;
+  border-radius: 0.5rem;
   overflow: hidden;
   height: 322px;
   position: relative;
@@ -233,8 +233,8 @@
   cursor: pointer;
 }
 .mainCardMain .contentBlock {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
   background-color: #eef2fc;
   height: 80px;
   position: sticky;
@@ -253,18 +253,18 @@
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   display: flex;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
   padding-top: 13px;
 }
 .mainCardMain .contentBlock .socialIcons .icon {
   background-color: #fff;
-  border-radius: 50px;
+  border-radius: 3.125rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  margin-right: 10px;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.625rem;
 }
 .mainCardMain .contentBlock .socialIcons .icon a {
   display: flex;
@@ -279,10 +279,10 @@
 }
 .aboutTopLedger .mainCard .CardImg {
   background: linear-gradient(
-      0deg,
-      rgba(244, 243, 255, 0.75),
-      rgba(244, 243, 255, 0.75)
-    );
+    0deg,
+    rgba(244, 243, 255, 0.75),
+    rgba(244, 243, 255, 0.75)
+  );
   position: absolute;
   top: 0;
   left: 63px;
@@ -291,7 +291,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin: 0px;
   padding-top: 15px !important;
   padding-bottom: 11px;
@@ -301,7 +301,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 19px;
   margin: 0px;
   margin-bottom: 25px !important;
@@ -315,17 +315,17 @@
 .aboutTopLedger .mainCard .CardImg1 {
   margin-top: 20px;
   background: linear-gradient(
-      0deg,
-      rgba(244, 243, 255, 0.75),
-      rgba(244, 243, 255, 0.75)
-    ),;
+    0deg,
+    rgba(244, 243, 255, 0.75),
+    rgba(244, 243, 255, 0.75)
+  );
   text-align: left;
 }
 .mainCard .CardImg1 h3 {
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin: 0px;
   padding-top: 15px;
   padding-bottom: 11px;
@@ -335,7 +335,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 19px;
   margin: 0px;
   margin-bottom: 25px !important;
@@ -350,10 +350,10 @@
 .aboutTopLedger .mainCard .CardImg2 {
   /* margin-top: 20px; */
   background: linear-gradient(
-      0deg,
-      rgba(244, 243, 255, 0.75),
-      rgba(244, 243, 255, 0.75)
-    );
+    0deg,
+    rgba(244, 243, 255, 0.75),
+    rgba(244, 243, 255, 0.75)
+  );
   position: absolute;
   top: 370px;
   left: 63px;
@@ -363,7 +363,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin: 0px;
   padding-top: 15px;
   padding-bottom: 11px;
@@ -373,7 +373,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 19px;
   margin: 0px;
   margin-bottom: 25px !important;
@@ -387,10 +387,10 @@
 .aboutTopLedger .mainCard .CardImg3 {
   /* margin-top: 20px; */
   background: linear-gradient(
-      0deg,
-      rgba(244, 243, 255, 0.75),
-      rgba(244, 243, 255, 0.75)
-    );
+    0deg,
+    rgba(244, 243, 255, 0.75),
+    rgba(244, 243, 255, 0.75)
+  );
   position: absolute;
   top: 520px;
   right: 73px;
@@ -400,7 +400,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin: 0px;
   padding-top: 15px;
   padding-bottom: 11px;
@@ -410,7 +410,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 19px;
   margin: 0px;
   margin-bottom: 25px !important;
@@ -423,7 +423,7 @@
 }
 .description input {
   border-radius: 25px;
-  font-size: 18px;
+  font-size: 1.125rem;
   display: inline-block;
   margin-top: 29px;
   text-decoration: none;
@@ -455,7 +455,7 @@
   font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: 500;
-  font-size: 21px;
+  font-size: 1.3125rem;
   line-height: 26px;
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.87);
@@ -484,7 +484,7 @@
   }
 
   .aboutHero .content .description {
-    font-size: 21px;
+    font-size: 1.3125rem;
     letter-spacing: normal;
   }
   .aboutTopLedger {
@@ -493,7 +493,7 @@
     margin-top: -1px;
   }
   .aboutTopLedger .wrapper .description {
-    padding-left: 16px;
+    padding-left: 1rem;
   }
   .aboutTopLedger .wrapper .Content {
     width: 100%;
@@ -506,7 +506,7 @@
     padding-top: 0px !important;
   }
   /* .aboutTopLedger .wrapper .title{
-  padding-left: 16px;
+  padding-left: 1rem;
 } */
   .signUp {
     margin-left: 16px !important;
@@ -515,7 +515,7 @@
     padding-bottom: 30px;
   }
   .aboutTopLedger .wrapper .description {
-    font-size: 16px;
+    font-size: 1rem;
     padding: 0px 0px;
     text-align: center !important;
     margin-bottom: 31px;
@@ -578,7 +578,7 @@
     display: none;
   }
   .description input {
-    font-size: 14px;
+    font-size: 0.875rem;
     padding: 14px 52px 13px 12px;
   }
   .SignUp {
@@ -671,7 +671,7 @@
     color: #fff;
     text-align: left !important;
     font-weight: 400 !important;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
   .aboutTopLedger .wrapper .Content .description {
     color: #fff;
@@ -691,7 +691,7 @@
   }
   .aboutAllMobile {
     display: block;
-    padding-top: 40px;
+    padding-top: 2.5rem;
   }
   .aboutAllDesktop {
     display: none;

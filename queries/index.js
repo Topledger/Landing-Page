@@ -1,4 +1,5 @@
 import axios from "axios";
+import { SYSTEM_PROGRAM_ADDRESS } from "constants/constants";
 
 function wait(time = 0) {
   return new Promise((resolve) => setTimeout(resolve, time));
@@ -122,14 +123,14 @@ export const fetchProgramList = async () => {
 const APP_SCRIPT_ID =
   "AKfycbzLroq5USlpyn2pC-UNm_1GdeVw6O20QfIPHXD8Ai4WmZShq9_VvlgpoN5X-KKXgvBM";
 
-export const postFeedback = async (formData) => {
+export const postFeedback = async (formData, scriptId = APP_SCRIPT_ID) => {
   const qs = new URLSearchParams();
   for (const key in formData) {
     qs.set(key, formData[key]);
   }
 
   const response = await axios.post(
-    `https://script.google.com/macros/s/${APP_SCRIPT_ID}/exec`,
+    `https://script.google.com/macros/s/${scriptId}/exec`,
     qs.toString(),
     {
       headers: {
@@ -168,6 +169,6 @@ export const fetchAddressInfo = async ({ address }) => {
   return {
     isProgram: type === "program",
     isToken: type === "mint" || (type === "account" && info?.mint),
-    isWallet: result?.value?.owner === "11111111111111111111111111111111",
+    isWallet: result?.value?.owner === SYSTEM_PROGRAM_ADDRESS,
   };
 };

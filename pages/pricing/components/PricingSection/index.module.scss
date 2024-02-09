@@ -1,0 +1,75 @@
+@import '@/assets/styles/breakpoints.scss';
+
+.pricingSection {
+  border-top: 1px solid #e2e8ff;
+  background: #fff;
+  padding: 120px 0px;
+  @include mobile {
+    padding: 80px 1rem;
+  }
+}
+
+.pricingSectionTitle {
+  color: #374151;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.pricingSectionSubtitle {
+  color: #374151;
+  font-size: 1.125rem;
+  line-height: 140%;
+}
+
+.pricingSectionContent {
+}
+
+.pricingContainer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 81px;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 3rem;
+
+  }
+}
+
+.pricingItem {
+  flex: 1;
+}
+
+.customPricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 33px;
+  margin-top: 3rem;
+
+  > div:first-child {
+    grid-column: 1 / span 2;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    > div:first-child {
+      grid-column: 1 / span 1;
+    }
+  }
+}
+.enterpricePlan {
+  height: 100%;
+  @include mobile {
+    width: 100%;
+  }
+}
+.walletAnalyticsPlan {
+  height: 100%;
+  @include mobile {
+    margin-top: 3rem;
+    width: 100%;
+  }
+}

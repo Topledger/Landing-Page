@@ -5,8 +5,8 @@ import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/Header1";
+import Footer from "../components/Footer1";
 import { DarkModeProvider } from "../providers/DarkMode";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { initGa } from "helpers/gaHelper";
@@ -19,6 +19,16 @@ const headerExcludePaths = ["thanks"];
 function isExcludedPath(pathList, currentPath) {
   return pathList.findIndex((path) => currentPath.includes(path)) === -1;
 }
+
+const NO_HEADER_FOOTER_PATHS = [
+  "/",
+  "/get-started",
+  "/landing",
+  "/web3-teams",
+  "/pricing",
+  "/dashboard-list",
+  "/research",
+];
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -48,7 +58,7 @@ function MyApp({ Component, pageProps }) {
       <QueryClientProvider client={queryClient}>
         <DarkModeProvider>
           {(() => {
-            if (router.pathname.includes("get-started")) {
+            if (NO_HEADER_FOOTER_PATHS.includes(router.pathname)) {
               return <Component {...pageProps} />;
             }
 

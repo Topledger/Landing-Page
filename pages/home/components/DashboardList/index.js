@@ -15,13 +15,14 @@ function Program({ thumb, name, icon, onClick }) {
   );
 }
 
-export function Arrow({ className, focused, onClick }) {
+export function Arrow({ text = "Analyze", className, focused, onClick }) {
   return (
     <button
       className={cx(styles.rightArrow, className, { focused })}
       onClick={onClick}
     >
-      <span>Analyze</span> <RightArrow />
+      {text && <span>{text}</span>}
+      <RightArrow />
     </button>
   );
 }

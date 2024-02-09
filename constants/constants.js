@@ -1,3 +1,5 @@
+export const SYSTEM_PROGRAM_ADDRESS = "11111111111111111111111111111111";
+
 export const DASHBOARDS = {
   programs: {
     client: "tl",

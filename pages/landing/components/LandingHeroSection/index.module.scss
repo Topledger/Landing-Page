@@ -1,0 +1,66 @@
+@import "@/assets/styles/mixins";
+@import "@/assets/styles/breakpoints.scss";
+
+.landingHeroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @include mesh-overlay;
+}
+
+.heading {
+  margin-top: 1rem;
+  color: #2a3a62;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 120%;
+
+  @include mobile {
+    font-size: 3.5rem;
+  }
+}
+
+.subHeading {
+  margin-top: 8rem;
+  color: #5e709d;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0.64px;
+
+  @include mobile {
+    margin-top: 4rem;
+    font-size: 1.5rem;
+  }
+}
+
+.description {
+  margin-top: 128px;
+  gap: 0.25rem;
+  padding: 1rem;
+  line-height: 2rem;
+  color: #374151;
+}
+.hiddenMobile {
+  @include mobile {
+    display: none;
+  }
+}
+
+.companyLogos {
+  margin-top: 22.5px;
+  margin-bottom: 178px;
+  height: 2.5rem;
+
+  background-image: url(/assets/images/landing/company-logos.svg);
+  background-image: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  @include mobile {
+    margin-top: 0.5rem;
+  }
+}

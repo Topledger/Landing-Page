@@ -1,0 +1,74 @@
+.featureList {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 2.5rem;
+  grid-template-columns: 12fr 13fr;
+  transition: border-color 0.3s ease-in-out;
+
+  &:hover {
+    border-color: #a8abd7 !important;
+  }
+}
+
+.featureListMedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px 0px 0px 40px;
+  height: 100%;
+}
+
+.featureListContent {
+  margin: 64px 48px;
+  flex: 1;
+}
+
+.featureListTags {
+  margin-bottom: 1.5rem;
+}
+
+.featureListTitle {
+  margin-bottom: 1.5rem;
+}
+
+.featureListDescription {
+  margin-bottom: 1.5rem;
+}
+
+.featureListFeatures {
+  margin-bottom: 1.5rem;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.featureListItem {
+  margin: 8px 0;
+  color: #374151;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: 0.32px;
+  display: flex;
+  align-items: center;
+  // &::before {
+  //   content: "";
+  // }
+}
+
+.bullet {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 0.75rem;
+
+  // background-image: url(/assets/images/icons/bullet-diamond.svg);
+  background-size: cover;
+}
+
+.featureListCta {
+  display: flex;
+}

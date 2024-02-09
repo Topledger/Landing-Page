@@ -1,0 +1,168 @@
+.sectionHead {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  position: relative;
+  color: #283d6d;
+  font-size: 2.5rem;
+  font-weight: 600;
+  max-width: 700px;
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.sectionDescription {
+  color: #2b3d6e;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.72px;
+  margin-top: 0.5rem;
+  max-width: 500px;
+}
+
+.chartIcons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.chartIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(41.150001525878906px);
+
+  > span {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+.cultureContainer {
+  margin-top: 2.5rem;
+}
+
+.culture {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+}
+.cultureContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cultureTitle {
+  margin-top: 1.5rem;
+  color: #374151;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.cultureDescription {
+  flex: 1;
+  margin-top: 1.5rem;
+  color: #374151;
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: 0.64px;
+}
+
+.cultureAction {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.ideaSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cloudSectionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cloudSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+  border-radius: 2.5rem;
+  border: 1px solid #e8e9fa;
+  background: #fdfdff;
+  padding: 56px 42px;
+}
+
+.cloudSectionTitle {
+  color: #374151;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.cloudSectionFeatures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 1.5rem;
+  gap: 1.5rem;
+}
+
+.cloudSectionFeature {
+  display: flex;
+  padding: 32px 24px 32px 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid #e8e9fa;
+  background: #edf2ff;
+}
+
+.cloudSectionFeatureTitle {
+  color: #374151;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.cloudSectionFeatureDescription {
+  color: #374151;
+  font-size: 1rem;
+  line-height: 140%;
+}
+
+.cloudSectionDivider {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.sectionAction {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .scheduleMessage {
+    color: #374151;
+    font-size: 1.125rem;
+    line-height: 140%;
+    max-width: 600px;
+    display: inline-block;
+  }
+}

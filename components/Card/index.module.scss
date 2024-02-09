@@ -1,0 +1,61 @@
+@import "@/assets/styles/breakpoints.scss";
+
+@mixin card-style {
+  display: inline-flex;
+  padding: 48px 40px 40px 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 2.5rem;
+
+  @include tablet {
+    padding: 2rem;
+  }
+
+  @include mobile {
+    border-radius: 1.5rem;
+  }
+}
+
+.card {
+  position: relative;
+}
+
+.cardContent {
+  @include card-style;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e8e9fa;
+
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: #a8abd7;
+  }
+
+  background: #fdfdff;
+  z-index: 1;
+}
+
+.bottom {
+  @include card-style;
+  width: 100%;
+  position: absolute;
+  padding-bottom: 16px;
+  flex-direction: column;
+  left: 0;
+  top: calc(100% - 70px);
+  transform: translate(0, 0px);
+  padding-top: 80px;
+  background-color: #bfc5e5;
+  z-index: 0;
+
+  @include mobile {
+    padding-top: 84px;
+    padding-bottom: 1rem;
+
+    a {
+      font-size: 0.875rem;
+    }
+  }
+}

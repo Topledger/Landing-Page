@@ -17,7 +17,7 @@
   font-family: "Helvetica 45 Light", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 2rem;
   line-height: 120%;
   text-align: center;
   letter-spacing: 0.02em;
@@ -25,7 +25,7 @@
 .thanksHeading p {
   font-style: normal;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 140%;
   text-align: center;
   letter-spacing: 0.02em;
@@ -33,11 +33,11 @@
 }
 .thankYou {
   background: #eef2fc;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 2.5rem;
   min-width: 80%;
   width: 95%;
 }
@@ -49,13 +49,13 @@
 }
 .thanksText img {
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 0.625rem;
   width: 20px;
 }
 .thanksText h6 {
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 17px;
   font-family: "Helvetica 45 Light", sans-serif;
   letter-spacing: 0.04em;
@@ -85,7 +85,7 @@
   }
   .thanksHeading h1 {
     font-weight: 500;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 120%;
   }
 }

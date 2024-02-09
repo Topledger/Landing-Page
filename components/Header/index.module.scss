@@ -1,30 +1,88 @@
-.pageHeader {
-  :global {
-    .navMain {
-      .right-section {
-        display: inline-flex;
-        gap: 1.62rem;
-        align-items: center;
+@import "@/assets/styles/breakpoints.scss";
 
-        .login-btn {
-          display: inline-flex;
-          padding: 0.5rem 1.5rem;
-          justify-content: flex-end;
-          align-items: center;
-          cursor: pointer;
+.appHeader {
+  z-index: 99;
+  width: 100%;
+  /* width: 100vw; */
+  height: 88px;
+  background-color: #eef2fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7rem;
 
-          border-radius: 1.5625rem;
-          border: 2px solid #4383ff;
-          background: #eef2fc;
+  @include max-width(xl) {
+    flex-direction: column-reverse;
+    padding-top: 4rem;
+    gap: 2rem;
+    padding: 0rem 4rem;
+  }
 
-          font-size: 1.125rem;
-          font-weight: 500;
-          letter-spacing: 0.045rem;
-          background: linear-gradient(94deg, #4383ff -15.13%, #6a5cff 107.24%);
-          background-clip: text;
-          color: #4383ff;
-        }
-      }
-    }
+  @include max-width(md) {
+    padding: 0 24px;
+  }
+
+  @include max-width(sm) {
+  }
+}
+
+.headerWrapper {
+  width: 100%;
+  display: flex;
+  max-width: 1280px;
+
+  @include max-width(xl) {
+    max-width: 1024px;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 0 0px;
+  margin-right: 1.5rem;
+  width: 10rem;
+}
+
+.headerLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 2rem;
+
+  @include max-width(xl) {
+    gap: 16p;
+  }
+  @include max-width(sm) {
+    display: none;
+  }
+}
+
+.headerLink {
+  padding: 0;
+
+  &,
+  & a {
+    color: #4e618d;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.32px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.headerButtons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 1rem;
+  width: 10rem;
+
+  @include max-width(sm) {
+    display: none;
   }
 }

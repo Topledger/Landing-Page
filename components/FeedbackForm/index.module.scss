@@ -59,7 +59,7 @@
   min-width: 20rem;
   min-height: 20rem;
   align-self: center;
-  border-radius: 16px;
+  border-radius: 1rem;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(11.5px);
@@ -81,7 +81,7 @@
   }
   .subtitle {
     color: #1a3989;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 140%;
     letter-spacing: 0.56px;
   }
@@ -116,10 +116,10 @@
         align-items: center;
         width: 100%;
         color: #1a3989;
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 140%;
         letter-spacing: 0.56px;
-        gap: 4px;
+        gap: 0.25rem;
 
         span:first-child {
           font-weight: 500;
@@ -149,7 +149,7 @@
       border-radius: 1.5rem;
       background: none;
       color: #1a3989;
-      font-size: 14px;
+      font-size: 0.875rem;
       font-weight: 500;
       cursor: pointer;
 
@@ -187,7 +187,7 @@
     );
     box-shadow: 0px 1px 2px 0px rgba(26, 57, 137, 0.38);
     color: white;
-    font-size: 16px;
+    font-size: 1rem;
     letter-spacing: 0.8px;
     cursor: pointer;
   }
@@ -205,7 +205,7 @@
   &Line1 {
     color: #1a3989;
     text-align: center;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
     line-height: 140%; /* 25.2px */
     letter-spacing: 0.72px;
@@ -213,7 +213,7 @@
   }
   &Line2 {
     color: #1a3989;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 140%;
     letter-spacing: 0.84px;
   }

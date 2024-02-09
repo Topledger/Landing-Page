@@ -1,0 +1,69 @@
+.walletAnalyticsPricing {
+  border-radius: 2.5rem;
+  border: 1px solid #1e202f;
+  background: #2d3250;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px 25px;
+}
+.walletAnalyticsPricingMedia {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.walletAnalyticsPricingTitle {
+  color: #f0f4ff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+}
+.walletAnalyticsPricingDescription {
+  color: #e2eaff;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 140%;
+  margin-top: 1rem;
+}
+
+.walletAnalyticsPricingContent {
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  background: #20243d;
+  padding: 25px 16px 15px;
+}
+.walletAnalyticsPricingPrice {
+  display: flex;
+  align-items: flex-end;
+  color: #e2eaff;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.walletAnalyticsPricingCurrency {
+  color: #6a719c;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.walletAnalyticsPricingPeriod {
+  color: #e2eaff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.walletAnalyticsPricingCta {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  button {
+    width: 100%;
+    text-align: center;
+    padding: 12px 24px;
+    justify-content: center;
+  }
+}

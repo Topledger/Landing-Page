@@ -1,0 +1,109 @@
+@import "@/assets/styles/breakpoints.scss";
+
+.outcomesSection {
+  padding-top: 7.5rem;
+  padding-bottom: 6.5625rem;
+
+  @include mobile {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.sectionHead {
+  width: 55%;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.sectionTitle {
+  color: #283d6d;
+  font-size: 2.5rem;
+  font-weight: 600;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+.sectionDescription {
+  color: #2b3d6e;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.72px;
+  margin-top: 0.5rem;
+
+  @include mobile {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+.outcomeContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 52px;
+  margin-top: 2.5rem;
+
+  @include tablet {
+    gap: 3.5rem;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.outcome {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+
+  @include tablet {
+    padding: 2rem;
+  }
+}
+
+.outcomeImage {
+  width: 100%;
+  border-radius: 1rem;
+}
+.outcomeImage img {
+  width: 100%;
+  max-width: 400px;
+}
+.outcomeContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.outcomeTitle {
+  margin-top: 1.5rem;
+  color: #374151;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  @include mobile {
+    font-size: 1.125rem;
+  }
+}
+.outcomeDescription {
+  flex: 1;
+  margin-top: 1.5rem;
+  color: #374151;
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: 0.64px;
+
+  @include mobile {
+    font-size: 0.875rem;
+  }
+}
+
+.outcomeAction {
+  width: 100%;
+  margin-top: 2rem;
+}

@@ -1,0 +1,134 @@
+@import "@/assets/styles/breakpoints.scss";
+
+.testimonialsSection {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+
+  @include mobile {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  color: #374151;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+.sectionDescription {
+  color: rgba(55, 65, 81, 0.7);
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 140%;
+  letter-spacing: 0.72px;
+  margin-top: 0.5rem;
+
+  @include mobile {
+    font-size: 1rem;
+  }
+}
+
+.sectionBody {
+  margin-top: 2.5rem;
+
+  @include mobile {
+    height: auto;
+  }
+}
+
+.testimonialContainer {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.testimonial {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 2.5rem;
+  background: #fff;
+  padding: 2.5rem 5rem;
+  box-shadow: 0px 8px 16px 0px rgba(116, 149, 199, 0.16);
+
+  @include mobile {
+    padding: 2rem;
+  }
+}
+
+.testimonialText {
+  color: #374151;
+  font-size: 1rem;
+  line-height: 140%;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonialContent {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #42454a;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+}
+
+.testimonialAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 0.625rem;
+  background-color: #c5c0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonialAuthorInfo {
+  flex: 1;
+}
+
+.testimonialAuthorName {
+  color: #4a7dff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.testimonialAuthorCredentials {
+  color: rgba(0, 0, 0, 0.64);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 101.2%;
+  letter-spacing: 0.35px;
+}
+
+.testimonialLogo {
+}
+
+.carousel {
+  min-height: 15rem;
+
+  @include mobile {
+    min-height: 23rem;
+  }
+}
