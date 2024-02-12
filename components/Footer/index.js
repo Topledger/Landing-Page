@@ -1,3 +1,5 @@
+import cx from "classnames";
+
 import Button from "../Button";
 import Section from "../Section";
 import ContactUs from "./components/ContactUs";
@@ -84,7 +86,11 @@ const Footer = () => {
             <Button.Link tertiary color="#1A3989" className={styles.copyLink}>
               © 2024, Top Ledger, All rights reserved
             </Button.Link>
-            <Button.Link tertiary color="#1A3989" className={styles.copyLink}>
+            <Button.Link
+              tertiary
+              color="#1A3989"
+              className={cx(styles.copyLink, styles.privacyPolicy)}
+            >
               Privacy Policy
             </Button.Link>
           </div>

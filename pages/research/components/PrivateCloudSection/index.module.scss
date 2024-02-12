@@ -1,3 +1,14 @@
+@import "@/assets/styles/breakpoints.scss";
+
+.privateCloudSection {
+  margin: 7.5rem 0rem;
+
+  @include mobile {
+    margin: 5rem 1.5rem;
+    padding: 0;
+  }
+}
+
 .sectionHead {
   position: relative;
   display: flex;
@@ -15,6 +26,12 @@
     position: relative;
     z-index: 1;
   }
+
+  @include mobile {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 29px;
+  }
 }
 
 .sectionDescription {
@@ -25,6 +42,13 @@
   letter-spacing: 0.72px;
   margin-top: 0.5rem;
   max-width: 500px;
+
+  @include mobile {
+    font-size: 1rem;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    margin-top: 1rem;
+  }
 }
 
 .chartIcons {
@@ -35,6 +59,13 @@
   position: absolute;
   right: 0;
   bottom: 0;
+
+  @include mobile {
+    position: relative;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 
 .chartIcon {
@@ -50,10 +81,18 @@
     width: 24px !important;
     height: 24px !important;
   }
+
+  @include mobile {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 .cultureContainer {
   margin-top: 2.5rem;
+  @include mobile {
+    margin-top: 0rem;
+  }
 }
 
 .culture {
@@ -92,7 +131,9 @@
   align-items: center;
   gap: 1rem;
 }
-
+.sectionBody {
+  margin-top: 3.5rem;
+}
 .cloudSectionContainer {
   display: flex;
   flex-direction: column;
@@ -100,6 +141,7 @@
 }
 
 .cloudSection {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-top: 2.5rem;
@@ -107,6 +149,11 @@
   border: 1px solid #e8e9fa;
   background: #fdfdff;
   padding: 56px 42px;
+
+  @include mobile {
+    margin-top: 0rem;
+    padding: 1.5rem 1rem;
+  }
 }
 
 .cloudSectionTitle {
@@ -114,6 +161,38 @@
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 140%;
+
+  @include mobile {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 17px;
+    color: #59b077;
+    border-radius: 4px;
+    padding: 0.5rem;
+    border: 1px solid #d4f3e0;
+    background-image: linear-gradient(0deg, #d4f3e0, #d4f3e0),
+      linear-gradient(0deg, #edfaf2, #edfaf2);
+
+    position: absolute;
+    top: 0px;
+    width: 82%;
+    left: 9%;
+    margin-top: -1rem;
+    white-space: nowrap;
+    display: none;
+  }
+}
+
+.cloudSectionTitleMobile {
+  display: none;
+
+  &:globa(.part-2) {
+    color: #cb8a5a;
+  }
+
+  @include mobile {
+    display: block;
+  }
 }
 
 .cloudSectionFeatures {
@@ -121,6 +200,10 @@
   grid-template-columns: repeat(2, 1fr);
   margin-top: 1.5rem;
   gap: 1.5rem;
+
+  @include mobile {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .cloudSectionFeature {
@@ -132,24 +215,42 @@
   border-radius: 1rem;
   border: 1px solid #e8e9fa;
   background: #edf2ff;
+
+  @include mobile {
+    padding: 1rem;
+  }
 }
 
 .cloudSectionFeatureTitle {
   color: #374151;
   font-size: 1.25rem;
   font-weight: 700;
+
+  @include mobile {
+    font-size: 1rem;
+    font-weight: 700;
+  }
 }
 
 .cloudSectionFeatureDescription {
   color: #374151;
   font-size: 1rem;
   line-height: 140%;
+
+  @include mobile {
+    font-size: 0.875rem;
+    line-height: 19.6px;
+  }
 }
 
 .cloudSectionDivider {
   display: flex;
   justify-content: center;
   margin-top: 2.5rem;
+
+  @include mobile {
+    margin-top: 1.5rem;
+  }
 }
 
 .sectionAction {
@@ -158,11 +259,24 @@
   align-items: center;
   justify-content: space-between;
 
+  @include mobile {
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
   .scheduleMessage {
     color: #374151;
     font-size: 1.125rem;
     line-height: 140%;
     max-width: 600px;
     display: inline-block;
+  }
+  @include mobile {
+    button {
+      font-size: 0.75rem;
+      line-height: 14.52px;
+    }
   }
 }

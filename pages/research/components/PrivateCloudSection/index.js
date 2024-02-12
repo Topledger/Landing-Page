@@ -1,77 +1,26 @@
-import Section from "@/components/Section";
-
-import styles from "./index.module.scss";
-import Card from "@/components/Card";
-import { getAction } from "@/components/ArticleCard/ArticleFooter";
 import Image from "next/image";
-import Icon from "@/components/Icon";
+import cx from "classnames";
+
+import Section from "@/components/Section";
 import Button from "@/components/Button";
 import UnderlinedText from "@/components/UnderlinedText";
 import QueryFormModal from "@/components/QueryForm/QueryFormModal";
 
-// const sections = [
-//   {
-//     title: "Tailored schemas to fit your specific needs",
-//     features: [
-//       {
-//         title: "DEX trades",
-//         description:
-//           "Decoding perpetual swaps to analyze the derivatives ecosystem",
-//       },
-//       {
-//         title: "NFT/cNFT mints and trades",
-//         description: "Access the activities of all stablecoins and SPL tokens",
-//       },
-//       {
-//         title: "Staking",
-//         description: "Decoded data for all DePIN protocols on Solana",
-//       },
-//       {
-//         title: "Perpetuals",
-//         description:
-//           "Decoding perpetual swaps to analyze the derivatives ecosystem",
-//       },
-//       {
-//         title: "Stablecoin activities",
-//         description: "Access the activities of all stablecoins and SPL tokens",
-//       },
-//       {
-//         title: "DePIN",
-//         description: "Decoded data for all DePIN protocols on Solana",
-//       },
-//     ],
-//   },
-//   {
-//     title: "Powering the most advanced use cases of the industry",
-//     features: [
-//       {
-//         title: "Market intelligence & reporting",
-//         description:
-//           "Fuel your research reports effortlessly, without concerning yourself with the underlying data",
-//       },
-//       {
-//         title: "Intelligent trading strategies",
-//         description:
-//           "Build trading tactics and develop backtesting systems by employing data science techniques",
-//       },
-//       {
-//         title: "AI models",
-//         description:
-//           "Train custom AI models from trusted and curatedon-chain data",
-//       },
-//       {
-//         title: "Wallet profiling at scale",
-//         description:
-//           "Compute customized attributes and enhance your wallet profiling and cohort segmentation applications",
-//       },
-//     ],
-//   },
-// ]
+import styles from "./index.module.scss";
 
 const CloudSection = ({ section = [] }) => {
   return (
     <div className={styles.cloudSection}>
       <h3 className={styles.cloudSectionTitle}>{section.title}</h3>
+      <h3
+        className={cx(
+          styles.cloudSectionTitleMobile,
+          styles.cloudSectionTitle,
+          section.customClass
+        )}
+      >
+        {section.titleMobile ?? section.title}
+      </h3>
       <div
         className={styles.cloudSectionFeatures}
         style={{ gridTemplateColumns: `repeat(${section.columns}, 1fr)` }}
@@ -106,7 +55,10 @@ const PrivateCloudFeatures = ({ image, sections = [] }) => {
 
 const PrivateCloudSection = ({ sections = [] }) => {
   return (
-    <Section containerStyle={{ paddingTop: "120px", paddingBottom: "120px" }}>
+    <Section
+      className={styles.privateCloudSection}
+      containerClassName={styles.privateCloudSectionContainer}
+    >
       <div className={styles.sectionHead}>
         <div>
           <h2 className={styles.sectionTitle}>

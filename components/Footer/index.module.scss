@@ -71,3 +71,9 @@
   font-weight: 400;
   width: 100%;
 }
+
+.privacyPolicy {
+  @include mobile {
+    display: none;
+  }
+}
