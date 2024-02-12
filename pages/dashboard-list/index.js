@@ -40,7 +40,7 @@ DashboardList.getInitialProps = async () => {
       icon:
         d.attributes.icon ??
         DASHBOARD_ICONS[d.attributes.title] ??
-        "/assets/images/dashboards/generic.svg",
+        "/assets/images/dashboards/solana.svg",
     })),
   };
 };
