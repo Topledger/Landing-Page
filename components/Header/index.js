@@ -71,7 +71,7 @@ const Header = ({ className }) => {
           />
         </Button.Link>
         <nav className={styles.headerLinks}>
-          {/* <HeaderMenu
+          <HeaderMenu
             className={styles.headerLink}
             menuItems={productsHeaderLinks}
           >
@@ -82,7 +82,7 @@ const Header = ({ className }) => {
             menuItems={useCasesHeaderLinks}
           >
             <a className={styles.headerLink}>User cases</a>
-          </HeaderMenu> */}
+          </HeaderMenu>
           <Button.Link tertiary className={styles.headerLink} href="/pricing">
             Pricing
           </Button.Link>

@@ -63,10 +63,7 @@ const CaseStudySection = ({ caseStudies = [] }) => {
             understand how our platform and offerings can be applied to your own
             requirements
           </div>
-          <div
-            className={styles.caseStudiesSectionContent}
-            style={{ marginTop: "68px" }}
-          >
+          <div className={styles.caseStudiesSectionContent}>
             {caseStudies
               .slice(0, Math.floor(caseStudies.length / 2))
               .map((caseStudy, index) => (

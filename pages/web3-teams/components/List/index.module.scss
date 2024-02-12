@@ -1,3 +1,5 @@
+@import "@/assets/styles/breakpoints.scss";
+
 .list {
   display: flex;
   flex-direction: column;
@@ -23,12 +25,22 @@
   letter-spacing: 0.36px;
   padding: 24px 32px;
   text-decoration: none;
+
+  @include mobile {
+    padding: 1rem;
+  }
 }
 
 .listItemIcon {
   width: 2rem;
   height: 2rem;
   margin-right: 1.5rem;
+
+  @include mobile {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+  }
 }
 
 .listItemName {
@@ -37,6 +49,13 @@
   font-weight: 500;
   letter-spacing: 0.36px;
   flex: 1;
+
+  @include mobile {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0.02em;
+  }
 }
 
 .listItemArrow {

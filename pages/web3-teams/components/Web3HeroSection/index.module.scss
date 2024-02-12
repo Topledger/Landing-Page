@@ -1,3 +1,4 @@
+@import "@/assets/styles/breakpoints.scss";
 @import "@/assets/styles/mixins";
 
 .landingHeroSection {
@@ -16,6 +17,13 @@
   flex-direction: column;
   max-width: 588px;
   width: 100%;
+
+  @include mobile {
+    align-items: center;
+    max-width: 100%;
+
+    width: 100vw;
+  }
 }
 .heading {
   color: #374151;
@@ -24,6 +32,14 @@
   font-weight: 700;
   line-height: normal;
   margin-top: 1.5rem;
+
+  @include mobile {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
 }
 
 .subHeading {
@@ -46,6 +62,10 @@
   height: 478px;
   width: 549px;
   margin-left: 71px;
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .scrollIcon {

@@ -1,13 +1,25 @@
+@import "@/assets/styles/breakpoints.scss";
+
 .caseStudiesSection {
-  padding: 120px 0px;
+  padding: 7.5rem 0px;
   border-top: 1px solid #e2e8ff;
   background: #fff;
+
+  @include mobile {
+    padding: 5rem 1.5rem;
+  }
 }
 
 .caseStudiesSectionTitle {
   color: #374151;
   font-size: 2.5rem;
   font-weight: 700;
+
+  @include mobile {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 29px;
+  }
 }
 
 .caseStudiesSectionSubtitle {
@@ -16,12 +28,25 @@
   line-height: 140%;
   letter-spacing: 0.64px;
   margin-top: 0.5rem;
+
+  @include mobile {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+  }
 }
 
 .caseStudiesSectionContent {
   display: flex;
   flex-direction: column;
   gap: 56px;
+  margin-top: 68px;
+
+  @include mobile {
+    gap: 3.5rem;
+    margin-top: 2.5rem;
+  }
 }
 
 .caseStudy {
@@ -48,12 +73,23 @@
 
 .caseStudyContent {
   padding: 32px 40px 38.5px;
+
+  @include mobile {
+    padding: 2rem 1.5rem;
+  }
 }
 
 .caseStudyTitle {
   color: #000;
   font-size: 1.5rem;
   font-weight: 700;
+
+  @include mobile {
+    font-size: 1.125rem;
+    font-weight: 800;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+  }
 }
 
 .caseStudyDescription {
@@ -62,15 +98,35 @@
   line-height: 140%;
   letter-spacing: 0.64px;
   margin-top: 14.5px;
+
+  @include mobile {
+    margin-top: 0.75rem;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+  }
 }
 
 .caseStudyCta {
   margin-top: 1.5rem;
+
+  @include mobile {
+    margin-top: 2rem;
+
+    * {
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+  }
 }
 
 .columnsContainer {
   display: flex;
   gap: 55px;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .column {
