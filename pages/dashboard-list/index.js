@@ -11,10 +11,12 @@ import {
 
 const DASHBOARD_ICONS = {
   Metaplex: "/assets/images/dashboards/metaplex.svg",
-  Drip: "/assets/images/dashboards/drip.png",
-  Drift: "/assets/images/dashboards/drift.png",
+  Drip: "/assets/images/dashboards/drip logo.svg",
+  "Drift public dashboard": "/assets/images/dashboards/drift logo.svg",
   Helium: "/assets/images/dashboards/helium.png",
   Phoenix: "/assets/images/dashboards/phoenix.png",
+  Tensor: "/assets/images/dashboards/tensor logo.svg",
+  "Flash Trade": "/assets/images/dashboards/flash trade.svg",
 };
 
 const DashboardList = ({ dashboards }) => {
