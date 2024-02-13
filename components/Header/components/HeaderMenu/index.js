@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import cx from "classnames";
 
 import Icon from "components/Icon";
@@ -48,13 +48,27 @@ const MenuItem = ({ icon, title, description, href, target, comingSoon }) => {
 };
 
 const HeaderMenu = ({ children, menuItems }) => {
+  const containerRef = useRef();
   const [isOpen, setIsOpen] = useState();
+
+  useEffect(() => {
+    if (isOpen) {
+      const handleClick = (e) => {
+        if (containerRef.current && !containerRef.current.contains(e.target)) {
+          setIsOpen(false);
+        }
+      };
+      document.addEventListener("click", handleClick);
+      return () => document.removeEventListener("click", handleClick);
+    }
+  }, [isOpen]);
 
   return (
     <>
       <span
-        className={styles.headerLink}
+        className={cx(styles.headerLink, { [styles.headerLinkOpen]: isOpen })}
         onClick={() => setIsOpen((isOpen) => !isOpen)}
+        ref={containerRef}
       >
         <span>
           {children}{" "}

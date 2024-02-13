@@ -35,7 +35,7 @@ $header-out-animation-delay: 0.3s;
   // position: relative;
   cursor: pointer;
 
-  &:hover {
+  &.headerLinkOpen {
     .headerMenu {
       @include header-menu-hover;
 
@@ -85,7 +85,9 @@ $header-out-animation-delay: 0.3s;
   @include header-menu;
 
   &:hover {
-    @include header-menu-hover;
+    @include min-width(lg) {
+      @include header-menu-hover;
+    }
 
     @include mobile {
       display: block;

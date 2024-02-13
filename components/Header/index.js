@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import cx from "classnames";
 import Image from "next/image";
 import BarsOutlinedIcon from "@ant-design/icons/BarsOutlined";
@@ -82,6 +82,18 @@ const Header = ({ className }) => {
   const toggleHeader = () => {
     setIsHeaderOpen((isHeaderOpen) => !isHeaderOpen);
   };
+
+  useEffect(() => {
+    if (isHeaderOpen) {
+      const handleClick = (e) => {
+        if (!e.target.closest(`.${styles.appHeader}`)) {
+          setIsHeaderOpen(false);
+        }
+      };
+      document.addEventListener("click", handleClick);
+      return () => document.removeEventListener("click", handleClick);
+    }
+  }, [isHeaderOpen]);
 
   return (
     <header className={cx(styles.appHeader, className)}>
