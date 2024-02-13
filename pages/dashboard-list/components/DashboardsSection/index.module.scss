@@ -1,7 +1,13 @@
+@import "@/assets/styles/breakpoints.scss";
+
 .dashboardsSection {
   border-top: 1px solid #e2e8ff;
   background: #fff;
-  padding: 64px 0px 120px;
+  padding: 4rem 0px 7.5rem;
+
+  @include mobile {
+    padding: 5rem 1.5rem;
+  }
 }
 
 .dashboardsSectionTitle {
@@ -9,6 +15,12 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-top: 0.5rem;
+
+  @include mobile {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 39px;
+  }
 }
 
 .dashboardsSectionSubtitle {
@@ -16,6 +28,12 @@
   font-size: 1.125rem;
   line-height: 140%;
   max-width: 600px;
+
+  @include mobile {
+    font-size: 1rem;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+  }
 }
 
 .dashboardsSectionContent {

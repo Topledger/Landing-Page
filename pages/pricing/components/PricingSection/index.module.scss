@@ -1,4 +1,4 @@
-@import '@/assets/styles/breakpoints.scss';
+@import "@/assets/styles/breakpoints.scss";
 
 .pricingSection {
   border-top: 1px solid #e2e8ff;
@@ -33,7 +33,6 @@
   @include mobile {
     flex-direction: column;
     gap: 3rem;
-
   }
 }
 
@@ -53,7 +52,7 @@
 
   @include mobile {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    row-gap: 2rem;
 
     > div:first-child {
       grid-column: 1 / span 1;

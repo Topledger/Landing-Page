@@ -78,6 +78,21 @@
   }
 }
 
+@mixin animFadeInTop($duration: 0.5s, $delay: 0s, $ease: ease-in-out) {
+  @keyframes fadeInTop {
+    0% {
+      height: 0%;
+      // transform: translateY(-20px);
+    }
+    100% {
+      height: 100%;
+      // transform: translateY(0);
+    }
+  }
+
+  animation: fadeInTop $duration $ease $delay 1 normal forwards;
+}
+
 @mixin mesh-overlay {
   &::before {
     content: "";

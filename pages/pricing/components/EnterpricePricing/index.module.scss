@@ -10,6 +10,7 @@
   @include mobile {
     flex-direction: column;
     height: auto;
+    border-radius: 1.5rem;
   }
 }
 
@@ -22,7 +23,9 @@
 
   @include mobile {
     width: 100%;
-    border-radius: 40px 40px 0px 0px;
+    border-radius: 1.5rem 1.5rem 0px 0px;
+    padding: 1.5rem;
+    text-align: center;
     border-right: none;
     border-bottom: 1px solid #e8e9fa;
     display: flex;
@@ -65,6 +68,10 @@
 .enterpricePricingContent {
   flex: 1;
   padding: 40px 41px;
+
+  @include mobile {
+    padding: 1.5rem;
+  }
 }
 
 .enterpricePricingFeatures {

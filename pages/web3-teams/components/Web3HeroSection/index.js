@@ -23,7 +23,7 @@ const Web3HeroSection = () => {
         </p>
         <h1 className={styles.heading}>
           Transforming the way teams do{" "}
-          <span style={{ color: "#4A7DFF" }}>data analytics</span>
+          <span style={{ color: "#085ED4" }}>data analytics</span>
         </h1>
         <p className={styles.subHeading}>
           Unlocking and unleashing the power of blockchain data has never been
@@ -33,7 +33,7 @@ const Web3HeroSection = () => {
           <Button
             className={styles.trialButton}
             primary
-            color="#4A7DFF"
+            color="#085ED4"
             onClick={QueryFormModal.show}
           >
             Book a demo

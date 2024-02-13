@@ -34,7 +34,7 @@ const features = [
         type: "link",
         text: "Documentation",
         target: "_blank",
-        href: "https://docs.topledger.io",
+        href: "https://docs.topledger.xyz",
       },
     ],
   },

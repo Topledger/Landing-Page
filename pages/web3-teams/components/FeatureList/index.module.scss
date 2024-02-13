@@ -1,3 +1,5 @@
+@import "@/assets/styles/breakpoints.scss";
+
 .featureList {
   position: relative;
   display: grid;
@@ -11,6 +13,10 @@
   &:hover {
     border-color: #a8abd7 !important;
   }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
 }
 
 .featureListMedia {
@@ -19,31 +25,66 @@
   justify-content: center;
   border-radius: 40px 0px 0px 40px;
   height: 100%;
+
+  @include mobile {
+    max-width: 100%;
+    border-radius: 40px 40px 0px 0px;
+
+    img {
+      max-width: 100%;
+      padding: 2.375rem 1.5rem;
+    }
+  }
 }
 
 .featureListContent {
-  margin: 64px 48px;
+  margin: 4rem 3rem;
   flex: 1;
+
+  @include mobile {
+    margin: 2rem 1.5rem;
+  }
 }
 
 .featureListTags {
   margin-bottom: 1.5rem;
+
+  @include mobile {
+    margin-bottom: 1rem;
+  }
 }
 
 .featureListTitle {
   margin-bottom: 1.5rem;
+
+  @include mobile {
+    margin-bottom: 0.875rem;
+  }
 }
 
 .featureListDescription {
   margin-bottom: 1.5rem;
+
+  @include mobile {
+    margin-top: 1rem;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+  }
 }
 
 .featureListFeatures {
+  margin: 0;
   margin-bottom: 1.5rem;
   list-style: none;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+  }
 }
 .featureListItem {
   margin: 8px 0;

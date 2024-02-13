@@ -1,7 +1,9 @@
+@import "@/assets/styles/breakpoints.scss";
 @import "@/assets/styles/mixins";
 
 .landingHeroSection {
   @include mesh-overlay;
+  padding: 0rem;
 }
 
 .heroSectionContainer {
@@ -9,6 +11,11 @@
   padding: 96px 0px 112px;
   justify-content: center;
   align-items: center;
+
+  @include mobile {
+    padding: 120px 28px 143px;
+    flex-direction: column;
+  }
 }
 
 .detailsSection {
@@ -16,14 +23,24 @@
   flex-direction: column;
   max-width: 588px;
   width: 100%;
+
+  @include mobile {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
 }
 .heading {
   color: #374151;
   font-size: 3rem;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   margin-top: 1.5rem;
+
+  @include mobile {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 39px;
+  }
 }
 
 .subHeading {
@@ -32,6 +49,12 @@
   font-size: 1.125rem;
   line-height: 140%;
   max-width: 80%;
+
+  @include mobile {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 22px;
+  }
 }
 
 .description {
@@ -46,6 +69,10 @@
   height: 478px;
   width: 549px;
   margin-left: 71px;
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .scrollIcon {
@@ -58,5 +85,10 @@
   .chip {
     font-size: 1rem;
     font-weight: 500;
+
+    @include mobile {
+      font-size: 0.875rem;
+      width: 100%;
+    }
   }
 }

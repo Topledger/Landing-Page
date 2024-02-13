@@ -4,8 +4,8 @@ import Page from "@/components/Page";
 import ResearchHeroSection from "./components/ResearchHeroSection";
 
 import TrialSection from "@/components/TrialSection";
-import FeatureSuiteSection from "./components/FeautreSuiteSection";
 import PrivateCloudSection from "./components/PrivateCloudSection";
+import FeatureSuiteSection from "../web3-teams/components/FeautreSuiteSection";
 
 const privateCloud = [
   {
@@ -42,6 +42,8 @@ const privateCloud = [
   },
   {
     title: "Powering the most advanced use cases of the industry",
+    titleMobile: "Powering the most advanced use cases",
+    customClass: "part-2",
     features: [
       {
         title: "Market intelligence & reporting",
