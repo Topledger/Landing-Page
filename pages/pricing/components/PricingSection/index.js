@@ -31,7 +31,7 @@ const PricingSection = ({
             <div className={styles.pricingItem} key={pricing.name}>
               <Pricing
                 pricing={pricing}
-                onClick={() => setSelectedPricing(index)}
+                // onClick={() => setSelectedPricing(index)}
                 isSelected={selectedPricing === index}
               />
             </div>

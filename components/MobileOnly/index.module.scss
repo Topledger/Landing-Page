@@ -1,0 +1,9 @@
+@import "@/assets/styles/breakpoints.scss";
+
+.mobileOnly {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}

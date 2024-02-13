@@ -56,12 +56,14 @@ const HeaderMenu = ({ children, menuItems }) => {
         className={styles.headerLink}
         onClick={() => setIsOpen((isOpen) => !isOpen)}
       >
-        {children}{" "}
-        <Icon
-          className={cx(styles.chevron, "chevron-icon")}
-          // style={{ transform: `rotate(${isOpen ? -180 : 0}deg)` }}
-          name="chevron"
-        />
+        <span>
+          {children}{" "}
+          <Icon
+            className={cx(styles.chevron, "chevron-icon")}
+            // style={{ transform: `rotate(${isOpen ? -180 : 0}deg)` }}
+            name="chevron"
+          />
+        </span>
         <div className={cx(styles.headerMenu, "header-menu")}>
           <ul className={styles.headerMenuItems}>
             {menuItems.map((menuItem) => (

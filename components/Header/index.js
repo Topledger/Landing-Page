@@ -1,10 +1,14 @@
+import { useState } from "react";
 import cx from "classnames";
 import Image from "next/image";
+import BarsOutlinedIcon from "@ant-design/icons/BarsOutlined";
 
 import Button from "../Button";
 
 import styles from "./index.module.scss";
 import HeaderMenu from "./components/HeaderMenu";
+import MobileHidden from "../MobileHidden";
+import MobileOnly from "../MobileOnly";
 
 const productsHeaderLinks = [
   {
@@ -58,7 +62,27 @@ const useCasesHeaderLinks = [
   },
 ];
 
+const BurgerButton = ({ className, onClick }) => {
+  return (
+    <Button
+      className={cx(styles.burgerButton, className)}
+      onClick={onClick}
+      noArrow
+      tertiary
+      color="#283D6D"
+    >
+      <BarsOutlinedIcon width={32} height={32} size={32} />
+    </Button>
+  );
+};
+
 const Header = ({ className }) => {
+  const [isHeaderOpen, setIsHeaderOpen] = useState(false);
+
+  const toggleHeader = () => {
+    setIsHeaderOpen((isHeaderOpen) => !isHeaderOpen);
+  };
+
   return (
     <header className={cx(styles.appHeader, className)}>
       <span className={styles.headerWrapper}>
@@ -70,7 +94,14 @@ const Header = ({ className }) => {
             alt="Top Ledger logo"
           />
         </Button.Link>
-        <nav className={styles.headerLinks}>
+        <MobileOnly>
+          <BurgerButton onClick={toggleHeader} />
+        </MobileOnly>
+        <nav
+          className={cx(styles.headerLinks, {
+            [styles.mobileHeaderOpen]: isHeaderOpen,
+          })}
+        >
           <HeaderMenu
             className={styles.headerLink}
             menuItems={productsHeaderLinks}
@@ -105,17 +136,19 @@ const Header = ({ className }) => {
             Docs
           </Button.Link>
         </nav>
-        <span className={styles.headerButtons}>
-          <Button.Link
-            href="https://analytics.topledger.xyz/login"
-            target="_blank"
-            noArrow
-            color="#085ED4"
-            secondary
-          >
-            Login
-          </Button.Link>
-        </span>
+        <MobileHidden>
+          <span className={styles.headerButtons}>
+            <Button.Link
+              href="https://analytics.topledger.xyz/login"
+              target="_blank"
+              noArrow
+              color="#085ED4"
+              secondary
+            >
+              Login
+            </Button.Link>
+          </span>
+        </MobileHidden>
       </span>
     </header>
   );

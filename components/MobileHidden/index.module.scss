@@ -1,0 +1,7 @@
+@import "@/assets/styles/breakpoints.scss";
+
+.mobileHidden {
+  @include mobile {
+    display: none !important;
+  }
+}

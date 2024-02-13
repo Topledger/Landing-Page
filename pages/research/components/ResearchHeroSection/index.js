@@ -33,7 +33,7 @@ const ResearchHeroSection = () => {
           <Button
             className={styles.trialButton}
             primary
-            color="#4A7DFF"
+            color="#085ED4"
             onClick={QueryFormModal.show}
           >
             Schedule a call
