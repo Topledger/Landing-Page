@@ -14,15 +14,15 @@ const privateCloud = [
       {
         title: "DEX trades",
         description:
-          "Decoding perpetual swaps to analyze the derivatives ecosystem",
+          "Decoded data from all DEXs and aggregators since 2021",
       },
       {
         title: "NFT/cNFT mints and trades",
-        description: "Access the activities of all stablecoins and SPL tokens",
+        description: "All NFT/cNFT decoded data to analyze primary & secondary GMV",
       },
       {
         title: "Staking",
-        description: "Decoded data for all DePIN protocols on Solana",
+        description: "All native and liquid staking decoded transactions",
       },
       {
         title: "Perpetuals",
