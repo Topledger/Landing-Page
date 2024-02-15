@@ -47,7 +47,7 @@ const features = [
       backgroundColor: "#F8F0FF",
     },
     tags: [{ text: "Know your users", color: "#9F62DD" }],
-    title: "Wallet analytics at scale",
+    title: "Wallet behaviour analytics",
     description:
       "We index every wallet on Solana, along with their activities across DEXs, NFTs, DePINs, LST protocols, perpetuals, and more. This enables you to analyze all of your users",
     features: [
@@ -102,22 +102,22 @@ const dashboards = [
   },
   {
     name: "Drip",
-    href: "https://topledger.xyz/dashboards/drip",
+    href: "https://analytics.topledger.xyz/tl/public/dashboards/7XqwqSZ3r7aYD5EVBwd67VHQ3Y1pXrq0agQptxuU",
     icon: "/assets/images/dashboards/drip.png",
   },
   {
     name: "Drift",
-    href: "https://topledger.xyz/dashboards/drift",
+    href: "https://analytics.topledger.xyz/drift/public/dashboards/rZdEYeLBps0O2mIfcKalMYyWGyerHU4nFy4vIcuK",
     icon: "/assets/images/dashboards/drift.png",
   },
   {
     name: "Helium",
-    href: "https://topledger.xyz/dashboards/helium",
+    href: "https://analytics.topledger.xyz/helium/public/dashboards/lAmbact4KjA6llkhKEPk6AVi9R8ZBQviPV0XPLLA",
     icon: "/assets/images/dashboards/helium.png",
   },
   {
     name: "Phoenix",
-    href: "https://topledger.xyz/dashboards/phoenix",
+    href: "https://analytics.topledger.xyz/tl/public/dashboards/78gpdXd6LHXX2AXNdjrz0GqEfpA8uLR5Qt897Fl4",
     icon: "/assets/images/dashboards/phoenix.png",
   },
 ];
