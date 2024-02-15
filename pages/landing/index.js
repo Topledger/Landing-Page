@@ -32,10 +32,10 @@ const articles = [
   },
   {
     id: 2,
-    tags: [{ text: "Crypto investors", color: "#9F62DD" }],
-    title: "Wallet profiler",
+    tags: [{ text: "Business professionals", color: "#9F62DD" }],
+    title: "Wallet behaviour analytics",
     description:
-      "Track individual wallet activity across DEXs, NFT or cNFT marketplaces, LST protocols, perpetuals, lending & borrowing platforms, DePIN, and more",
+      "Conduct an in-depth analysis of wallet behaviours, develop detailed wallet profiles aimed at aligning your efforts with your product development plans.",
     image: "/assets/images/landing/article-2.jpg",
     footer: {
       actionElements: [
