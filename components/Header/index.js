@@ -19,9 +19,9 @@ const productsHeaderLinks = [
   },
   {
     icon: "wallet-profiler",
-    title: "Wallet profiler",
+    title: "Wallet behaviour analytics",
     description:
-      "Track individual wallet activity across entire solana ecosystem",
+      "Create user personas at scale to help align with your product roadmap",
     href: "/wallet-profiler",
     comingSoon: true,
   },
