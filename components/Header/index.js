@@ -44,19 +44,19 @@ const useCasesHeaderLinks = [
   {
     icon: "web3-teams",
     title: "For web3 teams",
-    description: "Your partner in buildinga data culture",
+    description: "Your partner in building a data culture",
     href: "/web3-teams",
   },
   {
     icon: "institutions",
     title: "For institutions",
-    description: "Powering advanced analyticsuse cases",
+    description: "Powering advanced analytics use cases",
     href: "/research",
   },
   {
     icon: "developers",
     title: "For developers",
-    description: "Enhance your development usingTop Ledger API",
+    description: "Enhance your development using Top Ledger API",
     href: "https://docs.topledger.xyz",
     target: "_blank",
   },
