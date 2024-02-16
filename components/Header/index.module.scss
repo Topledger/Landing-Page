@@ -11,7 +11,8 @@
   align-items: center;
   justify-content: center;
   padding: 0 7rem;
-  position: relative;
+  position: fixed;
+  top: 0;
 
   @include max-width(xl) {
     flex-direction: column-reverse;

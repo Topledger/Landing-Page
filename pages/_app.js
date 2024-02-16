@@ -26,7 +26,7 @@ const NO_HEADER_FOOTER_PATHS = [
   "/landing",
   "/web3-teams",
   "/pricing",
-  "/dashboard-list",
+  "/dashboards",
   "/research",
 ];
 

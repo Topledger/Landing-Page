@@ -115,6 +115,7 @@ $header-out-animation-delay: 0.3s;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 1.5rem;
   column-gap: 84px;
+  margin-bottom: 2.5rem;
 
   @include mobile {
     grid-template-columns: 1fr;
@@ -127,7 +128,6 @@ $header-out-animation-delay: 0.3s;
 .headerMenuItem {
   display: flex;
   align-items: center;
-  margin-bottom: 2.5rem;
   gap: 1rem;
   padding: 15px;
   background-color: #fff;

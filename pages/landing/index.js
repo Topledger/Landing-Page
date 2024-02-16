@@ -19,12 +19,17 @@ const articles = [
     image: "/assets/images/landing/article-1.jpg",
     footer: {
       actionElements: [
-        // { type: "button", text: "See details", primary: true },
+        {
+          type: "link",
+          text: "See details",
+          primary: true,
+          href: "/web3-teams",
+        },
         {
           type: "link",
           text: "Public dashboards",
           target: "_blank",
-          href: "/dashboard-list",
+          href: "/dashboards",
           secondary: true,
         },
       ],
@@ -57,7 +62,7 @@ const articles = [
     image: "/assets/images/landing/article-3.jpg",
     footer: {
       actionElements: [
-        // { type: "button", text: "See details", primary: true},
+        { type: "link", text: "See details", primary: true, href: "/research" },
         {
           type: "link",
           text: "Available schemas",
@@ -116,7 +121,7 @@ const outcomes = [
       type: "link",
       target: "_blank",
       text: "Select a time",
-      href: "https://calendly.com/nitin_topledger/30min"
+      href: "https://calendly.com/nitin_topledger/30min",
     },
   },
   {
@@ -144,7 +149,7 @@ const dataCultures = [
       type: "link",
       target: "_blank",
       text: "Public Dashboards",
-      href: "/dashboard-list",
+      href: "/dashboards",
     },
     bottomContent: {
       text: "Indexing Helium's on-chain and oracle data",
@@ -159,7 +164,7 @@ const dataCultures = [
       type: "link",
       target: "_blank",
       text: "Success stories",
-      href: "https://blogs.topledger.xyz/"
+      href: "https://blogs.topledger.xyz/",
     },
     bottomContent: {
       text: "Multiple teams at Metaplex uses Top Ledger daily",
@@ -205,7 +210,6 @@ const testimonials = [
 const LandingPage = () => {
   return (
     <Page>
-      <Header />
       <LandingHeroSection />
       <ArticleSection articles={articles} />
       <OutcomesSection outcomes={outcomes} />

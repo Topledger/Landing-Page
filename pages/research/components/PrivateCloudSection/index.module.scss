@@ -153,6 +153,7 @@
   @include mobile {
     margin-top: 0rem;
     padding: 1.5rem 1rem;
+    border-radius: 1.5rem;
   }
 }
 
@@ -250,6 +251,7 @@
 
   @include mobile {
     margin-top: 1.5rem;
+    margin-bottom: 2.4rem;
   }
 }
 

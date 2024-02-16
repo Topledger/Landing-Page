@@ -65,6 +65,7 @@
 
   @include mobile {
     padding: 2rem;
+    border-radius: 1.5rem;
   }
 }
 
@@ -129,6 +130,6 @@
   min-height: 15rem;
 
   @include mobile {
-    min-height: 23rem;
+    min-height: 25rem;
   }
 }

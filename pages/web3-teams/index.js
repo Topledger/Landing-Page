@@ -9,6 +9,12 @@ import DashboardsSection from "./components/DashboardsSection";
 import FeatureSuiteSection from "./components/FeautreSuiteSection";
 import CaseStudySection from "./components/CaseStudySection";
 import QueryFormModal from "@/components/QueryForm/QueryFormModal";
+import {
+  dashboardSorter,
+  getAllDashboards,
+  getCreationDate,
+} from "helpers/dashboard";
+import { DASHBOARD_ICONS } from "pages/dashboards";
 
 const features = [
   {
@@ -190,7 +196,7 @@ const caseStudies = [
         type: "link",
         text: "Read full case study",
         target: "_blank",
-        href: "https://docs.topledger.xyz",
+        href: "https://blogs.topledger.xyz/case-study-drift-protocols-data-driven-journey-with-top-ledger-741d378293d0",
       },
     ],
   },
@@ -207,7 +213,7 @@ const caseStudies = [
         type: "link",
         text: "Read full case study",
         target: "_blank",
-        href: "https://docs.topledger.xyz",
+        href: "https://blogs.topledger.xyz/how-squads-utilizes-top-ledgers-analytics-platform-for-data-driven-growth-1f1bf7a4d150",
       },
     ],
   },
@@ -224,13 +230,13 @@ const caseStudies = [
         type: "link",
         text: "Read full case study",
         target: "_blank",
-        href: "https://docs.topledger.xyz",
+        href: "https://blogs.topledger.xyz/switchboard-linking-real-world-data-to-blockchains-da1db7da6ab4",
       },
     ],
   },
 ];
 
-const Web3TeamsPage = () => {
+const Web3TeamsPage = ({ dashboards }) => {
   return (
     <Page>
       <Header />
@@ -242,6 +248,26 @@ const Web3TeamsPage = () => {
       <TrialSection />
     </Page>
   );
+};
+
+Web3TeamsPage.getInitialProps = async () => {
+  const dashboards = await getAllDashboards();
+  const sorter = dashboardSorter(getCreationDate, "desc");
+  return {
+    dashboards: dashboards?.data
+      ?.sort(sorter)
+      ?.filter((d) => DASHBOARD_ICONS[d.attributes.title])
+      ?.map((d) => ({
+        id: d.id,
+        name: d.attributes.title,
+        href: d.attributes.link,
+        icon:
+          d.attributes.icon ??
+          DASHBOARD_ICONS[d.attributes.title] ??
+          "/assets/images/dashboards/solana.svg",
+      }))
+      .slice(0, 5),
+  };
 };
 
 export default Web3TeamsPage;
