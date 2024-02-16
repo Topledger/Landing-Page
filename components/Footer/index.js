@@ -18,11 +18,11 @@ const footerLinks = [
       },
       {
         text: "Wallet behaviour analytics",
-        href: "",
+        href: "/web3-teams",
       },
       {
         text: "TL for research",
-        href: "/web3-teams",
+        href: "/research",
       },
     ],
   },
