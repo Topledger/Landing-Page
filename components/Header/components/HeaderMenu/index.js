@@ -3,11 +3,11 @@ import cx from "classnames";
 
 import Icon from "components/Icon";
 
-import styles from "./index.module.scss";
-import Button from "@/components/Button";
 import Image from "next/image";
 import Link from "next/link";
 
+import styles from "./index.module.scss";
+import headerStyles from "@/components/Header/index.module.scss";
 // const menuItem = {
 //   icon: "analytics",
 //   title: "SQL based analytics platform",
@@ -55,6 +55,7 @@ const HeaderMenu = ({ children, menuItems }) => {
     if (isOpen) {
       const handleClick = (e) => {
         if (containerRef.current && !containerRef.current.contains(e.target)) {
+          console.log("containerRef.current", containerRef.current, e.target);
           setIsOpen(false);
         }
       };
@@ -67,7 +68,15 @@ const HeaderMenu = ({ children, menuItems }) => {
     <>
       <span
         className={cx(styles.headerLink, { [styles.headerLinkOpen]: isOpen })}
-        onClick={() => setIsOpen((isOpen) => !isOpen)}
+        onClick={(e) => {
+          e.stopPropagation();
+          if (
+            e.target instanceof HTMLAnchorElement &&
+            e.target.classList.contains(headerStyles.headerLink)
+          ) {
+            setIsOpen((isOpen) => !isOpen);
+          }
+        }}
         ref={containerRef}
       >
         <span>
