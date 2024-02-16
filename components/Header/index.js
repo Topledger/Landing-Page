@@ -19,11 +19,11 @@ const productsHeaderLinks = [
   },
   {
     icon: "wallet-profiler",
-    title: "Wallet analytics",
+    title: "Wallet behaviour analytics",
     description:
       "Create user personas at scale to help align with your product roadmap",
     href: "/wallet-profiler",
-    comingSoon: true,
+    //comingSoon: true,
   },
   {
     icon: "research",
