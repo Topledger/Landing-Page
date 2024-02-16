@@ -17,8 +17,8 @@ const footerLinks = [
         href: "/web3-teams",
       },
       {
-        text: "Wallet profiler",
-        href: "",
+        text: "Wallet behaviour analytics",
+        href: "/web3-teams",
       },
       {
         text: "TL for research",
