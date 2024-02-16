@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+himport Header from "@/components/Header";
 import Page from "@/components/Page";
 import PricingSection from "./components/PricingSection";
 import QueryFormModal from "@/components/QueryForm/QueryFormModal";
@@ -71,7 +71,7 @@ const pricing = [
     period: "per month",
     features: [
       "Offload analytics workload",
-      "Wallet analytics at scale",
+      "Wallet behaviour analytics",
       "Custom APIs",
       "All Plus plan benefits",
     ],
@@ -119,7 +119,7 @@ const walletAnalyticsPricing = {
     src: "/assets/images/pricing/wallet-analytics.svg",
     backgroundColor: "#F1E0FF",
   },
-  title: "Wallet analytics at scale",
+  title: "Wallet behaviour analytics",
   description:
     "Analyze your thousands of users across multiple Solana ecosystems in a no-code way.",
   price: "1000",
