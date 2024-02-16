@@ -53,7 +53,6 @@ const articles = [
         {
           type: "link",
           text: "see details",
-          target: "_blank",
           href: "/web3-teams"
           
         }
@@ -79,7 +78,7 @@ const articles = [
         {
           type: "link",
           text: "Available schemas",
-          target: "_blank",
+          //target: "_blank",
           href: "/research",
         },
       ],
@@ -160,7 +159,8 @@ const dataCultures = [
       "Our robust infrastructure, combined with our data indexing and decoding capabilities and enterprise support, ensures that you receive end-to-end analytics that are both broad and deep, without any interruption",
     action: {
       type: "link",
-      target: "_blank",
+      //target: "_blank",
+      primary: true,
       text: "See details",
       href: "/web3-teams",
     },
