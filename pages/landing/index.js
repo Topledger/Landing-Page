@@ -52,7 +52,7 @@ const articles = [
         },
         {
           type: "link",
-          text: "see details",
+          text: "See details",
           href: "/web3-teams"
           
         }
