@@ -79,7 +79,7 @@ const articles = [
           type: "link",
           text: "Available schemas",
           target: "_blank",
-          href: "/research",
+          href: "https://docs.topledger.xyz/data-tables/smart-tables",
         },
       ],
     },
