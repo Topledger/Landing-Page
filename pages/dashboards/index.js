@@ -16,7 +16,7 @@ export const DASHBOARD_ICONS = {
   Helium: "/assets/images/dashboards/helium.png",
   Phoenix: "/assets/images/dashboards/phoenix.png",
   Tensor: "/assets/images/dashboards/tensor logo.svg",
-  "Flash Trade": "/assets/images/dashboards/flash trade.svg",
+  "Flash trade": "/assets/images/dashboards/flash trade.svg",
 };
 
 const DashboardList = ({ dashboards }) => {
