@@ -1,4 +1,4 @@
-himport Header from "@/components/Header";
+import Header from "@/components/Header";
 import Page from "@/components/Page";
 import PricingSection from "./components/PricingSection";
 import QueryFormModal from "@/components/QueryForm/QueryFormModal";
@@ -133,8 +133,8 @@ const walletAnalyticsPricing = {
     onClick: () => QueryFormModal.show(),
     style: {
       width: "100%",
-      justifyContent: 'center'
-    }
+      justifyContent: "center",
+    },
   },
   isNew: true,
 };
