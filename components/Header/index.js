@@ -22,7 +22,7 @@ const productsHeaderLinks = [
     title: "Wallet behaviour analytics",
     description:
       "Create user personas at scale to help align with your product roadmap",
-    href: "/wallet-profiler",
+    href: "/web3-teams",
     //comingSoon: true,
   },
   {
