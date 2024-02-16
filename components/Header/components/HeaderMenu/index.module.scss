@@ -32,7 +32,6 @@ $header-out-animation-delay: 0.3s;
 .headerLink {
   display: inline-flex;
   align-items: center;
-  // position: relative;
   cursor: pointer;
 
   &.headerLinkOpen {
@@ -60,9 +59,6 @@ $header-out-animation-delay: 0.3s;
     align-items: flex-start;
   }
 
-  // & > span:first-child > a:active {
-  //   color: red;
-  // }
   &:focus {
     background-color: red;
   }
@@ -84,16 +80,16 @@ $header-out-animation-delay: 0.3s;
 
   @include header-menu;
 
-  &:hover {
-    @include min-width(lg) {
-      @include header-menu-hover;
-    }
+  // &:hover {
+  //   @include min-width(lg) {
+  //     @include header-menu-hover;
+  //   }
 
-    @include mobile {
-      display: block;
-      @include animFadeInTop;
-    }
-  }
+  //   @include mobile {
+  //     display: block;
+  //     @include animFadeInTop;
+  //   }
+  // }
 
   @include mobile {
     position: relative !important;

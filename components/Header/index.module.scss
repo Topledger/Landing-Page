@@ -1,11 +1,13 @@
 @import "@/assets/styles/breakpoints.scss";
 @import "@/assets/styles/mixins.scss";
 
+$header-height: 88px;
+
 .appHeader {
   z-index: 99;
   width: 100%;
   /* width: 100vw; */
-  height: 88px;
+  height: $header-height;
   background-color: #eef2fc;
   display: flex;
   align-items: center;
@@ -76,11 +78,14 @@
       position: absolute;
       z-index: 10;
       align-items: flex-start;
-      top: 100%;
       left: 0;
       padding: 1rem 1.5rem;
       background-color: #e7ecf3;
       width: 100%;
+      max-height: calc(100vh - $header-height);
+      top: $header-height;
+      overflow: auto;
+      justify-content: flex-start;
     }
   }
 }
