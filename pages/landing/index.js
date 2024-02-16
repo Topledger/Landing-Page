@@ -44,12 +44,18 @@ const articles = [
     image: "/assets/images/landing/article-2.jpg",
     footer: {
       actionElements: [
-        { type: "link", text: "Analyze now", primary: true, href: "/web3-teams" },
+        {
+          type: "link",
+         text: "Analyze now",
+         primary: true,
+         onClick: () => QueryFormModal.show()
+        },
         {
           type: "link",
           text: "see details",
           target: "_blank",
-          onClick: () => QueryFormModal.show()
+          href: "/web3-teams"
+          
         }
        // { type: "search", placeholder: "Enter a solana wallet" },
       ],
