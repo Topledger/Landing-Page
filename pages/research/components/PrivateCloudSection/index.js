@@ -109,9 +109,15 @@ const PrivateCloudSection = ({ sections = [] }) => {
             your specific needs and offer comprehensive enterprise support
             throughout the entire process
           </span>
-          <Button primary color="#085ED4" onClick={QueryFormModal.show}>
+          <Button.Link
+            primary
+            color="#085ED4"
+            href="https://calendly.com/nitin_topledger/30min"
+            target="_blank"
+            noArrow
+          >
             Schedule a call
-          </Button>
+          </Button.Link>
         </div>
       </div>
     </Section>

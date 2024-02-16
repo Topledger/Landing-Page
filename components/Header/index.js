@@ -124,7 +124,7 @@ const Header = ({ className }) => {
             className={styles.headerLink}
             menuItems={useCasesHeaderLinks}
           >
-            <a className={styles.headerLink}>User cases</a>
+            <a className={styles.headerLink}>Use cases</a>
           </HeaderMenu>
           <Button.Link tertiary className={styles.headerLink} href="/pricing">
             Pricing

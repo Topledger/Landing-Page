@@ -30,14 +30,16 @@ const ResearchHeroSection = () => {
           go-to data provider for Solana
         </p>
         <p className={styles.description}>
-          <Button
+          <Button.Link
             className={styles.trialButton}
             primary
             color="#085ED4"
-            onClick={QueryFormModal.show}
+            href="https://calendly.com/nitin_topledger/30min"
+            target="_blank"
+            noArrow
           >
             Schedule a call
-          </Button>
+          </Button.Link>
         </p>
       </div>
       <p className={styles.image}>

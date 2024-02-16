@@ -324,7 +324,7 @@ const QueryForm = () => {
             </div>
             <div className={styles.successLine4}>
               <Button.Link
-                href="/dashboard-list"
+                href="/dashboards"
                 color="#085ED4"
                 secondary
                 target="_blank"
