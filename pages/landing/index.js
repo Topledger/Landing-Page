@@ -161,8 +161,8 @@ const dataCultures = [
     action: {
       type: "link",
       target: "_blank",
-      text: "Public Dashboards",
-      href: "/dashboards",
+      text: "See details",
+      href: "/web3-teams",
     },
     bottomContent: {
       text: "Indexing Helium's on-chain and oracle data",
