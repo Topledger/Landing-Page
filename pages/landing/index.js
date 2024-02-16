@@ -28,7 +28,7 @@ const articles = [
         {
           type: "link",
           text: "Public dashboards",
-          target: "_blank",
+          //target: "_blank",
           href: "/dashboards",
           secondary: true,
         },
@@ -78,7 +78,7 @@ const articles = [
         {
           type: "link",
           text: "Available schemas",
-          //target: "_blank",
+          target: "_blank",
           href: "/research",
         },
       ],
