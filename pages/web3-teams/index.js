@@ -22,7 +22,7 @@ const features = [
     bulletColor: "#4968B6",
     media: {
       type: "image",
-      src: "/assets/images/web3-teams/feature-decoded-data.png",
+      src: "/assets/images/web3-teams/feature-decoded-data.svg",
       backgroundColor: "#EDF2FF",
     },
     tags: [{ text: "Fast-track onboarding", color: "#4968B6" }],
