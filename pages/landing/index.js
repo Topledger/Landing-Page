@@ -188,9 +188,9 @@ const dataCultures = [
 const testimonials = [
   {
     id: 1,
-    text: "The Top Ledger team has been a key partner for Metaplex Studios in creating real time dashboards that inform our most important strategic questions. I check Top Ledger regularly to track market movements and to understand the impact of new features and initiatives. It's become one of our most important tools and significantly improved the quality of our decision-making as a team.",
+    text: "The Top Ledger team has been a key partner for Metaplex Foundation in creating real time dashboards that inform our most important strategic questions. I check Top Ledger regularly to track market movements and to understand the impact of new features and initiatives. It's become one of our most important tools and significantly improved the quality of our decision-making as a team.",
     name: "Stephen",
-    credentials: "CEO, Metaplex",
+    credentials: "Director, Metaplex Foundation",
     logo: "/assets/images/logo/metaplex.svg",
     avatar: "/assets/images/avatar/stephen.png",
   },
