@@ -76,7 +76,7 @@ const features = [
     bulletColor: "#59B077",
     media: {
       type: "image",
-      src: "/assets/images/web3-teams/feature-competetive-analysis.png",
+      src: "/assets/images/web3-teams/feature-competetive-analysis.svg",
       backgroundColor: "#DDF8E7",
     },
     tags: [{ text: "Know your competitor", color: "#59B077" }],
