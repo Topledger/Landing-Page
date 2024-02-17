@@ -42,7 +42,7 @@ const Web3HeroSection = () => {
       </div>
       <p className={styles.image}>
         <Image
-          src="/assets/images/web3-teams/hero-image.png"
+          src="/assets/images/web3-teams/hero-image.svg"
           width={549}
           height={478}
           alt="Top Ledger for web3 teams"
