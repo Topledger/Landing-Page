@@ -67,7 +67,7 @@ const features = [
         type: "link",
         text: "Analyze now",
         target: "_blank",
-        href: "https://docs.topledger.xyz",
+        onClick: QueryFormModal.show,
       },
     ],
   },
