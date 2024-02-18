@@ -49,7 +49,7 @@ const features = [
     bulletColor: "#9F62DD",
     media: {
       type: "image",
-      src: "/assets/videos/web3-teams/feature-decoded-data.svg",
+      src: "/assets/images/web3-teams/feature-decoded-data.svg",
       backgroundColor: "#F8F0FF",
     },
     tags: [{ text: "Know your users", color: "#9F62DD" }],
