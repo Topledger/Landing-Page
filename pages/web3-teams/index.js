@@ -49,8 +49,8 @@ const features = [
     bulletColor: "#9F62DD",
     media: {
       type: "image",
-      src: "/assets/images/web3-teams/feature-decoded-data.svg",
-      backgroundColor: "#F8F0FF",
+      src: "/assets/images/web3-teams/feature-wallet-behaviour-analytics.svg",
+      backgroundColor: "#F8F0F6",
     },
     tags: [{ text: "Know your users", color: "#9F62DD" }],
     title: "Wallet behaviour analytics",
