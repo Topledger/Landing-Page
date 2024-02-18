@@ -48,8 +48,8 @@ const features = [
     color: "#F1E0FF",
     bulletColor: "#9F62DD",
     media: {
-      type: "video",
-      src: "/assets/videos/web3-teams/feature-visualize-data.mp4",
+      type: "image",
+      src: "/assets/videos/web3-teams/feature-decoded-data.svg",
       backgroundColor: "#F8F0FF",
     },
     tags: [{ text: "Know your users", color: "#9F62DD" }],
