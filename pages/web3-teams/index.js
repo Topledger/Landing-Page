@@ -84,7 +84,7 @@ const features = [
     description:
       "Our archive of decoded data, up-to-date schemas and taggings helps you quickly analyze the entire competitive landscape without any hassle",
     features: [
-      "Monthly swap volume - DEX",
+      //"Monthly swap volume - DEX",
       "Sectoral analysis",
       "Ecosystem analysis",
     ],
