@@ -20,6 +20,7 @@
 
   @include mobile {
     align-items: center;
+    text-align: center;
     max-width: 100%;
 
     width: 100vw;
@@ -48,6 +49,11 @@
   font-size: 1.125rem;
   line-height: 140%;
   max-width: 80%;
+  @include mobile {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 22px;
+  }
 }
 
 .description {
