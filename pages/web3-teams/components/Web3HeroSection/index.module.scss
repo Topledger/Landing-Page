@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   @include mobile {
-    padding: 120px 28px 143px;
+    padding: 120px 24px 143px;
     flex-direction: column;
   }
 }
@@ -88,5 +88,9 @@
   .chip {
     font-size: 1rem;
     font-weight: 500;
+    @include mobile {
+      font-size: 0.875rem;
+      width: 100%;
+    }
   }
 }
