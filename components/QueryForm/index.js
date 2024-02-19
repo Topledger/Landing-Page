@@ -327,7 +327,7 @@ const QueryForm = () => {
                 href="/dashboards"
                 color="#085ED4"
                 secondary
-                //target="_blank"
+                target="_blank"
               >
                 Public dashboards
               </Button.Link>
