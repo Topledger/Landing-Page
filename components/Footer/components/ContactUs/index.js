@@ -13,7 +13,7 @@ const ContactUs = () => {
       </div>
       <div
         className={styles.row}
-        style={{ borderBottom: "none", paddingTop: 0, paddingBottom: "24px" }}
+        style={{ borderBottom: "none", paddingTop: 24px, paddingBottom: 0 }}
       >
         {addressIcon}
         <Button.Link
@@ -26,7 +26,7 @@ const ContactUs = () => {
           Fraser Street #05-25 Duo Tower Singapore
         </Button.Link>
       </div>
-      <div className={styles.row} style={{ paddingTop: 0, paddingBottom: 0 }}>
+      <div className={styles.row} style={{ paddingTop: 0, paddingBottom: 24px }}>
         {mailIcon}
         <Button.Link
           href="mailto:nitin@topledger.xyz"
