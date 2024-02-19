@@ -118,7 +118,7 @@ const Header = ({ className }) => {
             className={styles.headerLink}
             menuItems={productsHeaderLinks}
           >
-            <a className={styles.headerLink}>Product</a>
+            <a className={styles.headerLink}>Products</a>
           </HeaderMenu>
           <HeaderMenu
             className={styles.headerLink}
