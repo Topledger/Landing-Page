@@ -74,7 +74,7 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <Section style={{ backgroundColor: "#E9EFFF" }} component="footer">
+    <Section style={{ backgroundColor: "#eef2fc" }} component="footer">
       <div className={styles.container}>
         <div className={styles.leftSection}>
           <div className={styles.footerLinksContainer}>
@@ -83,12 +83,12 @@ const Footer = () => {
             ))}
           </div>
           <div className={styles.copyContainer}>
-            <Button.Link tertiary color="#1A3989" className={styles.copyLink}>
+            <Button.Link tertiary color="#374151" className={styles.copyLink}>
               © 2024, Top Ledger, All rights reserved
             </Button.Link>
             <Button.Link
               tertiary
-              color="#1A3989"
+              color="#374151"
               className={cx(styles.copyLink, styles.privacyPolicy)}
             >
               Privacy Policy
