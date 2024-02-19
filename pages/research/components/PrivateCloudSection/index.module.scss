@@ -276,8 +276,9 @@
     display: inline-block;
     @include mobile {
     font-size: 1rem;
-    font-weight: 700;
-    line-height: 29px;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    margin-top: 1rem;
   }
   }
   @include mobile {
