@@ -57,6 +57,7 @@
 
 .featureListTitle {
   margin-bottom: 1.5rem;
+  color: #374151;
 
   @include mobile {
     margin-bottom: 0.875rem;
@@ -66,6 +67,7 @@
 .featureListDescription {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
+  color: #374151;
 
   @include mobile {
     margin-top: 1rem;
