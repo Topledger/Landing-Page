@@ -15,7 +15,7 @@ const articles = [
     tags: [{ text: "Web3 teams", color: "#3678C5" }],
     title: "SQL based analytics platform",
     description:
-      "Create comprehensive dashboards with deeper competitive insights, broader user profiling, and in-depth ecosystem analysis",
+      "Create comprehensive dashboards with deeper competitive insights, broader user profiling, and in-depth ecosystem analysis.",
     image: "/assets/images/landing/article-1.jpg",
     footer: {
       actionElements: [
@@ -70,7 +70,7 @@ const articles = [
     ],
     title: "Top Ledger for research",
     description:
-      "Forget about data integrity, speed, and infrastructure customization. Access decoded Solana data on your private cloud, including DEX trades, NFT/cNFT mints and trades, staking, DePIN, stablecoin activities, and more",
+      "Forget about data integrity, speed, and infrastructure customization. Access decoded Solana data on your private cloud, including DEX trades, NFT/cNFT mints and trades, staking, DePIN, stablecoin activities, and more.",
     image: "/assets/images/landing/article-3.jpg",
     footer: {
       actionElements: [
@@ -90,7 +90,7 @@ const articles = [
     title: "Top Ledger AI: Your trusted data ally",
     titleMobile: "Top Ledger AI",
     description:
-      "Top Ledger AI is set to transform data analysis on Solana, simplifying large-scale insight consumption and accelerating decision-making",
+      "Top Ledger AI is set to transform data analysis on Solana, simplifying large-scale insight consumption and accelerating decision-making.",
     image: "/assets/images/landing/article-3.jpg",
     footer: {
       actionElements: [
@@ -115,7 +115,7 @@ const outcomes = [
     image: "/assets/images/landing/outcome-analysts.svg",
     title: "For analysts",
     description:
-      "Run blazingly fast SQL queries and leave auto-scaling, replication of workloads, rollup aggregations and custom data decoding to us",
+      "Run blazingly fast SQL queries and leave auto-scaling, replication of workloads, rollup aggregations and custom data decoding to us.",
     action: {
       type: "link",
       target: "_blank",
@@ -128,7 +128,7 @@ const outcomes = [
     image: "/assets/images/landing/outcome-businesses.svg",
     title: "For business people",
     description:
-      "Our user-friendly interface with upcoming AI capabilities accelerates data analysis, enabling quicker, more effective problem-solving and a stronger data-driven approach in business decision-making",
+      "Our user-friendly interface with upcoming AI capabilities accelerates data analysis, enabling quicker, more effective problem-solving and a stronger data-driven approach in business decision-making.",
     action: {
       type: "link",
       target: "_blank",
@@ -141,7 +141,7 @@ const outcomes = [
     image: "/assets/images/landing/outcome-developers.svg",
     title: "For developers",
     description:
-      "Boost your development with Top Ledger API! Designed for seamless data integration on the Solana blockchain, our API empowers you to efficiently manage and query hundreds of decoded data tables",
+      "Boost your development with Top Ledger API! Designed for seamless data integration on the Solana blockchain, our API empowers you to efficiently manage and query hundreds of decoded data tables.",
     action: {
       type: "comingSoon",
       target: "_blank",
@@ -156,7 +156,7 @@ const dataCultures = [
     id: 1,
     title: "Uncompromising analytics - End to end solutions",
     description:
-      "Our robust infrastructure, combined with our data indexing and decoding capabilities and enterprise support, ensures that you receive end-to-end analytics that are both broad and deep, without any interruption",
+      "Our robust infrastructure, combined with our data indexing and decoding capabilities and enterprise support, ensures that you receive end-to-end analytics that are both broad and deep, without any interruption.",
     action: {
       type: "link",
       //target: "_blank",
@@ -172,7 +172,7 @@ const dataCultures = [
     id: 2,
     title: "Top Ledger is your partner in data culture",
     description:
-      "We collaborate with various teams in an organization to identify their specific data and analytics needs, aiming to improve operational efficiency and decision-making across all verticals",
+      "We collaborate with various teams in an organization to identify their specific data and analytics needs, aiming to improve operational efficiency and decision-making across all verticals.",
     action: {
       type: "link",
       target: "_blank",
