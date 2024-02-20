@@ -10,15 +10,21 @@ import FeatureSuiteSection from "../web3-teams/components/FeautreSuiteSection";
 const privateCloud = [
   {
     title: "Tailored schemas to fit your specific needs",
+    cta: {
+      text: "more",
+      icon: "arrow-right-dark",
+      type: "link",
+      href: "https://docs.topledger.xyz/data-tables/smart-tables",
+    },
     features: [
       {
         title: "DEX trades",
-        description:
-          "Decoded data from all DEXs and aggregators since 2021",
+        description: "Decoded data from all DEXs and aggregators since 2021",
       },
       {
         title: "NFT/cNFT mints and trades",
-        description: "All NFT/cNFT decoded data to analyze primary & secondary GMV",
+        description:
+          "All NFT/cNFT decoded data to analyze primary & secondary GMV",
       },
       {
         title: "Staking",
