@@ -163,36 +163,35 @@
   font-weight: 700;
   line-height: 140%;
 
-  @include mobile {
-    font-size: 0.75rem;
-    font-weight: 500;
-    line-height: 17px;
-    color: #59b077;
-    border-radius: 4px;
-    padding: 0.5rem;
-    border: 1px solid #d4f3e0;
-    background-image: linear-gradient(0deg, #d4f3e0, #d4f3e0),
-      linear-gradient(0deg, #edfaf2, #edfaf2);
+  // @include mobile {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 17px;
+  color: #59b077;
+  border-radius: 4px;
+  padding: 0.5rem;
+  border: 1px solid #d4f3e0;
+  background-image: linear-gradient(0deg, #d4f3e0, #d4f3e0),
+    linear-gradient(0deg, #edfaf2, #edfaf2);
 
-    position: absolute;
-    top: 0px;
-    width: 82%;
-    left: 9%;
-    margin-top: -1rem;
-    white-space: nowrap;
-    display: none;
-  }
+  position: absolute;
+  top: 0px;
+  width: 82%;
+  left: 9%;
+  margin-top: -1rem;
+  white-space: nowrap;
+  // display: none;
+  // }
 }
 
 .cloudSectionTitleMobile {
-  display: none;
+  // display: none;
+  text-align: center;
 
-  &:globa(.part-2) {
+  &:global(.part-2) {
+    background: linear-gradient(0deg, #fceadf, #fceadf),
+      linear-gradient(0deg, #fcf4ef, #fcf4ef);
     color: #cb8a5a;
-  }
-
-  @include mobile {
-    display: block;
   }
 }
 
@@ -275,11 +274,11 @@
     max-width: 600px;
     display: inline-block;
     @include mobile {
-    font-size: 1rem;
-    line-height: 22px;
-    letter-spacing: 0.04em;
-    margin-top: 1rem;
-  }
+      font-size: 1rem;
+      line-height: 22px;
+      letter-spacing: 0.04em;
+      margin-top: 1rem;
+    }
   }
   @include mobile {
     button {

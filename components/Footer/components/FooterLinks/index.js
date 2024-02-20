@@ -8,7 +8,7 @@ const FooterLinks = ({ footerLinks = [] }) => {
       <div className={styles.title}>{footerLinks.title}</div>
       <ul className={styles.links}>
         {footerLinks.links.map((link) => (
-          <li key={link.href} className={styles.linkWrapper}>
+          <li key={link.id} className={styles.linkWrapper}>
             <Button.Link
               href={link.href}
               tertiary

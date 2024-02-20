@@ -37,6 +37,7 @@ const features = [
     ],
     cta: [
       {
+        key: "documentation",
         type: "link",
         text: "Documentation",
         target: "_blank",
@@ -64,6 +65,7 @@ const features = [
     ],
     cta: [
       {
+        id: "analyze-now",
         type: "link",
         text: "Analyze now",
         target: "_blank",
@@ -90,41 +92,13 @@ const features = [
     ],
     cta: [
       {
+        id: "start-trial",
         type: "link",
         text: "Start a free trail",
         target: "_blank",
         onClick: QueryFormModal.show,
       },
     ],
-  },
-];
-
-const dashboards = [
-  {
-    name: "Metaplex",
-    href: "https://analytics.topledger.xyz/metaplex/public/dashboards/T50WQTTu2Cbz8hG0vge18izUO5ghEDrWhzb92knN",
-    icon: "/assets/images/dashboards/metaplex.svg",
-    target: "_blank",
-  },
-  {
-    name: "Drip",
-    href: "https://analytics.topledger.xyz/tl/public/dashboards/7XqwqSZ3r7aYD5EVBwd67VHQ3Y1pXrq0agQptxuU",
-    icon: "/assets/images/dashboards/drip.png",
-  },
-  {
-    name: "Drift",
-    href: "https://analytics.topledger.xyz/drift/public/dashboards/rZdEYeLBps0O2mIfcKalMYyWGyerHU4nFy4vIcuK",
-    icon: "/assets/images/dashboards/drift.png",
-  },
-  {
-    name: "Helium",
-    href: "https://analytics.topledger.xyz/helium/public/dashboards/lAmbact4KjA6llkhKEPk6AVi9R8ZBQviPV0XPLLA",
-    icon: "/assets/images/dashboards/helium.png",
-  },
-  {
-    name: "Phoenix",
-    href: "https://analytics.topledger.xyz/tl/public/dashboards/78gpdXd6LHXX2AXNdjrz0GqEfpA8uLR5Qt897Fl4",
-    icon: "/assets/images/dashboards/phoenix.png",
   },
 ];
 
@@ -139,6 +113,7 @@ const featureSuites = [
       "Securely connect your private data source to the Top Ledger platform and collate it with decoded on-chain Solana data",
     cta: [
       {
+        id: "connect-db",
         type: "link",
         text: "Supported DBs",
         target: "_blank",
@@ -156,6 +131,7 @@ const featureSuites = [
       "Set alerts on any chart to receive notifications in both your Slack and Discord channels",
     cta: [
       {
+        id: "set-alerts",
         type: "link",
         text: "Demo",
         target: "_blank",
@@ -173,6 +149,7 @@ const featureSuites = [
       "Our React component lets you effortlessly integrate any dashboard into your website, complementing your UI/UX design",
     cta: [
       {
+        id: "cast-dashboards",
         type: "link",
         text: "Live Example",
         target: "_blank",
@@ -193,6 +170,7 @@ const caseStudies = [
       "Drift Protocol is an open-sourced, decentralized exchange built on the Solana blockchain...",
     cta: [
       {
+        id: "case-study-drift-protocol",
         type: "link",
         text: "Read full case study",
         target: "_blank",
@@ -210,6 +188,7 @@ const caseStudies = [
       "Squads is a platform aimed at simplifying the management of developer and treasury assets...",
     cta: [
       {
+        id: "case-study-squads",
         type: "link",
         text: "Read full case study",
         target: "_blank",
@@ -227,6 +206,7 @@ const caseStudies = [
       "Switchboard is a revolutionary multi-chain oracle protocol designed to address the ...",
     cta: [
       {
+        id: "case-study-switchboard",
         type: "link",
         text: "Read full case study",
         target: "_blank",

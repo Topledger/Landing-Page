@@ -1,5 +1,7 @@
 import Link from "next/link";
 import cx from "classnames";
+import PropTypes from "prop-types";
+
 import SvgIcon from "../SvgIcon";
 
 import styles from "./index.module.scss";
@@ -14,20 +16,22 @@ const getBtnProps = (props) => ({
   }),
 });
 
-const getBtnStyle = ({color, ...props}) => ({
+const getBtnStyle = ({ color, ...props }) => ({
   ...props?.style,
   ...(props.primary && { backgroundColor: color, backgroundImage: "none" }),
-  ...(props.secondary && { backgroundColor: "transparent",
-  backgroundImage: "none",
-  borderColor: color,
-  color }),
+  ...(props.secondary && {
+    backgroundColor: "transparent",
+    backgroundImage: "none",
+    borderColor: color,
+    color,
+  }),
   ...(props.tertiary && { color: color }),
 });
 
 const Button = ({ color, children, className, ...props }) => {
   const btnProps = getBtnProps({ ...props, className });
 
-  const style = getBtnStyle({color, ...btnProps});
+  const style = getBtnStyle({ color, ...btnProps });
 
   return (
     <button {...btnProps} style={style}>
@@ -50,7 +54,7 @@ Button.Link = ({
   const btnProps = getBtnProps({ ...props, className });
   const newWindowLink = props.target === "_blank";
 
-  const style = getBtnStyle({color, ...btnProps});
+  const style = getBtnStyle({ color, ...btnProps });
 
   const Component = href ? Link : Anchor;
 
@@ -86,5 +90,20 @@ Button.Link = ({
 };
 
 Button.Link.displayName = "Button.Link";
+
+Button.propTypes = Button.Link.propTypes = {
+  color: PropTypes.string,
+  href: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  noArrow: PropTypes.bool,
+  arrowOnHover: PropTypes.bool,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  tertiary: PropTypes.bool,
+  disabled: PropTypes.bool,
+  target: PropTypes.string,
+  style: PropTypes.object,
+};
 
 export default Button;

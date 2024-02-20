@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import cx from "classnames";
 
 import Icon from "components/Icon";
@@ -49,13 +49,22 @@ const MenuItem = ({ icon, title, description, href, target, comingSoon }) => {
 
 const HeaderMenu = ({ children, menuItems }) => {
   const containerRef = useRef();
+  const anchorRef = useRef();
   const [isOpen, setIsOpen] = useState();
+
+  const handleClick = useCallback(
+    (e) => {
+      if (e.currentTarget === anchorRef.current) {
+        setIsOpen(!isOpen);
+      }
+    },
+    [isOpen]
+  );
 
   useEffect(() => {
     if (isOpen) {
       const handleClick = (e) => {
         if (containerRef.current && !containerRef.current.contains(e.target)) {
-          console.log("containerRef.current", containerRef.current, e.target);
           setIsOpen(false);
         }
       };
@@ -68,18 +77,13 @@ const HeaderMenu = ({ children, menuItems }) => {
     <>
       <span
         className={cx(styles.headerLink, { [styles.headerLinkOpen]: isOpen })}
-        onClick={(e) => {
-          e.stopPropagation();
-          if (
-            e.target instanceof HTMLAnchorElement &&
-            e.target.classList.contains(headerStyles.headerLink)
-          ) {
-            setIsOpen((isOpen) => !isOpen);
-          }
-        }}
         ref={containerRef}
       >
-        <span>
+        <span
+          style={{ display: "inline-flex" }}
+          onClick={handleClick}
+          ref={anchorRef}
+        >
           {children}{" "}
           <Icon
             className={cx(styles.chevron, "chevron-icon")}
