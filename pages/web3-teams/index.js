@@ -176,7 +176,7 @@ const featureSuites = [
         type: "link",
         text: "Live Example",
         target: "_blank",
-        href: "https://docs.topledger.xyz",
+        href: "https://app.drift.trade/stats",
       },
     ],
   },
