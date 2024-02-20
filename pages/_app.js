@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/x-icon" href="/favicon.png" />
+        <link rel="icon" type="image/x-icon" href="/favicon.svg" />
       </Head>
       <QueryClientProvider client={queryClient}>
         <DarkModeProvider>
