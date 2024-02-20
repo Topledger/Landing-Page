@@ -24,7 +24,7 @@ $header-height: 88px;
   }
 
   @include max-width(md) {
-    padding: 0 24px;
+    padding: 0 16px;
   }
 
   @include mobile {
@@ -79,7 +79,7 @@ $header-height: 88px;
       z-index: 10;
       align-items: flex-start;
       left: 0;
-      padding: 1rem 1.5rem;
+      padding: 1rem 1rem;
       background-color: #e7ecf3;
       width: 100%;
       max-height: calc(100vh - $header-height);
