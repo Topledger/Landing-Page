@@ -163,7 +163,6 @@
   font-weight: 700;
   line-height: 140%;
 
-  // @include mobile {
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 17px;
@@ -176,22 +175,29 @@
 
   position: absolute;
   top: 0px;
-  width: 82%;
-  left: 9%;
-  margin-top: -1rem;
   white-space: nowrap;
-  // display: none;
-  // }
-}
-
-.cloudSectionTitleMobile {
-  // display: none;
-  text-align: center;
-
+  margin-top: -1rem;
+  @include mobile {
+    width: 82%;
+    left: 9%;
+  }
   &:global(.part-2) {
     background: linear-gradient(0deg, #fceadf, #fceadf),
       linear-gradient(0deg, #fcf4ef, #fcf4ef);
     color: #cb8a5a;
+    border-color: #f5e4d7;
+  }
+  @include mobile {
+    display: none;
+  }
+}
+
+.cloudSectionTitleMobile {
+  display: none;
+  text-align: center;
+
+  @include mobile {
+    display: block;
   }
 }
 
@@ -296,5 +302,13 @@
     display: flex;
     gap: 0.5rem;
     font-size: 1rem;
+  }
+
+  @include mobile {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-top: -1rem;
+    height: 1.5rem;
   }
 }

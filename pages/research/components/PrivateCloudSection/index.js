@@ -13,7 +13,9 @@ const CloudSection = ({ section = [] }) => {
   const cta = section.cta ?? {};
   return (
     <div className={styles.cloudSection}>
-      <h3 className={styles.cloudSectionTitle}>{section.title}</h3>
+      <h3 className={cx(styles.cloudSectionTitle, section.customClass)}>
+        {section.title}
+      </h3>
       <h3
         className={cx(
           styles.cloudSectionTitleMobile,
