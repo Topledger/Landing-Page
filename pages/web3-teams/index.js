@@ -142,7 +142,7 @@ const featureSuites = [
         type: "link",
         text: "Supported DBs",
         target: "_blank",
-        href: "https://docs.topledger.xyz",
+        href: "https://docs.topledger.xyz/developer-docs/supported-dbs",
       },
     ],
   },
