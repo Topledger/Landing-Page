@@ -1,5 +1,6 @@
 @import "@/assets/styles/breakpoints.scss";
 
+
 .columns {
   position: relative;
   top: -8rem;
@@ -9,7 +10,7 @@
 
   @include mobile {
     padding-top: 1rem;
-    padding-bottom: 5rem;
+  
     grid-template-columns: 1fr;
   }
 }
