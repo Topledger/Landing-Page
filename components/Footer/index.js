@@ -13,14 +13,17 @@ const footerLinks = [
     title: "Products",
     links: [
       {
+        id: "sql-analytics",
         text: "SQL platform",
         href: "/web3-teams",
       },
       {
+        id: "wallet-profiler",
         text: "Wallet behaviour analytics",
         href: "/web3-teams",
       },
       {
+        id: "research",
         text: "TL for research",
         href: "/research",
       },
@@ -31,14 +34,17 @@ const footerLinks = [
     title: "Use Cases",
     links: [
       {
+        id: "web3-teams",
         text: "For web3 teams",
         href: "/web3-teams",
       },
       {
+        id: "institutions",
         text: "For institutions",
         href: "/research",
       },
       {
+        id: "developers",
         text: "For developers",
         href: "https://docs.topledger.xyz",
         target: "_blank",
@@ -50,20 +56,24 @@ const footerLinks = [
     title: "Other links",
     links: [
       {
+        id: "pricing",
         text: "Pricing",
         href: "/pricing",
       },
       {
+        id: "blogs",
         text: "Blogs",
         href: "https://blog.topledger.xyz",
         target: "_blank",
       },
       {
+        id: "docs",
         text: "Docs",
         href: "https://docs.topledger.xyz",
         target: "_blank",
       },
       {
+        id: "github",
         text: "Github",
         href: "https://github.com/Topledger",
         target: "_blank",

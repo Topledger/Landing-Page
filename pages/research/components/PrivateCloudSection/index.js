@@ -4,14 +4,18 @@ import cx from "classnames";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import UnderlinedText from "@/components/UnderlinedText";
+import Icon from "@/components/Icon";
 import QueryFormModal from "@/components/QueryForm/QueryFormModal";
 
 import styles from "./index.module.scss";
 
 const CloudSection = ({ section = [] }) => {
+  const cta = section.cta ?? {};
   return (
     <div className={styles.cloudSection}>
-      <h3 className={styles.cloudSectionTitle}>{section.title}</h3>
+      <h3 className={cx(styles.cloudSectionTitle, section.customClass)}>
+        {section.title}
+      </h3>
       <h3
         className={cx(
           styles.cloudSectionTitleMobile,
@@ -33,6 +37,19 @@ const CloudSection = ({ section = [] }) => {
             </p>
           </div>
         ))}
+        {section.cta && (
+          <div className={styles.cloudSectionCTA}>
+            <Button.Link
+              tertiary
+              color="#374151"
+              href={cta.href}
+              target="_blank"
+              noArrow
+            >
+              {cta.text} {cta.icon && <Icon name={cta.icon} />}
+            </Button.Link>
+          </div>
+        )}
       </div>
     </div>
   );

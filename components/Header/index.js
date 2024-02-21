@@ -12,12 +12,14 @@ import MobileOnly from "../MobileOnly";
 
 const productsHeaderLinks = [
   {
+    id: "sql-analytics",
     icon: "analytics",
     title: "SQL based analytics platform",
     description: "Create comprehensive dashboards with deeper analysis",
     href: "/web3-teams",
   },
   {
+    id: "wallet-profiler",
     icon: "wallet-profiler",
     title: "Wallet behaviour analytics",
     description:
@@ -26,12 +28,14 @@ const productsHeaderLinks = [
     //comingSoon: true,
   },
   {
+    id: "research",
     icon: "research",
     title: "Top Ledger for research",
     description: "Access Solana's decoded data directly on your private cloud",
     href: "/research",
   },
   {
+    id: "artificial-intelligence",
     icon: "artificial-intelligence",
     title: "Top Ledger AI",
     description: "Simplifying large-scale insight consumption",
@@ -42,18 +46,21 @@ const productsHeaderLinks = [
 
 const useCasesHeaderLinks = [
   {
+    id: "web3-teams",
     icon: "web3-teams",
     title: "For web3 teams",
     description: "Your partner in building a data culture",
     href: "/web3-teams",
   },
   {
+    id: "institutions",
     icon: "institutions",
     title: "For institutions",
     description: "Powering advanced analytics use cases",
     href: "/research",
   },
   {
+    id: "developers",
     icon: "developers",
     title: "For developers",
     description: "Enhance your development using Top Ledger API",
