@@ -70,14 +70,17 @@ $header-out-animation-delay: 0.3s;
 
 .headerMenu {
   position: absolute;
+  
   top: 88px;
   width: 100vw;
   left: 0;
-  background-color: #fff;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: auto;
+  border-bottom: 1px solid #E8E9FA;
+  box-shadow: 0px 16px 50px 0px rgba(179, 188, 212, 0.08);
 
   @include header-menu;
 
@@ -99,6 +102,7 @@ $header-out-animation-delay: 0.3s;
     margin-left: -1.5rem;
     display: none;
     margin-top: 1rem;
+    box-shadow: none;
   }
 }
 
@@ -111,7 +115,8 @@ $header-out-animation-delay: 0.3s;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 1.5rem;
-  column-gap: 84px;
+  column-gap: 64px;
+  margin-top:2rem;
   margin-bottom: 2.5rem;
 
   @include mobile {
