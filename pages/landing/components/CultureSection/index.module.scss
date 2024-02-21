@@ -30,6 +30,9 @@
 
   @include mobile {
     font-size: 1.5rem;
+    span{
+    margin-left: 0rem;
+    }
   }
 }
 
