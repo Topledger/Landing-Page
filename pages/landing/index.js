@@ -231,6 +231,6 @@ const LandingPage = () => {
       <TrialSection />
     </Page>
   );
-};
+}; 
 
 export default LandingPage;
