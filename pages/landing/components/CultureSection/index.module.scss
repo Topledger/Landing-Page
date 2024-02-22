@@ -90,22 +90,24 @@
 .cultureContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 52px;
+  gap: 56px;
   margin-top: 2.5rem;
 
   @include mobile {
     grid-template-columns: 1fr;
-    gap: 160px;
+    gap: 144px;
   }
 }
 
 .culture {
   position: relative;
   display: flex;
+  
   flex-direction: column;
   padding: 2.5rem;
 
   @include mobile {
+    border: 1px solid #BFC5E5 ;
     padding: 2rem;
   }
 }
