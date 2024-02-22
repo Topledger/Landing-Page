@@ -53,7 +53,7 @@ const articles = [
         {
           type: "link",
           text: "See details",
-          href: "/web3-teams#little-bit-more-b"
+          href: "/web3-teams"
           
         }
        // { type: "search", placeholder: "Enter a solana wallet" },
