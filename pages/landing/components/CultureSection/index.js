@@ -7,6 +7,7 @@ import Image from "next/image";
 import Icon from "@/components/Icon";
 import Button from "@/components/Button";
 import UnderlinedText from "@/components/UnderlinedText";
+import { getId } from "helpers/utils";
 
 const Culture = ({
   image,
