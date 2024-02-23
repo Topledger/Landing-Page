@@ -18,6 +18,7 @@ import { DASHBOARD_ICONS } from "pages/dashboards";
 
 const features = [
   {
+    
     color: "#DCE6FF",
     bulletColor: "#4968B6",
     media: {
@@ -46,6 +47,7 @@ const features = [
     ],
   },
   {
+    
     color: "#F1E0FF",
     bulletColor: "#9F62DD",
     media: {
@@ -53,6 +55,7 @@ const features = [
       src: "/assets/images/web3-teams/feature-wallet-behaviour-analytics.svg",
       backgroundColor: "#F8F0F6",
     },
+    
     tags: [{ text: "Know your users", color: "#9F62DD" }],
     title: "Wallet behaviour analytics",
     description:
@@ -74,6 +77,7 @@ const features = [
     ],
   },
   {
+    
     color: "#E8E9FA",
     bulletColor: "#59B077",
     media: {
@@ -117,7 +121,7 @@ const featureSuites = [
         type: "link",
         text: "Supported DBs",
         target: "_blank",
-        href: "https://docs.topledger.xyz",
+        href: "https://docs.topledger.xyz/developer-docs/supported-dbs",
       },
     ],
   },

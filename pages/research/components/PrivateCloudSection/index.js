@@ -98,7 +98,7 @@ const PrivateCloudSection = ({ sections = [] }) => {
                 style={{ backgroundColor: color }}
               >
                 <Image
-                  src={`/assets/images/landing/culture-icon-${index + 1}.svg`}
+                  src={`/assets/images/landing/pc-icon-${index + 1}.svg`}
                   width={100}
                   height={100}
                   alt={`culture-icon-${index + 1}`}

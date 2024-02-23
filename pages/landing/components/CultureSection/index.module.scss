@@ -30,6 +30,9 @@
 
   @include mobile {
     font-size: 1.5rem;
+    span{
+    margin-left: 0rem;
+    }
   }
 }
 
@@ -60,6 +63,7 @@
     position: relative;
     flex-wrap: wrap;
     margin-top: 2rem;
+    justify-content: space-between;
   }
 }
 
@@ -78,30 +82,32 @@
   }
 
   @include mobile {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
   }
 }
 
 .cultureContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 52px;
+  gap: 56px;
   margin-top: 2.5rem;
 
   @include mobile {
     grid-template-columns: 1fr;
-    gap: 160px;
+    gap: 144px;
   }
 }
 
 .culture {
   position: relative;
   display: flex;
+  
   flex-direction: column;
   padding: 2.5rem;
 
   @include mobile {
+    border: 1px solid #BFC5E5 ;
     padding: 2rem;
   }
 }

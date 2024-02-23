@@ -53,7 +53,7 @@ const articles = [
         {
           type: "link",
           text: "See details",
-          href: "/web3-teams"
+          href: "/web3-teams",
           
         }
        // { type: "search", placeholder: "Enter a solana wallet" },
@@ -141,7 +141,7 @@ const outcomes = [
     image: "/assets/images/landing/outcome-developers.svg",
     title: "For developers",
     description:
-      "Boost your development with Top Ledger API! Designed for seamless data integration on the Solana blockchain, our API empowers you to efficiently manage and query hundreds of decoded data tables.",
+      "Boost your development with Top Ledger APIs Designed for seamless data integration on the Solana blockchain, our API empowers you to efficiently manage and query hundreds of decoded data tables.",
     action: {
       type: "comingSoon",
       target: "_blank",
@@ -231,6 +231,6 @@ const LandingPage = () => {
       <TrialSection />
     </Page>
   );
-};
+}; 
 
 export default LandingPage;
