@@ -8,6 +8,7 @@ import Icon from "@/components/Icon";
 import QueryFormModal from "@/components/QueryForm/QueryFormModal";
 
 import styles from "./index.module.scss";
+import { getId } from "helpers/utils";
 
 const CloudSection = ({ section = [] }) => {
   const cta = section.cta ?? {};
@@ -75,6 +76,7 @@ const PrivateCloudSection = ({ sections = [] }) => {
     <Section
       className={styles.privateCloudSection}
       containerClassName={styles.privateCloudSectionContainer}
+      id={getId("Fast, reliable and decoded Solana data in your private cloud")}
     >
       <div className={styles.sectionHead}>
         <div>

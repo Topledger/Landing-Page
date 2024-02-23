@@ -10,6 +10,7 @@ const HeroSection = ({
   background,
   backgroundColor,
   children,
+  id,
 }) => {
   return (
     <Section
@@ -20,6 +21,7 @@ const HeroSection = ({
         ...style,
         ...(backgroundColor && { backgroundColor }),
       }}
+      id={id}
     >
       {children}
     </Section>

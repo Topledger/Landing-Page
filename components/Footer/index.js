@@ -84,7 +84,11 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <Section style={{ backgroundColor: "#edf2ff" }} component="footer">
+    <Section
+      id="app-footer"
+      style={{ backgroundColor: "#edf2ff" }}
+      component="footer"
+    >
       <div className={styles.container}>
         <div className={styles.leftSection}>
           <div className={styles.footerLinksContainer}>

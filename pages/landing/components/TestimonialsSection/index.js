@@ -2,6 +2,7 @@ import Section from "@/components/Section";
 
 import styles from "./index.module.scss";
 import Carousel from "@/components/Carousel";
+import { getId } from "helpers/utils";
 
 const Testimonial = ({ testimonial }) => {
   return (
@@ -38,6 +39,7 @@ const TestimonialsSection = ({ testimonials }) => {
         borderTop: "1px solid #E8E9FA",
       }}
       containerClassName={styles.testimonialsSection}
+      id={getId("Testimonials")}
     >
       <div className={styles.sectionHead}>
         <h2 className={styles.sectionTitle}>Testimonials</h2>

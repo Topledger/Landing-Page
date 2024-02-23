@@ -3,6 +3,7 @@ import Button from "@/components/Button";
 
 import styles from "./index.module.scss";
 import QueryFormModal from "../QueryForm/QueryFormModal";
+import { getId } from "helpers/utils";
 
 const TrialSection = () => {
   return (
@@ -11,6 +12,7 @@ const TrialSection = () => {
       containerClassName={styles.trialSectionContainer}
       containerStyle={{}}
       background="/assets/images/landing/bars-background-1.svg"
+      id={getId("Don't just take our word for it")}
     >
       <div className={styles.trialContainer}>
         <div className={styles.trialContent}>

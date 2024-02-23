@@ -4,11 +4,13 @@ import Image from "next/image";
 import BarsOutlinedIcon from "@ant-design/icons/BarsOutlined";
 
 import Button from "../Button";
-
-import styles from "./index.module.scss";
 import HeaderMenu from "./components/HeaderMenu";
 import MobileHidden from "../MobileHidden";
 import MobileOnly from "../MobileOnly";
+
+import styles from "./index.module.scss";
+import headerMenuStyles from "./components/HeaderMenu/index.module.scss";
+import { useRouter } from "next/router";
 
 const productsHeaderLinks = [
   {
@@ -86,6 +88,8 @@ const BurgerButton = ({ className, onClick }) => {
 const Header = ({ className }) => {
   const [isHeaderOpen, setIsHeaderOpen] = useState(false);
 
+  const router = useRouter();
+
   const toggleHeader = () => {
     setIsHeaderOpen((isHeaderOpen) => !isHeaderOpen);
   };
@@ -133,12 +137,18 @@ const Header = ({ className }) => {
           >
             <a className={styles.headerLink}>Use cases</a>
           </HeaderMenu>
-          <Button.Link tertiary className={styles.headerLink} href="/pricing">
+          <Button.Link
+            tertiary
+            className={cx(styles.headerLink, {
+              // [headerMenuStyles.active]: router.pathname?.includes("/pricing"),
+            })}
+            href="/pricing"
+          >
             Pricing
           </Button.Link>
           <Button.Link
             tertiary
-            className={styles.headerLink}
+            className={cx(styles.headerLink)}
             href="https://blogs.topledger.xyz/"
             target="_blank"
             noArrow
@@ -147,7 +157,7 @@ const Header = ({ className }) => {
           </Button.Link>
           <Button.Link
             tertiary
-            className={styles.headerLink}
+            className={cx(styles.headerLink)}
             href="https://docs.topledger.xyz/"
             target="_blank"
             noArrow
