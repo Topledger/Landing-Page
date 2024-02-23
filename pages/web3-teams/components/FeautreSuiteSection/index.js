@@ -3,6 +3,7 @@ import UnderlinedText from "@/components/UnderlinedText";
 
 import styles from "./index.module.scss";
 import { getAction } from "@/components/ArticleCard/ArticleFooter";
+import { getId } from "helpers/utils";
 
 // const feature = {
 //   media: {
@@ -47,7 +48,10 @@ const FeatureList = ({ features = [] }) => {
 
 const FeatureSuiteSection = ({ features = [] }) => {
   return (
-    <Section className={styles.featuresSection}>
+    <Section
+      className={styles.featuresSection}
+      id={getId("Suite of features to build a connected analytics experience")}
+    >
       <h2 className={styles.featuresSectionTitle}>
         Suite of features to build a <UnderlinedText>connected</UnderlinedText>{" "}
         analytics experience

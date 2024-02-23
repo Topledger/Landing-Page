@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import Card from "@/components/Card";
 import { getAction } from "@/components/ArticleCard/ArticleFooter";
 import Image from "next/image";
+import { getId } from "helpers/utils";
 
 const Outcome = ({ image, title, description, action }) => {
   return (
@@ -36,6 +37,7 @@ const OutcomesSection = ({ outcomes = [] }) => {
         backgroundPosition: "center center",
       }}
       containerClassName={styles.outcomesSection}
+      id={getId("Drive better business outcomes")}
     >
       <div className={styles.sectionHead}>
         <h2 className={styles.sectionTitle}>Drive better business outcomes</h2>

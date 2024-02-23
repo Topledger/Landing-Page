@@ -8,6 +8,7 @@ import Link from "next/link";
 
 import styles from "./index.module.scss";
 import headerStyles from "@/components/Header/index.module.scss";
+import { useRouter } from "next/router";
 // const menuItem = {
 //   icon: "analytics",
 //   title: "SQL based analytics platform",
@@ -18,10 +19,18 @@ import headerStyles from "@/components/Header/index.module.scss";
 //                   {menuItem.title}
 //                 </Button.Link>
 
-const MenuItem = ({ icon, title, description, href, target, comingSoon }) => {
+const MenuItem = ({
+  icon,
+  title,
+  description,
+  href,
+  target,
+  comingSoon,
+  onClick,
+}) => {
   return (
     <Link href={comingSoon ? "" : href}>
-      <a className={styles.headerMenuItem} target={target}>
+      <a className={styles.headerMenuItem} target={target} onClick={onClick}>
         <Image
           className={styles.headerMenuItemIcon}
           src={`/assets/images/header/menu-item-${icon}.svg`}
@@ -51,6 +60,15 @@ const HeaderMenu = ({ children, menuItems }) => {
   const containerRef = useRef();
   const anchorRef = useRef();
   const [isOpen, setIsOpen] = useState();
+  const [isActive, setIsActive] = useState(false);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsActive(
+      menuItems?.some((item) => router.pathname?.includes(item.href))
+    );
+  }, [router.pathname]);
 
   const handleClick = useCallback(
     (e) => {
@@ -83,6 +101,7 @@ const HeaderMenu = ({ children, menuItems }) => {
           style={{ display: "inline-flex" }}
           onClick={handleClick}
           ref={anchorRef}
+          className={cx({ [styles.active]: false && isActive })}
         >
           {children}{" "}
           <Icon
@@ -95,7 +114,14 @@ const HeaderMenu = ({ children, menuItems }) => {
           <ul className={styles.headerMenuItems}>
             {menuItems.map((menuItem) => (
               <li key={menuItem.id}>
-                <MenuItem {...menuItem} />
+                <MenuItem
+                  {...menuItem}
+                  onClick={() => {
+                    if (menuItem.href === router.pathname) {
+                      setIsOpen(false);
+                    }
+                  }}
+                />
               </li>
             ))}
           </ul>

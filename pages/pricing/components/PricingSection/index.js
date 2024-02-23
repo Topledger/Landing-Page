@@ -8,6 +8,7 @@ import Pricing from "../Pricing";
 import { useState } from "react";
 import EnterpricePricing from "../EnterpricePricing";
 import WalletAnalyticsPricing from "../WalletAnalyticsPricing";
+import { getId } from "helpers/utils";
 
 const PricingSection = ({
   pricing = [],
@@ -16,7 +17,10 @@ const PricingSection = ({
 }) => {
   const [selectedPricing, setSelectedPricing] = useState(1);
   return (
-    <Section className={styles.pricingSection}>
+    <Section
+      className={styles.pricingSection}
+      id={getId("Build a strong data culture in your organization")}
+    >
       <h2 className={styles.pricingSectionTitle}>
         Build a <UnderlinedText>strong data culture</UnderlinedText> in your
         organization

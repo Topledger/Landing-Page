@@ -4,6 +4,7 @@ import Section from "components/Section";
 
 import styles from "./index.module.scss";
 import { getAction } from "@/components/ArticleCard/ArticleFooter";
+import { getId } from "helpers/utils";
 
 // const caseStudy =   {
 //   media: {
@@ -54,7 +55,10 @@ Columns.Col.displayName = "Columns.Col";
 
 const CaseStudySection = ({ caseStudies = [] }) => {
   return (
-    <Section containerClassName={styles.caseStudiesSection}>
+    <Section
+      containerClassName={styles.caseStudiesSection}
+      id={getId("Case studies")}
+    >
       <Columns>
         <Columns.Col className={styles.csColumn}>
           <h2 className={styles.caseStudiesSectionTitle}>Case studies</h2>

@@ -10,12 +10,14 @@ const Section = ({
   className,
   containerClassName,
   component: Component = "section",
+  id,
   ...props
 }) => (
   <Component
     {...props}
     className={cx(styles.section, className)}
     style={{ ...style, backgroundImage: `url(${background})` }}
+    id={id}
   >
     <div
       className={cx(styles.container, containerClassName)}

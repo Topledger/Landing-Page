@@ -185,3 +185,10 @@ $header-out-animation-delay: 0.3s;
   font-weight: 500;
   margin-left: 0.75rem;
 }
+
+.active {
+  color: #4a7dff !important;
+  a {
+    color: #4a7dff;
+  }
+}
