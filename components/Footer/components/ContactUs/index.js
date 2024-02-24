@@ -26,7 +26,10 @@ const ContactUs = () => {
           Fraser Street #05-25 Duo Tower Singapore
         </Button.Link>
       </div>
-      <div className={styles.row} style={{ paddingTop: 0, paddingBottom: "24px" }}>
+      <div
+        className={styles.row}
+        style={{ paddingTop: 0, paddingBottom: "24px" }}
+      >
         {mailIcon}
         <Button.Link
           href="mailto:nitin@topledger.xyz"
@@ -73,15 +76,19 @@ const ContactUs = () => {
 export default ContactUs;
 
 const addressIcon = (
-  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="16" y="16" width="32" height="32" rx="16" fill="#20243D"/>
-<path d="M26.8027 34C26.2922 34.3922 26 34.8476 26 35.3333C26 36.8061 28.6863 38 32 38C35.3137 38 38 36.8061 38 35.3333C38 34.8476 37.7078 34.3922 37.1973 34M32 28.3333V31.6667M30.3333 30H33.6667M36 30.1481C36 32.4391 34.2091 34.2963 32 35.3333C29.7909 34.2963 28 32.4391 28 30.1481C28 27.8572 29.7909 26 32 26C34.2091 26 36 27.8572 36 30.1481Z" stroke="#E0E1FF" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width={64} height={64} fill="none">
+    <rect width={32} height={32} x={16} y={16} fill="#20243D" rx={16} />
+    <path
+      stroke="#E0E1FF"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M26.803 34c-.51.392-.803.848-.803 1.333C26 36.806 28.686 38 32 38s6-1.194 6-2.667c0-.485-.292-.94-.803-1.333M32 28.333v3.334M30.333 30h3.334m2.333.148c0 2.291-1.79 4.148-4 5.185-2.21-1.037-4-2.894-4-5.185C28 27.858 29.79 26 32 26s4 1.857 4 4.148Z"
+    />
+  </svg>
 );
 
 const mailIcon = (
-  
- <svg xmlns="http://www.w3.org/2000/svg" width={64} height={64} fill="none">
+  <svg xmlns="http://www.w3.org/2000/svg" width={64} height={64} fill="none">
     <g filter="url(#a)" transform="translate(0, 9)">
       <rect
         width={32}
