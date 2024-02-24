@@ -63,7 +63,7 @@ const footerLinks = [
       {
         id: "blogs",
         text: "Blogs",
-        href: "https://blog.topledger.xyz",
+        href: "https://blogs.topledger.xyz",
         target: "_blank",
       },
       {
