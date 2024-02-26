@@ -75,7 +75,7 @@ const footerLinks = [
       {
         id: "github",
         text: "Github",
-        href: "https://github.com/Topledger",
+        href: "https://github.com/Topledger/solana-programs",
         target: "_blank",
       },
     ],
