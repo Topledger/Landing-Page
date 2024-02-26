@@ -100,13 +100,13 @@ const Footer = () => {
             <Button.Link tertiary color="#374151" className={styles.copyLink}>
               © 2024, Top Ledger, All rights reserved
             </Button.Link>
-            /*<Button.Link
+            <Button.Link
               tertiary
               color="#374151"
               className={cx(styles.copyLink, styles.privacyPolicy)}
             >
               Privacy Policy
-            </Button.Link>*/
+            </Button.Link>
           </div>
         </div>
         <div className={styles.rightSection}>
