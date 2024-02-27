@@ -104,6 +104,7 @@ const Footer = () => {
               tertiary
               color="#374151"
               className={cx(styles.copyLink, styles.privacyPolicy)}
+              href="/privacy-policy"
             >
               Privacy Policy
             </Button.Link>

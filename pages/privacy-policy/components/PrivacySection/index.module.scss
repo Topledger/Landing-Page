@@ -1,0 +1,79 @@
+@import "@/assets/styles/breakpoints.scss";
+
+.privacySection {
+  margin: 7.5rem 0;
+
+  @include mobile {
+    margin: 5rem 0;
+  }
+}
+
+.privacySectionDescription {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  margin-top: 24px;
+}
+
+.privacySectionTitle {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+
+  @include mobile {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+  }
+}
+
+.privacyContentTitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+
+  color: #374151;
+
+  @include mobile {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+}
+
+.privacySectionText {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  margin-top: 1rem;
+
+  @include mobile {
+    margin-top: 0.5rem;
+  }
+}
+
+.listItem {
+  font-size: 16px;
+}
+
+.markdownText {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+
+  b {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+  }
+
+  a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    color: #085ed4;
+    text-decoration: none;
+  }
+}
