@@ -28,6 +28,7 @@ const NO_HEADER_FOOTER_PATHS = [
   "/pricing",
   "/dashboards",
   "/research",
+  "/privacy-policy",
 ];
 
 function MyApp({ Component, pageProps }) {
