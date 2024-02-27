@@ -1,0 +1,27 @@
+@import "@/assets/styles/breakpoints.scss";
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    font-size: 0.875rem;
+    color: #374151;
+  }
+}
+
+.listItemIcon {
+  min-width: 11.31px;
+  margin-top: 0.2rem;
+  width: 11.31px;
+  height: 11.31px;
+}
