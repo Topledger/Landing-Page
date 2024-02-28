@@ -1,24 +1,30 @@
 @import "@/assets/styles/breakpoints.scss";
 
 .privacySection {
-  margin: 7.5rem 0;
+  border-top: 1px solid #e2e8ff;
+  background: #fff;
+  padding: 4rem 0px 7.5rem;
 
   @include mobile {
-    margin: 5rem 0;
+    padding: 5rem 1.5rem;
   }
 }
 
+
+
 .privacySectionDescription {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 140%;
   letter-spacing: 0.01em;
   margin-top: 24px;
+  color:#374151;
 }
 
 .privacySectionTitle {
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
+  color: #374151;
 
   @include mobile {
     font-size: 24px;
@@ -30,22 +36,23 @@
 .privacyContentTitle {
   font-size: 24px;
   font-weight: 600;
-  line-height: 34px;
+  line-height: 140%;
 
   color: #374151;
 
   @include mobile {
     font-size: 20px;
     font-weight: 600;
-    line-height: 28px;
+    line-height: 140%;
   }
 }
 
 .privacySectionText {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 140%;
   letter-spacing: 0.01em;
   margin-top: 1rem;
+  color:#374151;
 
   @include mobile {
     margin-top: 0.5rem;
@@ -54,24 +61,27 @@
 
 .listItem {
   font-size: 16px;
+  line-height: 140%;
 }
 
 .markdownText {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 140%;
   letter-spacing: 0.01em;
+  color:#374151;
 
   b {
     font-size: 16px;
     font-weight: 700;
-    line-height: 22px;
+    line-height: 140%;
     letter-spacing: 0.01em;
+    color:#374151;
   }
 
   a {
     font-size: 16px;
     font-weight: 500;
-    line-height: 22px;
+    line-height: 140%;
     letter-spacing: 0.01em;
     color: #085ed4;
     text-decoration: none;
