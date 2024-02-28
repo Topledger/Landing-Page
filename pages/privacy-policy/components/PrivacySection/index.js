@@ -31,7 +31,7 @@ const ListSection = ({ list }) => {
   return (
     <List
       items={list.items.map((item) => (
-        <span className={styles.listItem}>
+        <span className={styles.listItem} key={item.title + item.definition}>
           <b>{item.title}</b>: {item.definition}
         </span>
       ))}
@@ -80,6 +80,10 @@ const PrivacySection = ({ title, description, sections }) => {
       ))}
     </Section>
   );
+};
+
+PrivacySection.defaultProps = {
+  sections: [],
 };
 
 export default PrivacySection;
