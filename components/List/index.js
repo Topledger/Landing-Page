@@ -5,8 +5,8 @@ import styles from "./index.module.scss";
 const List = ({ items = [] }) => {
   return (
     <ul className={styles.list}>
-      {items.map((item) => (
-        <li>
+      {items.map((item, index) => (
+        <li key={item.key ?? index}>
           <SvgIcon
             className={styles.listItemIcon}
             name="diamond-bullet"
