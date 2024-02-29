@@ -196,14 +196,23 @@ const testimonials = [
   },
   {
     id: 2,
+    text: "Top Ledger seamlessly ingested on-chain Solana data along with all of Helium’s Oracle data to create a unified querying experience for the entire network. Their analytics now span from internal monitoring to embedded insights to help the community understand key elements across the Helium Network.",
+    name: "Joey",
+    credentials: "Senior technical director, Helium",
+    logo: "/assets/images/logo/helium-foundation.svg",
+    avatar: "/assets/images/avatar/joey.png",
+  },
+  {
+    id: 3,
     text: "Topledger is a top-notch team that ships fast and produces high quality results. I'd recommend them to anyone looking for great Solana data infrastructure or analytics.",
     name: "Anduril",
     credentials: "Data lead, Solana Foundation",
     logo: "/assets/images/logo/solana-foundation.svg",
     avatar: "/assets/images/avatar/anduril.png",
   },
+  
   {
-    id: 3,
+    id: 4,
     text: "Top Ledger has been an invaluable partner for Squads, providing us with on-chain data that would otherwise be hard to obtain. As a native crypto company, we use their dashboards daily for most of our business metrics, which help us understand how we are growing and make strategic decisions based on this data.",
     name: "Stepan",
     credentials: "CEO, Squads Labs",
@@ -211,7 +220,7 @@ const testimonials = [
     avatar: "/assets/images/avatar/stepan.png",
   },
   {
-    id: 4,
+    id: 5,
     text: "Top Ledger has been instrumental in helping Drift analyze complex on-chain transactions with their real time dashboards. They are a highly responsive team, constantly iterating on their product and helping with feedback from the Drift team and users. Today, their dashboard helps to power analysis of the Drift platform through swaps, volume, and user data.",
     name: "Cindy",
     credentials: "Co-founder, Drift Protocol",
