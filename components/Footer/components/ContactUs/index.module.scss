@@ -5,9 +5,9 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  background: linear-gradient(0deg, #2d3250 0%, #2d3250 100%),
-    linear-gradient(0deg, #2d3250 0%, #2d3250 100%), #fff;
-  border-radius: 32px 32px 0px 0px;
+  background: linear-gradient(0deg, #d4e1fe 0%, #d4e1fe 100%),
+    linear-gradient(0deg, #d4e1fe 0%, #d4e1fe 100%), #fff;
+  border-radius: 24px 24px 0px 0px;
   height: 100%;
 
   @include max-width(xxl) {
@@ -20,10 +20,14 @@
 }
 
 .title {
-  color: #e0e1ff;
+  color: #374151;
   font-size: 1rem;
   font-weight: 500;
   text-indent: 1rem;
+  //padding-right: 1rem;
+  //min-width: 300px;
+  //padding-bottom: 1rem;
+  //border-bottom: 1px solid #b9c4e0;
 }
 
 .row {
@@ -32,7 +36,7 @@
   align-items: center;
   justify-content: flex-start;
   padding: 1.5rem;
-  border-bottom: 1px solid #1e202f;
+  border-bottom: 1px solid #b9c4e0;
 
   &:last-child {
     border-bottom: none;
@@ -46,11 +50,13 @@
 }
 
 .mailLink {
-  color: #e0e1ff;
+  color: #374151;
   font-size: 1rem;
-  font-weight: 300;
+  letter-spacing: 0.5px;
+  font-weight: 370;
+  //font-weight: 300;
   line-height: 140%;
-  letter-spacing: 0.64px;
+  
   padding: 0;
 }
 

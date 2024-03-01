@@ -4,7 +4,7 @@
   display: flex;
   padding-top: 120px;
   padding-bottom: 0;
-  gap: 4rem;
+  gap: 2rem;
 
   @include max-width(xxl) {
     gap: 2rem;
@@ -12,7 +12,7 @@
   @include max-width(xl) {
     flex-direction: column-reverse;
     padding-top: 5rem;
-    gap: 2rem;
+    gap: 1rem;
   }
 }
 
@@ -33,11 +33,12 @@
 
 .footerLinksContainer {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
   flex: 1;
+  gap: 2rem;
 
-  @include max-width(xxl) {
+  @include mobile {
     gap: 1rem;
   }
 }

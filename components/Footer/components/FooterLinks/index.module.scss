@@ -5,10 +5,13 @@
   flex-direction: column;
 
   flex-shrink: 0;
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
   background: #d5e1ff;
   padding: 1.5rem;
   flex: 1;
+  @include mobile{
+    border-radius:1.5rem;
+  }
 
   @include max-width(xxl) {
   }
@@ -42,8 +45,7 @@
   margin-top: 1.5rem;
 }
 
-.linkWrapper {
-}
+
 
 .link {
   color: #374151;
