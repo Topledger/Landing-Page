@@ -47,7 +47,8 @@ const Media = ({ media }) => {
 
 const FeatureList = ({ features = {} }) => {
   return (
-    <div id={getId(features?.title)} className={styles.featureList} style={{ borderColor: features.color }}>
+    <div className={styles.featureList} style={{ borderColor: features.color }}>
+      <span id={getId(features?.title)} className={styles.idLink}></span>
       <div
         className={styles.featureListMedia}
         style={{ backgroundColor: features?.media?.backgroundColor }}

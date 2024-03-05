@@ -4,6 +4,9 @@ import Button from "../Button";
 import Section from "../Section";
 import ContactUs from "./components/ContactUs";
 import FooterLinks from "./components/FooterLinks";
+import MobileOnly from "../MobileOnly";
+import MobileHidden from "../MobileHidden";
+import { getId } from "helpers/utils";
 
 import styles from "./index.module.scss";
 
@@ -20,7 +23,7 @@ const footerLinks = [
       {
         id: "wallet-profiler",
         text: "Wallet behaviour analytics",
-        href: "/web3-teams",
+        href: `/web3-teams#${getId("Wallet behaviour analytics")}`,
       },
       {
         id: "research",
@@ -96,10 +99,29 @@ const Footer = () => {
               <FooterLinks footerLinks={footerLink} key={footerLink.id} />
             ))}
           </div>
+          <MobileHidden>
+            <div className={styles.copyContainer}>
+              <Button.Link tertiary color="#374151" className={styles.copyLink}>
+                © 2024, Top Ledger, All rights reserved
+              </Button.Link>
+              <Button.Link
+                tertiary
+                color="#374151"
+                className={cx(styles.copyLink, styles.privacyPolicy)}
+                href="/privacy-policy"
+              >
+                Privacy Policy
+              </Button.Link>
+            </div>
+          </MobileHidden>
+        </div>
+        <div className={styles.rightSection}>
+          <div className={styles.contactUsContainer}>
+            <ContactUs />
+          </div>
+        </div>
+        <MobileOnly>
           <div className={styles.copyContainer}>
-            <Button.Link tertiary color="#374151" className={styles.copyLink}>
-              © 2024, Top Ledger, All rights reserved
-            </Button.Link>
             <Button.Link
               tertiary
               color="#374151"
@@ -108,13 +130,11 @@ const Footer = () => {
             >
               Privacy Policy
             </Button.Link>
+            <Button.Link tertiary color="#374151" className={styles.copyLink}>
+              © 2024, Top Ledger, All rights reserved
+            </Button.Link>
           </div>
-        </div>
-        <div className={styles.rightSection}>
-          <div className={styles.contactUsContainer}>
-            <ContactUs />
-          </div>
-        </div>
+        </MobileOnly>
       </div>
     </Section>
   );
