@@ -34,8 +34,9 @@ export function useSearchObject() {
 }
 
 const ALLOWED_CHARS = /^[a-z0-9\s\-]$/;
-export const getId = (text) =>
-  text
-    .toLowerCase()
+export const getId = (text) => {
+  return text
+    ?.toLowerCase()
     .replace(/./g, (c) => (ALLOWED_CHARS.test(c) ? c : ""))
     .replace(/\s+/g, "-");
+};

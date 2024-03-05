@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import cx from "classnames";
 import Image from "next/image";
@@ -9,8 +10,7 @@ import MobileHidden from "../MobileHidden";
 import MobileOnly from "../MobileOnly";
 
 import styles from "./index.module.scss";
-import headerMenuStyles from "./components/HeaderMenu/index.module.scss";
-import { useRouter } from "next/router";
+import { getId } from "helpers/utils";
 
 const productsHeaderLinks = [
   {
@@ -26,7 +26,7 @@ const productsHeaderLinks = [
     title: "Wallet behaviour analytics",
     description:
       "Create user personas at scale to help align with your product roadmap",
-    href: "/web3-teams",
+    href: `/web3-teams#${getId("Wallet behaviour analytics")}`,
     //comingSoon: true,
   },
   {
