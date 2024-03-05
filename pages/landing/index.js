@@ -8,6 +8,7 @@ import DataCultureSection from "./components/CultureSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import TrialSection from "@/components/TrialSection";
 import QueryFormModal from "@/components/QueryForm/QueryFormModal";
+import { getId } from "helpers/utils";
 
 const articles = [
   {
@@ -46,17 +47,17 @@ const articles = [
       actionElements: [
         {
           type: "link",
-         text: "Analyze now",
-         primary: true,
-         onClick: () => QueryFormModal.show()
+          text: "Analyze now",
+          primary: true,
+          onClick: () => QueryFormModal.show()
         },
         {
           type: "link",
           text: "See details",
-          href: "/web3-teams",
-          
+          href: `/web3-teams#${getId("Wallet behaviour analytics")}`,
+
         }
-       // { type: "search", placeholder: "Enter a solana wallet" },
+        // { type: "search", placeholder: "Enter a solana wallet" },
       ],
     },
   },
@@ -210,7 +211,7 @@ const testimonials = [
     logo: "/assets/images/logo/solana-foundation.svg",
     avatar: "/assets/images/avatar/anduril.png",
   },
-  
+
   {
     id: 4,
     text: "Top Ledger has been an invaluable partner for Squads, providing us with on-chain data that would otherwise be hard to obtain. As a native crypto company, we use their dashboards daily for most of our business metrics, which help us understand how we are growing and make strategic decisions based on this data.",
@@ -240,6 +241,6 @@ const LandingPage = () => {
       <TrialSection />
     </Page>
   );
-}; 
+};
 
 export default LandingPage;
