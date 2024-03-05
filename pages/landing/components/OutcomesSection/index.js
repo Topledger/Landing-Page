@@ -33,7 +33,7 @@ const OutcomesSection = ({ outcomes = [] }) => {
     <Section
       //background="/assets/images/landing/block-chain-hero-80.jpg"
       style={{
-        border: '1px solid #E8E9FA',
+        borderTop: '1px solid #E8E9FA',
         
       }}
       containerClassName={styles.outcomesSection}

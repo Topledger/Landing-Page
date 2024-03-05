@@ -60,7 +60,7 @@ const CaseStudySection = ({ caseStudies = [] }) => {
     <Section
     
       
-      style={{ border: '1px solid #E8E9FA',}}
+      style={{ borderTop: '1px solid #E8E9FA',}}
      
     
       containerClassName={styles.caseStudiesSection}
