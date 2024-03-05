@@ -117,7 +117,7 @@ const HeaderMenu = ({ children, menuItems }) => {
                 <MenuItem
                   {...menuItem}
                   onClick={() => {
-                    if (menuItem.href === router.pathname) {
+                    if (menuItem.href?.includes(router.pathname)) {
                       setIsOpen(false);
                     }
                   }}
