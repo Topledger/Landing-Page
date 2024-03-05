@@ -26,6 +26,7 @@ import { getId } from "helpers/utils";
 
 const CaseStudy = ({ caseStudy }) => {
   return (
+    
     <div className={styles.caseStudy}>
       <div className={styles.caseStudyMedia}>
         <img src={caseStudy.media.src} alt="Case study media" />
@@ -40,6 +41,7 @@ const CaseStudy = ({ caseStudy }) => {
         </div>
       </div>
     </div>
+    
   );
 };
 
@@ -56,6 +58,11 @@ Columns.Col.displayName = "Columns.Col";
 const CaseStudySection = ({ caseStudies = [] }) => {
   return (
     <Section
+    
+      
+      style={{ border: '1px solid #E8E9FA',}}
+     
+    
       containerClassName={styles.caseStudiesSection}
       id={getId("Case studies")}
     >
