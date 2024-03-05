@@ -3,6 +3,7 @@ import { getAction } from "@/components/ArticleCard/ArticleFooter";
 import SvgIcon from "@/components/SvgIcon";
 
 import styles from "./index.module.scss";
+import { getId } from "helpers/utils";
 
 // const features = {
 //   media: {
@@ -46,7 +47,7 @@ const Media = ({ media }) => {
 
 const FeatureList = ({ features = {} }) => {
   return (
-    <div className={styles.featureList} style={{ borderColor: features.color }}>
+    <div id={getId(features?.title)} className={styles.featureList} style={{ borderColor: features.color }}>
       <div
         className={styles.featureListMedia}
         style={{ backgroundColor: features?.media?.backgroundColor }}
