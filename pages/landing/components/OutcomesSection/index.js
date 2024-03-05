@@ -31,10 +31,10 @@ const Outcome = ({ image, title, description, action }) => {
 const OutcomesSection = ({ outcomes = [] }) => {
   return (
     <Section
-      background="/assets/images/landing/block-chain-hero-80.jpg"
+      //background="/assets/images/landing/block-chain-hero-80.jpg"
       style={{
-        // backgroundSize: "400%",
-        backgroundPosition: "center center",
+        border: '1px solid #E8E9FA',
+        
       }}
       containerClassName={styles.outcomesSection}
       id={getId("Drive better business outcomes")}

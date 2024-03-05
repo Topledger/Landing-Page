@@ -2,7 +2,8 @@
 
 .outcomesSection {
   padding-top: 7.5rem;
-  padding-bottom: 6.5625rem;
+  padding-bottom: 7.5rem;
+  //border-top:1px solid #E8E9FA;
 
   @include mobile {
     padding-top: 5rem;
@@ -19,7 +20,7 @@
 }
 
 .sectionTitle {
-  color: #283d6d;
+  color: #374151;
   font-size: 2.5rem;
   font-weight: 700;
 
@@ -29,7 +30,7 @@
 }
 
 .sectionDescription {
-  color: #2b3d6e;
+  color: #374151;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 140%;
