@@ -1,0 +1,13 @@
+.quickPrompt {
+  height: 72px;
+  padding: 16px 15px 16px 16px;
+  border-radius: 8px;
+  background-color: #fdfdff;
+  border: 1px solid #e8e9fa;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(238, 242, 252, 0.64);
+  }
+}

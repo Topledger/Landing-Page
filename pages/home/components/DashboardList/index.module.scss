@@ -20,15 +20,16 @@
       transition: all 0.5s ease;
     }
   }
-
-  &:global(:hover),
-  &:global(.focused) {
-    background-color: #1a3989 !important;
-    color: white !important;
-
-    span {
-      margin-right: 0.5rem;
+  &:global(.hoverEffect) {
+    &:hover,
+    &.focused {
+      background-color: #1a3989 !important;
       color: white !important;
+
+      span {
+        margin-right: 0.5rem;
+        color: white !important;
+      }
     }
   }
 }

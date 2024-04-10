@@ -32,10 +32,11 @@ const DashboardList = ({ dashboards }) => {
   );
 };
 
-DashboardList.getInitialProps = async () => {
+export const getStaticProps = async () => {
   const dashboards = await getAllDashboards();
   const sorter = dashboardSorter(getCreationDate, "desc");
-  return {
+  const props = {
+    title: "Dashboards",
     dashboards: dashboards?.data?.sort(sorter)?.map((d) => ({
       id: d.id,
       name: d.attributes.title,
@@ -45,6 +46,10 @@ DashboardList.getInitialProps = async () => {
         DASHBOARD_ICONS[d.attributes.title] ??
         "/assets/images/dashboards/solana.svg",
     })),
+  };
+
+  return {
+    props,
   };
 };
 

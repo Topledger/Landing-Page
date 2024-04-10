@@ -172,3 +172,21 @@ export const fetchAddressInfo = async ({ address }) => {
     isWallet: result?.value?.owner === SYSTEM_PROGRAM_ADDRESS,
   };
 };
+
+export const nlToSql = async (query) => {
+  const params = {
+    data_source_id: 3,
+    natural_language_text: query,
+    api_key: "15AFUyS0y5dKloRFCnPSR1KHeqGlmDM5npv2hMcx",
+  };
+  const res = await axios.get("http://localhost:5000/api/nl-to-sql", {
+    params,
+  });
+  const data = res.data;
+
+  const path = data?.embed_path;
+
+  if (path) {
+    return `http://localhost:5000${path.replace("/tl", "")}`;
+  }
+};

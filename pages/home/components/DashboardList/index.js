@@ -15,10 +15,16 @@ function Program({ thumb, name, icon, onClick }) {
   );
 }
 
-export function Arrow({ text = "Analyze", className, focused, onClick }) {
+export function Arrow({
+  text = "Analyze",
+  className,
+  focused,
+  onClick,
+  hoverEffect = true,
+}) {
   return (
     <button
-      className={cx(styles.rightArrow, className, { focused })}
+      className={cx(styles.rightArrow, className, { focused, hoverEffect })}
       onClick={onClick}
     >
       {text && <span>{text}</span>}
