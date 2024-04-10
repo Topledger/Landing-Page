@@ -9,8 +9,12 @@ import styles from "./index.module.scss";
 
 const DashboardWizard = ({ query: initialQuery }) => {
   const [query, setQuery] = useState(initialQuery);
-  const { data: embedUrl } = useQuery(["nl-to-sql", query], () =>
-    nlToSql(query)
+  const { data: embedUrl } = useQuery(
+    ["nl-to-sql", query],
+    () => nlToSql(query),
+    {
+      refetchOnWindowFocus: false,
+    }
   );
 
   return (
