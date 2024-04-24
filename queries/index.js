@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SYSTEM_PROGRAM_ADDRESS } from "constants/constants";
+import { SYSTEM_PROGRAM_ADDRESS, TLAI_API_KEY } from "constants/constants";
 
 function wait(time = 0) {
   return new Promise((resolve) => setTimeout(resolve, time));
@@ -177,11 +177,14 @@ export const nlToSql = async (query) => {
   const params = {
     data_source_id: 3,
     natural_language_text: query,
-    api_key: "15AFUyS0y5dKloRFCnPSR1KHeqGlmDM5npv2hMcx",
+    api_key: TLAI_API_KEY,
   };
-  const res = await axios.get("http://localhost:5000/api/nl-to-sql", {
-    params,
-  });
+  const res = await axios.get(
+    "https://analytics.topledger.xyz/tlai/api/nl-to-sql",
+    {
+      params,
+    }
+  );
   const data = res.data;
 
   const path = data?.embed_path;
