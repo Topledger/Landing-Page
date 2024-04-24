@@ -1,9 +1,10 @@
 import { TopLedgerEmbed } from "@/components/TopledgerEmbed";
+import cx from 'classnames';
 import styles from "./index.module.scss";
 
-const DashboardArea = ({ embedUrl }) => {
+const DashboardArea = ({ isLoading, embedUrl }) => {
   return (
-    <div className={styles.dashboardArea}>
+    <div className={cx(styles.dashboardArea, {[styles.loading]: isLoading})}>
       <TopLedgerEmbed embedUrl={embedUrl} />
     </div>
   );

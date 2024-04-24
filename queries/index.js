@@ -175,7 +175,7 @@ export const fetchAddressInfo = async ({ address }) => {
 
 export const nlToSql = async (query) => {
   const params = {
-    data_source_id: 3,
+    data_source_id: 108,
     natural_language_text: query,
     api_key: TLAI_API_KEY,
   };
@@ -190,6 +190,8 @@ export const nlToSql = async (query) => {
   const path = data?.embed_path;
 
   if (path) {
-    return `http://localhost:5000${path.replace("/tl", "")}`;
+    return `https://analytics.topledger.xyz${path}`;
+  } else {
+    return null;
   }
 };

@@ -1,0 +1,25 @@
+.dropdown {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8ff;
+  padding: 1.5rem;
+  animation: fa1deIn 0.2s;
+}
+
+.arrow {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  transform: rotate(45deg);
+  box-shadow: -1px -1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

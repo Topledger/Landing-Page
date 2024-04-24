@@ -1,4 +1,5 @@
 .dashboardArea {
+  position: relative;
   width: 800px;
   min-height: 329px;
   // padding: 0 264px 0 264px;
@@ -6,4 +7,39 @@
   border-radius: 8px;
   background: #fdfdff;
   border: 1px solid #e8e9fa;
+}
+
+.loading {
+  &::after {
+    // shimmer animation effect in div
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+    background: #ddd;
+    background: linear-gradient(
+      to right,
+      #f0f0f0 20%,
+      #e0e0e0 40%,
+      #f0f0f0 60%,
+      #e0e0e0 80%,
+      #f0f0f0 100%
+    );
+    background-size: 200% 100%;
+
+    @keyframes shimmer {
+      0% {
+        background-position: 100% 0;
+      }
+      100% {
+        background-position: -100% 0;
+      }
+    }
+  }
 }

@@ -40,3 +40,19 @@ export const getId = (text) => {
     .replace(/./g, (c) => (ALLOWED_CHARS.test(c) ? c : ""))
     .replace(/\s+/g, "-");
 };
+
+export const getUserData = () => {
+  try {
+    return JSON.parse(localStorage.getItem("userData"));
+  } catch (e) {
+    return null;
+  }
+};
+
+export const setUserData = (userData) => {
+  try {
+    return localStorage.setItem("userData", userData);
+  } catch (e) {
+    return null;
+  }
+};

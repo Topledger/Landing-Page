@@ -1,8 +1,26 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import Script from "next/script";
 
 import styles from "./index.module.scss";
+
+/**
+ * @typedef {{
+ * iss: string;
+ * azp: string;
+ * aud: string;
+ * sub: string;
+ * email: string;
+ * email_verified: boolean;
+ * nbf: number;
+ * name: string;
+ * picture: string;
+ * given_name: string;
+ * family_name: string;
+ * iat: number;
+ * exp: number;
+ * jti: string;
+ * }} GoogleUser
+ */
 
 const LoginButton = ({ onResponse }) => {
   const [dummyState, setDummyState] = useState(0);
@@ -10,7 +28,14 @@ const LoginButton = ({ onResponse }) => {
   useEffect(() => {
     window.onSignIn = (googleUser) => {
       console.log("googleUser", googleUser);
-      onResponse(googleUser);
+      const credential = googleUser.credential;
+      if (credential) {
+        /** @type {GoogleUser} */
+        const userData = JSON.parse(atob(credential.split(".")[1]));
+        onResponse(userData);
+      } else {
+        onResponse(null);
+      }
     };
 
     return () => {
@@ -40,12 +65,12 @@ const LoginButton = ({ onResponse }) => {
 const LoginContent = ({ onSuccess }) => {
   return (
     <div className={styles.loginContent}>
-      <p>Illuminate Solana's data landscape</p>
+      <p>{"Illuminate Solana's data landscape"}</p>
       <p className="subHeading">with our AI-powered visualization tool</p>
       <LoginButton
         onResponse={(response) => {
-          if (response?.credential) {
-            onSuccess();
+          if (response) {
+            onSuccess(response);
           }
         }}
       />

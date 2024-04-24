@@ -9,7 +9,7 @@ import styles from "./index.module.scss";
 
 const DashboardWizard = ({ query: initialQuery }) => {
   const [query, setQuery] = useState(initialQuery);
-  const { data: embedUrl } = useQuery(
+  const { data: embedUrl, isLoading } = useQuery(
     ["nl-to-sql", query],
     () => nlToSql(query),
     {
@@ -28,7 +28,7 @@ const DashboardWizard = ({ query: initialQuery }) => {
         />
       </h2>
       <div className={styles.dashboard}>
-        <DashboardArea embedUrl={embedUrl} />
+        <DashboardArea isLoading={isLoading} embedUrl={embedUrl} />
       </div>
     </div>
   );
