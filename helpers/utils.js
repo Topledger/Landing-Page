@@ -51,7 +51,7 @@ export const getUserData = () => {
 
 export const setUserData = (userData) => {
   try {
-    return localStorage.setItem("userData", userData);
+    return localStorage.setItem("userData", JSON.stringify(userData));
   } catch (e) {
     return null;
   }
