@@ -173,27 +173,32 @@ export const fetchAddressInfo = async ({ address }) => {
   };
 };
 
+const BACKEND_HOST = "https://analytics.topledger.xyz";
+const DATA_SOURCE_ID = 108;
+// const BACKEND_HOST =
+//   "https://orange-happiness-g7j95jgx5vrhwrw-5000.app.github.dev";
+// const DATA_SOURCE_ID = 1;
+
 export const nlToSql = async (query) => {
   const params = {
-    data_source_id: 108,
+    data_source_id: DATA_SOURCE_ID,
     natural_language_text: query,
     api_key: TLAI_API_KEY,
   };
-
-  const res = await axios.get(
-    "https://analytics.topledger.xyz/tlai/api/nl-to-sql",
-    {
-      params,
-    }
-  );
-
+  const res = await axios.get(`${BACKEND_HOST}/tlai/api/nl-to-sql`, {
+    params,
+  });
   const data = res.data;
 
   const path = data?.embed_path;
 
   if (path) {
-    return `https://analytics.topledger.xyz${path}`;
+    const embedUrl = `${BACKEND_HOST}${path}`;
+    return {
+      ...data,
+      embedUrl,
+    };
   } else {
-    return null;
+    return { ...data };
   }
 };

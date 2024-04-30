@@ -29,3 +29,14 @@
 .dashboard {
   padding: 2rem;
 }
+
+.sql {
+  display: flex;
+  gap: 1.5rem;
+
+  pre {
+    border: 1px solid #e2e8ff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+}

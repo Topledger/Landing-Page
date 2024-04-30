@@ -9,14 +9,16 @@ import styles from "./index.module.scss";
 
 const DashboardWizard = ({ query: initialQuery }) => {
   const [query, setQuery] = useState(initialQuery);
-  const {
-    data: embedUrl,
-    isLoading,
-    isRefetching,
-    refetch,
-  } = useQuery(["nl-to-sql", query], () => nlToSql(query), {
-    refetchOnWindowFocus: false,
-  });
+  const { data, isLoading, isRefetching, refetch } = useQuery(
+    ["nl-to-sql", query],
+    () => nlToSql(query),
+    {
+      refetchOnWindowFocus: false,
+    }
+  );
+  const embedUrl = data?.embedUrl;
+  const sql = data?.sql;
+  const visualizationConfig = data?.viz_config;
 
   return (
     <div className={styles.wizardContent}>
@@ -34,6 +36,12 @@ const DashboardWizard = ({ query: initialQuery }) => {
           }}
         />
       </h2>
+      {!isLoading && (
+        <div className={styles.sql}>
+          {sql && <pre>{sql}</pre>}
+          {visualizationConfig && <pre>{visualizationConfig}</pre>}
+        </div>
+      )}
       <div className={styles.dashboard}>
         <DashboardArea
           isLoading={isLoading || isRefetching}
