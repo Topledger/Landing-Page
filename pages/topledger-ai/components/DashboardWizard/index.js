@@ -9,13 +9,14 @@ import styles from "./index.module.scss";
 
 const DashboardWizard = ({ query: initialQuery }) => {
   const [query, setQuery] = useState(initialQuery);
-  const { data: embedUrl, isLoading } = useQuery(
-    ["nl-to-sql", query],
-    () => nlToSql(query),
-    {
-      refetchOnWindowFocus: false,
-    }
-  );
+  const {
+    data: embedUrl,
+    isLoading,
+    isRefetching,
+    refetch,
+  } = useQuery(["nl-to-sql", query], () => nlToSql(query), {
+    refetchOnWindowFocus: false,
+  });
 
   return (
     <div className={styles.wizardContent}>
@@ -24,11 +25,20 @@ const DashboardWizard = ({ query: initialQuery }) => {
           initialQuery={query}
           className={styles.wizardInput}
           placeholder="Ask something"
-          onChange={setQuery}
+          onChange={(text) => {
+            if (text === query) {
+              refetch();
+            } else {
+              setQuery(text);
+            }
+          }}
         />
       </h2>
       <div className={styles.dashboard}>
-        <DashboardArea isLoading={isLoading} embedUrl={embedUrl} />
+        <DashboardArea
+          isLoading={isLoading || isRefetching}
+          embedUrl={embedUrl}
+        />
       </div>
     </div>
   );

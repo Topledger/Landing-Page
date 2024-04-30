@@ -179,12 +179,14 @@ export const nlToSql = async (query) => {
     natural_language_text: query,
     api_key: TLAI_API_KEY,
   };
+
   const res = await axios.get(
     "https://analytics.topledger.xyz/tlai/api/nl-to-sql",
     {
       params,
     }
   );
+
   const data = res.data;
 
   const path = data?.embed_path;
