@@ -36,7 +36,7 @@ const DashboardWizard = ({ query: initialQuery }) => {
           }}
         />
       </h2>
-      {!isLoading && (
+      {!isLoading && !isRefetching && (
         <div className={styles.sql}>
           {sql && <pre>{sql}</pre>}
           {visualizationConfig && <pre>{visualizationConfig}</pre>}

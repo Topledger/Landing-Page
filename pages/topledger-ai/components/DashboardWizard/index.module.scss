@@ -27,16 +27,23 @@
 }
 
 .dashboard {
-  padding: 2rem;
+  padding: 0rem;
+  margin-top: 1rem;
 }
 
 .sql {
   display: flex;
   gap: 1.5rem;
+  margin-top: 1rem;
 
   pre {
     border: 1px solid #e2e8ff;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     padding: 1rem;
+    width: 22rem;
+
+    max-height: 14rem;
+    overflow: auto;
+    background: #f8f9fc;
   }
 }
