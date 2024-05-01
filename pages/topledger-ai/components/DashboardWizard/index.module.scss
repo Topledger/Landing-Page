@@ -35,15 +35,34 @@
   display: flex;
   gap: 1.5rem;
   margin-top: 1rem;
+  position: relative;
 
-  pre {
-    border: 1px solid #e2e8ff;
-    border-radius: 0.75rem;
-    padding: 1rem;
-    width: 22rem;
+  :global {
+    #ace-editor {
+      width: 30rem !important;
+      max-height: 18rem;
+      border: 1px solid #aaa;
+      border-radius: 0.5rem;
+    }
+  }
+}
 
-    max-height: 14rem;
-    overflow: auto;
-    background: #f8f9fc;
+.updateSqlBtn {
+  right: calc(50% + 0.75rem);
+}
+
+.updateVizConfigBtn {
+  right: 0%;
+}
+
+.updateSqlBtn, .updateVizConfigBtn {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
   }
 }

@@ -179,26 +179,51 @@ const DATA_SOURCE_ID = 108;
 //   "https://orange-happiness-g7j95jgx5vrhwrw-5000.app.github.dev";
 // const DATA_SOURCE_ID = 1;
 
+const tlAxios = axios.create({
+  baseURL: BACKEND_HOST,
+  params: {
+    api_key: TLAI_API_KEY,
+  },
+});
+
+const embedPathRegex = /query\/(?<queryId>\d+)\/visualization\/(?<vizId>\d+)/;
+
 export const nlToSql = async (query) => {
   const params = {
     data_source_id: DATA_SOURCE_ID,
     natural_language_text: query,
-    api_key: TLAI_API_KEY,
   };
-  const res = await axios.get(`${BACKEND_HOST}/tlai/api/nl-to-sql`, {
+  const res = await tlAxios.get("/tlai/api/nl-to-sql", {
     params,
   });
   const data = res.data;
 
   const path = data?.embed_path;
+  const { queryId, vizId } = embedPathRegex.exec(path)?.groups ?? {};
 
   if (path) {
     const embedUrl = `${BACKEND_HOST}${path}`;
     return {
       ...data,
       embedUrl,
+      queryId,
+      vizId,
     };
   } else {
     return { ...data };
   }
+};
+
+export const updateSQL = async (queryId, sql) => {
+  const response = await tlAxios.post(`/tlai/api/queries/${queryId}`, {
+    query: sql,
+  });
+
+  return response.data;
+};
+
+export const updateVisualization = async (vizId, config) => {
+  const response = await tlAxios.post(`/tlai/api/visualizations/${vizId}`, {
+    options: config,
+  });
 };
