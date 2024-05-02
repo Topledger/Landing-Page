@@ -2,23 +2,18 @@ import DataWizardInput from "./components/DataWizardInput";
 import QuickPrompt from "./components/QuickPrompt";
 import styles from "./index.module.scss";
 
-// Which traders or signers or wallets have the highest number of trades?
-// Which traders or signers or wallets have the highest number of trades?
-// Which traders or signers or wallets have the highest number of trades?
-// Which traders or signers or wallets have the highest number of trades?
-
 const QUICK_PROMPTS = [
   {
     text: "Which traders or signers or wallets have the highest number of trades?",
   },
   {
-    text: "Which traders or signers or wallets have the highest number of trades?",
+    text: "How has the trading volume for meme tokens changed month-over-month?",
   },
   {
-    text: "Which traders or signers or wallets have the highest number of trades?",
+    text: "What is the total trading or swap volume for stablecoins last month?",
   },
   {
-    text: "Which traders or signers or wallets have the highest number of trades?",
+    text: "How has the trading volume for USDC token changed month-over-month?",
   },
 ];
 

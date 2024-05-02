@@ -214,12 +214,49 @@ export const nlToSql = async (query) => {
   }
 };
 
+export const asyncWait = (timeout) =>
+  new Promise((resolve) => setTimeout(resolve, timeout));
+
+export const pollExecuteSQL = async (jobId) => {
+  const MAX_TRIES = 20;
+  const WAIT_TIME = 1000;
+  let retries = 0;
+  while (retries < MAX_TRIES) {
+    const response = await tlAxios.get(`/tlai/api/jobs/${jobId}`);
+    const data = response.data;
+    const job = data?.response;
+
+    if (job?.status === 3 && job?.query_result_id) {
+      return job?.query_result_id;
+    }
+
+    await asyncWait(WAIT_TIME);
+    retries += 1;
+  }
+
+  return null;
+};
+
 export const updateSQL = async (queryId, sql) => {
-  const response = await tlAxios.post(`/tlai/api/queries/${queryId}`, {
+  const updateResponse = await tlAxios.post(`/tlai/api/queries/${queryId}`, {
     query: sql,
   });
 
-  return response.data;
+  const executeResopnse = await tlAxios.post(
+    `/tlai/api/queries/${queryId}/results`,
+    {
+      id: Number(queryId),
+      parameters: {},
+      apply_auto_limit: false,
+      max_age: 0,
+    }
+  );
+
+  const jobId = executeResopnse.data?.job?.id;
+
+  const resultId = await pollExecuteSQL(jobId);
+
+  return [updateResponse.data, executeResopnse.data];
 };
 
 export const updateVisualization = async (vizId, config) => {
