@@ -35,11 +35,14 @@ const DashboardWizard = () => {
     await updateVisualization(vizId, JSON.parse(config));
     setLastUpdatedVizConfig(config);
   });
-  const embedUrl = data?.embedUrl;
-  const sql = data?.sql;
-  const visualizationConfig = data?.viz_config;
-  const queryId = data?.queryId;
-  const vizId = data?.vizId;
+  const {
+    embedUrl,
+    sql,
+    viz_config: visualizationConfig,
+    queryId,
+    vizId,
+    queryEditLink,
+  } = data || {};
 
   useEffect(() => {
     setUpdatedSql(sql);
@@ -125,6 +128,7 @@ const DashboardWizard = () => {
               value={updatedVizConfig}
               onChange={setVizConfig}
               annotations={jsonAnnotations}
+              externalEditorLink={queryEditLink}
               onLoad={(editor) => {
                 editor.renderer.setPadding(10);
                 editor.renderer.setScrollMargin(10);

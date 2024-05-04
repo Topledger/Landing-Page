@@ -1,0 +1,17 @@
+.editor {
+
+}
+
+.externalLink {
+  a {
+    color: #444;
+    font-size: 14px;
+    align-items: center;
+    svg {
+      width: 14px;
+      height: 14px;
+      transform: translate(0, -0.125rem);
+      margin-left: 0.25rem;
+    }
+  }
+}

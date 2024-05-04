@@ -213,6 +213,7 @@ export const nlToSql = async (query) => {
       embedUrl,
       queryId,
       vizId,
+      queryEditLink: getQueryEditLink(queryId),
     };
   } else {
     return { ...data };
@@ -272,3 +273,6 @@ export const updateVisualization = async (vizId, config) => {
     options: config,
   });
 };
+
+export const getQueryEditLink = (queryId) =>
+  `${BACKEND_HOST}/tlai/queries/${queryId}/source`;
