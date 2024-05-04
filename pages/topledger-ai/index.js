@@ -9,6 +9,8 @@ import DataWizard from "./components/DataWizard";
 import DashboardWizard from "./components/DashboardWizard";
 import { useUser } from "providers/User";
 import styles from "./index.module.scss";
+import { useRouter } from "next/router";
+import { useSearchObject } from "helpers/utils";
 
 const LoginContent = dynamic(() => import("./components/LoginContent"), {
   ssr: false,
@@ -16,12 +18,18 @@ const LoginContent = dynamic(() => import("./components/LoginContent"), {
 
 const TopledgerAI = () => {
   const { user, setUser } = useUser();
+  const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [query, setQuery] = useState("");
+  const { query } = useSearchObject();
 
   const handleLoginSuccess = (userData) => {
     console.log("handleLoginSuccess", userData);
     setUser(userData);
+  };
+
+  const setQuery = (query) => {
+    const params = new URLSearchParams({ query });
+    router.push({ query: params.toString() });
   };
 
   useEffect(() => {
@@ -41,7 +49,7 @@ const TopledgerAI = () => {
       >
         {!isLoggedIn && <LoginContent onSuccess={handleLoginSuccess} />}
         {isLoggedIn && !query && <DataWizard onQuery={setQuery} />}
-        {isLoggedIn && query && <DashboardWizard query={query} />}
+        {isLoggedIn && query && <DashboardWizard />}
       </AiContent>
       <AiFooter />
     </Page>

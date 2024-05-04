@@ -7,14 +7,17 @@ import { nlToSql, updateSQL, updateVisualization } from "queries";
 
 import styles from "./index.module.scss";
 import Editor from "./components/Editor";
+import { useSearchObject } from "helpers/utils";
+import { useRouter } from "next/router";
 
-const DashboardWizard = ({ query: initialQuery }) => {
-  const [query, setQuery] = useState(initialQuery);
+const DashboardWizard = () => {
+  const { query } = useSearchObject();
   const [updatedSql, setUpdatedSql] = useState();
   const [lastUpdatedSQL, setLastUpdatedSQL] = useState();
   const [updatedVizConfig, setVizConfig] = useState();
   const [lastUpdatedVizConfig, setLastUpdatedVizConfig] = useState();
   const [jsonAnnotations, setJsonAnnotations] = useState();
+  const router = useRouter();
 
   const { data, isLoading, isRefetching, refetch } = useQuery(
     ["nl-to-sql", query],
@@ -69,6 +72,11 @@ const DashboardWizard = ({ query: initialQuery }) => {
       }
     }
   }, [updatedVizConfig]);
+
+  const setQuery = (newQuery) => {
+    const params = new URLSearchParams({ query: newQuery });
+    router.push({ query: params.toString() });
+  };
 
   const sqlChanged = lastUpdatedSQL !== updatedSql;
   const vizConfigChanged = lastUpdatedVizConfig !== updatedVizConfig;
