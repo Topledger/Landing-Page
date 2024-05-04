@@ -201,6 +201,11 @@ export const nlToSql = async (query) => {
   const path = data?.embed_path;
   const { queryId, vizId } = embedPathRegex.exec(path)?.groups ?? {};
 
+  if (queryId) {
+    const executeData = await executeQuery(queryId);
+    await pollExecuteSQL(executeData?.job?.id);
+  }
+
   if (path) {
     const embedUrl = `${BACKEND_HOST}${path}`;
     return {
@@ -237,26 +242,29 @@ export const pollExecuteSQL = async (jobId) => {
   return null;
 };
 
+export const executeQuery = async (queryId) => {
+  const response = await tlAxios.post(`/tlai/api/queries/${queryId}/results`, {
+    id: Number(queryId),
+    parameters: {},
+    apply_auto_limit: false,
+    max_age: 0,
+  });
+
+  return response.data;
+};
+
 export const updateSQL = async (queryId, sql) => {
   const updateResponse = await tlAxios.post(`/tlai/api/queries/${queryId}`, {
     query: sql,
   });
 
-  const executeResopnse = await tlAxios.post(
-    `/tlai/api/queries/${queryId}/results`,
-    {
-      id: Number(queryId),
-      parameters: {},
-      apply_auto_limit: false,
-      max_age: 0,
-    }
-  );
+  const executeData = await executeQuery(queryId);
 
-  const jobId = executeResopnse.data?.job?.id;
+  const jobId = executeData?.job?.id;
 
   const resultId = await pollExecuteSQL(jobId);
 
-  return [updateResponse.data, executeResopnse.data];
+  return [updateResponse.data, executeData];
 };
 
 export const updateVisualization = async (vizId, config) => {

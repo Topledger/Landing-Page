@@ -21,9 +21,7 @@ const DashboardWizard = () => {
 
   const { data, isLoading, isRefetching, refetch } = useQuery(
     ["nl-to-sql", query],
-    () => {
-      return nlToSql(query);
-    },
+    () => nlToSql(query),
     {
       refetchOnWindowFocus: false,
       refetchOnMount: false,
