@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "@/assets/styles/variables";
+
+@import url($font-url);
 /* @import url("http://fonts.cdnfonts.com/css/helvetica-neue-9"); */
 /* @import url("/assets/font/HelveticaNeue.ttc"); */
 
@@ -22,7 +24,7 @@ body {
   padding: 0;
   margin: 0;
   // font-family: "Helvetica Neue", "Helvetica 45 Light", sans-serif;
-  font-family: "Inter", "Helvetica Neue", "Helvetica 45 Light", sans-serif;
+  font-family: $font-family;
 }
 
 @media screen and (max-width: 768px) {
