@@ -201,11 +201,6 @@ export const nlToSql = async (query) => {
   const path = data?.embed_path;
   const { queryId, vizId } = embedPathRegex.exec(path)?.groups ?? {};
 
-  if (queryId) {
-    const executeData = await executeQuery(queryId);
-    await pollExecuteSQL(executeData?.job?.id);
-  }
-
   if (path) {
     const embedUrl = `${BACKEND_HOST}${path}`;
     return {
@@ -259,13 +254,19 @@ export const updateSQL = async (queryId, sql) => {
     query: sql,
   });
 
+  return updateResponse.data;
+};
+
+export const executeAndPollQuery = async (queryId) => {
   const executeData = await executeQuery(queryId);
 
   const jobId = executeData?.job?.id;
 
   const resultId = await pollExecuteSQL(jobId);
 
-  return [updateResponse.data, executeData];
+  return {
+    resultId,
+  };
 };
 
 export const updateVisualization = async (vizId, config) => {

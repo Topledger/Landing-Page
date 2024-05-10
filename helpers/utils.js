@@ -8,7 +8,6 @@ export function useSearchParams() {
       (typeof window === "undefined" ? {} : window)?.location?.search
     )
   );
-  console.log("router.asPath", router.asPath);
 
   useEffect(() => {
     const handleRouteChange = (url) => {

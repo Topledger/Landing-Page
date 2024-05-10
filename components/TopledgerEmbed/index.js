@@ -1,19 +1,34 @@
-import React, { useRef } from "react";
+import React, {
+  forwardRef,
+  useCallback,
+  useImperativeHandle,
+  useRef,
+} from "react";
 
 import styles from "./index.module.scss";
 
-export const TopLedgerEmbed = ({
-  title,
-  caption,
-  embedUrl: url,
-  height,
-  width,
-  params = {},
-}) => {
+const TopLedgerEmbed = forwardRef((props, ref) => {
+  const { title, caption, embedUrl: url, height, width, params = {} } = props;
   const iframeRef = useRef();
 
+  let embedUrl;
+
+  const reloadIframe = useCallback(() => {
+    iframeRef.current.src = embedUrl;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [url]);
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      reloadIframe,
+    }),
+    [reloadIframe]
+  );
+
   if (!url) return null;
-  const embedUrl = new URL(url);
+
+  embedUrl = new URL(url);
   const searchParams = new URLSearchParams(embedUrl.search);
 
   searchParams.set("iframe", "true");
@@ -21,9 +36,7 @@ export const TopLedgerEmbed = ({
   searchParams.set("hide_timestamp", "true");
 
   embedUrl.search = searchParams.toString();
-  const reloadIframe = () => {
-    iframeRef.current.src = embedUrl;
-  };
+
   return (
     <figure className={`tlembed-wrapper ${styles.tlembedWrapper}`}>
       {title && <p>{title}</p>}
@@ -44,4 +57,8 @@ export const TopLedgerEmbed = ({
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
   );
-};
+});
+
+TopLedgerEmbed.displayName = "TopLedgerEmbed";
+
+export default TopLedgerEmbed;

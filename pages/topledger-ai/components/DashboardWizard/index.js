@@ -1,9 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 
 import DashboardArea from "./components/DashboardArea";
 import DataWizardInput from "./components/DataWizardInput";
-import { nlToSql, updateSQL, updateVisualization } from "queries";
+import {
+  executeAndPollQuery,
+  nlToSql,
+  updateSQL,
+  updateVisualization,
+} from "queries";
 
 import styles from "./index.module.scss";
 import Editor from "./components/Editor";
@@ -11,6 +16,7 @@ import { useSearchObject } from "helpers/utils";
 import { useRouter } from "next/router";
 
 const DashboardWizard = () => {
+  const embedRef = useRef();
   const { query } = useSearchObject();
   const [updatedSql, setUpdatedSql] = useState();
   const [lastUpdatedSQL, setLastUpdatedSQL] = useState();
@@ -19,9 +25,16 @@ const DashboardWizard = () => {
   const [jsonAnnotations, setJsonAnnotations] = useState();
   const router = useRouter();
 
+  const executeMutation = useMutation(async ({ queryId }) =>
+    executeAndPollQuery(queryId)
+  );
   const { data, isLoading, isRefetching, refetch } = useQuery(
     ["nl-to-sql", query],
-    () => nlToSql(query),
+    async () => {
+      const data = await nlToSql(query);
+      executeMutation.mutate({ queryId: data?.queryId });
+      return data;
+    },
     {
       refetchOnWindowFocus: false,
       refetchOnMount: false,
@@ -29,12 +42,16 @@ const DashboardWizard = () => {
   );
   const sqlMutation = useMutation(async ({ queryId, sqlQuery }) => {
     await updateSQL(queryId, sqlQuery);
+    await executeMutation.mutateAsync({ queryId });
+    embedRef.current?.reloadIframe();
     setLastUpdatedSQL(sqlQuery);
   });
   const vizMutation = useMutation(async ({ vizId, config }) => {
     await updateVisualization(vizId, JSON.parse(config));
+    embedRef.current?.reloadIframe();
     setLastUpdatedVizConfig(config);
   });
+
   const {
     embedUrl,
     sql,
@@ -150,8 +167,9 @@ const DashboardWizard = () => {
       )}
       <div className={styles.dashboard}>
         <DashboardArea
-          isLoading={isLoading || isRefetching}
+          isLoading={isLoading || isRefetching || executeMutation.isLoading}
           embedUrl={embedUrl}
+          embedRef={embedRef}
         />
       </div>
     </div>
