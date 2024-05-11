@@ -1,8 +1,13 @@
+@import "@/assets/styles/variables";
+
 .editor {
-
 }
-
+.prettyBtn {
+  display: inline-block;
+  padding: 0.5rem;
+}
 .externalLink {
+  display: inline-block;
   a {
     color: #444;
     font-size: 14px;

@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 
@@ -12,8 +13,8 @@ import {
 
 import styles from "./index.module.scss";
 import Editor from "./components/Editor";
+import Button from "./components/Button";
 import { useSearchObject } from "helpers/utils";
-import { useRouter } from "next/router";
 
 const DashboardWizard = () => {
   const embedRef = useRef();
@@ -129,7 +130,7 @@ const DashboardWizard = () => {
             />
           )}
           {sqlChanged && (
-            <button
+            <Button
               disabled={sqlMutation.isLoading}
               className={styles.updateSqlBtn}
               onClick={() =>
@@ -137,7 +138,7 @@ const DashboardWizard = () => {
               }
             >
               Update SQL
-            </button>
+            </Button>
           )}
           {visualizationConfig && (
             <Editor
@@ -153,7 +154,7 @@ const DashboardWizard = () => {
             />
           )}
           {vizConfigChanged && (
-            <button
+            <Button
               disabled={vizMutation.isLoading || jsonAnnotations?.length}
               className={styles.updateVizConfigBtn}
               onClick={() =>
@@ -161,7 +162,7 @@ const DashboardWizard = () => {
               }
             >
               Update Config
-            </button>
+            </Button>
           )}
         </div>
       )}

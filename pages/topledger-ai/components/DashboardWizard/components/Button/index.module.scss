@@ -1,0 +1,25 @@
+@import "@/assets/styles/variables";
+
+.button {
+  cursor: pointer;
+  background-color: #f6f6f6;
+  transition: background-color 0.25s ease;
+  border: 1px solid #eee;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  color: #444;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.72px;
+  font-family: $font-family;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+  &:hover {
+    background-color: #eee;
+  }
+  &:active {
+    background-color: #e0e0e0;
+  }
+}
