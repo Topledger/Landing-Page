@@ -4,7 +4,7 @@ import Page from "@/components/Page";
 import TrialSection from "@/components/TrialSection";
 import PrivacySection from "./components/PrivacySection";
 
-const pageTitle = "Welcome to Top Ledger's Privacy Policy";
+const pageTitle = "Privacy Policy";
 const pageDescription =
   "Thank you for choosing Top Ledger. By using our website, engaging with our services, or accessing our software-as-a-service (SaaS) offerings, you agree to the practices described in this policy. If you're representing an organization, your agreement confirms you're authorized to bind your entity and its users to these terms. If you lack such authority, or if you disagree with any part of these terms, you will not be able to access our services.";
 
