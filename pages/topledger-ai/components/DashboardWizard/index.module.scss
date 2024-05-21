@@ -49,6 +49,13 @@
   }
 }
 
+.updateSqlBtn,
+.updateVizConfigBtn {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
 .updateSqlBtn {
   right: calc(50% + 0.75rem);
 }
