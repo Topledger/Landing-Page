@@ -11,6 +11,7 @@ import { DarkModeProvider } from "../providers/DarkMode";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { initGa } from "helpers/gaHelper";
 import { TRACKING_ID } from "constants/app.constants";
+import UserProvider from "providers/User";
 // import ReactQueryDevtools from "react-query/devtools";
 
 const footerExcludePaths = ["thanks", "dashboard", "programs"];
@@ -29,6 +30,7 @@ const NO_HEADER_FOOTER_PATHS = [
   "/dashboards",
   "/research",
   "/privacy-policy",
+  "/topledger-ai",
 ];
 
 function MyApp({ Component, pageProps }) {
@@ -57,24 +59,26 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" type="image/x-icon" href="/favicon.svg" />
       </Head>
       <QueryClientProvider client={queryClient}>
-        <DarkModeProvider>
-          {(() => {
-            if (NO_HEADER_FOOTER_PATHS.includes(router.pathname)) {
-              return <Component {...pageProps} />;
-            }
+        <UserProvider>
+          <DarkModeProvider>
+            {(() => {
+              if (NO_HEADER_FOOTER_PATHS.includes(router.pathname)) {
+                return <Component {...pageProps} />;
+              }
 
-            return (
-              <>
-                {router.pathname.includes("thanks") ? null : <Header />}
-                <Component {...pageProps} />
-                {router.pathname.includes("thanks") ||
-                router.pathname.includes("dashboard") ? null : (
-                  <Footer />
-                )}
-              </>
-            );
-          })()}
-        </DarkModeProvider>
+              return (
+                <>
+                  {router.pathname.includes("thanks") ? null : <Header />}
+                  <Component {...pageProps} />
+                  {router.pathname.includes("thanks") ||
+                  router.pathname.includes("dashboard") ? null : (
+                    <Footer />
+                  )}
+                </>
+              );
+            })()}
+          </DarkModeProvider>
+        </UserProvider>
         {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </>

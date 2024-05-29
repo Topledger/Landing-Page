@@ -1,0 +1,15 @@
+.menuContainer {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+.menuItem {
+  cursor: pointer;
+  color: #333333;
+  font-size: 0.9em;
+}

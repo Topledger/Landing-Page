@@ -1,4 +1,5 @@
 export const SYSTEM_PROGRAM_ADDRESS = "11111111111111111111111111111111";
+export const TLAI_API_KEY = `${process.env.NEXT_PUBLIC_TLAI_API_KEY}`;
 
 export const DASHBOARDS = {
   programs: {

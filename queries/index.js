@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SYSTEM_PROGRAM_ADDRESS } from "constants/constants";
+import { SYSTEM_PROGRAM_ADDRESS, TLAI_API_KEY } from "constants/constants";
 
 function wait(time = 0) {
   return new Promise((resolve) => setTimeout(resolve, time));
@@ -172,3 +172,108 @@ export const fetchAddressInfo = async ({ address }) => {
     isWallet: result?.value?.owner === SYSTEM_PROGRAM_ADDRESS,
   };
 };
+
+const BACKEND_HOST = "https://analytics.topledger.xyz";
+const DATA_SOURCE_ID = 108;
+// const BACKEND_HOST =
+//   "https://orange-happiness-g7j95jgx5vrhwrw-5000.app.github.dev";
+// const DATA_SOURCE_ID = 1;
+
+const tlAxios = axios.create({
+  baseURL: BACKEND_HOST,
+  params: {
+    api_key: TLAI_API_KEY,
+  },
+});
+
+const embedPathRegex = /query\/(?<queryId>\d+)\/visualization\/(?<vizId>\d+)/;
+
+export const nlToSql = async (query) => {
+  const params = {
+    data_source_id: DATA_SOURCE_ID,
+    natural_language_text: query,
+  };
+  const res = await tlAxios.get("/tlai/api/nl-to-sql", {
+    params,
+  });
+  const data = res.data;
+
+  const path = data?.embed_path;
+  const { queryId, vizId } = embedPathRegex.exec(path)?.groups ?? {};
+
+  if (path) {
+    const embedUrl = `${BACKEND_HOST}${path}`;
+    return {
+      ...data,
+      embedUrl,
+      queryId,
+      vizId,
+      queryEditLink: getQueryEditLink(queryId),
+    };
+  } else {
+    return { ...data };
+  }
+};
+
+export const asyncWait = (timeout) =>
+  new Promise((resolve) => setTimeout(resolve, timeout));
+
+export const pollExecuteSQL = async (jobId) => {
+  const MAX_TRIES = 20;
+  const WAIT_TIME = 1000;
+  let retries = 0;
+  while (retries < MAX_TRIES) {
+    const response = await tlAxios.get(`/tlai/api/jobs/${jobId}`);
+    const data = response.data;
+    const job = data?.response;
+
+    if (job?.status === 3 && job?.query_result_id) {
+      return job?.query_result_id;
+    }
+
+    await asyncWait(WAIT_TIME);
+    retries += 1;
+  }
+
+  return null;
+};
+
+export const executeQuery = async (queryId) => {
+  const response = await tlAxios.post(`/tlai/api/queries/${queryId}/results`, {
+    id: Number(queryId),
+    parameters: {},
+    apply_auto_limit: false,
+    max_age: 0,
+  });
+
+  return response.data;
+};
+
+export const updateSQL = async (queryId, sql) => {
+  const updateResponse = await tlAxios.post(`/tlai/api/queries/${queryId}`, {
+    query: sql,
+  });
+
+  return updateResponse.data;
+};
+
+export const executeAndPollQuery = async (queryId) => {
+  const executeData = await executeQuery(queryId);
+
+  const jobId = executeData?.job?.id;
+
+  const resultId = await pollExecuteSQL(jobId);
+
+  return {
+    resultId,
+  };
+};
+
+export const updateVisualization = async (vizId, config) => {
+  const response = await tlAxios.post(`/tlai/api/visualizations/${vizId}`, {
+    options: config,
+  });
+};
+
+export const getQueryEditLink = (queryId) =>
+  `${BACKEND_HOST}/tlai/queries/${queryId}/source`;

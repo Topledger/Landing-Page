@@ -1,0 +1,22 @@
+@import "@/assets/styles/variables";
+
+.editor {
+}
+.prettyBtn {
+  display: inline-block;
+  padding: 0.5rem;
+}
+.externalLink {
+  display: inline-block;
+  a {
+    color: #444;
+    font-size: 14px;
+    align-items: center;
+    svg {
+      width: 14px;
+      height: 14px;
+      transform: translate(0, -0.125rem);
+      margin-left: 0.25rem;
+    }
+  }
+}

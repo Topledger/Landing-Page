@@ -19,6 +19,12 @@ export const getCreationDate = (dashboard) =>
   new Date(dashboard?.attributes?.createdAt).getTime();
 
 export const getAllDashboards = async () => {
-  const { data: dashboards } = await axiosInstance.get("/dashboards");
+  try {
+    const { data: dashboards } = await axiosInstance.get("/dashboards");
+  } catch (err) {
+    console.error(err); 
+    return { data: [] };
+  }
+
   return dashboards;
 };

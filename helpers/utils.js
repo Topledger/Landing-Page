@@ -8,7 +8,6 @@ export function useSearchParams() {
       (typeof window === "undefined" ? {} : window)?.location?.search
     )
   );
-  console.log("router.asPath", router.asPath);
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -39,4 +38,20 @@ export const getId = (text) => {
     ?.toLowerCase()
     .replace(/./g, (c) => (ALLOWED_CHARS.test(c) ? c : ""))
     .replace(/\s+/g, "-");
+};
+
+export const getUserData = () => {
+  try {
+    return JSON.parse(localStorage.getItem("userData"));
+  } catch (e) {
+    return null;
+  }
+};
+
+export const setUserData = (userData) => {
+  try {
+    return localStorage.setItem("userData", JSON.stringify(userData));
+  } catch (e) {
+    return null;
+  }
 };

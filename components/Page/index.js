@@ -6,13 +6,15 @@ import Header from "../Header";
 
 import styles from "./index.module.scss";
 
-const Body = ({ children, header }) => (
-  <div className={cx(styles.pageBody, { [styles.withHeader]: header })}>
+const Body = ({ children, header, className }) => (
+  <div
+    className={cx(styles.pageBody, className, { [styles.withHeader]: header })}
+  >
     {children}
   </div>
 );
 
-const Page = ({ title, children, header = true }) => (
+const Page = ({ title, children, className, header = true, footer = true }) => (
   <div className="page">
     <Head>
       <meta charSet="UTF-8" />
@@ -36,9 +38,11 @@ const Page = ({ title, children, header = true }) => (
     </Head>
     <div className="page-content">
       {header && <Header />}
-      <Body header={header}>{children}</Body>
+      <Body className={className} header={header}>
+        {children}
+      </Body>
     </div>
-    <Footer />
+    {footer && <Footer />}
   </div>
 );
 
