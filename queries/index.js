@@ -11,7 +11,7 @@ export async function fetchProgramDashboard(programName) {
   return {
     title: "Metaplex",
     subTitle: "7 days decoded instructions data.",
-    general: [
+    general: [ 
       {
         id: 1,
         grid: {
