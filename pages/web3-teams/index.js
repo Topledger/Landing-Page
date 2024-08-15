@@ -10,15 +10,15 @@ import FeatureSuiteSection from "./components/FeautreSuiteSection";
 import CaseStudySection from "./components/CaseStudySection";
 import QueryFormModal from "@/components/QueryForm/QueryFormModal";
 import {
-  dashboardSorter,
-  getAllDashboards,
-  getCreationDate,
+  // dashboardSorter,
+  // getAllDashboards,
+  // getCreationDate,
+  dashboards,
 } from "helpers/dashboard";
 import { DASHBOARD_ICONS } from "pages/dashboards";
 
 const features = [
   {
-    
     color: "#DCE6FF",
     bulletColor: "#4968B6",
     media: {
@@ -47,7 +47,6 @@ const features = [
     ],
   },
   {
-    
     color: "#F1E0FF",
     bulletColor: "#9F62DD",
     media: {
@@ -55,7 +54,7 @@ const features = [
       src: "/assets/images/web3-teams/feature-wallet-behaviour-analytics.svg",
       backgroundColor: "#F8F0F6",
     },
-    
+
     tags: [{ text: "Know your users", color: "#9F62DD" }],
     title: "Wallet behaviour analytics",
     description:
@@ -77,7 +76,6 @@ const features = [
     ],
   },
   {
-    
     color: "#E8E9FA",
     bulletColor: "#59B077",
     media: {
@@ -235,23 +233,25 @@ const Web3TeamsPage = ({ dashboards }) => {
 };
 
 Web3TeamsPage.getInitialProps = async () => {
-  const dashboards = await getAllDashboards();
-  const sorter = dashboardSorter(getCreationDate, "desc");
-  return {
-    dashboards: dashboards?.data
-      ?.sort(sorter)
-      ?.filter((d) => DASHBOARD_ICONS[d.attributes.title])
-      ?.map((d) => ({
-        id: d.id,
-        name: d.attributes.title,
-        href: d.attributes.link,
-        icon:
-          d.attributes.icon ??
-          DASHBOARD_ICONS[d.attributes.title] ??
-          "/assets/images/dashboards/solana.svg",
-      }))
-      .slice(0, 5),
-  };
+  // const dashboards = await getAllDashboards();
+  // const sorter = dashboardSorter(getCreationDate, "desc");
+  // return {
+  //   dashboards: dashboards?.data
+  //     ?.sort(sorter)
+  //     ?.filter((d) => DASHBOARD_ICONS[d.attributes.title])
+  //     ?.map((d) => ({
+  //       id: d.id,
+  //       name: d.attributes.title,
+  //       href: d.attributes.link,
+  //       icon:
+  //         d.attributes.icon ??
+  //         DASHBOARD_ICONS[d.attributes.title] ??
+  //         "/assets/images/dashboards/solana.svg",
+  //     }))
+  //     .slice(0, 5),
+  // };
+
+  return { dashboards: dashboards.slice(0, 5) };
 };
 
 export default Web3TeamsPage;

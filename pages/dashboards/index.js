@@ -4,9 +4,10 @@ import Page from "@/components/Page";
 import TrialSection from "@/components/TrialSection";
 import DashboardsSection from "./components/DashboardsSection";
 import {
-  dashboardSorter,
-  getAllDashboards,
-  getCreationDate,
+  dashboards,
+  // dashboardSorter,
+  // getAllDashboards,
+  // getCreationDate,
 } from "helpers/dashboard";
 
 export const DASHBOARD_ICONS = {
@@ -33,19 +34,21 @@ const DashboardList = ({ dashboards }) => {
 };
 
 DashboardList.getInitialProps = async () => {
-  const dashboards = await getAllDashboards();
-  const sorter = dashboardSorter(getCreationDate, "desc");
-  return {
-    dashboards: dashboards?.data?.sort(sorter)?.map((d) => ({
-      id: d.id,
-      name: d.attributes.title,
-      href: d.attributes.link,
-      icon:
-        d.attributes.icon ??
-        DASHBOARD_ICONS[d.attributes.title] ??
-        "/assets/images/dashboards/solana.svg",
-    })),
-  };
+  // const dashboards = await getAllDashboards();
+  // const sorter = dashboardSorter(getCreationDate, "desc");
+  // return {
+  //   dashboards: dashboards?.data?.sort(sorter)?.map((d) => ({
+  //     id: d.id,
+  //     name: d.attributes.title,
+  //     href: d.attributes.link,
+  //     icon:
+  //       d.attributes.icon ??
+  //       DASHBOARD_ICONS[d.attributes.title] ??
+  //       "/assets/images/dashboards/solana.svg",
+  //   })),
+  // };
+
+  return { dashboards };
 };
 
 export default DashboardList;
