@@ -24,13 +24,12 @@ const List = ({ data, isDarkMode, fetchData, fetchAllDashboards }) => {
   const handleShareUpdate = async () => {
     try {
       const res = await axios.put(
-        `https://admin.topledger.xyz/api/dashboards/` +
-        data?.id,
+        `https://admin.topledger.xyz/api/dashboards/` + data?.id,
         { data: { shares: data?.attributes?.shares + 1 } }
       );
       if (res) {
         fetchData(false);
-        fetchAllDashboards(false)
+        fetchAllDashboards(false);
       }
     } catch (error) {
       console.log("Error", error);
@@ -78,17 +77,24 @@ const List = ({ data, isDarkMode, fetchData, fetchAllDashboards }) => {
           <p>
             <div className="ShareIcons">
               {isComponentVisible ? (
-                <img src="assets/images/cross-small.svg" onClick={() => toggleMenu()} />
+                <img
+                  src="assets/images/cross-small.svg"
+                  onClick={() => toggleMenu()}
+                />
               ) : (
-                <AiOutlineShareAlt className={styles.shareIcon} onClick={() => toggleMenu()} />
+                <AiOutlineShareAlt
+                  className={styles.shareIcon}
+                  onClick={() => toggleMenu()}
+                />
               )}
             </div>
           </p>
         </div>
 
         <div
-          className={`${styles.shareDropdown} ${isComponentVisible ? " " : styles.animationDropDown
-            }`}
+          className={`${styles.shareDropdown} ${
+            isComponentVisible ? " " : styles.animationDropDown
+          }`}
         >
           <div className={styles.wrapper}>
             <div className={styles.icons}>
