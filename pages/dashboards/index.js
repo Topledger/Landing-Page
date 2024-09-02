@@ -16,7 +16,7 @@ export const DASHBOARD_ICONS = {
   "Drift trade": "/assets/images/dashboards/drift logo.svg",
   Helium: "/assets/images/dashboards/helium.svg",
   "Helium mobile subscribers": "/assets/images/dashboards/helium.svg",
-  Phoenix: "/assets/images/dashboards/phoenix.svg",
+  //Phoenix: "/assets/images/dashboards/phoenix.svg",
   Tensor: "/assets/images/dashboards/tensor logo.svg",
   "Flash trade": "/assets/images/dashboards/flash trade.svg",
 };
