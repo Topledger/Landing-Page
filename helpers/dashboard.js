@@ -54,12 +54,7 @@ export const dashboards = [
     href: "https://analytics.topledger.xyz/helium/public/dashboards/81P8F2a40psaWv9qvVvcRuPErNeUgHClqmkuJtUo",
     icon: "/assets/images/dashboards/helium.svg",
   },
-  {
-    id: 35,
-    name: "Phoenix",
-    href: "https://analytics.topledger.xyz/tl/public/dashboards/knoPmkT1W0deT8txVQYw1daqqepjITZRZbvz1oft",
-    icon: "/assets/images/dashboards/phoenix.svg",
-  },
+
   {
     id: 34,
     name: "Token 22",
