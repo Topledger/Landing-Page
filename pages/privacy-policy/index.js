@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Header from "@/components/Header";
 import Page from "@/components/Page";
 
@@ -94,6 +95,53 @@ const sections = [
 const ResearchPage = () => {
   return (
     <Page>
+      <Head>
+        
+        <title>Top Ledger - Privacy Policy</title>
+        <meta
+          name="description"
+          content="Review Top Ledger's privacy policy to understand how we handle your data, including personal and service data. Learn about our data collection, retention, sharing, security measures, and your privacy rights."
+        />
+        <meta
+          name="keywords"
+          content="Top Ledger privacy policy, data privacy, personal data handling, service data, SaaS privacy, data retention policy, data security, global data compliance, privacy rights, blockchain privacy, data sharing policy, GDPR compliance, data protection, cookie policies"
+        />
+        <meta name="author" content="Top Ledger Team" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Open Graph Tags for Social Media */}
+        <meta
+          property="og:title"
+          content="Top Ledger - Privacy Policy"
+        />
+        <meta
+          property="og:description"
+          content="Understand how Top Ledger collects, uses, and protects your data. Learn about our commitment to data privacy, security, and compliance with international standards."
+        />
+        <meta property="og:image" content="/assets/images/privacy-policy/og-image.jpg" />
+        <meta property="og:url" content="https://www.topledger.xyz/privacy-policy" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Top Ledger - Privacy Policy" />
+        <meta
+          name="twitter:description"
+          content="Explore how Top Ledger manages your data securely and transparently. Learn about our data collection, retention, and sharing practices."
+        />
+        <meta name="twitter:image" content="/assets/images/privacy-policy/twitter-card-image.jpg" />
+        <meta name="twitter:site" content="@TopLedger" />
+
+        {/* Extended Meta Tags */}
+        <meta name="robots" content="index, follow" />
+        <meta name="rating" content="General" />
+        <meta name="distribution" content="global" />
+        <meta name="application-name" content="Top Ledger" />
+        <meta name="theme-color" content="#FFFFFF" />
+
+        {/* Canonical Link */}
+        <link rel="canonical" href="https://www.topledger.xyz/privacy-policy" />
+      </Head>
       <Header />
       <PrivacySection
         title={pageTitle}

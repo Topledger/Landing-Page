@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Header from "@/components/Header";
 import Page from "@/components/Page";
 
@@ -221,6 +222,53 @@ const caseStudies = [
 const Web3TeamsPage = ({ dashboards }) => {
   return (
     <Page>
+      <Head>
+        {/* Basic Meta Tags */}
+        <title>Top Ledger - Web3 Analytics for Solana Teams</title>
+        <meta
+          name="description"
+          content="Empower your Web3 team with advanced blockchain analytics. Access decoded Solana data, wallet behavior analytics, custom dashboards, competitive analysis, and AI-driven insights."
+        />
+        <meta
+          name="keywords"
+          content="Web3 analytics, Solana analytics, decoded data, wallet behavior analytics, competitive analysis, dashboards for Solana, blockchain analytics, trading strategies, DePIN, LST protocols, perpetual swaps, NFT analysis, private databases, Top Ledger case studies, blockchain research, AI models, ecosystem analysis"
+        />
+        <meta name="author" content="Top Ledger Team" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Open Graph Tags for Social Media */}
+        <meta
+          property="og:title"
+          content="Top Ledger - Web3 Analytics for Solana Teams"
+        />
+        <meta
+          property="og:description"
+          content="Leverage Top Ledger’s Web3 analytics for decoded Solana data, wallet profiling, competitive analysis, and data-driven growth. Explore case studies and actionable insights."
+        />
+        <meta property="og:image" content="/assets/images/web3-teams/og-web3.jpg" />
+        <meta property="og:url" content="https://www.topledger.xyz/web3-teams" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Top Ledger - Web3 Analytics for Solana Teams" />
+        <meta
+          name="twitter:description"
+          content="Access Solana blockchain analytics with Top Ledger: Wallet behavior analytics, competitive analysis, and private dashboards for your Web3 team."
+        />
+        <meta name="twitter:image" content="/assets/images/web3-teams/twitter-card-web3.jpg" />
+        <meta name="twitter:site" content="@TopLedger" />
+
+        {/* Extended Meta Tags */}
+        <meta name="robots" content="index, follow" />
+        <meta name="rating" content="General" />
+        <meta name="distribution" content="global" />
+        <meta name="application-name" content="Top Ledger" />
+        <meta name="theme-color" content="#FFFFFF" />
+
+        {/* Canonical Link */}
+        <link rel="canonical" href="https://www.topledger.xyz/web3-teams" />
+      </Head>
       <Header />
       <Web3HeroSection />
       <FeaturesSection features={features} />
