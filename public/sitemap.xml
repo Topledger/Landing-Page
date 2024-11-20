@@ -1,29 +1,42 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-		<!--	created with www.mysitemapgenerator.com	-->
-		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
 <url>
-	<loc>https://topledger.xyz/</loc>
-	<lastmod>2022-06-19T14:11:33+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://topledger.xyz/</loc>
+  <lastmod>2024-09-30T09:10:18+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-	<loc>https://topledger.xyz</loc>
-	<lastmod>2022-06-19T14:11:33+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://topledger.xyz/web3-teams</loc>
+  <lastmod>2024-09-30T09:10:18+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://topledger.xyz/about-us</loc>
-	<lastmod>2022-06-19T14:11:33+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://topledger.xyz/research</loc>
+  <lastmod>2024-09-30T09:10:18+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://topledger.xyz/dashboards</loc>
-	<lastmod>2022-06-19T14:11:33+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://topledger.xyz/pricing</loc>
+  <lastmod>2024-09-30T09:10:18+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://topledger.xyz/get-started</loc>
-	<lastmod>2022-06-19T14:11:33+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://topledger.xyz/dashboards</loc>
+  <lastmod>2024-09-30T09:10:18+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://topledger.xyz/privacy-policy</loc>
+  <lastmod>2024-09-30T09:10:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 </urlset>
