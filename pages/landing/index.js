@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Header from "@/components/Header";
 import Page from "@/components/Page";
 
@@ -232,7 +233,48 @@ const testimonials = [
 
 const LandingPage = () => {
   return (
+    
     <Page>
+      <Head>
+        {/* Basic Meta Tags */}
+        <title>Top Ledger - Solana Blockchain Analytics & Data Consultancy</title>
+        <meta
+          name="description"
+          content="Top Ledger provides comprehensive analytics for the Solana blockchain, including wallet and token balances, perpetual trades, staking, DePIN, gaming data, account states, liquidity data, LST data, and more."
+        />
+        <meta
+          name="keywords"
+          content="Solana analytics, DePIN, perpetual trades, wallet balances, token balances, historic data, gaming data, account state data, data consultancy, liquidity data, LST data, staking, blockchain data, Solana insights, Top Ledger"
+        />
+        <meta name="author" content="Top Ledger Team" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Open Graph Tags for Social Media */}
+        <meta
+          property="og:title"
+          content="Top Ledger - Solana Blockchain Analytics & Data Consultancy"
+        />
+        <meta
+          property="og:description"
+          content="Empowering teams with real-time analytics for wallet balances, token data, perpetual trades, historic data, DePIN, and more on the Solana blockchain."
+        />
+        <meta property="og:image" content="/assets/images/landing/og-image.jpg" />
+        <meta property="og:url" content="https://www.topledger.xyz/" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Top Ledger - Solana Blockchain Analytics & Data Consultancy" />
+        <meta
+          name="twitter:description"
+          content="SQL-based platform offering wallet and token analytics, DePIN insights, perpetual trade data, staking metrics, liquidity data, and more on Solana."
+        />
+        <meta name="twitter:image" content="/assets/images/landing/twitter-card-image.jpg" />
+        <meta name="twitter:site" content="@TopLedger" />
+
+        {/* Canonical Link */}
+        <link rel="canonical" href="https://www.topledger.xyz/" />
+      </Head>
       <LandingHeroSection />
       <ArticleSection articles={articles} />
       <OutcomesSection outcomes={outcomes} />
