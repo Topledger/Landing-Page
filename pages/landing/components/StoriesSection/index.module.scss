@@ -1,0 +1,175 @@
+@import "@/assets/styles/breakpoints.scss";
+
+.insightStoriesSection {
+  
+  padding: 7.5rem 0px;
+  //border-top: 1px solid #e2e8ff;
+  background: #ffffff;
+
+  @include mobile {
+    padding: 5rem 0rem;
+  }
+}
+
+.insightStoriesSectionTitle {
+  color: #374151;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.8px;
+
+  @include mobile {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 29px;
+  }
+}
+
+.insightStoriesSectionSubtitle {
+  color: #374151;
+  font-size: 1.125rem;
+  line-height: 140%;
+  letter-spacing: 0.72px;
+  margin-top: 0.5rem;
+  color: rgba(55, 65, 81, 0.70);
+  text-align: center;
+  font-weight: 400;
+
+  @include mobile {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+  }
+}
+
+.insightStoriesSectionContent {
+  display: flex;
+  flex-direction: row;
+  gap: 56px;
+  margin-top: 68px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    gap: 3.5rem;
+    margin-top: 2.5rem;
+  }
+}
+
+.insightStory {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 2.5rem;
+  border: 1px solid rgba(251, 252, 255, 0.00);
+  background: #fdfdff;
+  transition: border-color 0.3s ease-in-out;
+  box-shadow: 0px 8px 16px 0px rgba(116, 149, 199, 0.16);
+  padding: 0.375rem;
+
+  &:hover {
+    border-color: #a8abd7;
+  }
+
+  @include mobile {
+    border-radius: 1.5rem;
+  }
+}
+
+.insightStoryMedia {
+  width: 100%;
+  img {
+    width: 100%;
+    border-radius: 2.5rem 2.5rem 0 0;
+  }
+
+  @include mobile {
+    img {
+      border-radius: 1.5rem 1.5rem 0 0;
+    }
+  }
+}
+
+.insightStoryContent {
+  padding: 24px 18px;
+
+  @include mobile {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.insightStoryTitle {
+  color: #374151;
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: normal;
+
+  @include mobile {
+    font-size: 1.125rem;
+    font-weight: 800;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+  }
+}
+
+.insightStoryDescription {
+  color: #374151;
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: 0.64px;
+  margin-top: 14.5px;
+
+  @include mobile {
+    margin-top: 0.75rem;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+  }
+}
+
+.insightStoryFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.125rem;
+
+  @include mobile {
+    margin-top: 1.5rem;
+
+    * {
+      font-size: 1.125rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.insightStoryFooterIcon {
+  display: inline-block;
+  height: 18px;
+}
+
+.insightStoryFooterDesc {
+  color: #586983;
+  text-align: right;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 140%; /* 19.6px */
+  letter-spacing: 0.07px;
+}
+
+.columnsContainer {
+  display: flex;
+  gap: 3.25rem;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.column {
+  flex: 1;
+}
