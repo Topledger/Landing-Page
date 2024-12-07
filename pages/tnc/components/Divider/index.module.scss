@@ -1,0 +1,10 @@
+@import "@/assets/styles/breakpoints.scss";
+
+.divider {
+  border-top: 1px solid #e2e8ff;
+  margin: 1.5rem 0;
+
+  @include mobile {
+    margin: 1rem 0;
+  }
+}
