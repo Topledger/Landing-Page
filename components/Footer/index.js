@@ -104,14 +104,24 @@ const Footer = () => {
               <Button.Link tertiary color="#374151" className={styles.copyLink}>
                 © 2024, Top Ledger, All rights reserved
               </Button.Link>
-              <Button.Link
-                tertiary
-                color="#374151"
-                className={cx(styles.copyLink, styles.privacyPolicy)}
-                href="/privacy-policy"
-              >
-                Privacy Policy
-              </Button.Link>
+              <span style={{ display: "inline-flex", gap: "2rem" }}>
+                <Button.Link
+                  tertiary
+                  color="#374151"
+                  className={cx(styles.copyLink, styles.privacyPolicy)}
+                  href="/tnc"
+                >
+                  Terms
+                </Button.Link>
+                <Button.Link
+                  tertiary
+                  color="#374151"
+                  className={cx(styles.copyLink, styles.privacyPolicy)}
+                  href="/privacy-policy"
+                >
+                  Privacy Policy
+                </Button.Link>
+              </span>
             </div>
           </MobileHidden>
         </div>
@@ -122,14 +132,24 @@ const Footer = () => {
         </div>
         <MobileOnly>
           <div className={styles.copyContainer}>
-            <Button.Link
-              tertiary
-              color="#374151"
-              className={cx(styles.copyLink, styles.privacyPolicy)}
-              href="/privacy-policy"
-            >
-              Privacy Policy
-            </Button.Link>
+            <span style={{ display: "inline-flex", gap: "2rem" }}>
+              <Button.Link
+                tertiary
+                color="#374151"
+                className={cx(styles.copyLink, styles.privacyPolicy)}
+                href="/tnc"
+              >
+                Terms
+              </Button.Link>
+              <Button.Link
+                tertiary
+                color="#374151"
+                className={cx(styles.copyLink, styles.privacyPolicy)}
+                href="/privacy-policy"
+              >
+                Privacy Policy
+              </Button.Link>
+            </span>
             <Button.Link tertiary color="#374151" className={styles.copyLink}>
               © 2024, Top Ledger, All rights reserved
             </Button.Link>
