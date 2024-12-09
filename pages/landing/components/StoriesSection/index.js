@@ -59,9 +59,12 @@ const StoriesSection = ({ insightStories = [] }) => {
             Turning insights into impact
           </div>
           <div className={styles.insightStoriesSectionContent}>
-            {insightStories
-              .map((insightStory.link, index) => (
-                <InsightsStories key={index} insightStory={insightStory} />
+            {insightStories.map((insightStory, index) => (
+                <Link href={insightStory.link} key={index}>
+                <a>
+                  <InsightsStories insightStory={insightStory} />
+                </a>
+              </Link>
               ))}
           </div>
         </Columns.Col>
