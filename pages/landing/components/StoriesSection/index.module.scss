@@ -74,13 +74,7 @@
   &:hover {
     border-color: #a8abd7;
   }
-  a {
-    text-decoration: none; /* Ensure no underline or text changes */
-    color: inherit;
-    display: flex; /* Maintain flex layout for content */
-    flex-direction: column; /* Keep child alignment */
-    width: 100%; /* Match parent dimensions */
-  }
+
   @include mobile {
     border-radius: 1.5rem;
   }

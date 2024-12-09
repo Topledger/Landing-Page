@@ -60,11 +60,7 @@ const StoriesSection = ({ insightStories = [] }) => {
           </div>
           <div className={styles.insightStoriesSectionContent}>
             {insightStories.map((insightStory, index) => (
-                <Link href={insightStory.link} key={index}>
-                <a>
-                  <InsightsStories insightStory={insightStory} />
-                </a>
-              </Link>
+                <InsightsStories key={index} insightStory={insightStory} />
               ))}
           </div>
         </Columns.Col>
