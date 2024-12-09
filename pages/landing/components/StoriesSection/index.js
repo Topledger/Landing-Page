@@ -1,6 +1,6 @@
 import cx from "classnames";
 import Image from "next/image";
-
+import Link from "next/link";
 import Section from "components/Section";
 import { getId } from "helpers/utils";
 
@@ -60,7 +60,7 @@ const StoriesSection = ({ insightStories = [] }) => {
           </div>
           <div className={styles.insightStoriesSectionContent}>
             {insightStories
-              .map((insightStory, index) => (
+              .map((insightStory.link, index) => (
                 <InsightsStories key={index} insightStory={insightStory} />
               ))}
           </div>

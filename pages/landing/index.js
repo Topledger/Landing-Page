@@ -197,17 +197,13 @@ const insightStories = [
     title: "State of Raydium Q3 2024",
     description:
       "State of Raydium Q3 2024",
-    action: {
-      type: "link",
-      target: "_blank",
-      href: "https://messari.io/report/state-of-raydium-q3-2024",
-      },
     footer: {
       icon: "/assets/images/landing/messari.png",
       width: "114px",
       height: "18px",
       desc: "Nov 7, 2024"
     },
+    link:"https://www.artemis.xyz/research/raydium-king-of-solana-de-fi",
   },
   {
     media: {
@@ -217,17 +213,13 @@ const insightStories = [
     title: "Raydium: King of Solana Defi",
     description:
       "Raydium: King of Solana Defi",
-    action: {
-        type: "link",
-        target: "_blank",
-        href: "https://www.artemis.xyz/research/raydium-king-of-solana-de-fi",
-        },
     footer: {
       icon: "/assets/images/landing/artemis.png",
       width: "147px",
       height: "18px",
       desc: "Nov 7, 2024"
     },
+    link: "https://www.artemis.xyz/research/raydium-king-of-solana-de-fi",
   },
   {
     media: {
@@ -237,17 +229,13 @@ const insightStories = [
     title: "State of Metaplex Q1 2023",
     description:
       "State of Metaplex Q1 2023",
-    action: {
-        type: "link",
-        target: "_blank",
-        href: "https://messari.io/report/state-of-metaplex-q1-2023",
-        },
     footer: {
       icon: "/assets/images/landing/messari.png",
       width: "114px",
       height: "18px",
       desc: "Apr 14, 2023"
     },
+    link: "https://www.artemis.xyz/research/raydium-king-of-solana-de-fi",
   },
 ];
 
