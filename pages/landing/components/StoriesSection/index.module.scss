@@ -34,6 +34,7 @@
   color: rgba(55, 65, 81, 0.70);
   text-align: center;
   font-weight: 400;
+  
 
   @include mobile {
     margin-top: 1rem;
@@ -172,4 +173,10 @@
 
 .column {
   flex: 1;
+}
+.linkWrapper {
+  display: block; /* Ensures the link doesn't shrink its content */
+  width: 100%; /* Matches the card width */
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Keeps text color consistent */
 }

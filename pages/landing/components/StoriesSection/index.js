@@ -60,7 +60,13 @@ const StoriesSection = ({ insightStories = [] }) => {
           </div>
           <div className={styles.insightStoriesSectionContent}>
             {insightStories.map((insightStory, index) => (
-                <InsightsStories key={index} insightStory={insightStory} />
+                <Link href={insightStory.link} key={index}>
+                <a className={styles.linkWrapper} 
+                    target="_blank" 
+                    rel="noopener noreferrer" >
+                  <InsightsStories insightStory={insightStory} />
+                </a>
+              </Link>
               ))}
           </div>
         </Columns.Col>

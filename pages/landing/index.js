@@ -203,7 +203,8 @@ const insightStories = [
       height: "18px",
       desc: "Nov 7, 2024"
     },
-    link:"https://www.artemis.xyz/research/raydium-king-of-solana-de-fi",
+    
+    link:"https://messari.io/report/state-of-raydium-q3-2024",
   },
   {
     media: {
@@ -235,7 +236,7 @@ const insightStories = [
       height: "18px",
       desc: "Apr 14, 2023"
     },
-    link: "https://www.artemis.xyz/research/raydium-king-of-solana-de-fi",
+    link: "https://messari.io/report/state-of-metaplex-q1-2023",
   },
 ];
 
