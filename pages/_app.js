@@ -29,6 +29,7 @@ const NO_HEADER_FOOTER_PATHS = [
   "/dashboards",
   "/research",
   "/privacy-policy",
+  "/tnc",
 ];
 
 function MyApp({ Component, pageProps }) {

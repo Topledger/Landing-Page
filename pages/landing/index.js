@@ -7,6 +7,7 @@ import ArticleSection from "./components/ArticleSection";
 import OutcomesSection from "./components/OutcomesSection";
 import DataCultureSection from "./components/CultureSection";
 import TestimonialsSection from "./components/TestimonialsSection";
+import StoriesSection from "./components/StoriesSection";
 import TrialSection from "@/components/TrialSection";
 import QueryFormModal from "@/components/QueryForm/QueryFormModal";
 import { getId } from "helpers/utils";
@@ -187,6 +188,54 @@ const dataCultures = [
   },
 ];
 
+const insightStories = [
+  {
+    media: {
+      type: "image",
+      src: "/assets/images/landing/stories-icon-1.svg",
+    },
+    title: "State of Raydium Q3 2024",
+    description:
+      "State of Raydium Q3 2024",
+    footer: {
+      icon: "/assets/images/landing/messari.png",
+      width: "114px",
+      height: "18px",
+      desc: "Nov 7, 2024"
+    },
+  },
+  {
+    media: {
+      type: "image",
+      src: "/assets/images/landing/stories-icon-2.svg",
+    },
+    title: "Raydium: King of Solana Defi",
+    description:
+      "Raydium: King of Solana Defi",
+    footer: {
+      icon: "/assets/images/landing/artemis.png",
+      width: "147px",
+      height: "18px",
+      desc: "Nov 7, 2024"
+    },
+  },
+  {
+    media: {
+      type: "image",
+      src: "/assets/images/landing/stories-icon-3.svg",
+    },
+    title: "State of Metaplex Q1 2023",
+    description:
+      "State of Metaplex Q1 2023",
+    footer: {
+      icon: "/assets/images/landing/messari.png",
+      width: "114px",
+      height: "18px",
+      desc: "Apr 14, 2023"
+    },
+  },
+];
+
 const testimonials = [
   {
     id: 1,
@@ -279,6 +328,7 @@ const LandingPage = () => {
       <ArticleSection articles={articles} />
       <OutcomesSection outcomes={outcomes} />
       <DataCultureSection dataCultures={dataCultures} />
+      <StoriesSection insightStories={insightStories} />
       <TestimonialsSection testimonials={testimonials} />
       <TrialSection />
     </Page>
