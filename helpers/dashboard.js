@@ -54,6 +54,12 @@ export const dashboards = [
     href: "https://analytics.topledger.xyz/helium/public/dashboards/81P8F2a40psaWv9qvVvcRuPErNeUgHClqmkuJtUo",
     icon: "/assets/images/dashboards/helium.svg",
   },
+  {
+    id: 39,
+    name: "Switchboard",
+    href: "https://analytics.topledger.xyz/switchboard/public/dashboards/bgtz1xBaS8pNNG4IKqfHqurfkOG9VKxMa9LRcl0K",
+    icon: "/assets/images/dashboards/helium.svg",
+  },
 
   {
     id: 34,
