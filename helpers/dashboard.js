@@ -58,7 +58,7 @@ export const dashboards = [
     id: 39,
     name: "Switchboard",
     href: "https://analytics.topledger.xyz/switchboard/public/dashboards/bgtz1xBaS8pNNG4IKqfHqurfkOG9VKxMa9LRcl0K",
-    icon: "/assets/images/dashboards/helium.svg",
+    icon: "/assets/images/dashboards/switchboard.svg",
   },
 
   {
