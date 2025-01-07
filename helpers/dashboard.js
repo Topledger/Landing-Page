@@ -56,6 +56,18 @@ export const dashboards = [
   },
   {
     id: 39,
+    name: "Sonic frontier V0",
+    href: "https://analytics.topledger.xyz/sonic/public/dashboards/HU4ssmiglZl2WlfBuDUtaHhfa4EfmLAtJQzNTDYn",
+    icon: "/assets/images/dashboards/sonic.svg",
+  },
+  {
+    id: 38,
+    name: "Sonic frontier V1",
+    href: "https://analytics.topledger.xyz/sonic/public/dashboards/KpwkxhG5izxxQk6XT9LeAqe10PFeAKYqG3BCrMdR",
+    icon: "/assets/images/dashboards/sonic.svg",
+  },
+  {
+    id: 37,
     name: "Switchboard",
     href: "https://analytics.topledger.xyz/switchboard/public/dashboards/bgtz1xBaS8pNNG4IKqfHqurfkOG9VKxMa9LRcl0K",
     icon: "/assets/images/dashboards/switchboard.svg",
