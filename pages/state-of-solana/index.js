@@ -169,7 +169,7 @@ const StateOfSolana = () => {
                                 />
                                 {loading[dashboard?.id] !== false && (
                                     <div className="loading">
-                                        <div class="loading-indicator">
+                                        <div className="loading-indicator">
                                             <div id="shadow"></div>
                                             <img
                                                 id="css-logo"
