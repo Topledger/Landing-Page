@@ -1,0 +1,24 @@
+.tabsContainer {
+    display: flex;
+    gap: 1.5rem;
+    border-bottom: 1px solid #e2e8ff;
+    display: inline-flex;
+
+    .tabBtn {
+        background-color: transparent;
+        border: none;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        letter-spacing: 1%;
+        padding: 12px 0px;
+
+        cursor: pointer;
+
+        &.tabBtnSelected {
+            color: #085ed4;
+            font-weight: 500;
+            border-bottom: 1px solid #085ed4;
+            margin-bottom: -1px;
+        }
+    }
+}

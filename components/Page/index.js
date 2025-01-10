@@ -13,7 +13,7 @@ const Body = ({ children, header }) => (
 );
 
 const Page = ({ title, children, header = true }) => (
-  <div className="page">
+  <div className={cx("page", styles.page)}>
     <Head>
       <meta charSet="UTF-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -34,7 +34,7 @@ const Page = ({ title, children, header = true }) => (
   Solana Dashboard, P2E Games, Magic Eden, Web3, SQL"
       ></meta>
     </Head>
-    <div className="page-content">
+    <div className={cx("page-content", styles.pageContent)}>
       {header && <Header />}
       <Body header={header}>{children}</Body>
     </div>
