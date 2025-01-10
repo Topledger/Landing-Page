@@ -11,6 +11,7 @@ const Tabs = ({ children, onChange, activeKey }) => {
                 <div className={styles.tabsContainer}>
                     {children.map((child) => (
                         <button
+                            key={child.props.tab}
                             onClick={() => onChange(child.props.tab)}
                             className={cx(styles.tabBtn, {
                                 [styles.tabBtnSelected]:
@@ -27,9 +28,11 @@ const Tabs = ({ children, onChange, activeKey }) => {
     );
 };
 
-Tabs.TabPane = ({ children, tab }) => {
+const TabPane = ({ children, tab }) => {
     const { activeKey, onChange } = useContext(TabContext);
     return activeKey === tab && <div>{children}</div>;
 };
+
+Tabs.TabPane = TabPane;
 
 export default Tabs;
