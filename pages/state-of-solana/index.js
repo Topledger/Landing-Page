@@ -34,15 +34,15 @@ const userWalletDashboards = [
     {
         wallet_dashboard: {
             id: 1,
-            title: "Overview",
+            title: "DEX Overview",
             org_slug: "tl",
-            api_key: "0Cm9R8K8xu4vq93Ljb88UJDtWr6jwTM1V9AGMQQo",
+            api_key: "Jix7XZI0p41oMZ7pEVhcW1vCydMvgIsdy5Q7ma4D",
         },
     },
     {
         wallet_dashboard: {
             id: 2,
-            title: "DEXs",
+            title: "REV",
             org_slug: "tl",
             api_key: "0Cm9R8K8xu4vq93Ljb88UJDtWr6jwTM1V9AGMQQo",
         },
@@ -50,19 +50,12 @@ const userWalletDashboards = [
     {
         wallet_dashboard: {
             id: 3,
-            title: "NFT Ecosystem",
+            title: "Block Rewards",
             org_slug: "tl",
-            api_key: "0Cm9R8K8xu4vq93Ljb88UJDtWr6jwTM1V9AGMQQo",
+            api_key: "JHrjYsFXzCEcSgpBS6RCCpZqV6dQMCKyn3sgGJon",
         },
     },
-    {
-        wallet_dashboard: {
-            id: 4,
-            title: "DePINs",
-            org_slug: "tl",
-            api_key: "0Cm9R8K8xu4vq93Ljb88UJDtWr6jwTM1V9AGMQQo",
-        },
-    },
+    
 ];
 
 const StateOfSolana = () => {
