@@ -30,6 +30,7 @@ const NO_HEADER_FOOTER_PATHS = [
   "/research",
   "/privacy-policy",
   "/tnc",
+  "/state-of-solana",
 ];
 
 function MyApp({ Component, pageProps }) {
@@ -69,7 +70,7 @@ function MyApp({ Component, pageProps }) {
                 {router.pathname.includes("thanks") ? null : <Header />}
                 <Component {...pageProps} />
                 {router.pathname.includes("thanks") ||
-                router.pathname.includes("dashboard") ? null : (
+                  router.pathname.includes("dashboard") ? null : (
                   <Footer />
                 )}
               </>

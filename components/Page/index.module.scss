@@ -3,3 +3,14 @@ $header-height: 88px;
 .pageBody {
   margin-top: $header-height;
 }
+
+.page {
+  min-height: 100vh;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageContent {
+  flex: 1;
+}
