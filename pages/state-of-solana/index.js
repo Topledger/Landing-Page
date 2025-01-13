@@ -42,6 +42,14 @@ const userWalletDashboards = [
     {
         wallet_dashboard: {
             id: 2,
+            title: "NFT Overview",
+            org_slug: "tl",
+            api_key: "kDQ2VM88nre4oLa3qwhotrCXB5ZeCg4yiDWKC48d",
+        },
+    },
+    {
+        wallet_dashboard: {
+            id: 3,
             title: "REV",
             org_slug: "tl",
             api_key: "0Cm9R8K8xu4vq93Ljb88UJDtWr6jwTM1V9AGMQQo",
