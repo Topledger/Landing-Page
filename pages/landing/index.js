@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Page from "@/components/Page";
+import Announceband from "@/components/announceband";
 
 import LandingHeroSection from "./components/LandingHeroSection";
 import ArticleSection from "./components/ArticleSection";
@@ -328,6 +329,7 @@ const LandingPage = () => {
         {/* Canonical Link */}
         <link rel="canonical" href="https://www.topledger.xyz/" />
       </Head>
+      <Announceband />
       <LandingHeroSection />
       <ArticleSection articles={articles} />
       <OutcomesSection outcomes={outcomes} />

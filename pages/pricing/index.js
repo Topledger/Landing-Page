@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import Page from "@/components/Page";
 import PricingSection from "./components/PricingSection";
 import QueryFormModal from "@/components/QueryForm/QueryFormModal";
-
 const pricing = [
   {
     media: {
@@ -191,6 +190,7 @@ const Web3TeamsPage = () => {
         <link rel="canonical" href="https://www.topledger.xyz/pricing" />
       </Head>
       <Header />
+      
       <PricingSection
         pricing={pricing}
         enterpricePricingPlan={enterpricePricingPlan}
