@@ -57,7 +57,7 @@ const userWalletDashboards = [
     },
     {
         wallet_dashboard: {
-            id: 3,
+            id: 4,
             title: "Block Rewards",
             org_slug: "tl",
             api_key: "JHrjYsFXzCEcSgpBS6RCCpZqV6dQMCKyn3sgGJon",
