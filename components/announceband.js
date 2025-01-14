@@ -6,7 +6,7 @@ import { BoldOutlined } from "@ant-design/icons";
 const AnnouncementBand = () => {
   return (
     <div style={styles.band}>
-      Real time solana data streams to create trading platforms like GMGM.{" "}
+      Real time solana data streams to create trading platforms like GMGN.{" "}
       <a onClick={() => QueryFormModal.show()} style={{ cursor: 'pointer', ...styles.link }}>
         Contact
       </a>
