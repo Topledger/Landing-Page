@@ -2,7 +2,7 @@
     font-size: 21px;
     line-height: 1.25;
     letter-spacing: 1%;
-    color: #374151;
+    color: var(--title-color, #374151);
     padding-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -14,16 +14,180 @@
 .dashboardSection {
     padding: 1.5rem 4rem;
     min-height: 40rem;
+    background-color: var(--dashboard-section-bg, "white");
+
     :global {
         .tl-dashboards.public-dashboard-page {
             background-color: transparent;
-
             .tl-dashboard-container {
                 padding-left: 0;
                 padding-right: 0;
                 .dashboard-wrapper.preview-mode {
                     > .react-grid-layout {
                         margin-right: 0;
+                    }
+                }
+
+                .dashboard-widget-wrapper {
+                    .widget-wrapper {
+                        .tile.body-container.widget-visualization {
+                            background-color: var(
+                                --dashboard-widget-bg,
+                                "white"
+                            );
+
+                            .widget-header {
+                                .visualization-name {
+                                    color: var(
+                                        --dashboard-widget-title-text-color,
+                                        rgba(0, 0, 0, 0.8)
+                                    );
+                                }
+                                .th-title
+                                    > p
+                                    > span.query-link
+                                    > span:nth-child(2) {
+                                    color: var(
+                                        --dashboard-widget-title-text-color,
+                                        rgba(0, 0, 0, 0.8)
+                                    );
+                                }
+                            }
+
+                            .counter-visualization-content {
+                                .counter-visualization-value {
+                                    color: var(
+                                        --dashboard-widget-counter-value-color,
+                                        #595959
+                                    );
+                                }
+                                .counter-visualization-label {
+                                    color: var(
+                                        --dashboard-widget-counter-label-color,
+                                        #595959
+                                    );
+                                }
+                            }
+                            .table-visualization-container {
+                                .ant-table {
+                                    backdrop-filter: blur(32px);
+                                    background: var(
+                                        --dashboard-widget-table-bg,
+                                        #4a4f54
+                                    ) !important;
+                                    .ant-table-thead {
+                                        th {
+                                            background: var(
+                                                --dashboard-widget-table-header-bg,
+                                                #3a3f44
+                                            ) !important;
+                                        }
+                                    }
+                                    tr {
+                                        td {
+                                            vertical-align: middle;
+                                            text-align: left !important;
+                                            div {
+                                                display: inline-flex;
+                                                align-items: center;
+                                                justify-content: flex-start;
+                                            }
+                                        }
+                                    }
+                                    * {
+                                        color: var(
+                                            --dashboard-widget-viz-chart-text-color
+                                        );
+                                    }
+                                }
+                                .ant-pagination {
+                                    .ant-pagination-item {
+                                        a {
+                                            color: #6a5cff !important;
+                                        }
+                                        &-active {
+                                            a {
+                                                color: #4938ff !important;
+                                            }
+                                        }
+                                    }
+                                    &-disabled {
+                                        .ant-pagination-item-link {
+                                            opacity: 0.6;
+                                        }
+                                    }
+                                    .ant-pagination-item-link {
+                                        svg {
+                                            color: var(
+                                                --dashboard-widget-viz-chart-text-color
+                                            );
+                                        }
+                                    }
+                                }
+                            }
+                            .chart-visualization-container {
+                                svg.main-svg {
+                                    background-color: var(
+                                        --dashboard-widget-viz-chart-bg,
+                                        transparent
+                                    ) !important;
+
+                                    .infolayer {
+                                        .legend {
+                                            rect.bg {
+                                                fill: var(
+                                                    --dashboard-widget-viz-chart-bg,
+                                                    transparent
+                                                ) !important;
+                                            }
+
+                                            .legendtext {
+                                                fill: var(
+                                                    --dashboard-widget-viz-legend-text-color,
+                                                    rgb(0, 0, 0)
+                                                ) !important;
+                                            }
+                                        }
+                                        .annotation {
+                                            text {
+                                                fill: var(
+                                                    --dashboard-widget-viz-chart-text-color,
+                                                    rgb(68, 68, 68)
+                                                ) !important;
+                                            }
+                                        }
+                                        .xtitle,
+                                        .ytitle {
+                                            fill: var(
+                                                --dashboard-widget-viz-chart-text-color,
+                                                rgb(68, 68, 68)
+                                            ) !important;
+                                        }
+                                    }
+
+                                    .cartesianlayer {
+                                        .xtick,
+                                        .ytick {
+                                            text {
+                                                fill: var(
+                                                    --dashboard-widget-viz-chart-text-color,
+                                                    rgb(68, 68, 68)
+                                                ) !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .body-row.tile__bottom-control {
+                                span {
+                                    color: var(
+                                        --dashboard-widget-title-text-color,
+                                        #595959
+                                    );
+                                }
+                            }
+                        }
                     }
                 }
             }

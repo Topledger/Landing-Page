@@ -1,10 +1,11 @@
 .tabsContainer {
     display: flex;
     gap: 1.5rem;
-    border-bottom: 1px solid #e2e8ff;
+    border-bottom: 1px solid var(--tab-border-color, #e2e8ff);
     display: inline-flex;
 
     .tabBtn {
+        color: var(--tab-color, #374151);
         background-color: transparent;
         border: none;
         font-size: 0.875rem;
@@ -15,9 +16,9 @@
         cursor: pointer;
 
         &.tabBtnSelected {
-            color: #085ed4;
+            color: var(--tab-selected-color, #085ed4);
             font-weight: 500;
-            border-bottom: 1px solid #085ed4;
+            border-bottom: 1px solid var(--tab-selected-color, #085ed4);
             margin-bottom: -1px;
         }
     }

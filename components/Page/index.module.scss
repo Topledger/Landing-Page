@@ -1,16 +1,35 @@
 $header-height: 88px;
 
 .pageBody {
-  margin-top: $header-height;
+    margin-top: $header-height;
 }
 
 .page {
-  min-height: 100vh;
-  top: 0;
-  display: flex;
-  flex-direction: column;
+    min-height: 100vh;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--page-bg, transparent);
 }
 
 .pageContent {
-  flex: 1;
+    flex: 1;
+}
+
+.theme-dark {
+    --page-bg: #0d0f11;
+    --title-color: #b8c0cc;
+    --dashboard-section-bg: #0d0f11;
+    --dashboard-widget-bg: #191d23;
+    --dashboard-widget-title-text-color: #b8c0cc;
+    --dashboard-widget-counter-value-color: #e3e3e3;
+    --dashboard-widget-counter-label-color: #b8c0cc;
+    --dashboard-widget-viz-chart-bg: transparent;
+    --header-bg: #191d23;
+    --header-menu-link-color: #e3e3e3;
+    --tab-color: #b8c0cc;
+    --tab-selected-color: #5395cf;
+    --tab-border-color: transparent;
+    --dashboard-widget-viz-legend-text-color: #b8c0cc;
+    --dashboard-widget-viz-chart-text-color: #b8c0cc;
 }

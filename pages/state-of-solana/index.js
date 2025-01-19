@@ -55,10 +55,12 @@ const userWalletDashboards = [
             api_key: "JHrjYsFXzCEcSgpBS6RCCpZqV6dQMCKyn3sgGJon",
         },
     },
-    
 ];
+const showThemeToggle = false;
+const defaultTheme = "dark";
 
 const StateOfSolana = () => {
+    const [theme, setTheme] = useState(defaultTheme);
     const [loading, setLoading] = useState({});
     const [activeTab, setActiveTab] = useState(
         userWalletDashboards[0]?.wallet_dashboard?.id
@@ -73,7 +75,40 @@ const StateOfSolana = () => {
     };
 
     return (
-        <Page>
+        <Page theme={theme} footer>
+            {/* enable theme switcher */}
+            {showThemeToggle && (
+                <div
+                    style={{
+                        position: "fixed",
+                        top: 10,
+                        right: 160,
+                        zIndex: 999,
+                        color: theme === "dark" ? "white" : "black",
+                    }}
+                >
+                    <label htmlFor="default">
+                        Default
+                        <input
+                            type="radio"
+                            name="theme"
+                            id="default"
+                            checked={theme === "default"}
+                            onClick={() => setTheme("default")}
+                        />
+                    </label>
+                    <label htmlFor="dark">
+                        Dark
+                        <input
+                            type="radio"
+                            name="theme"
+                            id="dark"
+                            checked={theme === "dark"}
+                            onClick={() => setTheme("dark")}
+                        />
+                    </label>
+                </div>
+            )}
             <Head>
                 <title>Top Ledger - {pageTitle}</title>
                 <meta name="description" content={pageDescription} />
@@ -153,7 +188,15 @@ const StateOfSolana = () => {
                                     client={dashboard?.org_slug}
                                     token={dashboard?.api_key}
                                     className={styles.dashboard}
-                                    loader={<Loader />}
+                                    loader={
+                                        <Loader
+                                            color={
+                                                theme === "dark"
+                                                    ? "#a4afd6"
+                                                    : "#1a3989"
+                                            }
+                                        />
+                                    }
                                     onDashboardLoad={() =>
                                         setTabLoading(dashboard?.id, false)
                                     }
