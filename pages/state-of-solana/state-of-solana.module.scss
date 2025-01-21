@@ -31,6 +31,7 @@
                 .dashboard-widget-wrapper {
                     .widget-wrapper {
                         .tile.body-container.widget-visualization {
+                            border-radius: 4px;
                             background-color: var(
                                 --dashboard-widget-bg,
                                 "white"
@@ -47,6 +48,8 @@
                                     > p
                                     > span.query-link
                                     > span:nth-child(2) {
+                                    font-size: 14px;
+                                    line-height: 20px;
                                     color: var(
                                         --dashboard-widget-title-text-color,
                                         rgba(0, 0, 0, 0.8)
@@ -55,17 +58,28 @@
                             }
 
                             .counter-visualization-content {
+                                & > div {
+                                    transform: scale(1) !important;
+                                }
                                 .counter-visualization-value {
                                     color: var(
                                         --dashboard-widget-counter-value-color,
                                         #595959
                                     );
+                                    font-size: 24px;
+                                    line-height: 29px;
+                                    letter-spacing: 1%;
                                 }
                                 .counter-visualization-label {
+                                    margin-top: 0.75rem;
                                     color: var(
                                         --dashboard-widget-counter-label-color,
                                         #595959
                                     );
+
+                                    font-size: 14px;
+                                    line-height: 20px;
+                                    letter-spacing: 1%;
                                 }
                             }
                             .table-visualization-container {
@@ -124,13 +138,23 @@
                                         }
                                     }
                                 }
+                                // font-size: 14px;
+                                // line-height: 21px;
                             }
                             .chart-visualization-container {
+                                transform: scale(0.95);
                                 svg.main-svg {
                                     background-color: var(
                                         --dashboard-widget-viz-chart-bg,
                                         transparent
                                     ) !important;
+
+                                    text {
+                                        font-family: "Inter", "Helvetica Neue",
+                                            "Helvetica 45 Light", sans-serif !important;
+                                        line-height: 1.2 !important;
+                                        letter-spacing: 0.2px !important;
+                                    }
 
                                     .infolayer {
                                         .legend {
@@ -173,6 +197,27 @@
                                                     --dashboard-widget-viz-chart-text-color,
                                                     rgb(68, 68, 68)
                                                 ) !important;
+                                                font-size: 14px !important;
+                                            }
+                                        }
+                                        .xtick {
+                                            transform: translate(0, 8px);
+                                        }
+                                        .ytick {
+                                            transform: translate(0px, 0);
+                                        }
+
+                                        .gridlayer {
+                                            .ygrid.crisp {
+                                                stroke: #334e68 !important;
+                                            }
+                                        }
+                                    }
+
+                                    .pielayer {
+                                        .slicetext {
+                                            text {
+                                                fill: transparent !important;
                                             }
                                         }
                                     }
