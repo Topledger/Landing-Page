@@ -56,9 +56,9 @@ export const dashboards = [
   },
   {
     id: 39,
-    name: "Sonic frontier V0",
-    href: "https://analytics.topledger.xyz/sonic/public/dashboards/HU4ssmiglZl2WlfBuDUtaHhfa4EfmLAtJQzNTDYn",
-    icon: "/assets/images/dashboards/sonic.svg",
+    name: "Raydium",
+    href: "https://analytics.topledger.xyz/raydium/public/dashboards/dmOdxtVTiAMZQL6A2OqgA5pgZXKnBfcJyxEAYmBk?p_Date%20Type=Day",
+    icon: "/assets/images/dashboards/raydiumlogo.svg",
   },
   {
     id: 38,
@@ -91,18 +91,7 @@ export const dashboards = [
     href: "https://analytics.topledger.xyz/solana/public/dashboards/C0Akx84ngP4mEK6XOnwXUbOhHI5aJfUaiDc2jxqW",
     icon: "/assets/images/dashboards/solana.svg",
   },
-  {
-    id: 20,
-    name: "Drip",
-    href: "https://analytics.topledger.xyz/tl/public/dashboards/7XqwqSZ3r7aYD5EVBwd67VHQ3Y1pXrq0agQptxuU",
-    icon: "/assets/images/dashboards/drip logo.svg",
-  },
-  {
-    id: 16,
-    name: "Tensor",
-    href: "https://analytics.topledger.xyz/tensor/public/dashboards/8JQea3zqnCIfMDkeW4pmVZ2pf0CmYraCF71XKjKV",
-    icon: "/assets/images/dashboards/tensor logo.svg",
-  },
+  
   {
     id: 9,
     name: "Liquid staking",
