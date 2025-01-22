@@ -56,7 +56,7 @@ const userWalletDashboards = [
         },
     },
 ];
-const showThemeToggle = false;
+const showThemeToggle = true;
 const defaultTheme = "dark";
 
 const StateOfSolana = () => {
