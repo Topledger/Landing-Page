@@ -23,7 +23,7 @@ const ContactUs = () => {
           target="_blank"
           noArrow
         >
-          DONNA ANALYTICS PRIVATE LIMITED <br />
+          Donna Analytics Pvt Ltd <br />
 CIN: U72200RJ2022PTC082273 <br />
 GSTIN: 08AAJCD3910G1ZT
         </Button.Link>
