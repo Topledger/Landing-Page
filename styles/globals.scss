@@ -1854,19 +1854,27 @@ body.theme-dark {
             .ant-modal-body {
                 @include widget-darkmode;
             }
-
-            .ant-modal-footer {
-                .ant-btn {
-                    background-color: var(--modal-footer-btn-bg);
-                    border-color: var(--modal-footer-btn-border);
-                    color: var(--dashboard-widget-title-text-color);
-                }
-            }
         }
     }
 
     .zmdi.zmdi-fullscreen {
         color: var(--dashboard-widget-title-text-color);
+    }
+
+    .parameter-container {
+        .parameter-apply-button {
+            background-color: transparent;
+        }
+    }
+
+    .ant-btn {
+        background-color: var(--ant-btn-bg);
+        border-color: var(--ant-btn-border);
+        color: var(--ant-btn-color);
+
+        &:hover {
+            background-color: var(--ant-btn-bg-hover) !important;
+        }
     }
 
     .ant-select {

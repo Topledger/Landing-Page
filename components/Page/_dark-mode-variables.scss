@@ -17,4 +17,9 @@
     --dashboard-widget-viz-chart-text-color: #b8c0cc;
     --dashboard-widget-table-bg: #191d23;
     --dashboard-widget-table-header-bg: #17171a;
+
+    --ant-btn-bg: var(--dashboard-widget-bg);
+    --ant-btn-border: var(--modal-footer-btn-border);
+    --ant-btn-color: var(--dashboard-widget-title-text-color);
+    --ant-btn-bg-hover: #292d33;
 }

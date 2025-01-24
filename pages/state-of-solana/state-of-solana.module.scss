@@ -24,6 +24,10 @@
             .tl-dashboard-container {
                 padding-left: 0;
                 padding-right: 0;
+
+                .rd-timer {
+                    background-color: transparent;
+                }
                 .dashboard-wrapper.preview-mode {
                     > .react-grid-layout {
                         margin-right: 0;
@@ -41,7 +45,7 @@
                             // box-shadow: rgba(102, 136, 153, 0.15) 0px 4px 9px -3px;
                             box-shadow: none;
                             border: 1px solid
-                                var(--dashboard-widget-border, #e3e3e3);
+                                var(--dashboard-widget-border, transparent);
 
                             .widget-header {
                                 .visualization-name {
