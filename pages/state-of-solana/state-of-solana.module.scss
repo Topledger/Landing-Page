@@ -1,8 +1,10 @@
+@import "widget-darkmode.scss";
+
 .pageTitle {
     font-size: 21px;
     line-height: 1.25;
     letter-spacing: 1%;
-    color: #374151;
+    color: var(--title-color, #374151);
     padding-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -14,16 +16,70 @@
 .dashboardSection {
     padding: 1.5rem 4rem;
     min-height: 40rem;
+    background-color: var(--dashboard-section-bg, "white");
+
     :global {
         .tl-dashboards.public-dashboard-page {
             background-color: transparent;
-
             .tl-dashboard-container {
                 padding-left: 0;
                 padding-right: 0;
+
+                .rd-timer {
+                    background-color: transparent;
+                }
                 .dashboard-wrapper.preview-mode {
                     > .react-grid-layout {
                         margin-right: 0;
+                    }
+                }
+
+                .dashboard-widget-wrapper {
+                    .widget-wrapper {
+                        .tile.body-container.widget-visualization {
+                            border-radius: 4px;
+                            background-color: var(
+                                --dashboard-widget-bg,
+                                "white"
+                            );
+                            // box-shadow: rgba(102, 136, 153, 0.15) 0px 4px 9px -3px;
+                            box-shadow: none;
+                            border: 1px solid
+                                var(--dashboard-widget-border, transparent);
+
+                            .widget-header {
+                                .visualization-name {
+                                    color: var(
+                                        --dashboard-widget-title-text-color,
+                                        rgba(0, 0, 0, 0.8)
+                                    );
+                                }
+                                .th-title
+                                    > p
+                                    > span.query-link
+                                    > span:nth-child(2) {
+                                    font-size: 14px;
+                                    line-height: 20px;
+                                    color: var(
+                                        --dashboard-widget-title-text-color,
+                                        rgba(0, 0, 0, 0.8)
+                                    );
+                                }
+
+                                .parameter-container {
+                                    .parameter-block {
+                                        .parameter-heading {
+                                            color: var(
+                                                --dashboard-widget-title-text-color,
+                                                rgba(0, 0, 0, 0.8)
+                                            );
+                                        }
+                                        background-color: transparent;
+                                    }
+                                }
+                            }
+                            @include widget-darkmode;
+                        }
                     }
                 }
             }

@@ -8,7 +8,7 @@ $header-height: 88px;
     width: 100%;
     /* width: 100vw; */
     height: $header-height;
-    background-color: #eef2fc;
+    background-color: var(--header-bg, #eef2fc);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,7 +102,7 @@ $header-height: 88px;
 
     &,
     & a {
-        color: #4e618d;
+        color: var(--header-menu-link-color, #4e618d);
         font-size: 1rem;
         font-weight: 500;
         letter-spacing: 0.32px;

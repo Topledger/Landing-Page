@@ -1,16 +1,23 @@
+@import "dark-mode-variables";
+
 $header-height: 88px;
 
 .pageBody {
-  margin-top: $header-height;
+    margin-top: $header-height;
 }
 
 .page {
-  min-height: 100vh;
-  top: 0;
-  display: flex;
-  flex-direction: column;
+    min-height: 100vh;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--page-bg, transparent);
 }
 
 .pageContent {
-  flex: 1;
+    flex: 1;
+}
+
+.theme-dark {
+    @include dark-mode-vars;
 }

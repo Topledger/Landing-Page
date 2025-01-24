@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "components/Page/dark-mode-variables";
+@import "pages/state-of-solana/_widget-darkmode.scss";
 /* @import url("http://fonts.cdnfonts.com/css/helvetica-neue-9"); */
 /* @import url("/assets/font/HelveticaNeue.ttc"); */
 
@@ -1831,4 +1833,76 @@ main.page-main {
     background-size: cover;
     background-position: 50% 50%;
     background-attachment: fixed;
+}
+
+body.theme-dark {
+    @include dark-mode-vars;
+
+    .ant-modal-root {
+        .ant-modal-content {
+            background-color: var(--dashboard-widget-bg);
+            .ant-modal-close-x svg {
+                color: var(--dashboard-widget-title-text-color);
+            }
+
+            .ant-modal-header {
+                background-color: transparent;
+                .ant-modal-title {
+                    color: var(--dashboard-widget-title-text-color);
+                }
+            }
+            .ant-modal-body {
+                @include widget-darkmode;
+            }
+        }
+    }
+
+    .zmdi.zmdi-fullscreen {
+        color: var(--dashboard-widget-title-text-color);
+    }
+
+    .parameter-container {
+        .parameter-apply-button {
+            background-color: transparent;
+        }
+    }
+
+    .ant-btn {
+        background-color: var(--ant-btn-bg);
+        border-color: var(--ant-btn-border);
+        color: var(--ant-btn-color);
+
+        &:hover {
+            background-color: var(--ant-btn-bg-hover) !important;
+        }
+    }
+
+    .ant-select {
+        &-arrow,
+        &-clear {
+            &,
+            & svg {
+                color: var(--tab-selected-color);
+            }
+        }
+        &-selector {
+            background-color: var(--dashboard-widget-bg) !important;
+            border: 1px solid var(--dashboard-widget-border) !important;
+            color: var(--dashboard-widget-title-text-color);
+        }
+
+        &-dropdown {
+            background-color: var(--dashboard-widget-bg) !important;
+            border: 1px solid var(--dashboard-widget-border) !important;
+            .ant-select-item-option {
+                color: var(--dashboard-widget-title-text-color);
+                &-selected {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+                &-active {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
 }
