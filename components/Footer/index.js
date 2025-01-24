@@ -151,7 +151,7 @@ const Footer = () => {
               </Button.Link>
             </span>
             <Button.Link tertiary color="#374151" className={styles.copyLink}>
-              © 2024, Top Ledger, All rights reserved
+              © 2025, Top Ledger, All rights reserved
             </Button.Link>
           </div>
         </MobileOnly>

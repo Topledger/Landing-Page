@@ -23,7 +23,9 @@ const ContactUs = () => {
           target="_blank"
           noArrow
         >
-          Fraser Street #05-25 Duo Tower Singapore
+          Donna Analytics Pvt Ltd <br />
+CIN: U72200RJ2022PTC082273 <br />
+GSTIN: 08AAJCD3910G1ZT
         </Button.Link>
       </div>
       <div

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Page from "@/components/Page";
 
+import Announceband from "@/components/announceband";
 import TrialSection from "@/components/TrialSection";
 import PrivacySection from "./components/PrivacySection";
 
@@ -143,6 +144,7 @@ const ResearchPage = () => {
         <link rel="canonical" href="https://www.topledger.xyz/privacy-policy" />
       </Head>
       <Header />
+      <Announceband />
       <PrivacySection
         title={pageTitle}
         description={pageDescription}

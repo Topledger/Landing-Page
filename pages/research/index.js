@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Page from "@/components/Page";
+import Announceband from "@/components/announceband";
 
 import ResearchHeroSection from "./components/ResearchHeroSection";
 
@@ -158,6 +159,7 @@ const ResearchPage = () => {
         <link rel="canonical" href="https://www.topledger.xyz/research" />
       </Head>
       <Header />
+      <Announceband />
       <ResearchHeroSection />
       <PrivateCloudSection sections={privateCloud} />
       <FeatureSuiteSection features={featureSuites} />

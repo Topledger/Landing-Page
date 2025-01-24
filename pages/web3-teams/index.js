@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Page from "@/components/Page";
+import Announceband from "@/components/announceband";
 
 import Web3HeroSection from "./components/Web3HeroSection";
 
@@ -270,6 +271,7 @@ const Web3TeamsPage = ({ dashboards }) => {
         <link rel="canonical" href="https://www.topledger.xyz/web3-teams" />
       </Head>
       <Header />
+      <Announceband />
       <Web3HeroSection />
       <FeaturesSection features={features} />
       <DashboardsSection dashboards={dashboards} />
