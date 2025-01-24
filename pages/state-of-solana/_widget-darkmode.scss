@@ -153,10 +153,9 @@
                 }
 
                 .gridlayer {
-                    .xgrid.crisp {
-                        stroke: #334e68 !important;
-                    }
-                    .ygrid.crisp {
+                    .xgrid.crisp,
+                    .ygrid.crisp,
+                    .y2grid.crisp {
                         stroke: #334e68 !important;
                     }
                 }
