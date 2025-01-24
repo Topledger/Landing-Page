@@ -74,8 +74,18 @@ const StateOfSolana = () => {
         }));
     };
 
+    useEffect(() => {
+        if (theme === "dark") {
+            document.body.classList.add("theme-dark");
+        } else {
+            document.body.classList.remove("theme-dark");
+        }
+
+        return () => document.body.classList.remove("theme-dark");
+    }, [theme]);
+
     return (
-        <Page theme={theme} footer>
+        <Page theme={theme} footer={false}>
             {/* enable theme switcher */}
             {showThemeToggle && (
                 <div

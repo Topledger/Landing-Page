@@ -1,0 +1,20 @@
+@mixin dark-mode-vars {
+    --page-bg: #0d0f11;
+    --title-color: #b8c0cc;
+    --dashboard-section-bg: #0d0f11;
+    --dashboard-widget-bg: #191d23;
+    --dashboard-widget-border: #282f3a;
+    --dashboard-widget-title-text-color: #b8c0cc;
+    --dashboard-widget-counter-value-color: #e3e3e3;
+    --dashboard-widget-counter-label-color: #b8c0cc;
+    --dashboard-widget-viz-chart-bg: transparent;
+    --header-bg: #191d23;
+    --header-menu-link-color: #e3e3e3;
+    --tab-color: #b8c0cc;
+    --tab-selected-color: #5395cf;
+    --tab-border-color: transparent;
+    --dashboard-widget-viz-legend-text-color: #b8c0cc;
+    --dashboard-widget-viz-chart-text-color: #b8c0cc;
+    --dashboard-widget-table-bg: #191d23;
+    --dashboard-widget-table-header-bg: #17171a;
+}
