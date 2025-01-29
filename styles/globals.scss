@@ -1837,6 +1837,7 @@ main.page-main {
 
 body.theme-dark {
     @include dark-mode-vars;
+    background-color: var(--page-bg);
 
     .ant-modal-root {
         .ant-modal-content {

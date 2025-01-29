@@ -6,6 +6,8 @@ import Page from "@/components/Page";
 import Head from "next/head";
 import Header from "@/components/Header";
 import Tabs from "@/components/Tabs";
+import AppHeader from "@/components/AppHeader";
+import AppFooter from "@/components/AppFooter";
 
 const pageTitle = "State of Solana";
 const pageDescription =
@@ -93,7 +95,7 @@ const StateOfSolana = () => {
     }, [theme]);
 
     return (
-        <Page theme={theme} footer={false}>
+        <Page theme={theme} footer={false} header={false}>
             {/* enable theme switcher */}
             {showThemeToggle && (
                 <div
@@ -188,7 +190,8 @@ const StateOfSolana = () => {
                     href="https://www.topledger.xyz/privacy-policy"
                 />
             </Head>
-            <Header pageType="wide" />
+            {/* <Header pageType="wide" /> */}
+            <AppHeader pageType="wide" />
             <div className={styles.dashboardSection}>
                 <h1 className={styles.pageTitle}>{pageTitle}</h1>
                 <Tabs
@@ -239,6 +242,7 @@ const StateOfSolana = () => {
                     )}
                 </Tabs>
             </div>
+            <AppFooter />
         </Page>
     );
 };
