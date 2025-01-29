@@ -41,17 +41,10 @@ const userWalletDashboards = [
             api_key: "Jix7XZI0p41oMZ7pEVhcW1vCydMvgIsdy5Q7ma4D",
         },
     },
+    
     {
         wallet_dashboard: {
             id: 2,
-            title: "NFT Overview",
-            org_slug: "tl",
-            api_key: "kDQ2VM88nre4oLa3qwhotrCXB5ZeCg4yiDWKC48d",
-        },
-    },
-    {
-        wallet_dashboard: {
-            id: 3,
             title: "REV",
             org_slug: "tl",
             api_key: "0Cm9R8K8xu4vq93Ljb88UJDtWr6jwTM1V9AGMQQo",
@@ -59,7 +52,7 @@ const userWalletDashboards = [
     },
     {
         wallet_dashboard: {
-            id: 4,
+            id: 3,
             title: "Block Rewards",
             org_slug: "tl",
             api_key: "JHrjYsFXzCEcSgpBS6RCCpZqV6dQMCKyn3sgGJon",
