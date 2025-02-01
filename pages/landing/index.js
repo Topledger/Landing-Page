@@ -94,7 +94,7 @@ const articles = [
     },
     {
         id: 4,
-        tags: [{ text: "Everyone", color: "#D4996D" }],
+        tags: [{ text: "Institutions", color: "#D4996D" }],
         title: "Historical raw & decoded data",
         titleMobile: "Historical raw & decoded data",
         description:
@@ -104,7 +104,7 @@ const articles = [
             actionElements: [
                 {
                     type: "link",
-                    text: "Coming soon",
+                    text: "Get access",
                     primary: true,
                     onClick: () => QueryFormModal.show(),
                     style: {
