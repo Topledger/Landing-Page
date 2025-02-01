@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import dynamic from "next/dynamic";
 import Loader from "pages/programs/components/Loader";
 import styles from "./state-of-solana.module.scss";
 import Page from "@/components/Page";
 import Head from "next/head";
-import Header from "@/components/Header";
+
 import Tabs from "@/components/Tabs";
 import AppHeader from "@/components/AppHeader";
 import AppFooter from "@/components/AppFooter";
@@ -41,7 +41,7 @@ const userWalletDashboards = [
             api_key: "Jix7XZI0p41oMZ7pEVhcW1vCydMvgIsdy5Q7ma4D",
         },
     },
-    
+
     {
         wallet_dashboard: {
             id: 2,
@@ -192,15 +192,15 @@ const StateOfSolana = () => {
                     activeKey={activeTab}
                 >
                     {userWalletDashboards?.map(
-                        ({ wallet_dashboard: dashboard } = {}) => (
+                        ({ wallet_dashboard: wdashboard } = {}) => (
                             <Tabs.TabPane
-                                tab={dashboard.id}
-                                key={dashboard?.id}
-                                title={dashboard?.title}
+                                tab={wdashboard.id}
+                                key={wdashboard?.id}
+                                title={wdashboard?.title}
                             >
                                 <TLDashboards
-                                    client={dashboard?.org_slug}
-                                    token={dashboard?.api_key}
+                                    client={wdashboard?.org_slug}
+                                    token={wdashboard?.api_key}
                                     className={styles.dashboard}
                                     loader={
                                         <Loader
@@ -211,13 +211,14 @@ const StateOfSolana = () => {
                                             }
                                         />
                                     }
-                                    onDashboardLoad={() =>
-                                        setTabLoading(dashboard?.id, false)
-                                    }
+                                    onDashboardLoad={(...params) => {
+                                        // handleDashboardLoad(...params);
+                                        setTabLoading(wdashboard?.id, false);
+                                    }}
                                     // parameters={parametersRef.current}
                                     dashboardRef={dashboardRef}
                                 />
-                                {loading[dashboard?.id] !== false && (
+                                {loading[wdashboard?.id] !== false && (
                                     <div className="loading">
                                         <div className="loading-indicator">
                                             <div id="shadow"></div>
