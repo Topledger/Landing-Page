@@ -71,9 +71,9 @@ const articles = [
                 color: "#6467C5",
             },
         ],
-        title: "Top Ledger for research",
+        title: "Real-time data feeds",
         description:
-            "Forget about data integrity, speed, and infrastructure customization. Access decoded Solana data on your private cloud, including DEX trades, NFT/cNFT mints and trades, staking, DePIN, stablecoin activities, and more.",
+            "Access real-time Solana account and ledger data, including all DEX pool states, LP positions, Perpetual positions, DEX swaps, LP transactions, DePIN activities, and more.",
         image: "/assets/images/landing/article-3.jpg",
         footer: {
             actionElements: [
@@ -95,18 +95,20 @@ const articles = [
     {
         id: 4,
         tags: [{ text: "Everyone", color: "#D4996D" }],
-        title: "Top Ledger AI: Your trusted data ally",
-        titleMobile: "Top Ledger AI",
+        title: "Historical raw & decoded data",
+        titleMobile: "Historical raw & decoded data",
         description:
-            "Top Ledger AI is set to transform data analysis on Solana, simplifying large-scale insight consumption and accelerating decision-making.",
+            "Access all historical raw blocks and program-specific decoded instructions and events data in Parquet format from genesis block.",
         image: "/assets/images/landing/article-3.jpg",
         footer: {
             actionElements: [
                 {
-                    type: "comingSoon",
+                    type: "link",
                     text: "Coming soon",
+                    primary: true,
+                    onClick: () => QueryFormModal.show(),
                     style: {
-                        width: "100%",
+                        //width: "100%",
                         textAlign: "center",
                         border: "1px solid rgba(29, 148, 34, 0.14)",
                         background: "#DDF8E7",
@@ -121,7 +123,7 @@ const outcomes = [
     {
         id: 1,
         image: "/assets/images/landing/outcome-analysts.svg",
-        title: "For analysts",
+        title: "For Web3 teams",
         description:
             "Run blazingly fast SQL queries and leave auto-scaling, replication of workloads, rollup aggregations and custom data decoding to us.",
         action: {
@@ -134,9 +136,9 @@ const outcomes = [
     {
         id: 2,
         image: "/assets/images/landing/outcome-businesses.svg",
-        title: "For business people",
+        title: "For institutions",
         description:
-            "Our user-friendly interface with upcoming AI capabilities accelerates data analysis, enabling quicker, more effective problem-solving and a stronger data-driven approach in business decision-making.",
+            "Access the most trusted real-time and historical raw and decoded data for use cases such as training an AI agent, conducting industry-leading crypto research, or performing audits.",
         action: {
             type: "link",
             target: "_blank",
@@ -149,7 +151,7 @@ const outcomes = [
         image: "/assets/images/landing/outcome-developers.svg",
         title: "For developers",
         description:
-            "Boost your development with Top Ledger APIs Designed for seamless data integration on the Solana blockchain, our API empowers you to efficiently manage and query hundreds of decoded data tables.",
+            "Accelerate your development with Top Ledger APIs, built for seamless Solana account and ledger data integration. Query hundreds of decoded data tables with unmatched efficiency.",
         action: {
             type: "comingSoon",
             target: "_blank",

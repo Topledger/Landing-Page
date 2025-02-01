@@ -10,8 +10,8 @@ const LandingHeroSection = () => {
       className={styles.landingHeroSection}
       background="/assets/images/landing/block-chain-hero-80.jpg"
     >
-      <p className={styles.subHeading}>End to End</p>
-      <h1 className={styles.heading}>Blockchain Analytics</h1>
+      <p className={styles.subHeading}>Enterprise Grade</p>
+      <h1 className={styles.heading}>Blockchain Data & Analytics</h1>
       <p className={styles.description}>
         <span>Powering the best</span>
         <span className={styles.hiddenMobile}>
