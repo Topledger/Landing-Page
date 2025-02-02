@@ -42,6 +42,10 @@
                 &.ant-table-column-sort {
                     background-color: rgba(0, 0, 0, 0.1);
                 }
+
+                &-row-hover {
+                    background-color: rgba(0, 0, 0, 0.1) !important;
+                }
             }
             tr {
                 td {
@@ -51,6 +55,12 @@
                         display: inline-flex;
                         align-items: center;
                         justify-content: flex-start;
+                    }
+                }
+
+                &.ant-table-row:hover {
+                    td {
+                        background-color: rgba(0, 0, 0, 0.1) !important;
                     }
                 }
             }
