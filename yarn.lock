@@ -5311,10 +5311,10 @@ tinyqueue@^3.0.0:
   resolved "https://registry.yarnpkg.com/tinyqueue/-/tinyqueue-3.0.0.tgz#101ea761ccc81f979e29200929e78f1556e3661e"
   integrity sha512-gRa9gwYU3ECmQYv3lslts5hxuIa90veaEcxDYuu3QGOIAEM2mOZkVHp48ANJuu1CURtRdHKUBY5Lm1tHV+sD4g==
 
-tl-dashboards@2.0.1-beta1:
-  version "2.0.1-beta1"
-  resolved "https://registry.yarnpkg.com/tl-dashboards/-/tl-dashboards-2.0.1-beta1.tgz#c63fc11657d3228e46b432f85f7fb9b197b1091f"
-  integrity sha512-VdNM+1NbhzxZhOmwF6WueNfMGvLYYsL1IIdvwerXe0x0vEfAz6S8408+llku94oTiwf7NznK2CGLez8a558khg==
+tl-dashboards@2.0.1-beta3:
+  version "2.0.1-beta3"
+  resolved "https://registry.yarnpkg.com/tl-dashboards/-/tl-dashboards-2.0.1-beta3.tgz#92dcae4257505d9764ec2f52f156b162c6fbf905"
+  integrity sha512-mfNCrWclpTBMEQ+Vb1xqMYNI2DzdcgN8zYivpMvd6dA03wFPWvOIaJPdICuQi2rgxQKDP2jw7Hh9xi6cZtTV3w==
   dependencies:
     "@ant-design/v5-patch-for-react-19" "^1.0.3"
     "@loadable/component" "^5.15.3"

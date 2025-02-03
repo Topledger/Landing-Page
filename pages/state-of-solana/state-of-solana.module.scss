@@ -51,7 +51,7 @@
                                 display: flex;
                                 justify-content: space-between;
                                 align-items: center;
-                                >div {
+                                > div {
                                     margin-bottom: 0 !important;
                                 }
                                 .refresh-indicator {
@@ -65,7 +65,6 @@
                                     .parameter-heading {
                                         display: none;
                                     }
-
                                 }
                                 .visualization-name {
                                     color: var(
@@ -94,6 +93,47 @@
                                             );
                                         }
                                         background-color: transparent;
+                                    }
+
+                                    --selected-color: #282f3a;
+
+                                    .ant-radio-group {
+                                        &.ant-radio-group-solid {
+                                            border-radius: 12px;
+                                            .ant-radio-button-wrapper {
+                                                background-color: var(
+                                                    --dashboard-widget-bg
+                                                );
+                                                color: var(
+                                                    --dashboard-widget-title-text-color
+                                                );
+                                                border-color: var(
+                                                    --selected-color
+                                                );
+
+                                                &-checked {
+                                                    background-color: var(
+                                                        --selected-color
+                                                    );
+                                                    color: var(
+                                                        --dashboard-widget-title-text-color
+                                                    );
+                                                }
+                                                &::before {
+                                                    display: none;
+                                                }
+
+                                                border-width: 1px 0px;
+                                                &:first-child {
+                                                    border-left-width: 1px;
+                                                }
+                                                &:last-child {
+                                                    border-right-width: 1px;
+                                                }
+                                                align-items: center;
+                                                display: inline-flex;
+                                            }
+                                        }
                                     }
                                 }
                             }
