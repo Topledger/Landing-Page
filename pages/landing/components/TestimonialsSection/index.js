@@ -36,7 +36,7 @@ const TestimonialsSection = ({ testimonials }) => {
       style={{
         backgroundSize: "400%",
         backgroundPosition: "center center",
-        borderTop: "1px solid #E8E9FA",
+        borderTop: "1px solid #E1E9FF",
       }}
       containerClassName={styles.testimonialsSection}
       id={getId("Testimonials")}

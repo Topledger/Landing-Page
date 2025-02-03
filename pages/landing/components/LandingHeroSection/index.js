@@ -31,7 +31,7 @@ const LandingHeroSection = () => {
               alt="Solana"
             />
           </span>
-          <span>ecosystem</span>
+          <span> & <b>SVM</b> Ecosystem</span>
         </span>
       </p>
       <p className={styles.companyLogos}>

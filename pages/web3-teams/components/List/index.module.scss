@@ -7,15 +7,18 @@
   list-style: none;
   gap: 0.5rem;
 }
+
 .listItemContainer {
   border-radius: 0.5rem;
   border: 1px solid #e8e9fa;
   background: #fdfdff;
   transition: border-color 0.3s ease-in-out;
+
   &:hover {
     border-color: #a8abd7;
   }
 }
+
 .listItem {
   display: flex;
   align-items: center;

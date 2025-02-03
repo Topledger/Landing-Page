@@ -8,7 +8,7 @@ import styles from "./index.module.scss";
 
 const InsightsStories = ({ insightStory }) => {
   return (
-    
+
     <div className={styles.insightStory}>
       <div className={styles.insightStoryMedia}>
         <img src={insightStory.media.src} alt="Insight story media" />
@@ -30,7 +30,7 @@ const InsightsStories = ({ insightStory }) => {
         </div>
       </div>
     </div>
-    
+
   );
 };
 
@@ -48,7 +48,7 @@ const StoriesSection = ({ insightStories = [] }) => {
   console.log('in::', insightStories);
   return (
     <Section
-      style={{ borderTop: '1px solid #E8E9FA',}}  
+      style={{ borderTop: '1px solid #E1E9FF', }}
       containerClassName={styles.insightStoriesSection}
       id={getId("Insight Stories")}
     >
@@ -60,14 +60,14 @@ const StoriesSection = ({ insightStories = [] }) => {
           </div>
           <div className={styles.insightStoriesSectionContent}>
             {insightStories.map((insightStory, index) => (
-                <Link href={insightStory.link} key={index}>
-                <a className={styles.linkWrapper} 
-                    target="_blank" 
-                    rel="noopener noreferrer" >
+              <Link href={insightStory.link} key={index}>
+                <a className={styles.linkWrapper}
+                  target="_blank"
+                  rel="noopener noreferrer" >
                   <InsightsStories insightStory={insightStory} />
                 </a>
               </Link>
-              ))}
+            ))}
           </div>
         </Columns.Col>
       </Columns>
