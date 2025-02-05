@@ -36,7 +36,15 @@ const userWalletDashboards = [
     {
         wallet_dashboard: {
             id: 1,
-            title: "DEX Overview",
+            title: "Overview",
+            org_slug: "tl",
+            api_key: "AXa6aNn8xxDCpyOXBx0cnRsKeh1HrBHNBZJcu6Ey",
+        },
+    },
+    {
+        wallet_dashboard: {
+            id: 2,
+            title: "DEX",
             org_slug: "tl",
             api_key: "Jix7XZI0p41oMZ7pEVhcW1vCydMvgIsdy5Q7ma4D",
         },
@@ -44,7 +52,7 @@ const userWalletDashboards = [
 
     {
         wallet_dashboard: {
-            id: 2,
+            id: 3,
             title: "REV",
             org_slug: "tl",
             api_key: "0Cm9R8K8xu4vq93Ljb88UJDtWr6jwTM1V9AGMQQo",
@@ -52,7 +60,7 @@ const userWalletDashboards = [
     },
     {
         wallet_dashboard: {
-            id: 3,
+            id: 4,
             title: "Block Rewards",
             org_slug: "tl",
             api_key: "JHrjYsFXzCEcSgpBS6RCCpZqV6dQMCKyn3sgGJon",
