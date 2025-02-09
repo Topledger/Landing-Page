@@ -61,7 +61,7 @@
   background-size: cover;
   background-position: calc(100%) center;
   background-repeat: repeat;
-  animation: slide 40s linear infinite;
+  animation: slide 30s linear infinite;
 
   @keyframes slide {
     0% {
@@ -69,15 +69,15 @@
     }
 
     100% {
-      background-position: -854px center;
+      background-position: 100% center;
     }
   }
 
   @include mobile {
     margin-top: 0.5rem;
     background-repeat: repeat;
-    background-size: auto 100%;
+    background-size: cover;
     background-position: 0% center;
-    animation: slide 20s linear infinite;
+    animation: slide 30s linear infinite;
   }
 }
