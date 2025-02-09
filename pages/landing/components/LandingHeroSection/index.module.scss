@@ -55,12 +55,13 @@
 .companyLogos {
   margin-top: 12px;
   margin-bottom: 178px;
-  height: 2.5rem;
+  height: 2.8rem;
 
   background-image: url(/assets/images/landing/company-logos.svg);
-  background-size: contain;
-  background-position: calc(50% + 8px) center;
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: calc(100%) center;
+  background-repeat: repeat;
+  animation: slide 40s linear infinite;
 
   @keyframes slide {
     0% {

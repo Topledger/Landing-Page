@@ -102,7 +102,7 @@ const Footer = () => {
           <MobileHidden>
             <div className={styles.copyContainer}>
               <Button.Link tertiary color="#374151" className={styles.copyLink}>
-                © 2024, Top Ledger, All rights reserved
+                © 2025, Top Ledger, All rights reserved
               </Button.Link>
               <span style={{ display: "inline-flex", gap: "2rem" }}>
                 <Button.Link

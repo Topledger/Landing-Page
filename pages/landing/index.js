@@ -123,7 +123,7 @@ const outcomes = [
     {
         id: 1,
         image: "/assets/images/landing/outcome-analysts.svg",
-        title: "For Web3 teams",
+        title: "For web3 teams",
         description:
             "Run blazingly fast SQL queries and leave auto-scaling, replication of workloads, rollup aggregations and custom data decoding to us.",
         action: {
