@@ -204,7 +204,8 @@
                     .xgrid.crisp,
                     .ygrid.crisp,
                     .y2grid.crisp {
-                        stroke: #334e68 !important;
+                        stroke: #1b252f !important;
+                        stroke-dasharray: 8, 8;
                     }
                 }
             }
