@@ -230,17 +230,17 @@ const insightStories = [
     {
         media: {
             type: "image",
-            src: "/assets/images/landing/stories-icon-3.svg",
+            src: "/assets/images/landing/stories-icon-4.svg",
         },
-        title: "State of Metaplex Q1 2023",
+        title: "Understanding Metaplex",
         description: "State of Metaplex Q1 2023",
         footer: {
             icon: "/assets/images/landing/messari.svg",
             width: "100px",
             height: "18px",
-            desc: "Apr 14, 2023",
+            desc: "Feb 11, 2025",
         },
-        link: "https://messari.io/report/state-of-metaplex-q1-2023",
+        link: "https://messari.io/report/understanding-metaplex",
     },
 ];
 
