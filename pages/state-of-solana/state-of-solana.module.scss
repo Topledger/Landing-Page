@@ -30,6 +30,7 @@
         .tl-dashboards.public-dashboard-page {
             margin-top: 1.5rem;
             background-color: transparent;
+
             .tl-dashboard-container {
                 padding-left: 0;
                 padding-right: 0;
@@ -186,7 +187,8 @@
                             &.widget-text {
                                 background-color: transparent;
                                 border: none;
-                                padding-bottom: 0.5rem;
+                                padding: 0;
+
                                 .markdown {
                                     display: flex;
                                     align-items: flex-end;
