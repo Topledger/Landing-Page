@@ -1,3 +1,4 @@
+@import "@/assets/styles/breakpoints.scss";
 @import "widget-darkmode.scss";
 
 .pageTitle {
@@ -164,11 +165,27 @@
                         }
                     }
                 }
+
+                @include mobile {
+                    margin: 0;
+                    width: calc(100% + 30px) !important;
+                    margin: -15px;
+
+                    .dashboard-wrapper {
+                        .layout {
+                            margin: 0;
+                        }
+                    }
+                }
             }
 
             #footer {
                 display: none;
             }
         }
+    }
+
+    @include mobile {
+        padding: 1.5rem 1rem;
     }
 }

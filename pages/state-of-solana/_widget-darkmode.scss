@@ -1,6 +1,6 @@
 @mixin widget-darkmode {
     .counter-visualization-content {
-        &>div {
+        & > div {
             transform: scale(1) !important;
         }
 
@@ -21,7 +21,6 @@
         }
     }
 
-
     .table-visualization-container {
         .ant-table {
             backdrop-filter: blur(32px);
@@ -34,8 +33,10 @@
                 }
 
                 th {
-                    background: var(--dashboard-widget-table-header-bg,
-                            #3a3f44) !important;
+                    background: var(
+                        --dashboard-widget-table-header-bg,
+                        #3a3f44
+                    ) !important;
                 }
             }
 
@@ -113,8 +114,10 @@
         transform: scale(0.95);
 
         svg.main-svg {
-            background-color: var(--dashboard-widget-viz-chart-bg,
-                    transparent) !important;
+            background-color: var(
+                --dashboard-widget-viz-chart-bg,
+                transparent
+            ) !important;
 
             text {
                 font-family: "Inter", "Helvetica Neue", "Helvetica 45 Light",
@@ -126,13 +129,17 @@
             .infolayer {
                 .legend {
                     rect.bg {
-                        fill: var(--dashboard-widget-viz-chart-bg,
-                                transparent) !important;
+                        fill: var(
+                            --dashboard-widget-viz-chart-bg,
+                            transparent
+                        ) !important;
                     }
 
                     .legendtext {
-                        fill: var(--dashboard-widget-viz-legend-text-color,
-                                rgb(0, 0, 0)) !important;
+                        fill: var(
+                            --dashboard-widget-viz-legend-text-color,
+                            rgb(0, 0, 0)
+                        ) !important;
                     }
 
                     .scrollbar {
@@ -142,25 +149,30 @@
 
                 .annotation {
                     text {
-                        fill: var(--dashboard-widget-viz-chart-text-color,
-                                rgb(68, 68, 68)) !important;
+                        fill: var(
+                            --dashboard-widget-viz-chart-text-color,
+                            rgb(68, 68, 68)
+                        ) !important;
                     }
                 }
 
                 .xtitle,
                 .ytitle {
-                    fill: var(--dashboard-widget-viz-chart-text-color,
-                            rgb(68, 68, 68)) !important;
+                    fill: var(
+                        --dashboard-widget-viz-chart-text-color,
+                        rgb(68, 68, 68)
+                    ) !important;
                 }
             }
 
             .cartesianlayer {
-
                 .xtick,
                 .ytick {
                     text {
-                        fill: var(--dashboard-widget-viz-chart-text-color,
-                                rgb(68, 68, 68)) !important;
+                        fill: var(
+                            --dashboard-widget-viz-chart-text-color,
+                            rgb(68, 68, 68)
+                        ) !important;
                         font-size: 14px !important;
                     }
                 }
@@ -174,7 +186,6 @@
                 }
 
                 .gridlayer {
-
                     .xgrid.crisp,
                     .ygrid.crisp,
                     .y2grid.crisp {
@@ -188,6 +199,21 @@
                     text {
                         fill: transparent !important;
                     }
+                }
+            }
+        }
+        .modebar-container {
+            top: -8px !important;
+
+            .modebar-group {
+                background-color: rgba(0, 0, 0, 0.1) !important;
+                padding-left: 0.75rem;
+
+                .modebar-btn .icon path {
+                    fill: var(
+                        --dashboard-widget-viz-chart-text-color,
+                        rgb(68, 68, 68)
+                    ) !important;
                 }
             }
         }
