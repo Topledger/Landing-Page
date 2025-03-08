@@ -36,108 +36,130 @@
 
                 .dashboard-widget-wrapper {
                     .widget-wrapper {
-                        .tile.body-container.widget-visualization {
-                            border-radius: 4px;
-                            background-color: var(
-                                --dashboard-widget-bg,
-                                "white"
-                            );
-                            // box-shadow: rgba(102, 136, 153, 0.15) 0px 4px 9px -3px;
-                            box-shadow: none;
-                            border: 1px solid
-                                var(--dashboard-widget-border, transparent);
+                        .tile.body-container {
+                            &.widget-visualization {
+                                border-radius: 4px;
+                                background-color: var(
+                                    --dashboard-widget-bg,
+                                    "white"
+                                );
+                                // box-shadow: rgba(102, 136, 153, 0.15) 0px 4px 9px -3px;
+                                box-shadow: none;
+                                border: 1px solid
+                                    var(--dashboard-widget-border, transparent);
 
-                            .widget-header {
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                > div {
-                                    margin-bottom: 0 !important;
-                                }
-                                .refresh-indicator {
-                                    margin-top: 2.5rem;
-                                    margin-right: 2.5rem;
-                                }
-                                .parameter-container {
-                                    padding: 0rem 1rem;
-                                    margin: 0;
-                                    margin-right: 1rem;
-                                    .parameter-heading {
-                                        display: none;
+                                .widget-header {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    > div {
+                                        margin-bottom: 0 !important;
                                     }
-                                }
-                                .visualization-name {
-                                    color: var(
-                                        --dashboard-widget-title-text-color,
-                                        rgba(0, 0, 0, 0.8)
-                                    );
-                                }
-                                .th-title
-                                    > p
-                                    > span.query-link
-                                    > span:nth-child(2) {
-                                    font-size: 14px;
-                                    line-height: 20px;
-                                    color: var(
-                                        --dashboard-widget-title-text-color,
-                                        rgba(0, 0, 0, 0.8)
-                                    );
-                                }
-
-                                .parameter-container {
-                                    .parameter-block {
+                                    .refresh-indicator {
+                                        margin-top: 2.5rem;
+                                        margin-right: 2.5rem;
+                                    }
+                                    .parameter-container {
+                                        padding: 0rem 1rem;
+                                        margin: 0;
+                                        margin-right: 1rem;
                                         .parameter-heading {
-                                            color: var(
-                                                --dashboard-widget-title-text-color,
-                                                rgba(0, 0, 0, 0.8)
-                                            );
+                                            display: none;
                                         }
-                                        background-color: transparent;
+                                    }
+                                    .visualization-name {
+                                        color: var(
+                                            --dashboard-widget-title-text-color,
+                                            rgba(0, 0, 0, 0.8)
+                                        );
+                                    }
+                                    .th-title
+                                        > p
+                                        > span.query-link
+                                        > span:nth-child(2) {
+                                        font-size: 14px;
+                                        line-height: 20px;
+                                        color: var(
+                                            --dashboard-widget-title-text-color,
+                                            rgba(0, 0, 0, 0.8)
+                                        );
                                     }
 
-                                    --selected-color: #282f3a;
-
-                                    .ant-radio-group {
-                                        &.ant-radio-group-solid {
-                                            border-radius: 12px;
-                                            .ant-radio-button-wrapper {
-                                                background-color: var(
-                                                    --dashboard-widget-bg
-                                                );
+                                    .parameter-container {
+                                        .parameter-block {
+                                            .parameter-heading {
                                                 color: var(
-                                                    --dashboard-widget-title-text-color
+                                                    --dashboard-widget-title-text-color,
+                                                    rgba(0, 0, 0, 0.8)
                                                 );
-                                                border-color: var(
-                                                    --selected-color
-                                                );
+                                            }
+                                            background-color: transparent;
+                                        }
 
-                                                &-checked {
+                                        --selected-color: #282f3a;
+
+                                        .ant-radio-group {
+                                            &.ant-radio-group-solid {
+                                                border-radius: 12px;
+                                                .ant-radio-button-wrapper {
                                                     background-color: var(
-                                                        --selected-color
+                                                        --dashboard-widget-bg
                                                     );
                                                     color: var(
                                                         --dashboard-widget-title-text-color
                                                     );
-                                                }
-                                                &::before {
-                                                    display: none;
-                                                }
+                                                    border-color: var(
+                                                        --selected-color
+                                                    );
 
-                                                border-width: 1px 0px;
-                                                &:first-child {
-                                                    border-left-width: 1px;
+                                                    &-checked {
+                                                        background-color: var(
+                                                            --selected-color
+                                                        );
+                                                        color: var(
+                                                            --dashboard-widget-title-text-color
+                                                        );
+                                                    }
+                                                    &::before {
+                                                        display: none;
+                                                    }
+
+                                                    border-width: 1px 0px;
+                                                    &:first-child {
+                                                        border-left-width: 1px;
+                                                    }
+                                                    &:last-child {
+                                                        border-right-width: 1px;
+                                                    }
+                                                    align-items: center;
+                                                    display: inline-flex;
                                                 }
-                                                &:last-child {
-                                                    border-right-width: 1px;
-                                                }
-                                                align-items: center;
-                                                display: inline-flex;
                                             }
                                         }
                                     }
                                 }
                             }
                             @include widget-darkmode;
+
+                            &.widget-text {
+                                background-color: transparent;
+                                border: none;
+                                padding: 0;
+                                box-shadow: none;
+
+                                .markdown {
+                                    display: flex;
+                                    align-items: flex-end;
+                                    padding: 0 !important;
+                                    h2 {
+                                        color: var(
+                                            --dashboard-widget-title-text-color,
+                                            rgba(0, 0, 0, 0.8)
+                                        );
+                                        font-size: 1.25rem;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
