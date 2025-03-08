@@ -32,6 +32,7 @@ $header-height: 88px;
     }
 
     @include mobile {
+        padding: 0 1rem !important;
         * {
             -webkit-tap-highlight-color: transparent;
         }
