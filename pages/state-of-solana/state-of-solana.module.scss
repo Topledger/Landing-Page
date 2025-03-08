@@ -68,6 +68,11 @@
                                         .parameter-heading {
                                             display: none;
                                         }
+
+                                        @include mobile {
+                                            padding: 0rem;
+                                            margin: 0rem;
+                                        }
                                     }
                                     .visualization-name {
                                         color: var(
