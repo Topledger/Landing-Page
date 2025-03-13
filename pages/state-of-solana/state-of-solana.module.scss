@@ -61,6 +61,11 @@
                                         margin-top: 2.5rem;
                                         margin-right: 2.5rem;
                                     }
+                                    > .m-b-10 {
+                                        position: absolute;
+                                        right: 0;
+                                        top: 1rem;
+                                    }
                                     .parameter-container {
                                         padding: 0rem 1rem;
                                         margin: 0;
@@ -80,16 +85,30 @@
                                             rgba(0, 0, 0, 0.8)
                                         );
                                     }
-                                    .th-title
-                                        > p
-                                        > span.query-link
-                                        > span:nth-child(2) {
-                                        font-size: 14px;
-                                        line-height: 20px;
-                                        color: var(
-                                            --dashboard-widget-title-text-color,
-                                            rgba(0, 0, 0, 0.8)
-                                        );
+                                    .th-title {
+                                        &
+                                            > p
+                                            > span.query-link
+                                            > span:nth-child(2) {
+                                            font-size: 14px;
+                                            line-height: 20px;
+                                            color: var(
+                                                --dashboard-widget-title-text-color,
+                                                rgba(0, 0, 0, 0.8)
+                                            );
+                                        }
+                                        .markdown.query--description {
+                                            p {
+                                                margin-top: 0.5rem;
+                                                font-size: 12px;
+                                                line-height: 20px;
+                                                font-style: normal;
+                                                color: var(
+                                                    --dashboard-widget-title-text-color,
+                                                    rgba(0, 0, 0, 0.8)
+                                                );
+                                            }
+                                        }
                                     }
 
                                     .parameter-container {

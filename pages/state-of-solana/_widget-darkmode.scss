@@ -1,3 +1,5 @@
+@import "@/assets/styles/breakpoints.scss";
+
 @mixin widget-darkmode {
     .counter-visualization-content {
         & > div {
@@ -165,6 +167,10 @@
                         --dashboard-widget-viz-chart-text-color,
                         rgb(68, 68, 68)
                     ) !important;
+                }
+
+                @include mobile {
+                    transform: translate(0, 8px);
                 }
             }
 
