@@ -59,6 +59,14 @@ const userWalletDashboards = [
             api_key: "JHrjYsFXzCEcSgpBS6RCCpZqV6dQMCKyn3sgGJon",
         },
     },
+    {
+        wallet_dashboard: {
+            id: 4,
+            title: "Compute Units & Txn Bytes",
+            org_slug: "tl",
+            api_key: "uPoqbyKQtsQ8Mt1YVxX11Idom5DEbDIZBI7L6hii",
+        },
+    },
 ];
 const showThemeToggle = false;
 const defaultTheme = "dark";
