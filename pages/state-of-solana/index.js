@@ -67,6 +67,14 @@ const userWalletDashboards = [
             api_key: "uPoqbyKQtsQ8Mt1YVxX11Idom5DEbDIZBI7L6hii",
         },
     },
+    {
+        wallet_dashboard: {
+            id: 5,
+            title: "Stable Coins",
+            org_slug: "tl",
+            api_key: "ZYGNI0Jz37axTytOosS7qeIurtaXpQZPhx2WZQyc",
+        },
+    },
 ];
 const showThemeToggle = false;
 const defaultTheme = "dark";
