@@ -44,7 +44,7 @@ const StateOfSolana = () => {
     const dashboardRef = useRef();
 
     const setActiveTab = useCallback((tabId) => {
-        router.push(`/state-of-solana/${tabId}`);
+        window.location = `/state-of-solana/${tabId}`;
     }, []);
 
     const setTabLoading = (dashboardId, isLoading) => {
