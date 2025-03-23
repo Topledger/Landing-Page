@@ -75,6 +75,7 @@ export const userWalletDashboards = [
         wallet_dashboard: {
             id: 4,
             title: "Compute Units & Txn Bytes",
+            slug: "compute-units-txn-bytes",
             org_slug: "tl",
             api_key: "uPoqbyKQtsQ8Mt1YVxX11Idom5DEbDIZBI7L6hii",
         },
@@ -83,6 +84,7 @@ export const userWalletDashboards = [
         wallet_dashboard: {
             id: 5,
             title: "Stable Coins",
+            slug: "stable-coins",
             org_slug: "tl",
             api_key: "ZYGNI0Jz37axTytOosS7qeIurtaXpQZPhx2WZQyc",
         },
