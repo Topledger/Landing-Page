@@ -81,6 +81,12 @@ const footerLinks = [
         href: "https://github.com/Topledger/solana-programs",
         target: "_blank",
       },
+      {
+        id: "media-kit",
+        text: "Media Kit",
+        href: "https://www.figma.com/design/Vs0VeatB3BvTmwks7A2bIj/Media-Kit?t=NRw317rA76LJKm6P-1",
+        target: "_blank",
+      },
     ],
   },
 ];

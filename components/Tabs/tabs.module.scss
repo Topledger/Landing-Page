@@ -1,8 +1,7 @@
 .tabsContainer {
-    display: flex;
+    display: inline-flex;
     gap: 1.5rem;
     border-bottom: 1px solid var(--tab-border-color, #e2e8ff);
-    display: inline-flex;
 
     .tabBtn {
         color: var(--tab-color, #374151);
@@ -12,7 +11,6 @@
         line-height: 1.25rem;
         letter-spacing: 1%;
         padding: 12px 0px;
-
         cursor: pointer;
 
         &.tabBtnSelected {
@@ -20,6 +18,22 @@
             font-weight: 500;
             border-bottom: 1px solid var(--tab-selected-color, #085ed4);
             margin-bottom: -1px;
+        }
+    }
+}
+
+/* Dark mode override */
+@media (prefers-color-scheme: dark) {
+    .tabsContainer {
+        border-bottom: 1px solid var(--tab-border-color-dark, #191D23); // example dark gray
+
+        .tabBtn {
+            color: var(--tab-color-dark, #d1d5db); // light gray text
+
+            &.tabBtnSelected {
+                color: var(--tab-selected-color-dark, #60a5fa); // blue-400
+                border-bottom: 1px solid var(--tab-selected-color-dark, #60a5fa);
+            }
         }
     }
 }

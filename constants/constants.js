@@ -71,4 +71,20 @@ export const userWalletDashboards = [
             api_key: "JHrjYsFXzCEcSgpBS6RCCpZqV6dQMCKyn3sgGJon",
         },
     },
+    {
+        wallet_dashboard: {
+            id: 4,
+            title: "Compute Units & Txn Bytes",
+            org_slug: "tl",
+            api_key: "uPoqbyKQtsQ8Mt1YVxX11Idom5DEbDIZBI7L6hii",
+        },
+    },
+    {
+        wallet_dashboard: {
+            id: 5,
+            title: "Stable Coins",
+            org_slug: "tl",
+            api_key: "ZYGNI0Jz37axTytOosS7qeIurtaXpQZPhx2WZQyc",
+        },
+    },
 ];
