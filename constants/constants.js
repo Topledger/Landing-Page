@@ -34,15 +34,7 @@ export const PARAMETER_NAMES = Object.keys(DASHBOARDS).map(
 );
 
 export const userWalletDashboards = [
-    {
-        wallet_dashboard: {
-            id: 1,
-            title: "Overview",
-            slug: "overview",
-            org_slug: "solana",
-            api_key: "AXa6aNn8xxDCpyOXBx0cnRsKeh1HrBHNBZJcu6Ey",
-        },
-    },
+
     {
         wallet_dashboard: {
             id: 2,
