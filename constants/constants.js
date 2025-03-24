@@ -37,7 +37,7 @@ export const userWalletDashboards = [
 
     {
         wallet_dashboard: {
-            id: 2,
+            id: 1,
             title: "DEX",
             slug: "dex",
             org_slug: "tl",
@@ -47,7 +47,7 @@ export const userWalletDashboards = [
 
     {
         wallet_dashboard: {
-            id: 3,
+            id: 2,
             title: "REV",
             slug: "rev",
             org_slug: "tl",
@@ -56,7 +56,7 @@ export const userWalletDashboards = [
     },
     {
         wallet_dashboard: {
-            id: 4,
+            id: 3,
             title: "Block Rewards",
             slug: "block-rewards",
             org_slug: "tl",
