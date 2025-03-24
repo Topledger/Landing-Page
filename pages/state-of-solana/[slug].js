@@ -216,3 +216,34 @@ const StateOfSolana = () => {
 };
 
 export default StateOfSolana;
+
+export async function getStaticPaths() {
+    const paths = userWalletDashboards.map(({ wallet_dashboard }) => ({
+        params: { slug: wallet_dashboard.slug },
+    }));
+
+    return {
+        paths,
+        fallback: false,
+    };
+}
+
+export async function getStaticProps({ params }) {
+    // Find the dashboard that matches the slug
+    const dashboard = userWalletDashboards.find(
+        ({ wallet_dashboard }) => wallet_dashboard.slug === params.slug
+    );
+
+    if (!dashboard) {
+        return {
+            notFound: true,
+        };
+    }
+
+    return {
+        props: {
+            initialActiveTab: params.slug,
+        },
+        revalidate: 86400, // 24 hours
+    };
+}
