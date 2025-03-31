@@ -3,10 +3,18 @@
 .appFooter {
     padding: 1.75rem 4rem !important;
     background-color: transparent !important;
+
+    @include mobile {
+        padding: 1.75rem 1.5rem !important;
+    }
 }
 .appFooterContainer {
     max-width: 100%;
     padding: 0px;
+
+    @include max-width(xxl) {
+        padding: 0px;
+    }
 }
 
 .container {
@@ -21,6 +29,11 @@
         flex-direction: column;
         padding-top: 5rem;
         gap: 1rem;
+    }
+
+    @include mobile {
+        gap: 1rem;
+        padding: 0rem;
     }
 }
 
@@ -45,7 +58,7 @@
     width: 100%;
 
     @include mobile {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 1rem;
 
         margin-top: 0.5rem;
