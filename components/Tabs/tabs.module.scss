@@ -1,7 +1,12 @@
 .tabsContainer {
+    --padding: 1.5rem;
     display: inline-flex;
     gap: 1.5rem;
     border-bottom: 1px solid var(--tab-border-color, #e2e8ff);
+    width: calc(100% + var(--padding));
+    padding-right: var(--padding);
+    margin-right: -var(--padding);
+    overflow-x: auto;
 
     .tabBtn {
         color: var(--tab-color, #374151);
@@ -12,6 +17,7 @@
         letter-spacing: 1%;
         padding: 12px 0px;
         cursor: pointer;
+        white-space: nowrap;
 
         &.tabBtnSelected {
             color: var(--tab-selected-color, #085ed4);
@@ -25,7 +31,7 @@
 /* Dark mode override */
 @media (prefers-color-scheme: dark) {
     .tabsContainer {
-        border-bottom: 1px solid var(--tab-border-color-dark, #191D23); // example dark gray
+        border-bottom: 1px solid var(--tab-border-color-dark, #191d23); // example dark gray
 
         .tabBtn {
             color: var(--tab-color-dark, #d1d5db); // light gray text
