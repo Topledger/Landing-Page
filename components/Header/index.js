@@ -120,8 +120,14 @@ const Header = ({ className, pageType = "normal" }) => {
                         alt="Top Ledger logo"
                     />
                 </Button.Link>
+
+
                 <MobileOnly>
+
+
                     <BurgerButton onClick={toggleHeader} />
+
+
                 </MobileOnly>
                 <nav
                     className={cx(styles.headerLinks, {
@@ -169,6 +175,15 @@ const Header = ({ className, pageType = "normal" }) => {
                     </Button.Link>
                     <Button.Link
                         tertiary
+                        className={cx(styles.headerLink)}
+                        href="https://discrimin8r.topledger.xyz/"
+                        target="_blank"
+                        noArrow
+                    >
+                        Discriminator DB
+                    </Button.Link>
+                    <Button.Link
+                        tertiary
                         className={cx(styles.headerLinksp)}
                         href="https://topledger.xyz/state-of-solana"
                         target="_blank"
@@ -176,6 +191,8 @@ const Header = ({ className, pageType = "normal" }) => {
                     >
                         State of Solana
                     </Button.Link>
+
+
                 </nav>
                 <MobileHidden>
                     <span className={styles.headerButtons}>
@@ -191,7 +208,7 @@ const Header = ({ className, pageType = "normal" }) => {
                     </span>
                 </MobileHidden>
             </span>
-        </header>
+        </header >
     );
 };
 
