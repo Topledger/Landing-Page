@@ -38,17 +38,19 @@ export const userWalletDashboards = [
         wallet_dashboard: {
             id: 1,
             title: "Overview",
-            slug: "overview",
-            org_slug: "solana",
-            api_key: "AXa6aNn8xxDCpyOXBx0cnRsKeh1HrBHNBZJcu6Ey",
+            slug: "Overview",
+            org_slug: "tl",
+            api_key: "qHYfENbrNsR2vbYNteodbaRQ8R7m7BE7DVCFvEm0",
         },
     },
+
     {
         wallet_dashboard: {
             id: 2,
             title: "DEX",
             slug: "dex",
             org_slug: "tl",
+
             api_key: "Jix7XZI0p41oMZ7pEVhcW1vCydMvgIsdy5Q7ma4D",
         },
     },
@@ -73,7 +75,7 @@ export const userWalletDashboards = [
     },
     {
         wallet_dashboard: {
-            id: 4,
+            id: 5,
             title: "Compute Units & Txn Bytes",
             slug: "compute-units-txn-bytes",
             org_slug: "tl",
@@ -82,8 +84,8 @@ export const userWalletDashboards = [
     },
     {
         wallet_dashboard: {
-            id: 5,
-            title: "Stable Coins",
+            id: 6,
+            title: "Stablecoins",
             slug: "stable-coins",
             org_slug: "tl",
             api_key: "ZYGNI0Jz37axTytOosS7qeIurtaXpQZPhx2WZQyc",

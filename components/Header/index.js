@@ -178,6 +178,15 @@ const Header = ({ className, pageType = "normal" }) => {
                     >
                         Docs
                     </Button.Link>
+                    <Button.Link
+                        tertiary
+                        className={cx(styles.headerLink)}
+                        href="https://discrimin8r.topledger.xyz/"
+                        target="_blank"
+                        noArrow
+                    >
+                        Discriminator DB
+                    </Button.Link>
                     <MobileHidden>
                         <Button.Link
                             tertiary
