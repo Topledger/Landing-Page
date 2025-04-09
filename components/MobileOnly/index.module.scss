@@ -1,9 +1,27 @@
 @import "@/assets/styles/breakpoints.scss";
 
 .mobileOnly {
-  display: none !important;
+    display: none !important;
+}
 
-  @include mobile {
-    display: block !important;
-  }
+$display-types: (
+    "block",
+    "flex",
+    "inline-flex",
+    "inline",
+    "grid",
+    "inline-grid",
+    "table",
+    "table-row",
+    "table-cell",
+    "list-item",
+    "run-in"
+);
+
+@each $type in $display-types {
+    .visibility-#{$type} {
+        @include mobile {
+            display: #{$type} !important;
+        }
+    }
 }
