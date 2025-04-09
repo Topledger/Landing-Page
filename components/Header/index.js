@@ -120,7 +120,7 @@ const Header = ({ className, pageType = "normal" }) => {
                         alt="Top Ledger logo"
                     />
                 </Button.Link>
-                <MobileOnly visibilityType="flex">
+                <MobileOnly visibilityType="inline-flex">
                     <div className={styles.mobileButtonContainer}>
                         <Button.Link
                             tertiary
