@@ -120,8 +120,19 @@ const Header = ({ className, pageType = "normal" }) => {
                         alt="Top Ledger logo"
                     />
                 </Button.Link>
-                <MobileOnly>
-                    <BurgerButton onClick={toggleHeader} />
+                <MobileOnly visibilityType="flex">
+                    <div className={styles.mobileButtonContainer}>
+                        <Button.Link
+                            tertiary
+                            className={cx(styles.headerLinksp)}
+                            href="https://topledger.xyz/state-of-solana"
+                            target="_blank"
+                            noArrow
+                        >
+                            State of Solana
+                        </Button.Link>
+                        <BurgerButton onClick={toggleHeader} />
+                    </div>
                 </MobileOnly>
                 <nav
                     className={cx(styles.headerLinks, {
@@ -167,15 +178,17 @@ const Header = ({ className, pageType = "normal" }) => {
                     >
                         Docs
                     </Button.Link>
-                    <Button.Link
-                        tertiary
-                        className={cx(styles.headerLinksp)}
-                        href="https://topledger.xyz/state-of-solana"
-                        target="_blank"
-                        noArrow
-                    >
-                        State of Solana
-                    </Button.Link>
+                    <MobileHidden>
+                        <Button.Link
+                            tertiary
+                            className={cx(styles.headerLinksp)}
+                            href="https://topledger.xyz/state-of-solana"
+                            target="_blank"
+                            noArrow
+                        >
+                            State of Solana
+                        </Button.Link>
+                    </MobileHidden>
                 </nav>
                 <MobileHidden>
                     <span className={styles.headerButtons}>

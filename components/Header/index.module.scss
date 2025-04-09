@@ -100,6 +100,15 @@ $header-height: 88px;
     }
 }
 
+.mobileButtonContainer {
+    display: inline-flex !important;
+    align-items: center;
+
+    .headerLinksp {
+        font-size: 0.875rem;
+    }
+}
+
 .headerLink {
     padding: 0;
 
@@ -118,7 +127,7 @@ $header-height: 88px;
 
 .headerLinksp {
     padding: 0;
-    background: linear-gradient(135deg, #9A45FF, #529BD4, #17FB9B);
+    background: linear-gradient(135deg, #9a45ff, #529bd4, #17fb9b);
     /* Adjust colors as needed */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -135,7 +144,6 @@ $header-height: 88px;
 
     -webkit-tap-highlight-color: transparent;
 }
-
 
 .headerButtons {
     display: flex;
