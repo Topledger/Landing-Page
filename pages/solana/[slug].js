@@ -59,7 +59,7 @@ const StateOfSolana1 = (props) => {
   }, []);
 
   const setActiveTab = useCallback((tabId) => {
-    window.location = `/state-of-solana1/${tabId}`;
+    window.location = `/solana/${tabId}`;
   }, []);
 
   const setTabLoading = (dashboardId, isLoading) => {
