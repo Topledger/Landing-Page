@@ -217,7 +217,7 @@ const StateOfSolana1 = (props) => {
       <div className={styles.dashboardSection}>
         <div className={styles.dashboardHeader}>
           <h1 className={styles.pageTitle}>{pageTitle}</h1>
-          <button onClick={handleLogout} className={styles.logoutButton}>
+          <button onClick={handleLogout} className={styles.logoutButton} aria-label="Logout">
             Logout
           </button>
         </div>
