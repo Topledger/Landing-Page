@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const WeOffer = () => {
   return (
@@ -29,9 +30,12 @@ const WeOffer = () => {
             </Link>
           </div>
           <div className="offerImage">
-            <img
+            <Image
               style={{ border: "1px solid #D8E3FF", borderRadius: "1rem" }}
-              src="assets/images/offer.png"
+              src="/assets/images/offer.png"
+              alt="Dashboard example with SQL queries"
+              width={600}
+              height={400}
             />
           </div>
         </div>
@@ -40,7 +44,12 @@ const WeOffer = () => {
       {/* <section className="sources">
         <div className="sourcesMain">
           <div className="sourcesImage">
-            <img src="assets/images/weOffer.png" />
+            <Image 
+              src="/assets/images/weOffer.png" 
+              alt="Alternative data visualization"
+              width={600}
+              height={400}
+            />
           </div>
           <div className="sourcesContent">
             <h1>Unlock the power of alternative data sources</h1>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import Loader from "pages/programs/components/Loader";
 import styles from "./state-of-solana1.module.scss";
 import Page from "@/components/Page";
@@ -252,11 +253,13 @@ const StateOfSolana1 = (props) => {
                   <div className="loading">
                     <div className="loading-indicator">
                       <div id="shadow"></div>
-                      <img
+                      <Image
                         id="css-logo"
                         style={{ height: "0px" }}
                         src="/assets/images/brand-logo.svg"
-                        alt=""
+                        alt="Loading logo"
+                        width={150}
+                        height={0}
                       />
                     </div>
                   </div>

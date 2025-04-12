@@ -1,20 +1,41 @@
 import React from "react";
+import Image from "next/image";
 
 const Visual = () => {
   return (
     <section className="visual" id="visual">
       <div className="visualMain">
         <div className="visualBox">
-          <img src="assets/images/visual_1.svg" />
+          <Image
+            src="/assets/images/visual_1.svg"
+            alt="Visualization 1"
+            width={200}
+            height={200}
+          />
         </div>
         <div className="visualBox">
-          <img src="assets/images/visual_2.svg" />
+          <Image
+            src="/assets/images/visual_2.svg"
+            alt="Visualization 2"
+            width={200}
+            height={200}
+          />
         </div>
         <div className="visualBox">
-          <img src="assets/images/visual_3.svg" />
+          <Image
+            src="/assets/images/visual_3.svg"
+            alt="Visualization 3"
+            width={200}
+            height={200}
+          />
         </div>
         <div className="visualBox">
-          <img src="assets/images/visual_4.svg" />
+          <Image
+            src="/assets/images/visual_4.svg"
+            alt="Visualization 4"
+            width={200}
+            height={200}
+          />
         </div>
       </div>
       <div className="visualContent">
