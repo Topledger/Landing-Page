@@ -1,0 +1,157 @@
+@import "@/assets/styles/breakpoints.scss";
+
+.tooltipContainer {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+  max-width: 280px;
+  transform: translateY(10px);
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &.top {
+    bottom: 100%;
+    margin-bottom: 10px;
+  }
+
+  &.bottom {
+    top: 100%;
+    margin-top: 10px;
+  }
+}
+
+.tooltipContent {
+  background-color: rgba(38, 43, 56, 0.95);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.4;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+
+  :global(.theme-dark) & {
+    background-color: rgba(40, 44, 52, 0.95);
+  }
+}
+
+.date {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 4px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.percentChange {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 4px;
+  border-radius: 4px;
+
+  &.positive {
+    color: #34d399;
+    background-color: rgba(52, 211, 153, 0.1);
+  }
+
+  &.negative {
+    color: #f87171;
+    background-color: rgba(248, 113, 113, 0.1);
+  }
+}
+
+.additionalData {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+
+.dataItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.dataLabel {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+.dataValue {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.arrowBottom,
+.arrowTop {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrowBottom {
+  bottom: -8px;
+  border-top: 8px solid rgba(38, 43, 56, 0.95);
+
+  :global(.theme-dark) & {
+    border-top-color: rgba(40, 44, 52, 0.95);
+  }
+}
+
+.arrowTop {
+  top: -8px;
+  border-bottom: 8px solid rgba(38, 43, 56, 0.95);
+
+  :global(.theme-dark) & {
+    border-bottom-color: rgba(40, 44, 52, 0.95);
+  }
+}
+
+// Responsive styles
+@include mobile {
+  .tooltipContainer {
+    max-width: 220px;
+  }
+
+  .tooltipContent {
+    padding: 10px 12px;
+  }
+
+  .title {
+    font-size: 13px;
+  }
+
+  .value {
+    font-size: 14px;
+  }
+}
