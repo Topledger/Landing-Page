@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002Fstate-of-solana\u002F[slug]","\u002Fstate-of-solana1\u002F[slug]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
