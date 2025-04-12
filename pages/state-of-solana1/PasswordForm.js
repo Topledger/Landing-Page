@@ -52,7 +52,7 @@ const PasswordForm = ({ onAuthenticate }) => {
           <div className={styles.passwordFormWrapper}>
             <div className={styles.logoContainer}>
               <div className={styles.logoBackground}>
-                <i className="fas fa-lock"></i>
+                <i className="fas fa-lock" aria-hidden="true"></i>
               </div>
             </div>
 
@@ -60,7 +60,7 @@ const PasswordForm = ({ onAuthenticate }) => {
 
             {isLogout && (
               <div className={styles.logoutMessageContainer}>
-                <i className="fas fa-check-circle"></i>
+                <i className="fas fa-check-circle" aria-hidden="true"></i>
                 <p className={styles.logoutMessage}>You have been successfully logged out.</p>
               </div>
             )}
@@ -78,26 +78,28 @@ const PasswordForm = ({ onAuthenticate }) => {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter password"
                     className={styles.passwordInput}
+                    aria-label="Password input"
                   />
                   <button
                     type="button"
                     className={styles.togglePasswordButton}
                     onClick={togglePasswordVisibility}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
                   >
-                    <i className={`fas ${showPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
+                    <i className={`fas ${showPassword ? "fa-eye-slash" : "fa-eye"}`} aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
 
               <button type="submit" className={styles.passwordButton}>
                 <span>Access Dashboard</span>
-                <i className="fas fa-arrow-right"></i>
+                <i className="fas fa-arrow-right" aria-hidden="true"></i>
               </button>
             </form>
 
             {error && (
               <div className={styles.errorContainer}>
-                <i className="fas fa-exclamation-circle"></i>
+                <i className="fas fa-exclamation-circle" aria-hidden="true"></i>
                 <p className={styles.passwordError}>{error}</p>
               </div>
             )}
@@ -105,7 +107,7 @@ const PasswordForm = ({ onAuthenticate }) => {
         </div>
       </div>
 
-      <style jsx global>{`
+      <style>{`
         body {
           margin: 0;
           padding: 0;
