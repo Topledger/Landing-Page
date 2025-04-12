@@ -33,8 +33,8 @@ const NO_HEADER_FOOTER_PATHS = [
     /^\/state-of-solana$/,
     /^\/state-of-solana\/.*$/,
     // Temporarily commenting these out to test
-    /^\/state-of-solana1$/,
-    /^\/state-of-solana1\/.*$/,
+    /^\/solana$/,
+    /^\/solana\/.*$/,
 ];
 
 function MyApp({ Component, pageProps }) {
