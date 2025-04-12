@@ -56,7 +56,7 @@ const PasswordForm = ({ onAuthenticate }) => {
               </div>
             </div>
 
-            <h1 className={styles.passwordTitle}>State of Solana1</h1>
+            <h1 className={styles.passwordTitle}>State of Solana</h1>
 
             {isLogout && (
               <div className={styles.logoutMessageContainer}>

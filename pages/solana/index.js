@@ -19,7 +19,7 @@ const StateOfSolana1Redirect = () => {
   useEffect(() => {
     if (isAuthenticated) {
       router.replace(
-        `/state-of-solana1/${userWalletDashboards[0].wallet_dashboard.slug}`
+        `/solana/${userWalletDashboards[0].wallet_dashboard.slug}`
       );
     }
   }, [router, isAuthenticated]);

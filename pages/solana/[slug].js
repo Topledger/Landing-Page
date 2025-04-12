@@ -95,7 +95,7 @@ const StateOfSolana1 = (props) => {
       sessionStorage.removeItem("solana1-auth");
       sessionStorage.removeItem("solana1-nav");
       // Redirect to the password page with logout parameter
-      window.location.href = "/state-of-solana1?logout=true";
+      window.location.href = "/solana?logout=true";
     }
   }, []);
 
