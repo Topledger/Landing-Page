@@ -17,7 +17,7 @@ const pageDescription =
 
 const TLDashboards = dynamic(
     async () => {
-        const DashboardModule = await import("tl-dashboards");
+        const DashboardModule = await import("tl-dashboards-beta");
         console.log("DashboardModule", DashboardModule);
 
         return DashboardModule;
