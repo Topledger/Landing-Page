@@ -37,7 +37,7 @@ const DashboardHead = ({ programName }) => (
 
 const TLDashboards = dynamic(
   async () => {
-    const DashboardModule = await import("tl-dashboards");
+    const DashboardModule = await import("tl-dashboards-beta");
     console.log("DashboardModule", DashboardModule);
 
     return DashboardModule;
@@ -60,7 +60,7 @@ function Programs() {
 
   const [parameterName, setParameterName] = useState(
     PARAMETER_NAMES.find((name) => query[`p_${name}`]) ??
-      DASHBOARDS.programs.adddressParamName
+    DASHBOARDS.programs.adddressParamName
   );
 
   const [dashboard, setDashboard] = useState(
@@ -141,8 +141,8 @@ function Programs() {
       const dashboard = addressInfo.isWallet
         ? DASHBOARDS.wallet
         : addressInfo.isToken
-        ? DASHBOARDS.token
-        : DASHBOARDS.programs;
+          ? DASHBOARDS.token
+          : DASHBOARDS.programs;
       setDashboard(dashboard);
       setParameterName(dashboard.adddressParamName);
     }
@@ -156,7 +156,7 @@ function Programs() {
           <ProgramAdressInput
             isDashboard
             parameterName={parameterName}
-            onApply={() => {}}
+            onApply={() => { }}
             programs={programList}
           />
           <>

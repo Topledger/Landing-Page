@@ -19,7 +19,7 @@ const pageDescription =
 
 const TLDashboards = dynamic(
   async () => {
-    const DashboardModule = await import("tl-dashboards");
+    const DashboardModule = await import("tl-dashboards-beta");
     console.log("DashboardModule", DashboardModule);
 
     return DashboardModule;
@@ -209,7 +209,7 @@ const StateOfSolana1 = (props) => {
         {/* Canonical Link */}
         <link
           rel="canonical"
-          href="https://www.topledger.xyz/state-of-solana1"
+          href="https://www.topledger.xyz/solana"
         />
       </Head>
       {/* <Header pageType="wide" /> */}
