@@ -13,7 +13,7 @@ import AppFooter from "@/components/AppFooter";
 import { userWalletDashboards } from "constants/constants1";
 import PasswordForm from "./PasswordForm";
 
-const pageTitle = "State of Solana1";
+const pageTitle = "State of Solana";
 const pageDescription =
   "Explore the latest insights and analytics on the Solana blockchain. Discover the current state of Solana's ecosystem, DEXs, NFTs, and more.";
 
