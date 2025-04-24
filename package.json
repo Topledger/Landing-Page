@@ -33,6 +33,7 @@
         "recharts": "^2.1.16",
         "slick-carousel": "^1.8.1",
         "sol-dashboards": "^1.0.0",
+        "tl-dashboards-beta": "^2.0.1-beta4",
         "yarn": "^1.22.19"
     },
     "devDependencies": {
