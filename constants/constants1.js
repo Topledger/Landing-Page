@@ -54,11 +54,29 @@ export const userWalletDashboards = [
   },
   {
     wallet_dashboard: {
-      id: 1,
+      id: 3,
       title: "Stablecoins",
       slug: "stablecoins",
       org_slug: "solana",
       api_key: "lIPifHfQKMw851APma1MUmiGrB7uNvzxeGBR2REl",
+    },
+  },
+  {
+    wallet_dashboard: {
+      id: 4,
+      title: "DePin",
+      slug: "depin",
+      org_slug: "solana",
+      api_key: "7wuFI8oAPv4UaMkh7BG3YcyQkvDqKh1TQDT3wqUK",
+    },
+  },
+  {
+    wallet_dashboard: {
+      id: 5,
+      title: "Treasury",
+      slug: "treasury",
+      org_slug: "solana",
+      api_key: "nTSQtmqFcKhLsreo9gF7sy0FcIFtd59xDNH0tI7g",
     },
   },
 
