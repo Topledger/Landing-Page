@@ -79,6 +79,24 @@ export const userWalletDashboards = [
       api_key: "nTSQtmqFcKhLsreo9gF7sy0FcIFtd59xDNH0tI7g",
     },
   },
+  {
+    wallet_dashboard: {
+      id: 6,
+      title: "Bitcoin on Solana",
+      slug: "bitcoin-on-solana",
+      org_slug: "solana",
+      api_key: "kcUYPSHA5gSCYCi7Gs38kpVZ2Qg15NrtZMvLs9Q7",
+    },
+  },
+  {
+    wallet_dashboard: {
+      id: 7,
+      title: "VC funding",
+      slug: "vc-funding",
+      org_slug: "solana",
+      api_key: "Xn47p6rXsTMStqr7xdyO4M7A03C8s1fyhpE6Mtta",
+    },
+  }
 
 
 ]; 
