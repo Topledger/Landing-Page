@@ -114,6 +114,15 @@ export const userWalletDashboards = [
       org_slug: "solana",
       api_key: "aL3PivKryKDrRISfU6navyo26pNHdGh7smfWzyBI",
     },
+  },
+  {
+    wallet_dashboard: {
+      id: 10,
+      title: "RWA",
+      slug: "rwa",
+      org_slug: "solana",
+      api_key: "0gFVCJnKkSKv6h2Xat66L3RkVjnCG8WEh8N1xhSk",
+    },
   }
   
 
