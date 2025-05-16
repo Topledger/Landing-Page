@@ -96,7 +96,26 @@ export const userWalletDashboards = [
       org_slug: "solana",
       api_key: "Xn47p6rXsTMStqr7xdyO4M7A03C8s1fyhpE6Mtta",
     },
+  },
+  {
+    wallet_dashboard: {
+      id: 8,
+      title: "AI Tokens",
+      slug: "ai-tokens",
+      org_slug: "solana",
+      api_key: "MjIBpnddqGT7PXdEwSnc1MounpgdL5xrIZoSF9sK",
+    },
+  },
+  {
+    wallet_dashboard: {
+      id: 9,
+      title: "Payments",
+      slug: "payments",
+      org_slug: "solana",
+      api_key: "aL3PivKryKDrRISfU6navyo26pNHdGh7smfWzyBI",
+    },
   }
+  
 
 
 ]; 
