@@ -1,7 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useimport Image from "next/image";
-// ...existing code...
-<Image src="/assets/logo.svg" alt="Logo" width={100} height={50} />} from "react";
+import { useEffect, useState } from "react";
 import cx from "classnames";
 import Image from "next/image";
 import BarsOutlinedIcon from "@ant-design/icons/BarsOutlined";
@@ -122,16 +120,11 @@ const Header = ({ className, pageType = "normal" }) => {
                         alt="Top Ledger logo"
                     />
                 </Button.Link>
-<<<<<<< HEAD
-                
-=======
                 <MobileOnly visibilityType="inline-flex">
                     <div className={styles.mobileButtonContainer}>
-                        
                         <BurgerButton onClick={toggleHeader} />
                     </div>
                 </MobileOnly>
->>>>>>> c6357049 (ok)
                 <nav
                     className={cx(styles.headerLinks, {
                         [styles.mobileHeaderOpen]: isHeaderOpen,
@@ -185,12 +178,8 @@ const Header = ({ className, pageType = "normal" }) => {
                     >
                         Discriminator DB
                     </Button.Link>
-                    
-<<<<<<< HEAD
-=======
                 </nav>
                 <MobileHidden>
->>>>>>> c6357049 (ok)
                     <span className={styles.headerButtons}>
                         <Button.Link
                             href="https://analytics.topledger.xyz/login"
