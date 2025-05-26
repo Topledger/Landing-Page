@@ -120,7 +120,16 @@ const Header = ({ className, pageType = "normal" }) => {
                         alt="Top Ledger logo"
                     />
                 </Button.Link>
+<<<<<<< HEAD
                 
+=======
+                <MobileOnly visibilityType="inline-flex">
+                    <div className={styles.mobileButtonContainer}>
+                        
+                        <BurgerButton onClick={toggleHeader} />
+                    </div>
+                </MobileOnly>
+>>>>>>> c6357049 (ok)
                 <nav
                     className={cx(styles.headerLinks, {
                         [styles.mobileHeaderOpen]: isHeaderOpen,
@@ -175,6 +184,11 @@ const Header = ({ className, pageType = "normal" }) => {
                         Discriminator DB
                     </Button.Link>
                     
+<<<<<<< HEAD
+=======
+                </nav>
+                <MobileHidden>
+>>>>>>> c6357049 (ok)
                     <span className={styles.headerButtons}>
                         <Button.Link
                             href="https://analytics.topledger.xyz/login"
