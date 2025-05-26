@@ -1,6 +1,7 @@
 import cx from "classnames";
 
 import styles from "./index.module.scss";
+import Image from "next/image";
 
 const trustees = [
   {
@@ -56,7 +57,7 @@ const TrustedBySection = () => {
           {trustees.map((trustee) => (
             <div className="icon" key={trustee.name}>
               <a href={trustee.link} target="_blank" rel="noreferrer">
-                <img src={trustee.icon} alt={trustee.name} />
+                <Image src={trustee.icon} alt={trustee.name} />
               </a>
             </div>
           ))}

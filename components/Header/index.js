@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useimport Image from "next/image";
+// ...existing code...
+<Image src="/assets/logo.svg" alt="Logo" width={100} height={50} />} from "react";
 import cx from "classnames";
 import Image from "next/image";
 import BarsOutlinedIcon from "@ant-design/icons/BarsOutlined";

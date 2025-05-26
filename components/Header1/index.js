@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import cx from "classnames";
+import Image from "next/image";
 
 import { DarkModeContext } from "../../context/DarkMode";
 
@@ -32,9 +33,9 @@ const Header = () => {
         <div className="logo">
           <Link href="/">
             {router.pathname === "/dashboards" && isDarkMode ? (
-              <img src="/assets/images/black-logo.png" alt="Top Ledger Logo" />
+              <Image src="/assets/images/black-logo.png" alt="Top Ledger Logo" />
             ) : (
-              <img src="/assets/images/logo.png" alt="Top Ledger Logo" />
+              <Image src="/assets/images/logo.png" alt="Top Ledger Logo" />
             )}
           </Link>
         </div>
@@ -47,9 +48,9 @@ const Header = () => {
           </button>
           <div className="navLink" onClick={() => toggleMenu()}>
             {menuOpen ? (
-              <img src="/assets/images/cross.svg" alt="cross-icon" />
+              <Image src="/assets/images/cross.svg" alt="cross-icon" />
             ) : (
-              <img src="/assets/images/navIcon.png" alt="menu-icon" />
+              <Image src="/assets/images/navIcon.png" alt="menu-icon" />
             )}
           </div>
         </div>
@@ -59,38 +60,34 @@ const Header = () => {
       {menuOpen && (
         <div className="head-menu">
           <div
-            className={`active ${
-              router.pathname === "/dashboards" ? "active-link" : null
-            }`}
+            className={`active ${router.pathname === "/dashboards" ? "active-link" : null
+              }`}
           >
             <Link href="/dashboards">Dashboards</Link>
           </div>
           <div
-            className={`active ${
-              router.pathname === "https://docs.topledger.xyz/"
+            className={`active ${router.pathname === "https://docs.topledger.xyz/"
                 ? "active-link"
                 : null
-            }`}
+              }`}
           >
             <Link href="https://docs.topledger.xyz/" target="_blank">
               Docs
             </Link>
           </div>
           <div
-            className={`active ${
-              router.pathname === "https://docs.topledger.xyz/"
+            className={`active ${router.pathname === "https://docs.topledger.xyz/"
                 ? "active-link"
                 : null
-            }`}
+              }`}
           >
             <Link href="https://blogs.topledger.xyz/" target="_blank">
               Blogs
             </Link>
           </div>
           <div
-            className={`active ${
-              router.pathname === "/about-us" ? "active-link" : null
-            }`}
+            className={`active ${router.pathname === "/about-us" ? "active-link" : null
+              }`}
           >
             <Link href="/about-us">About</Link>
           </div>
