@@ -175,8 +175,13 @@ const dataCultures = [
             href: "/web3-teams",
         },
         bottomContent: {
+            type: "link",
+
             text: "Indexing Helium's on-chain and oracle data",
-        },
+            href: "https://blogs.topledger.xyz/introduction-to-the-helium-network-bfaf6402a7a6",
+        }
+
+
     },
     {
         id: 2,
@@ -190,6 +195,7 @@ const dataCultures = [
             href: "https://blogs.topledger.xyz/",
         },
         bottomContent: {
+
             text: "Multiple teams at Metaplex uses Top Ledger daily",
         },
     },

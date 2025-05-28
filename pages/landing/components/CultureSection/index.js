@@ -14,7 +14,7 @@ const Culture = ({
   title,
   description,
   action,
-  bottomContent: { text } = {},
+  bottomContent: { text, href, target, type } = {},
 }) => {
   const bottomContent = (
     <div className={styles.ideaSection}>
@@ -28,6 +28,9 @@ const Culture = ({
         tertiary
         target="_blank"
         color="#374151"
+        href={href}
+
+        type={type}
         className={styles.bottomText}
       >
         {text}
