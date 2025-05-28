@@ -182,13 +182,14 @@ const Header = ({ className, pageType = "normal" }) => {
                 <MobileHidden>
                     <span className={styles.headerButtons}>
                         <Button.Link
-                            href="https://analytics.topledger.xyz/login"
+                            href="https://research.topledger.xyz/"
                             target="_blank"
                             noArrow
+
                             color="#085ED4"
                             secondary
                         >
-                            Login
+                            Top Ledger Research
                         </Button.Link>
                     </span>
                 </MobileHidden>
