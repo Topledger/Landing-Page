@@ -123,8 +123,17 @@ export const userWalletDashboards = [
       org_slug: "solana",
       api_key: "0gFVCJnKkSKv6h2Xat66L3RkVjnCG8WEh8N1xhSk",
     },
+  },
+  {
+    wallet_dashboard: {
+      id: 11,
+      title: "Consumer",
+      slug: "consumer",
+      org_slug: "solana",
+      api_key: "msEkoEEopFtVVt7KruAJ14UWBrB162D7Ss9xxtKp",
+    },
   }
-  
+
 
 
 ]; 
