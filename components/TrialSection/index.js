@@ -25,9 +25,11 @@ const TrialSection = () => {
               className={styles.trialButton}
               primary
               color="#085ED4"
-              onClick={() => QueryFormModal.show()}
+              onClick={() => {
+                window.open("https://calendly.com/nitin_topledger/30min", "_blank");
+              }}
             >
-              Start a free trial
+              Schedule a Call
             </Button>
           </div>
         </div>

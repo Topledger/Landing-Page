@@ -182,14 +182,14 @@ const Header = ({ className, pageType = "normal" }) => {
                 <MobileHidden>
                     <span className={styles.headerButtons}>
                         <Button.Link
-                            href="https://analytics.topledger.xyz/"
+                            href="https://calendly.com/nitin_topledger/30min"
                             target="_blank"
                             noArrow
 
                             color="#085ED4"
                             secondary
                         >
-                            Login
+                            Schedule a Call
                         </Button.Link>
                     </span>
                 </MobileHidden>

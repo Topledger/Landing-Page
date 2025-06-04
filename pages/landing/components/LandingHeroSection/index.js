@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import HeroSection from "@/components/HeroSection";
+import Button from "@/components/Button";
 
 import styles from "./index.module.scss";
 
@@ -12,6 +13,8 @@ const LandingHeroSection = () => {
     >
       <p className={styles.subHeading}>Enterprise Grade</p>
       <h1 className={styles.heading}>Blockchain Data & Analytics</h1>
+
+
       <p className={styles.description}>
         <span>Powering the best</span>
         <span className={styles.hiddenMobile}>
