@@ -1,4 +1,5 @@
 import cx from "classnames";
+import Image from "next/image";
 
 import Button from "../Button";
 import Section from "../Section";
@@ -75,12 +76,7 @@ const footerLinks = [
         href: "https://docs.topledger.xyz",
         target: "_blank",
       },
-      {
-        id: "github",
-        text: "Github",
-        href: "https://github.com/Topledger/solana-programs",
-        target: "_blank",
-      },
+
       {
         id: "media-kit",
         text: "Media Kit",
@@ -91,6 +87,24 @@ const footerLinks = [
   },
 ];
 
+const socialLinks = [
+  {
+    name: "Twitter",
+    href: "https://twitter.com/ledger_top",
+    icon: "/assets/images/twitter.svg"
+  },
+  {
+    name: "Telegram",
+    href: "https://telegram.me/ergon50",
+    icon: "/assets/images/telegram.svg"
+  },
+  {
+    name: "Github",
+    href: "https://github.com/Topledger/solana-programs",
+    icon: "/assets/images/github.svg"
+  }
+];
+
 const Footer = () => {
   return (
     <Section
@@ -99,70 +113,84 @@ const Footer = () => {
       component="footer"
     >
       <div className={styles.container}>
-        <div className={styles.leftSection}>
-          <div className={styles.footerLinksContainer}>
+        {/* Top Section */}
+        <div className={styles.topSection}>
+          {/* Brand Section */}
+          <div className={styles.brandSection}>
+            <div className={styles.logo}>
+              <Image
+                src="/assets/images/logo/topledger-full.svg"
+                width={120}
+                height={40}
+                alt="Top Ledger"
+              />
+            </div>
+            <p className={styles.description}>
+              Empowering web3 teams with powerful analytics and insights for the Solana ecosystem.
+            </p>
+            <div className={styles.socialLinks}>
+              {socialLinks.map((social) => (
+                <Button.Link
+                  key={social.name}
+                  href={social.href}
+                  style={{ backgroundColor: "transparent", padding: 0, border: "none" }}
+                  target="_blank"
+                  className={styles.socialLink}
+                  noArrow
+                >
+                  <Image
+                    src={social.icon}
+                    width={32}
+                    height={32}
+                    alt={social.name}
+                  />
+                </Button.Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Links Grid */}
+          <div className={styles.linksGrid}>
             {footerLinks.map((footerLink) => (
               <FooterLinks footerLinks={footerLink} key={footerLink.id} />
             ))}
           </div>
-          <MobileHidden>
-            <div className={styles.copyContainer}>
-              <Button.Link tertiary color="#374151" className={styles.copyLink}>
-                © 2025, Top Ledger, All rights reserved
-              </Button.Link>
-              <span style={{ display: "inline-flex", gap: "2rem" }}>
-                <Button.Link
-                  tertiary
-                  color="#374151"
-                  className={cx(styles.copyLink, styles.privacyPolicy)}
-                  href="/tnc"
-                >
-                  Terms
-                </Button.Link>
-                <Button.Link
-                  tertiary
-                  color="#374151"
-                  className={cx(styles.copyLink, styles.privacyPolicy)}
-                  href="/privacy-policy"
-                >
-                  Privacy Policy
-                </Button.Link>
-              </span>
-            </div>
-          </MobileHidden>
-        </div>
-        <div className={styles.rightSection}>
-          <div className={styles.contactUsContainer}>
+
+          {/* Contact Section */}
+          <div className={styles.contactSection}>
             <ContactUs />
           </div>
         </div>
-        <MobileOnly>
-          <div className={styles.copyContainer}>
-            <span style={{ display: "inline-flex", gap: "2rem" }}>
-              <Button.Link
-                tertiary
-                color="#374151"
-                className={cx(styles.copyLink, styles.privacyPolicy)}
-                href="/tnc"
-              >
-                Terms
-              </Button.Link>
-              <Button.Link
-                tertiary
-                color="#374151"
-                className={cx(styles.copyLink, styles.privacyPolicy)}
-                href="/privacy-policy"
-              >
-                Privacy Policy
-              </Button.Link>
-            </span>
-            <Button.Link tertiary color="#374151" className={styles.copyLink}>
-              © 2025, Top Ledger, All rights reserved
+
+        {/* Divider */}
+        <div className={styles.divider}></div>
+
+        {/* Bottom Section */}
+        <div className={styles.bottomSection}>
+          <div className={styles.copyright}>
+            <span>© 2025 Top Ledger. All rights reserved.</span>
+          </div>
+          <div className={styles.legalLinks}>
+            <Button.Link
+              tertiary
+              className={styles.legalLink}
+              href="/tnc"
+            >
+              Terms & Conditions
+            </Button.Link>
+            <span className={styles.separator}>•</span>
+            <Button.Link
+              tertiary
+              className={styles.legalLink}
+              href="/privacy-policy"
+            >
+              Privacy Policy
             </Button.Link>
           </div>
-        </MobileOnly>
+        </div>
       </div>
     </Section>
   );
 };
+
 export default Footer;

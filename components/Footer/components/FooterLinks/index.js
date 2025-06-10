@@ -11,6 +11,10 @@ const FooterLinks = ({ footerLinks = [] }) => {
           <li key={link.id} className={styles.linkWrapper}>
             <Button.Link
               href={link.href}
+              style={{
+                //padding: "0 !important",
+                marginTop: "0rem !important",
+              }}
               tertiary
               className={styles.link}
               target={link.target}
@@ -22,7 +26,7 @@ const FooterLinks = ({ footerLinks = [] }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </div >
   );
 };
 

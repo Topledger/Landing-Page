@@ -3,59 +3,82 @@
 .container {
   display: flex;
   flex-direction: column;
-
-  flex-shrink: 0;
-  border-radius: 1.5rem;
-  background: #d5e1ff;
-  padding: 1.5rem;
-  flex: 1;
+  gap: 1rem;
 
   @include mobile {
-    border-radius: 1.5rem;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100%;
+    margin: 0 auto;
   }
-
-  @include max-width(xxl) {}
-
-  @include max-width(xl) {}
 }
 
 .title {
-  color: #374151;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.96px;
-  border-bottom: 1px solid #b9c4e0;
-  min-width: 120px;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
-  margin-right: 3.5rem;
+  color: #1a3989;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
 
-  @include max-width(xxl) {
-    margin-right: 2rem;
+  @include mobile {
+    text-align: center !important;
+    width: 100%;
   }
 }
 
 .links {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: 0rem;
+
+  @include mobile {
+    align-items: center !important;
+    text-align: center !important;
+    width: 100%;
+  }
+}
+
+.linkWrapper {
+  margin: 0;
+
+  @include mobile {
+    text-align: center !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .link {
-  color: #374151;
-  font-size: 1rem;
-  line-height: 120%;
-  letter-spacing: 0.8px;
+  color: #6b7280 !important;
+  font-size: 0.95rem;
+  line-height: 1.5;
   font-weight: 400;
-  padding: 0;
-  min-height: 1.5rem;
-  display: flex;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
-  height: auto;
+
+  &:hover {
+    color: #1a3989 !important;
+    transform: translateX(4px);
+  }
+
+  @include mobile {
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100%;
+    margin: 0 auto !important;
+
+    &:hover {
+      transform: none;
+    }
+  }
 }
