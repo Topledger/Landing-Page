@@ -11,9 +11,9 @@ const axiosInstance = axios.create({
  */
 export const dashboardSorter =
     (getValue, sortOrder = "asc") =>
-    (dashboard1, dashboard2) =>
-        (sortOrder === "desc" ? -1 : 1) *
-        (getValue(dashboard1) - getValue(dashboard2));
+        (dashboard1, dashboard2) =>
+            (sortOrder === "desc" ? -1 : 1) *
+            (getValue(dashboard1) - getValue(dashboard2));
 
 export const getCreationDate = (dashboard) =>
     new Date(dashboard?.attributes?.createdAt).getTime();
@@ -30,12 +30,7 @@ export const dashboards = [
         href: "https://analytics.topledger.xyz/metaplex/public/dashboards/T50WQTTu2Cbz8hG0vge18izUO5ghEDrWhzb92knN",
         icon: "/assets/images/dashboards/metaplex.svg",
     },
-    {
-        id: 43,
-        name: "Drift trade",
-        href: "https://analytics.topledger.xyz/drift/public/dashboards/rZdEYeLBps0O2mIfcKalMYyWGyerHU4nFy4vIcuK",
-        icon: "/assets/images/dashboards/drift logo.svg",
-    },
+
     {
         id: 42,
         name: "Flash trade",
@@ -66,12 +61,7 @@ export const dashboards = [
         href: "https://analytics.topledger.xyz/sonic/public/dashboards/KpwkxhG5izxxQk6XT9LeAqe10PFeAKYqG3BCrMdR",
         icon: "/assets/images/dashboards/sonic.svg",
     },
-    {
-        id: 37,
-        name: "Switchboard",
-        href: "https://analytics.topledger.xyz/switchboard/public/dashboards/bgtz1xBaS8pNNG4IKqfHqurfkOG9VKxMa9LRcl0K",
-        icon: "/assets/images/dashboards/switchboard.svg",
-    },
+
 
     {
         id: 34,
