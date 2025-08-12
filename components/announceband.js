@@ -6,9 +6,9 @@ import { BoldOutlined } from "@ant-design/icons";
 const AnnouncementBand = () => {
   return (
     <div style={styles.band}>
-      Real time Solana data streams to create trading platforms or AI Agents.{" "}
-      <a onClick={() => QueryFormModal.show()} style={{ cursor: 'pointer', ...styles.link }}>
-        Contact
+      Top Ledger Research is live.{" "}
+      <a style={styles.link} href="https://research.topledger.xyz" target="_blank" >
+        Check it out.
       </a>
     </div>
   );

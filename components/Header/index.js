@@ -154,7 +154,7 @@ const Header = ({ className, pageType = "normal" }) => {
                     <Button.Link
                         tertiary
                         className={cx(styles.headerLink)}
-                        href="https://blogs.topledger.xyz/"
+                        href="https://research.topledger.xyz/blogs"
                         target="_blank"
                         noArrow
                     >
