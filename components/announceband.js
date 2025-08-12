@@ -7,7 +7,7 @@ const AnnouncementBand = () => {
   return (
     <div style={styles.band}>
       Top Ledger Research is live.{" "}
-      <a style={styles.link} href="https://research.topledger.xyz" target="_blank" >
+      <a style={styles.link} href="https://research.topledger.xyz" target="_blank" rel="noreferrer" >
         Check it out.
       </a>
     </div>
