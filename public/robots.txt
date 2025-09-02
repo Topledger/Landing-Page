@@ -34,4 +34,4 @@ Disallow:
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: https://topledger.xyz/catalog/sitemap.xml
+Sitemap: https://topledger.xyz/sitemap.xml
