@@ -35,6 +35,7 @@
 
 .titleMobile {
   display: none;
+
   @include mobile {
     display: block;
     font-size: 1.2rem;
@@ -58,4 +59,55 @@
   margin-top: 2rem;
   display: flex;
   width: 100%;
+}
+
+.fullWidthCard {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.articleContent {
+  width: 100%;
+}
+
+.fullWidthContent {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  @include tablet {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.textSection {
+  width: 100%;
+}
+
+.fullWidthTextSection {
+  flex: 1;
+  width: auto;
+}
+
+.imageSection {
+  flex: 0 0 auto;
+  width: 300px;
+
+  @include tablet {
+    width: 100%;
+    display: none;
+  }
+
+  @include mobile {
+    width: 100%;
+    display: none;
+  }
+}
+
+.fullWidthImage {
+  width: 80%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: center;
 }

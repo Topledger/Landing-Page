@@ -6,10 +6,14 @@ import style from "./index.module.scss";
 
 const ArticleSection = ({ articles = [] }) => {
   return (
-    <Section style={{ height: "758px" }} id={getId("Articles")}>
+    <Section style={{ height: "1130px" }} id={getId("Articles")}>
       <div className={style.columns}>
         {articles.map((article) => (
-          <ArticleCard article={article} key={article.id} />
+          <ArticleCard
+            article={article}
+            key={article.id}
+            variant={article.variant || "default"}
+          />
         ))}
       </div>
     </Section>
@@ -17,3 +21,6 @@ const ArticleSection = ({ articles = [] }) => {
 };
 
 export default ArticleSection;
+
+
+

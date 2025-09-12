@@ -117,6 +117,26 @@ const articles = [
             ],
         },
     },
+    {
+        id: 5,
+        tags: [{ text: "for developers", color: "#6467C5" }],
+        title: "Top Ledger APIs",
+        description:
+            "A unified platform delivery structured access to a suite of 100+ endpoints covering protocol revenue, MEV, stablecoin flows, DEX volumes, wrapped BTC usage, compute usage, launchpads, and more.\nBuilt for developers, analysts, and teams who want deeper visibility into the network.",
+        image: "/assets/images/landing/api-illustration.svg",
+        footer: {
+            actionElements: [
+                {
+                    type: "link",
+                    text: "Explore APIs",
+                    target: "_blank",
+                    //primary: true,
+                    href: "https://api.topledger.xyz/", // Update this to the actual API documentation URL
+                },
+            ],
+        },
+        variant: "fullWidth",
+    },
 ];
 
 const outcomes = [
