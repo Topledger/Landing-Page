@@ -43,7 +43,7 @@ const researchArticle = {
         actionElements: [
             {
                 type: "link",
-                text: "See details",
+                text: "Explore",
                 //primary: true,
                 href: "https://research.topledger.xyz",
                 target: "_blank",
