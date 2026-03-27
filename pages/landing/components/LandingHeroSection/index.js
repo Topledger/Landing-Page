@@ -11,8 +11,8 @@ const LandingHeroSection = () => {
       className={styles.landingHeroSection}
       background="/assets/images/landing/block-chain-hero-80.jpg"
     >
-      <p className={styles.subHeading}>APIs, Streams & Analytics</p>
-      <h1 className={styles.heading}>Unified onchain data</h1>
+      <p className={styles.subHeading}>Enterprise Grade</p>
+      <h1 className={styles.heading}>Blockchain Data & Analytics</h1>
 
 
       <p className={styles.description}>
