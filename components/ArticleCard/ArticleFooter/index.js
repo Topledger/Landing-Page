@@ -57,8 +57,8 @@ const FooterActions = ({ actions = [] }) => {
   return (
     <div className={cx(styles.footer, styles.footerAction)}>
       {actions.length > 0 &&
-        actions.map((action) => (
-          <FooterAction key={action.id} action={action} />
+        actions.map((action, index) => (
+          <FooterAction key={action.id ?? `${action.text}-${index}`} action={action} />
         ))}
     </div>
   );

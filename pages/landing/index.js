@@ -13,32 +13,46 @@ import TrialSection from "@/components/TrialSection";
 import QueryFormModal from "@/components/QueryForm/QueryFormModal";
 import { getId } from "helpers/utils";
 
-const articles = [
-    {
-        id: 1,
-        tags: [{ text: "Web3 teams", color: "#3678C5" }],
-        title: "SQL based analytics platform",
-        description:
-            "Create comprehensive dashboards with deeper competitive insights, broader user profiling, and in-depth ecosystem analysis.",
-        image: "/assets/images/landing/article-1.jpg",
-        footer: {
-            actionElements: [
-                {
-                    type: "link",
-                    text: "See details",
-                    primary: true,
-                    href: "/web3-teams",
-                },
-                {
-                    type: "link",
-                    text: "Public dashboards",
-                    //target: "_blank",
-                    href: "/dashboards",
-                    secondary: true,
-                },
-            ],
-        },
+const apisArticle = {
+    id: 5,
+    tags: [{ text: "for developers", color: "#6467C5" }],
+    title: "Top Ledger APIs",
+    description:
+        "Lending, perps, vaults, LP positions, staking, and PnL across 20+ protocols — Kamino, Drift, Jupiter, Raydium, Orca, Meteora, and more. REST, WebSocket, Kafka, and MCP-native.",
+    image: "/assets/images/landing/api-illustration.svg",
+    footer: {
+        actionElements: [
+            {
+                type: "link",
+                text: "Explore APIs",
+                target: "_blank",
+                href: "https://api.topledger.xyz/",
+            },
+        ],
     },
+};
+
+const researchArticle = {
+    id: 6,
+    tags: [{ text: "Research", color: "#3678C5" }],
+    title: "Top Ledger Research",
+    description:
+        "Interactive research dashboards and deep-dive analytics on Solana protocols, liquidity, and ecosystem trends—built for analysts and teams who need credible, queryable intelligence.",
+    image: "/assets/images/landing/article-1.jpg",
+    footer: {
+        actionElements: [
+            {
+                type: "link",
+                text: "See details",
+                //primary: true,
+                href: "https://research.topledger.xyz",
+                target: "_blank",
+            },
+        ],
+    },
+};
+
+const aggregatedArticles = [
     {
         id: 2,
         tags: [{ text: "Business professionals", color: "#9F62DD" }],
@@ -67,7 +81,7 @@ const articles = [
         id: 3,
         tags: [
             {
-                text: "Institutions & Market intelligence platforms",
+                text: "Market intelligence platforms",
                 color: "#6467C5",
             },
         ],
@@ -108,7 +122,6 @@ const articles = [
                     primary: true,
                     onClick: () => QueryFormModal.show(),
                     style: {
-                        //width: "100%",
                         textAlign: "center",
                         border: "1px solid rgba(29, 148, 34, 0.14)",
                         background: "#DDF8E7",
@@ -116,26 +129,6 @@ const articles = [
                 },
             ],
         },
-    },
-    {
-        id: 5,
-        tags: [{ text: "for developers", color: "#6467C5" }],
-        title: "Top Ledger APIs",
-        description:
-            "A unified platform delivery structured access to a suite of 100+ endpoints covering protocol revenue, MEV, stablecoin flows, DEX volumes, wrapped BTC usage, compute usage, launchpads, and more.\nBuilt for developers, analysts, and teams who want deeper visibility into the network.",
-        image: "/assets/images/landing/api-illustration.svg",
-        footer: {
-            actionElements: [
-                {
-                    type: "link",
-                    text: "Explore APIs",
-                    target: "_blank",
-                    //primary: true,
-                    href: "https://api.topledger.xyz/", // Update this to the actual API documentation URL
-                },
-            ],
-        },
-        variant: "fullWidth",
     },
 ];
 
@@ -373,7 +366,11 @@ const LandingPage = () => {
             </Head>
             <Announceband />
             <LandingHeroSection />
-            <ArticleSection articles={articles} />
+            <ArticleSection
+                apisArticle={apisArticle}
+                researchArticle={researchArticle}
+                aggregatedArticles={aggregatedArticles}
+            />
             <OutcomesSection outcomes={outcomes} />
             <DataCultureSection dataCultures={dataCultures} />
             <StoriesSection insightStories={insightStories} />

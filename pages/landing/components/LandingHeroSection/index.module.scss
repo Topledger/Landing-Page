@@ -7,6 +7,18 @@
   align-items: center;
   text-align: center;
 
+  /* Taller hero so the background image covers more vertical space before cards overlap */
+  min-height: 52rem;
+  background-position: center center;
+
+  @include tablet {
+    min-height: 40rem;
+  }
+
+  @include mobile {
+    min-height: auto;
+  }
+
   @include mesh-overlay;
 }
 

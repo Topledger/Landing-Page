@@ -1,16 +1,36 @@
 @import "@/assets/styles/breakpoints.scss";
 
-
-.columns {
+.section {
   position: relative;
   top: -8rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 2rem;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
   gap: 3.5rem;
 
   @include mobile {
+    gap: 2rem;
     padding-top: 1rem;
-
-    grid-template-columns: 1fr;
   }
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: -8rem;
+  gap: 3.5rem;
+  align-items: stretch;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    margin-top: 4rem;
+    gap: 2rem;
+  }
+}
+
+.bottomRow {
+  width: 100%;
 }

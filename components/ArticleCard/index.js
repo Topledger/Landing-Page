@@ -15,7 +15,7 @@ const ArticleCard = ({ article, variant = "default" }) => {
           <div className={styles.header}>
             {article.tags.length > 0 &&
               article.tags.map((tag) => (
-                <Chip key={tag.id} color={tag.color}>
+                <Chip key={tag.text ?? tag.id} color={tag.color}>
                   {tag.text}
                 </Chip>
               ))}
