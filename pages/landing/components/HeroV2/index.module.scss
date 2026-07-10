@@ -1,0 +1,291 @@
+@import "@/assets/styles/tokens";
+@import "@/assets/styles/breakpoints";
+
+// ============================================================================
+// HeroV2 — single-column editorial hero
+//
+// Layers (back to front):
+//   1. .meshA  — slow-drifting blue radial blob, top-left quadrant
+//   2. .meshB  — slow-drifting violet radial blob, bottom-right quadrant
+//   3. .dotGrid — faint masked dot grid for tactile depth
+//   4. .container — content (centered, constrained)
+//   5. <HeroLiveRibbon> — quiet status bar
+// ============================================================================
+
+.hero {
+    position: relative;
+    background: var(--tl-paper);
+    overflow: hidden;
+    padding-top: clamp(72px, 10vw, 132px);
+    padding-bottom: 0;
+    isolation: isolate;
+}
+
+// ---------- Background scaffolding ----------
+
+.dotGrid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle,
+            rgba(15, 17, 23, 0.05) 1px,
+            transparent 1px);
+    background-size: 30px 30px;
+    background-position: 0 0;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 40%,
+            #000 0%,
+            rgba(0, 0, 0, 0.45) 60%,
+            transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%,
+            #000 0%,
+            rgba(0, 0, 0, 0.45) 60%,
+            transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+// Two large, soft blobs that slowly drift in opposite circles.
+// They're well below 0.1 opacity each — you'll feel them, not see them.
+.meshA,
+.meshB {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(80px);
+    will-change: transform;
+}
+
+.meshA {
+    top: -160px;
+    left: 8%;
+    width: 720px;
+    height: 720px;
+    background: radial-gradient(circle at center,
+            rgba(45, 91, 255, 0.18) 0%,
+            rgba(45, 91, 255, 0) 60%);
+    animation: driftA 28s linear infinite;
+}
+
+.meshB {
+    top: 60px;
+    right: 4%;
+    width: 640px;
+    height: 640px;
+    background: radial-gradient(circle at center,
+            rgba(153, 69, 255, 0.16) 0%,
+            rgba(153, 69, 255, 0) 60%);
+    animation: driftB 36s linear infinite;
+}
+
+@keyframes driftA {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(48px, 32px) scale(1.06);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes driftB {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-56px, 40px) scale(1.04);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+// ---------- Layout ----------
+
+.container {
+    @include tl-container;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include max-width(md) {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+// ---------- Reveal-on-load primitive ----------
+// Each direct child uses `--reveal-delay` (set inline) to stagger.
+
+.eyebrow,
+.heading,
+.subheading,
+.ctaRow {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: reveal 720ms var(--tl-ease) var(--reveal-delay, 0ms) both;
+}
+
+@keyframes reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// ---------- Eyebrow ----------
+
+.eyebrow {
+    @include tl-eyebrow;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px 6px 10px;
+    border: 1px solid var(--tl-border);
+    border-radius: var(--tl-r-pill);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    color: var(--tl-text-muted);
+    margin-bottom: clamp(28px, 4vw, 36px);
+}
+
+.eyebrowDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--tl-solana-mint);
+    box-shadow: 0 0 0 3px rgba(20, 241, 149, 0.18);
+}
+
+// ---------- Headline ----------
+
+.heading {
+    @include tl-display-tight;
+    font-size: var(--tl-fs-display-lg);
+    margin: 0 0 clamp(20px, 3vw, 28px);
+    max-width: 16ch;
+    text-wrap: balance;
+}
+
+.headingAccent {
+    background: linear-gradient(135deg,
+            var(--tl-solana-violet) 0%,
+            var(--tl-accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-style: italic;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+}
+
+// ---------- Subheading ----------
+
+.subheading {
+    @include tl-body;
+    font-size: var(--tl-fs-body-xl);
+    color: var(--tl-text-muted);
+    max-width: 60ch;
+    margin: 0 0 clamp(32px, 4.5vw, 40px);
+    text-wrap: pretty;
+}
+
+// ---------- CTAs ----------
+
+.ctaRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    @include max-width(md) {
+        justify-content: flex-start;
+    }
+}
+
+.ctaPrimary,
+.ctaSecondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 50px;
+    padding: 0 22px;
+    border-radius: var(--tl-r-2);
+    font-family: var(--tl-font-body);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform var(--tl-d-2) var(--tl-ease),
+        background-color var(--tl-d-2) var(--tl-ease),
+        border-color var(--tl-d-2) var(--tl-ease),
+        box-shadow var(--tl-d-2) var(--tl-ease);
+
+    svg {
+        transition: transform var(--tl-d-2) var(--tl-ease);
+    }
+
+    &:hover svg {
+        transform: translateX(2px);
+    }
+}
+
+.ctaPrimary {
+    background: var(--tl-ink);
+    color: var(--tl-text-on-ink);
+    border: 1px solid var(--tl-ink);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset,
+        0 8px 20px -8px rgba(15, 17, 23, 0.45);
+
+    &:hover {
+        background: var(--tl-ink-soft);
+        transform: translateY(-1px);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset,
+            0 12px 24px -10px rgba(15, 17, 23, 0.55);
+    }
+}
+
+.ctaSecondary {
+    background: transparent;
+    color: var(--tl-text);
+    border: 1px solid var(--tl-border-strong);
+
+    &:hover {
+        border-color: var(--tl-text);
+        background: rgba(255, 255, 255, 0.4);
+    }
+}
+
+// ---------- Reduced motion: kill drifts and fades ----------
+
+@media (prefers-reduced-motion: reduce) {
+
+    .meshA,
+    .meshB {
+        animation: none;
+    }
+
+    .eyebrow,
+    .heading,
+    .subheading,
+    .ctaRow {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}

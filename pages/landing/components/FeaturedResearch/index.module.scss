@@ -1,0 +1,88 @@
+@import "@/assets/styles/tokens";
+@import "@/assets/styles/breakpoints";
+
+.section {
+    @include tl-section-tight;
+    // Warm off-white — the only "tonal" band in the rhythm. Sits between
+    // two pure-white sections (Personas above, Quotes below) and gives the
+    // research strip a calm, paper-like editorial character.
+    background: var(--tl-paper-elevated);
+    border-top: 1px solid var(--tl-border);
+}
+
+.container {
+    @include tl-container;
+}
+
+.label {
+    @include tl-eyebrow;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @include max-width(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.item {
+    display: flex;
+}
+
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px 24px;
+    background: var(--tl-paper-elevated);
+    border: 1px solid var(--tl-border);
+    border-radius: var(--tl-r-3);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: border-color var(--tl-d-2) var(--tl-ease),
+        transform var(--tl-d-2) var(--tl-ease);
+
+    &:hover {
+        border-color: var(--tl-text);
+        transform: translateY(-2px);
+
+        .arrow {
+            color: var(--tl-text);
+            transform: translate(2px, -2px);
+        }
+    }
+}
+
+.publication {
+    @include tl-eyebrow;
+    color: var(--tl-text-subtle);
+}
+
+.title {
+    font-family: var(--tl-font-display);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: var(--tl-lh-snug);
+    color: var(--tl-text);
+    letter-spacing: var(--tl-ls-display);
+    margin-top: auto;
+}
+
+.arrow {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    color: var(--tl-text-subtle);
+    transition: color var(--tl-d-2) var(--tl-ease),
+        transform var(--tl-d-2) var(--tl-ease);
+}

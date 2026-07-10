@@ -1,0 +1,63 @@
+@import "@/assets/styles/tokens";
+@import "@/assets/styles/breakpoints";
+
+.section {
+    // Slightly brighter than the hero (#fafafa) above so the logo strip
+    // reads as its own band — a bright stage for the brand marks.
+    background: var(--tl-paper-elevated);
+    padding: clamp(56px, 8vw, 96px) 0 clamp(48px, 6vw, 72px);
+}
+
+.container {
+    @include tl-container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    text-align: center;
+}
+
+.label {
+    @include tl-eyebrow;
+}
+
+.logos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(24px, 4vw, 56px);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    height: 36px;
+
+    img {
+        max-height: 32px;
+        width: auto;
+        // Restrained grayscale → full colour on hover. The Stripe move.
+        filter: grayscale(1) brightness(0) opacity(0.55);
+        transition: filter var(--tl-d-3) var(--tl-ease),
+            transform var(--tl-d-3) var(--tl-ease);
+    }
+
+    &:hover img {
+        filter: grayscale(0) brightness(1) opacity(1);
+        transform: translateY(-1px);
+    }
+
+    @include max-width(md) {
+        flex: 0 0 calc(33.333% - 24px);
+        justify-content: center;
+    }
+
+    @include max-width(sm) {
+        flex: 0 0 calc(50% - 24px);
+    }
+}

@@ -1,0 +1,158 @@
+// ============================================================================
+// Top Ledger — Global CSS custom properties
+// Imported ONCE from styles/globals.scss (NOT from CSS modules).
+// ============================================================================
+
+:root {
+    // ---------- Color: ink + paper ----------
+    --tl-ink: #0a0b0e;
+    --tl-ink-soft: #14161c;
+    --tl-paper: #fafafa;
+    --tl-paper-elevated: #ffffff;
+    --tl-paper-2: #f5f4f1;
+    --tl-paper-3: #efece6;
+    --tl-paper-4: #e8e5dd;
+
+    // ---------- Color: neutral ramp ----------
+    --tl-n-50: #f7f8fa;
+    --tl-n-100: #eef0f5;
+    --tl-n-200: #e2e5ee;
+    --tl-n-300: #cbd0dc;
+    --tl-n-400: #9aa1b3;
+    --tl-n-500: #6b7180;
+    --tl-n-600: #4b505d;
+    --tl-n-700: #2f333d;
+    --tl-n-800: #1d2027;
+    --tl-n-900: #0f1117;
+
+    // ---------- Color: accents ----------
+    --tl-accent: #2d5bff;
+    --tl-accent-hover: #1f48e0;
+    --tl-accent-soft: #e8eeff;
+
+    --tl-solana-violet: #9945ff;
+    --tl-solana-mint: #14f195;
+
+    --tl-warn: #ffb84a;
+    --tl-success: #14b87f;
+    --tl-danger: #ff5e5b;
+
+    // ---------- Surface ----------
+    --tl-surface: var(--tl-paper);
+    --tl-surface-elevated: var(--tl-paper-elevated);
+    --tl-surface-muted: var(--tl-n-50);
+    --tl-border: var(--tl-n-200);
+    --tl-border-strong: var(--tl-n-300);
+
+    // ---------- Text ----------
+    --tl-text: var(--tl-ink);
+    --tl-text-muted: var(--tl-n-600);
+    --tl-text-subtle: var(--tl-n-500);
+    --tl-text-faint: var(--tl-n-300);
+    --tl-text-on-ink: #fafafa;
+    --tl-text-on-ink-muted: rgba(250, 250, 250, 0.64);
+
+    // ---------- Bento tile tints ----------
+    --tl-tint-blue: #eef3ff;
+    --tl-tint-violet: #f4eeff;
+    --tl-tint-mint: #e8faf1;
+    --tl-tint-amber: #fff5e6;
+    --tl-tint-rose: #fdeef0;
+    --tl-tint-slate: #eef1f6;
+
+    // ---------- Type families ----------
+    --tl-font-display: "Geist", "Inter", -apple-system, BlinkMacSystemFont,
+        "Helvetica Neue", sans-serif;
+    --tl-font-body: "Inter", "Geist", -apple-system, BlinkMacSystemFont,
+        "Helvetica Neue", sans-serif;
+    --tl-font-mono: "Geist Mono", "JetBrains Mono", "SFMono-Regular", Menlo,
+        Monaco, Consolas, monospace;
+
+    // ---------- Type scale (fluid via clamp) ----------
+    --tl-fs-display-xl: clamp(3rem, 6.5vw, 6rem);
+    --tl-fs-display-lg: clamp(2.5rem, 5vw, 4.25rem);
+    --tl-fs-display-md: clamp(2rem, 3.5vw, 3rem);
+    --tl-fs-display-sm: clamp(1.5rem, 2.4vw, 2rem);
+    --tl-fs-body-xl: clamp(1.125rem, 1.4vw, 1.375rem);
+    --tl-fs-body-lg: 1.125rem;
+    --tl-fs-body-md: 1rem;
+    --tl-fs-body-sm: 0.875rem;
+    --tl-fs-eyebrow: 0.75rem;
+    --tl-fs-mono-md: 0.875rem;
+    --tl-fs-mono-sm: 0.75rem;
+
+    // ---------- Line height ----------
+    --tl-lh-display: 1.04;
+    --tl-lh-tight: 1.15;
+    --tl-lh-snug: 1.3;
+    --tl-lh-body: 1.55;
+
+    // ---------- Letter spacing ----------
+    --tl-ls-display: -0.025em;
+    --tl-ls-display-tight: -0.035em;
+    --tl-ls-eyebrow: 0.12em;
+    --tl-ls-mono: -0.005em;
+
+    // ---------- Spacing scale ----------
+    --tl-s-1: 4px;
+    --tl-s-2: 8px;
+    --tl-s-3: 12px;
+    --tl-s-4: 16px;
+    --tl-s-5: 24px;
+    --tl-s-6: 32px;
+    --tl-s-7: 48px;
+    --tl-s-8: 64px;
+    --tl-s-9: 96px;
+    --tl-s-10: 128px;
+    --tl-s-11: 192px;
+
+    // ---------- Section padding ----------
+    --tl-section-y: clamp(64px, 10vw, 144px);
+    --tl-section-y-tight: clamp(48px, 6vw, 80px);
+    --tl-content-x: clamp(20px, 4vw, 64px);
+    --tl-content-max: 1240px;
+
+    // ---------- Radius ----------
+    --tl-r-1: 8px;
+    --tl-r-2: 12px;
+    --tl-r-3: 16px;
+    --tl-r-4: 24px;
+    --tl-r-pill: 999px;
+
+    // ---------- Elevation ----------
+    --tl-e-1: 0 1px 2px rgba(15, 17, 23, 0.04),
+        0 1px 3px rgba(15, 17, 23, 0.06);
+    --tl-e-2: 0 4px 12px rgba(15, 17, 23, 0.06),
+        0 2px 4px rgba(15, 17, 23, 0.04);
+    --tl-e-3: 0 24px 48px -12px rgba(15, 17, 23, 0.18),
+        0 8px 16px -8px rgba(15, 17, 23, 0.08);
+    --tl-e-glow: 0 0 0 1px rgba(45, 91, 255, 0.18),
+        0 12px 32px -8px rgba(45, 91, 255, 0.32);
+
+    // ---------- Motion ----------
+    --tl-ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --tl-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --tl-d-1: 150ms;
+    --tl-d-2: 250ms;
+    --tl-d-3: 400ms;
+    --tl-d-4: 700ms;
+}
+
+// Reduced-motion respect: cascades over everything below.
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --tl-d-1: 0ms;
+        --tl-d-2: 0ms;
+        --tl-d-3: 0ms;
+        --tl-d-4: 0ms;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}

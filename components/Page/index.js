@@ -3,6 +3,8 @@ import cx from "classnames";
 
 import Footer from "../Footer";
 import Header from "../Header";
+import HeaderV2 from "../HeaderV2";
+import FooterV2 from "../FooterV2";
 
 import styles from "./index.module.scss";
 
@@ -18,6 +20,7 @@ const Page = ({
     header = true,
     footer = true,
     theme: themeName = "default",
+    pageType = "normal",
 }) => (
     <div className={cx("page", styles.page)}>
         <Head>
@@ -52,10 +55,15 @@ const Page = ({
                 styles.pageContent
             )}
         >
-            {header && <Header />}
+            {header &&
+                (pageType === "landing-v2" ? (
+                    <HeaderV2 />
+                ) : (
+                    <Header pageType={pageType} />
+                ))}
             <Body header={header}>{children}</Body>
         </div>
-        {footer && <Footer />}
+        {footer && (pageType === "landing-v2" ? <FooterV2 /> : <Footer />)}
     </div>
 );
 

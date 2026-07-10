@@ -109,7 +109,7 @@ const Footer = () => {
   return (
     <Section
       id="app-footer"
-      style={{ backgroundColor: "#edf2ff" }}
+      style={{ backgroundColor: "var(--tl-paper-2, #f5f4f1)", borderTop: "1px solid var(--tl-border, #e2e5ee)" }}
       component="footer"
     >
       <div className={styles.container}>

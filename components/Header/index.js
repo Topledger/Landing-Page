@@ -88,6 +88,7 @@ const BurgerButton = ({ className, onClick }) => {
 
 const Header = ({ className, pageType = "normal" }) => {
     const [isHeaderOpen, setIsHeaderOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const router = useRouter();
 
@@ -107,8 +108,19 @@ const Header = ({ className, pageType = "normal" }) => {
         }
     }, [isHeaderOpen]);
 
+    // Scroll-aware shrink: only consumed by .page-type-landing-v2 styles.
+    useEffect(() => {
+        const onScroll = () => {
+            setIsScrolled(window.scrollY > 24);
+        };
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     return (
         <header
+            data-scrolled={isScrolled ? "true" : "false"}
             className={cx(styles.appHeader, className, `page-type-${pageType}`)}
         >
             <span className={cx(styles.headerWrapper, `page-type-${pageType}`)}>

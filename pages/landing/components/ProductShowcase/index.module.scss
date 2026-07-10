@@ -1,0 +1,534 @@
+@import "@/assets/styles/tokens";
+@import "@/assets/styles/breakpoints";
+
+// ============================================================================
+// ProductShowcase — "What we ship"
+//
+// Editorial bento mosaic on a 12-column grid with a 100px base row.
+// The asymmetry is deliberate: one anchor card, a tight stacked column,
+// and a rhythmic bottom row of three cards in *different widths*.
+//
+//                 12-col grid · base row 100px
+//   ┌────────── 8c × 4r ──────────┬─── 4c × 2r ───┐
+//   │                             │   02 FEEDS    │
+//   │                             │   (tall-ish)  │
+//   │   01 SQL — FEATURED         ├─── 4c × 2r ───┤
+//   │   horizontal split          │   03 WALLETS  │
+//   │                             │   (tall-ish)  │
+//   └─────────────────────────────┴───────────────┘
+//   ┌── 5c × 3r ──┬── 4c × 3r ──┬── 3c × 3r ──┐
+//   │  04 ARCHIVE │  05 APIS     │ 06 RESEARCH │
+//   │  (widest)   │  (medium)    │ (narrowest) │
+//   └─────────────┴──────────────┴─────────────┘
+//
+// Why this works:
+//   - Different col counts (8/4/5/4/3) + different row counts (4/2/3) =
+//     real visual variety, not a stamped grid.
+//   - The featured card is *the* anchor; everything else relates to it.
+//   - The bottom strip resolves into a confident horizontal cadence,
+//     but with subtly varying widths so the eye keeps moving.
+//   - Tints stay quiet (one accent per card) — the geometry does the talking.
+// ============================================================================
+
+.section {
+    @include tl-section;
+    background: var(--tl-paper);
+    position: relative;
+}
+
+.container { @include tl-container; }
+
+// ---------- Section header ----------
+
+.head {
+    margin-bottom: clamp(48px, 6vw, 80px);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 32px;
+
+    @include max-width(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.headLeft {
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.eyebrowRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.eyebrowDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--tl-solana-mint);
+    box-shadow: 0 0 0 3px rgba(20, 241, 149, 0.18);
+}
+
+.eyebrow { @include tl-eyebrow; }
+
+.heading {
+    @include tl-display-tight;
+    font-size: var(--tl-fs-display-lg);
+    margin: 0;
+
+    em {
+        font-style: italic;
+        font-weight: 500;
+        background: linear-gradient(
+            120deg,
+            var(--tl-accent) 0%,
+            var(--tl-solana-violet) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+.kicker {
+    @include tl-body;
+    font-size: var(--tl-fs-body-lg);
+    max-width: 60ch;
+    margin-top: 8px;
+}
+
+.headOrnament {
+    @include tl-mono;
+    font-size: 11px;
+    color: var(--tl-text-subtle);
+    text-transform: uppercase;
+    letter-spacing: var(--tl-ls-eyebrow);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 6px;
+    white-space: nowrap;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 1px;
+        background: var(--tl-border-strong);
+    }
+}
+
+// ---------- Mosaic grid ----------
+//
+// 12-col base, 100px row units. `grid-auto-flow: dense` lets the layout
+// reflow gracefully if any card is hidden later (also helps at breakpoints).
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 100px;
+    grid-auto-flow: dense;
+    gap: clamp(14px, 1.2vw, 20px);
+
+    // Tablet: collapse to a 6-col sub-mosaic — still asymmetric, but tighter.
+    @include max-width(lg) {
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 110px;
+    }
+
+    // Mobile: full stack.
+    @include max-width(md) {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+}
+
+// ---------- Tile (shared) ----------
+
+.tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--tl-paper-elevated);
+    border: 1px solid var(--tl-border);
+    border-radius: var(--tl-r-3);
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform var(--tl-d-3) var(--tl-ease),
+        border-color var(--tl-d-3) var(--tl-ease),
+        box-shadow var(--tl-d-3) var(--tl-ease);
+
+    --tile-tint: var(--tl-text);
+    --tile-tint-soft: var(--tl-n-100);
+
+    &[data-tint="blue"]   { --tile-tint: var(--tl-accent);          --tile-tint-soft: rgba(45, 91, 255, 0.10); }
+    &[data-tint="violet"] { --tile-tint: var(--tl-solana-violet);   --tile-tint-soft: rgba(153, 69, 255, 0.10); }
+    &[data-tint="mint"]   { --tile-tint: #10a36b;                   --tile-tint-soft: rgba(20, 241, 149, 0.12); }
+    &[data-tint="amber"]  { --tile-tint: #b8761b;                   --tile-tint-soft: rgba(255, 184, 74, 0.14); }
+    &[data-tint="rose"]   { --tile-tint: #d14a55;                   --tile-tint-soft: rgba(255, 94, 91, 0.10); }
+    &[data-tint="slate"]  { --tile-tint: var(--tl-n-700);           --tile-tint-soft: rgba(15, 17, 23, 0.06); }
+
+    // ---------- Layout variants ----------
+
+    // The anchor: spans 8 cols × 4 rows (~400px tall on desktop).
+    &[data-layout="featured"] {
+        grid-column: span 8;
+        grid-row: span 4;
+        flex-direction: row;
+    }
+    // Right-stack columns: half-height tall-ish cards.
+    &[data-layout="medium-tall"] {
+        grid-column: span 4;
+        grid-row: span 2;
+    }
+    // Bottom row: three cards in *unequal* widths for the masonry feel.
+    &[data-layout="bottom-wide"]    { grid-column: span 5; grid-row: span 3; }
+    &[data-layout="bottom-medium"]  { grid-column: span 4; grid-row: span 3; }
+    &[data-layout="bottom-narrow"]  { grid-column: span 3; grid-row: span 3; }
+
+    // Tablet: collapse to 6-col sub-mosaic.
+    @include max-width(lg) {
+        &[data-layout="featured"] {
+            grid-column: span 6;
+            grid-row: span 4;
+            flex-direction: column;
+        }
+        &[data-layout="medium-tall"] {
+            grid-column: span 3;
+            grid-row: span 2;
+        }
+        &[data-layout="bottom-wide"]   { grid-column: span 4; grid-row: span 3; }
+        &[data-layout="bottom-medium"] { grid-column: span 2; grid-row: span 3; }
+        &[data-layout="bottom-narrow"] { grid-column: span 6; grid-row: span 3; }
+    }
+
+    // Mobile: full stack.
+    @include max-width(md) {
+        &[data-layout="featured"],
+        &[data-layout="medium-tall"],
+        &[data-layout="bottom-wide"],
+        &[data-layout="bottom-medium"],
+        &[data-layout="bottom-narrow"] {
+            grid-column: 1 / -1;
+            grid-row: auto;
+            flex-direction: column;
+            min-height: 280px;
+        }
+    }
+
+    // Top accent bar — slides in on hover from the left edge.
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--tile-tint);
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform var(--tl-d-3) var(--tl-ease);
+        z-index: 3;
+    }
+
+    // Soft corner halo.
+    &::after {
+        content: "";
+        position: absolute;
+        top: -30%;
+        right: -15%;
+        width: 60%;
+        height: 70%;
+        background: radial-gradient(
+            ellipse at center,
+            var(--tile-tint-soft) 0%,
+            transparent 65%
+        );
+        opacity: 0;
+        transition: opacity var(--tl-d-3) var(--tl-ease);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        border-color: var(--tl-border-strong);
+        box-shadow: var(--tl-e-2);
+
+        &::before { transform: scaleX(1); }
+        &::after  { opacity: 1; }
+    }
+
+    &:focus-visible { @include tl-focus-ring; }
+}
+
+// ---------- Featured tile (horizontal split: copy ↔ canvas) ----------
+
+.featuredCopy {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 42%;
+    max-width: 42%;
+    padding: 32px 30px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    border-right: 1px solid var(--tl-border);
+    background: var(--tl-paper-elevated);
+
+    @include max-width(lg) {
+        flex: 0 0 auto;
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--tl-border);
+        padding: 28px 26px 24px;
+    }
+}
+
+.featuredCanvas {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    min-width: 0;
+    padding: 28px;
+    display: flex;
+    align-items: stretch;
+    background:
+        radial-gradient(
+            ellipse 80% 60% at 50% 0%,
+            var(--tile-tint-soft) 0%,
+            transparent 70%
+        ),
+        var(--tl-n-50);
+
+    @include max-width(lg) {
+        padding: 24px;
+        min-height: 240px;
+    }
+}
+
+.featuredTitle {
+    @include tl-display-tight;
+    font-size: clamp(1.65rem, 2.2vw, 2rem);
+    line-height: 1.1;
+    margin: 0;
+}
+
+.featuredDesc {
+    @include tl-body;
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.featuredHints {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 2px;
+    list-style: none;
+    padding: 0;
+}
+
+.featuredHint {
+    @include tl-mono;
+    font-size: 11.5px;
+    color: var(--tl-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--tile-tint);
+        flex-shrink: 0;
+    }
+}
+
+.featuredFoot {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--tl-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.featuredCta {
+    @include tl-mono;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--tl-text);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    svg {
+        transition: transform var(--tl-d-2) var(--tl-ease),
+            color var(--tl-d-2) var(--tl-ease);
+        color: var(--tl-text-subtle);
+    }
+
+    .tile:hover & {
+        color: var(--tile-tint);
+        svg {
+            color: var(--tile-tint);
+            transform: translateX(5px);
+        }
+    }
+}
+
+.featuredCtaHint {
+    @include tl-mono;
+    font-size: 10.5px;
+    color: var(--tl-text-faint);
+    text-transform: uppercase;
+    letter-spacing: var(--tl-ls-eyebrow);
+}
+
+// ---------- Compact tile (every non-featured variant) ----------
+
+.tileHead {
+    position: relative;
+    z-index: 1;
+    padding: 22px 22px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include max-width(md) {
+        padding: 22px 22px 0;
+    }
+}
+
+.tileMeta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tileIndex {
+    @include tl-mono;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--tl-text-subtle);
+    transition: color var(--tl-d-2) var(--tl-ease);
+    letter-spacing: 0.04em;
+
+    .tile:hover & {
+        color: var(--tile-tint);
+    }
+}
+
+.tileMetaSep {
+    width: 12px;
+    height: 1px;
+    background: var(--tl-border-strong);
+    flex-shrink: 0;
+}
+
+.tileTag {
+    @include tl-mono;
+    font-size: 10.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: var(--tl-ls-eyebrow);
+    color: var(--tl-text-subtle);
+}
+
+.tileBody {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tileTitle {
+    @include tl-display-tight;
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.18;
+    color: var(--tl-text);
+}
+
+.tileDesc {
+    @include tl-body;
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 38ch;
+}
+
+.tilePreview {
+    position: relative;
+    z-index: 1;
+    margin: 16px 22px 0;
+    flex: 1;
+    min-height: 80px;
+    display: flex;
+    align-items: stretch;
+}
+
+.tileFoot {
+    position: relative;
+    z-index: 1;
+    padding: 14px 22px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid transparent;
+    margin-top: 14px;
+    transition: border-color var(--tl-d-2) var(--tl-ease);
+
+    .tile:hover & {
+        border-color: var(--tl-n-100);
+    }
+}
+
+.tileLink {
+    @include tl-mono;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--tl-text);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    svg {
+        transition: transform var(--tl-d-2) var(--tl-ease),
+            color var(--tl-d-2) var(--tl-ease);
+        color: var(--tl-text-subtle);
+    }
+
+    .tile:hover & {
+        color: var(--tile-tint);
+        svg {
+            color: var(--tile-tint);
+            transform: translateX(4px);
+        }
+    }
+}
+
+.tileLinkHint {
+    @include tl-mono;
+    font-size: 10px;
+    color: var(--tl-text-faint);
+    text-transform: uppercase;
+    letter-spacing: var(--tl-ls-eyebrow);
+    transition: color var(--tl-d-2) var(--tl-ease);
+
+    .tile:hover & {
+        color: var(--tl-text-subtle);
+    }
+}

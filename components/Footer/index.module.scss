@@ -67,9 +67,11 @@
 }
 
 .description {
-  color: #6b7280;
-  font-size: 0.95rem;
+  color: var(--tl-text-muted, #6b7280);
+  font-family: var(--tl-font-body, "Inter", sans-serif);
+  font-size: 0.9375rem;
   line-height: 1.6;
+  letter-spacing: -0.005em;
   margin: 0;
   max-width: 280px;
 
@@ -102,12 +104,16 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 8px;
-  background-color: rgba(196, 209, 243, 0.3);
-  transition: all 0.2s ease;
+  border-radius: var(--tl-r-2, 12px);
+  background-color: var(--tl-paper-3, #efece6);
+  border: 1px solid var(--tl-border, #e2e5ee);
+  transition: background-color var(--tl-d-2, 250ms) var(--tl-ease, cubic-bezier(0.16, 1, 0.3, 1)),
+    transform var(--tl-d-2, 250ms) var(--tl-ease, cubic-bezier(0.16, 1, 0.3, 1)),
+    border-color var(--tl-d-2, 250ms) var(--tl-ease, cubic-bezier(0.16, 1, 0.3, 1));
 
   &:hover {
-    background-color: rgba(196, 209, 243, 0.6);
+    background-color: var(--tl-paper-4, #e8e5dd);
+    border-color: var(--tl-text-muted, #6b7280);
     transform: translateY(-2px);
   }
 }
@@ -151,16 +157,10 @@
 
 .divider {
   height: 1px;
-  background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(196, 209, 243, 0.4) 20%,
-      rgba(196, 209, 243, 0.8) 50%,
-      rgba(196, 209, 243, 0.4) 80%,
-      transparent 100%);
+  background-color: var(--tl-border, #e2e5ee);
   margin: 2rem 0;
 
   @include mobile {
-    background: rgba(196, 209, 243, 0.6) !important;
     margin: 0rem 0 !important;
     width: 100% !important;
   }
@@ -183,9 +183,12 @@
 }
 
 .copyright {
-  color: #6b7280;
-  font-size: 0.9rem;
+  color: var(--tl-text-muted, #6b7280);
+  font-family: var(--tl-font-mono, "Geist Mono", monospace);
+  font-size: 0.75rem;
   font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .legalLinks {
@@ -201,28 +204,33 @@
 }
 
 .legalLink {
-  color: #6b7280 !important;
-  font-size: 0.8rem;
+  color: var(--tl-text-muted, #6b7280) !important;
+  font-family: var(--tl-font-body, "Inter", sans-serif);
+  font-size: 0.8125rem;
   font-weight: 400;
+  letter-spacing: -0.005em;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color var(--tl-d-2, 250ms) var(--tl-ease, cubic-bezier(0.16, 1, 0.3, 1));
 
   &:hover {
-    color: #1a3989 !important;
+    color: var(--tl-text, #0a0b0e) !important;
   }
 }
 
 .separator {
-  color: #d1d5db;
-  font-size: 0.8rem;
+  color: var(--tl-text-faint, #d1d5db);
+  font-size: 0.75rem;
 }
 
 // Legacy styles for backwards compatibility
 .title {
+  font-family: var(--tl-font-body, "Inter", sans-serif);
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 0.8125rem;
   line-height: 1.4;
-  color: #1a3989;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tl-text, #0a0b0e);
   margin-bottom: 1.25rem;
 }
 

@@ -15,12 +15,14 @@
 }
 
 .title {
-  color: #1a3989;
-  font-size: 1rem;
+  color: var(--tl-text, #0a0b0e);
+  font-family: var(--tl-font-mono, "Geist Mono", monospace);
+  font-size: 0.6875rem;
   font-weight: 500;
   line-height: 1.4;
-  opacity: 0.8;
-  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem 0;
   padding: 0;
 
   @include mobile {
@@ -56,20 +58,23 @@
 }
 
 .link {
-  color: #6b7280 !important;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  color: var(--tl-text-muted, #6b7280) !important;
+  font-family: var(--tl-font-body, "Inter", sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.7;
   font-weight: 400;
+  letter-spacing: -0.005em;
   padding: 0 !important;
   margin: 0 !important;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: color var(--tl-d-2, 250ms) var(--tl-ease, cubic-bezier(0.16, 1, 0.3, 1)),
+    transform var(--tl-d-2, 250ms) var(--tl-ease, cubic-bezier(0.16, 1, 0.3, 1));
   display: inline-flex;
   align-items: center;
 
   &:hover {
-    color: #1a3989 !important;
-    transform: translateX(4px);
+    color: var(--tl-text, #0a0b0e) !important;
+    transform: translateX(2px);
   }
 
   @include mobile {

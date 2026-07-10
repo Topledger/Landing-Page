@@ -1,0 +1,315 @@
+@import "@/assets/styles/tokens";
+
+// ============================================================================
+// Inline product previews
+//
+// These render INSIDE the editorial product cards. The card frame already
+// supplies the surface, border, and shadow — so the previews here must be
+// *quiet*: muted backdrop, hairline detail, no extra elevation.
+//
+// Each preview opts into a soft neutral surface (`%previewSurface`) and
+// inherits hover energy from the parent card. Avoid putting a second white
+// box-on-white-card here.
+// ============================================================================
+
+%previewSurface {
+    background: var(--tl-n-50);
+    border-radius: var(--tl-r-2);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+// ============================================================================
+// 1. SQL preview
+// ============================================================================
+.sql {
+    @extend %previewSurface;
+    display: flex;
+    flex-direction: column;
+}
+.sqlChrome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--tl-border);
+
+    > span {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--tl-n-200);
+    }
+}
+.sqlTab {
+    @include tl-mono;
+    margin-left: 10px;
+    font-size: 10.5px;
+    color: var(--tl-text-subtle);
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+.sqlCode {
+    @include tl-mono;
+    margin: 0;
+    padding: 12px 14px;
+    font-size: 11.5px;
+    color: var(--tl-n-700);
+    line-height: 1.7;
+    white-space: pre;
+    flex: 1;
+    overflow: hidden;
+}
+.line {
+    display: block;
+    position: relative;
+}
+.ln {
+    color: var(--tl-n-300);
+    margin-right: 12px;
+    user-select: none;
+}
+.kw  { color: var(--tl-solana-violet); font-weight: 600; }
+.fn  { color: var(--tl-accent); font-weight: 600; }
+.cursor {
+    display: inline-block;
+    width: 6px;
+    height: 12px;
+    background: var(--tl-accent);
+    margin-left: 4px;
+    transform: translateY(2px);
+    animation: blink 1s steps(2) infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+// ============================================================================
+// 2. Pulse feed
+// ============================================================================
+.pulse {
+    @extend %previewSurface;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.pulseRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: pulseRow 2.4s var(--tl-ease) infinite;
+    opacity: 0.7;
+}
+.pulseDot {
+    flex: 0 0 7px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--tl-solana-mint);
+    box-shadow: 0 0 0 0 rgba(20, 241, 149, 0.5);
+    animation: pulseDot 1.6s var(--tl-ease) infinite;
+}
+.pulseLine {
+    flex: 1;
+    height: 5px;
+    border-radius: var(--tl-r-pill);
+    background: linear-gradient(
+        90deg,
+        var(--tl-n-100) 0%,
+        var(--tl-n-200) 30%,
+        var(--tl-n-100) 100%
+    );
+}
+@keyframes pulseDot {
+    0%   { box-shadow: 0 0 0 0 rgba(20, 241, 149, 0.5); }
+    70%  { box-shadow: 0 0 0 6px rgba(20, 241, 149, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(20, 241, 149, 0); }
+}
+@keyframes pulseRow {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 1; }
+}
+
+// ============================================================================
+// 3. Sparkline
+// ============================================================================
+.sparkline {
+    @extend %previewSurface;
+    padding: 14px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+.sparkLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    @include tl-mono;
+    font-size: 10.5px;
+    color: var(--tl-text-subtle);
+}
+.sparkValue {
+    color: var(--tl-success);
+    font-weight: 600;
+    font-size: 11.5px;
+}
+.sparkSvg {
+    width: 100%;
+    height: 56px;
+    display: block;
+}
+
+// ============================================================================
+// 4. Block stack
+// ============================================================================
+.stack {
+    @extend %previewSurface;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+}
+.stackBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    background: var(--tl-paper-elevated);
+    border: 1px solid var(--tl-border);
+    border-radius: 6px;
+    @include tl-mono;
+    font-size: 10px;
+    color: var(--tl-text-muted);
+    opacity: 0;
+    transform: translateY(-4px);
+    animation: blockIn 0.5s var(--tl-ease) forwards;
+}
+.stackSlot {
+    color: var(--tl-text);
+    font-weight: 500;
+}
+.stackHash {
+    color: var(--tl-text-subtle);
+}
+@keyframes blockIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+// ============================================================================
+// 5. API endpoint cycler
+// ============================================================================
+.api {
+    @extend %previewSurface;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+.apiRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: apiIn 0.4s var(--tl-ease) both;
+}
+.apiMethod {
+    @include tl-mono;
+    font-size: 9.5px;
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 4px;
+    background: var(--tl-n-100);
+    color: var(--tl-n-700);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    &[data-method="GET"]  { background: rgba(45, 91, 255, 0.10);  color: var(--tl-accent); }
+    &[data-method="POST"] { background: rgba(20, 184, 127, 0.10); color: var(--tl-success); }
+    &[data-method="WS"]   { background: rgba(153, 69, 255, 0.10); color: var(--tl-solana-violet); }
+    &[data-method="MCP"]  { background: rgba(255, 184, 74, 0.16); color: #b87a14; }
+}
+.apiPath {
+    @include tl-mono;
+    font-size: 11px;
+    color: var(--tl-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+}
+.apiResp {
+    @include tl-mono;
+    font-size: 10.5px;
+    color: var(--tl-text-subtle);
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--tl-border);
+}
+.apiStatus {
+    color: var(--tl-success);
+    font-weight: 600;
+}
+@keyframes apiIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+// ============================================================================
+// 6. Dashboard
+// ============================================================================
+.dash {
+    @extend %previewSurface;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.dashHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--tl-text);
+    font-weight: 500;
+}
+.dashPill {
+    @include tl-mono;
+    font-size: 9.5px;
+    padding: 2px 8px;
+    border-radius: var(--tl-r-pill);
+    background: var(--tl-paper-elevated);
+    border: 1px solid var(--tl-border);
+    color: var(--tl-text-muted);
+}
+.dashChart {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 56px;
+}
+.dashBar {
+    flex: 1;
+    background: linear-gradient(
+        180deg,
+        var(--tl-accent) 0%,
+        rgba(45, 91, 255, 0.3) 100%
+    );
+    border-radius: 2px 2px 0 0;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    animation: barRise 0.7s var(--tl-ease) forwards;
+}
+@keyframes barRise {
+    to { transform: scaleY(1); }
+}
