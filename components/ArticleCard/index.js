@@ -13,12 +13,22 @@ const ArticleCard = ({ article, variant = "default" }) => {
       <div className={cx(styles.articleContent, { [styles.fullWidthContent]: isFullWidth })}>
         <div className={cx(styles.textSection, { [styles.fullWidthTextSection]: isFullWidth })}>
           <div className={styles.header}>
-            {article.tags.length > 0 &&
-              article.tags.map((tag) => (
-                <Chip key={tag.text ?? tag.id} color={tag.color}>
-                  {tag.text}
-                </Chip>
-              ))}
+            <div className={styles.tags}>
+              {article.tags.length > 0 &&
+                article.tags.map((tag) => (
+                  <Chip key={tag.text ?? tag.id} color={tag.color}>
+                    {tag.text}
+                  </Chip>
+                ))}
+            </div>
+            {article.badge && (
+              <Chip
+                className={styles.badgeChip}
+                color={article.badge.color}
+              >
+                {article.badge.text}
+              </Chip>
+            )}
           </div>
           <h3 className={styles.title}>{article.title}</h3>
           <h3 className={cx(styles.title, styles.titleMobile)}>{article.titleMobile ?? article.title}</h3>

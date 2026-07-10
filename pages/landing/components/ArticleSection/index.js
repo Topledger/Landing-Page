@@ -14,16 +14,17 @@ const ArticleSection = ({
     <Section className={style.section} id={getId("Articles")}>
       <div className={style.layout}>
         <div className={style.topRow}>
-          {apisArticle && (
-            <ArticleCard
-              article={apisArticle}
-              variant={apisArticle.variant || "default"}
-            />
-          )}
+
           {researchArticle && (
             <ArticleCard
               article={researchArticle}
               variant={researchArticle.variant || "default"}
+            />
+          )}
+          {apisArticle && (
+            <ArticleCard
+              article={apisArticle}
+              variant={apisArticle.variant || "default"}
             />
           )}
         </div>

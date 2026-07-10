@@ -34,10 +34,11 @@ const apisArticle = {
 
 const researchArticle = {
     id: 6,
-    tags: [{ text: "Research", color: "#3678C5" }],
-    title: "Top Ledger Research",
+    tags: [{ text: "Agentic", color: "#3678C5" }],
+    badge: { text: "New", color: "#16A34A" },
+    title: "Tokenized Asset & Stablecoin Intelligence",
     description:
-        "Interactive research dashboards and deep-dive analytics on Solana protocols, liquidity, and ecosystem trends—built for analysts and teams who need credible, queryable intelligence.",
+        "Real-time decoding and analytics for tokenized assets and stablecoins — built and maintained by an AI agent.",
     image: "/assets/images/landing/article-1.jpg",
     footer: {
         actionElements: [

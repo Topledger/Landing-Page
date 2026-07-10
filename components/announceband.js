@@ -6,8 +6,8 @@ import { BoldOutlined } from "@ant-design/icons";
 const AnnouncementBand = () => {
   return (
     <div style={styles.band}>
-      Top Ledger APIs are live.{" "}
-      <a style={styles.link} href="https://api.topledger.xyz" target="_blank" rel="noreferrer" >
+      Tokenized Asset & Stablecoin Intelligence{" "}
+      <a style={styles.link} href="https://research.topledger.xyz" target="_blank" rel="noreferrer" >
         Check it out.
       </a>
     </div>
