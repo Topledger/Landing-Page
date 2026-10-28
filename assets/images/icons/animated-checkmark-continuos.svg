@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="154" height="154">
+  <style>
+    @keyframes checkmark-circle {
+      0% {
+        stroke-dashoffset: 480
+      }
+
+      100% {
+        stroke-dashoffset: 960
+      }
+    }
+
+    @keyframes colored-circle {
+      0% {
+        opacity: 0
+      }
+
+      100% {
+        opacity: 100
+      }
+    }
+
+    polyline {
+      animation: checkmark 0.25s ease-in-out 0.7s infinite;
+    }
+
+    circle {
+      animation: checkmark-circle 0.6s ease-in-out infinite;
+    }
+
+    circle#colored {
+      animation: colored-circle 0.6s ease-in-out 0.7s infinite;
+    }
+  </style>
+  <g fill="none" stroke="#63B63C" stroke-width="2">
+    <circle cx="77" cy="77" r="72" style="stroke-dasharray:480, 480; stroke-dashoffset: 960;"></circle>
+    <circle id="colored" fill="#63B63C" cx="77" cy="77" r="72"
+      style="stroke-dasharray:480, 480; stroke-dashoffset: 960;"></circle>
+    <polyline class="st0" stroke="#fff" stroke-width="10" points="43.5,77.8 63.7,97.9 112.2,49.4 "
+      style="stroke-dasharray:100, 100; stroke-dashoffset: 200;" />
+  </g>
+</svg>

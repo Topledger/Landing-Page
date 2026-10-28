@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="482" height="286" viewBox="0 0 482 286" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="url(#filter1_d_928_9357)">
+    <rect x="126" y="2" width="174" height="278" rx="8" fill="#FDFDFF"/>
+    <path d="M141 33C141 25.4575 141 21.6863 143.343 19.3431C145.686 17 149.458 17 157 17H269C276.542 17 280.314 17 282.657 19.3431C285 21.6863 285 25.4575 285 33V73H141V33Z" fill="#EDF2FF"/>
+    <rect x="141" y="81" width="144" height="56" fill="#EDF2FF"/>
+    <rect x="141" y="145" width="144" height="56" fill="#EDF2FF"/>
+    <path d="M141 209H285V249C285 256.542 285 260.314 282.657 262.657C280.314 265 276.542 265 269 265H157C149.458 265 145.686 265 143.343 262.657C141 260.314 141 256.542 141 249V209Z" fill="#EDF2FF"/>
+  </g>
+  <g filter="url(#filter0_d_928_9357)">
+    <rect x="4" y="2" width="106" height="278" rx="8" fill="#FDFDFF"/>
+    <text style="fill: rgb(74, 104, 182); font-family: Arial; font-size: 13px; white-space: pre;" x="35.495" y="147.499">Helium</text>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.8px;" x="278.939" y="358.076">Enter your text here</text>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.8px;" x="243.141" y="51.764">Enter your text here</text>
+    <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.8px;" x="291.668" y="-7.155">Enter your text here</text>
+  </g>
+  <rect x="316" y="29" width="166" height="32" rx="4" fill="#4968B6"/>
+  <path d="M330.375 42.525L333.525 42.525" stroke="white"/>
+  <path d="M338.324 50.175L341.474 50.175" stroke="white"/>
+  <path d="M330.375 39.825L333.525 39.825" stroke="white"/>
+  <path d="M338.324 47.475L341.474 47.475" stroke="white"/>
+  <ellipse cx="332.438" cy="47.4" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="340.562" cy="39.6" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="332.438" cy="50.4" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="340.562" cy="42.6" rx="0.9375" ry="0.9" fill="white"/>
+  <path d="M336.499 53.05V45.5H344.049V52.5C344.049 52.8038 343.803 53.05 343.499 53.05H336.499ZM335.499 45.5V53.05H328.499C328.195 53.05 327.949 52.8038 327.949 52.5V45.5H335.499ZM344.049 44.5H336.499V36.95H343.499C343.803 36.95 344.049 37.1963 344.049 37.5V44.5ZM335.499 36.95V44.5H327.949V37.5C327.949 37.1963 328.195 36.95 328.499 36.95H335.499Z" stroke="white"/>
+  <rect x="316" y="93" width="166" height="32" rx="4" fill="#4968B6"/>
+  <path d="M330.375 106.525L333.525 106.525" stroke="white"/>
+  <path d="M338.324 114.175L341.474 114.175" stroke="white"/>
+  <path d="M330.375 103.825L333.525 103.825" stroke="white"/>
+  <path d="M338.324 111.475L341.474 111.475" stroke="white"/>
+  <ellipse cx="332.438" cy="111.4" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="340.562" cy="103.6" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="332.438" cy="114.4" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="340.562" cy="106.6" rx="0.9375" ry="0.9" fill="white"/>
+  <path d="M336.499 117.05V109.5H344.049V116.5C344.049 116.804 343.803 117.05 343.499 117.05H336.499ZM335.499 109.5V117.05H328.499C328.195 117.05 327.949 116.804 327.949 116.5V109.5H335.499ZM344.049 108.5H336.499V100.95H343.499C343.803 100.95 344.049 101.196 344.049 101.5V108.5ZM335.499 100.95V108.5H327.949V101.5C327.949 101.196 328.195 100.95 328.499 100.95H335.499Z" stroke="white"/>
+  <rect x="316" y="157" width="166" height="32" rx="4" fill="#4968B6"/>
+  <path d="M330.375 170.525L333.525 170.525" stroke="white"/>
+  <path d="M338.324 178.175L341.474 178.175" stroke="white"/>
+  <path d="M330.375 167.825L333.525 167.825" stroke="white"/>
+  <path d="M338.324 175.475L341.474 175.475" stroke="white"/>
+  <ellipse cx="332.438" cy="175.4" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="340.562" cy="167.6" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="332.438" cy="178.4" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="340.562" cy="170.6" rx="0.9375" ry="0.9" fill="white"/>
+  <path d="M336.499 181.05V173.5H344.049V180.5C344.049 180.804 343.803 181.05 343.499 181.05H336.499ZM335.499 173.5V181.05H328.499C328.195 181.05 327.949 180.804 327.949 180.5V173.5H335.499ZM344.049 172.5H336.499V164.95H343.499C343.803 164.95 344.049 165.196 344.049 165.5V172.5ZM335.499 164.95V172.5H327.949V165.5C327.949 165.196 328.195 164.95 328.499 164.95H335.499Z" stroke="white"/>
+  <rect x="316" y="221" width="166" height="32" rx="4" fill="#4968B6"/>
+  <path d="M330.375 234.525L333.525 234.525" stroke="white"/>
+  <path d="M338.324 242.175L341.474 242.175" stroke="white"/>
+  <path d="M330.375 231.825L333.525 231.825" stroke="white"/>
+  <path d="M338.324 239.475L341.474 239.475" stroke="white"/>
+  <ellipse cx="332.438" cy="239.4" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="340.562" cy="231.6" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="332.438" cy="242.4" rx="0.9375" ry="0.9" fill="white"/>
+  <ellipse cx="340.562" cy="234.6" rx="0.9375" ry="0.9" fill="white"/>
+  <path d="M336.499 245.05V237.5H344.049V244.5C344.049 244.804 343.803 245.05 343.499 245.05H336.499ZM335.499 237.5V245.05H328.499C328.195 245.05 327.949 244.804 327.949 244.5V237.5H335.499ZM344.049 236.5H336.499V228.95H343.499C343.803 228.95 344.049 229.196 344.049 229.5V236.5ZM335.499 228.95V236.5H327.949V229.5C327.949 229.196 328.195 228.95 328.499 228.95H335.499Z" stroke="white"/>
+  <path d="M110 45H141" stroke="#4968B6"/>
+  <path d="M126 45L121.5 47.5981L121.5 42.4019L126 45Z" fill="#4968B6"/>
+  <path d="M285 45H316" stroke="#4968B6"/>
+  <path d="M305 45L300.5 47.5981L300.5 42.4019L305 45Z" fill="#4968B6"/>
+  <path d="M110 109H141" stroke="#4968B6"/>
+  <path d="M126 109L121.5 111.598L121.5 106.402L126 109Z" fill="#4968B6"/>
+  <path d="M285 109H316" stroke="#4968B6"/>
+  <path d="M305 109L300.5 111.598L300.5 106.402L305 109Z" fill="#4968B6"/>
+  <path d="M110 173H141" stroke="#4968B6"/>
+  <path d="M126 173L121.5 175.598L121.5 170.402L126 173Z" fill="#4968B6"/>
+  <path d="M285 173H316" stroke="#4968B6"/>
+  <path d="M305 173L300.5 175.598L300.5 170.402L305 173Z" fill="#4968B6"/>
+  <path d="M110 237H141" stroke="#4968B6"/>
+  <path d="M126 237L121.5 239.598L121.5 234.402L126 237Z" fill="#4968B6"/>
+  <path d="M285 237H316" stroke="#4968B6"/>
+  <path d="M305 237L300.5 239.598L300.5 234.402L305 237Z" fill="#4968B6"/>
+  <defs>
+    <filter id="filter0_d_928_9357" x="0" y="0" width="114" height="286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="2"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.211765 0 0 0 0 0.470588 0 0 0 0 0.772549 0 0 0 0.1 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_928_9357"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_928_9357" result="shape"/>
+    </filter>
+    <filter id="filter1_d_928_9357" x="122" y="0" width="182" height="286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="2"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.211765 0 0 0 0 0.470588 0 0 0 0 0.772549 0 0 0 0.1 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_928_9357"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_928_9357" result="shape"/>
+    </filter>
+  </defs>
+  <text style="fill: rgb(74, 104, 182); font-family: Arial, sans-serif; font-size: 10px; white-space: pre;" x="178.755" y="47.25">Entity Manager</text>
+  <text style="fill: rgb(74, 104, 182); font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; white-space: pre;" x="212.429" y="111.389">Data Credits</text>
+  <text style="fill: rgb(74, 104, 182); font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; white-space: pre;" x="212.429" y="175.234">Sub DAOs</text>
+  <text style="fill: rgb(74, 104, 182); font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; white-space: pre;" x="214.086" y="239.679">Lazy Distributer</text>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 0.1px; white-space: pre;" x="353.642" y="49.055">helium.entity_manager</text>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 0.1px; white-space: pre;" x="353.642" y="112.248">helium.data_credits</text>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 0.1px; white-space: pre;" x="353.642" y="176.335">helium.sub_daos</text>
+  <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 10px; letter-spacing: 0.1px; white-space: pre;" x="353.642" y="239.901">helium.lazy_distributers</text>
+</svg>
